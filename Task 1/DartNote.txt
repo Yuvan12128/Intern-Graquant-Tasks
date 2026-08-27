@@ -1,0 +1,115 @@
+DART:
+----
+
+Why are we learning Dart?
+=> Dart is a client-optimized programming language build in 2011 by Google but got integrated with Flutter only in 2015.
+=> Dart become popular after getting integrated with Fluter.
+=> Dart can be used to build we apps; One example is Gopogle Ads.
+=> Flutter can also be used for mobile, web apps, server, and backend applications.
+=> It's an object-oriented programming language, and its syntax is similar to javaScript, java, and C.
+=> It's fast and efficient, with Just-In-Time and Ahead-Of-Time compilation.
+=> It compiles into native code and JavaScript code.
+
+Simple Program:
+-------------------
+
+void main(){
+	print('Hello World');
+}
+
+Variable:
+--------
+	Variable are used to store value.
+
+	Variable are containers which can contain something.
+
+	a=10;
+	------
+	|    |
+	| 10 |
+	|	 | ----> a is a container or a variable.
+	------
+	
+What is Data Type?
+	==> water container is used to store water. 
+	==> Rice container is usd to store Rice.
+	==> Number container is used to store number.
+	==> Letter container is used to store letter.
+
+	A data type specifies the kind of data that a variable of container can store.
+
+	water can = 5 litre of water.
+
+	b=20 Here b is holding number so the vaiable should have a prefix saying this container can store only number.
+	number b=20.
+
+What is Data Type?
+	int : Intergers, or whole numbers.
+	double: Floating-point numbers, or numbers with decimals.
+	String: Represents a sequence of characters of letter.
+	bool: Stores a true of false value.
+	dynamic: type provides flexibility by allowing variables to store values of any type.
+
+if else ?
+	The if-else construct is a control flow statement that executes a block of code if a specified condition is ture, or an alternative block if it is false.
+
+What's fucntion ?
+	A fucntion is a reusable set of instructions that can be called whenever needed to perform a specific task.
+
+	To do specific taks we will call specific persion.
+	==> if light is not working we will call electrician.
+	==> if pipe is not working we will call plumber.
+
+Simple Program 
+--------------
+
+void main{
+	apple();
+	samsung();
+	redMi();
+}
+
+void apple(){
+	print('Apple');
+}
+void samsung(){
+	print('Samsung');
+}
+void redMi(){
+	print('RedMi');
+}
+
+For Loop ?
+	The traditional for loop is used when you need to execute a block of code a specific number of times or when you need the index value inside the loop.
+
+Program:
+--------
+	void main(){
+		for (int count=1; count<=5; count++){
+			print('yuvan');
+		}
+	}
+
+What are classes & Objects?
+	Class: A class is a blueprint for creating objects.  It defines properties and methods that the created objects (instances) will have.
+	Object: An object is an instances of a class.  It is created from the class and represents a specific implementation of the blueprint defined by the class.
+
+Program:
+-------
+class Laptop{
+	int price =0;
+	String brand='';
+
+}
+void main(){
+	Laptop lap1 = Laptop();
+	lap1.price = 20000;
+	lap1.brand = 'Yuvan';
+
+	Laptop lap2 = Laptop();
+	lap2.price = 300000;
+	lap2.price = 'Shankar';
+
+	print(lap1.brand);
+}
+
