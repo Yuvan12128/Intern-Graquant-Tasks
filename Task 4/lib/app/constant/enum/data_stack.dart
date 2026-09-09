@@ -1,0 +1,4 @@
+enum DataStack {
+  PRODUCTION,
+  QA,
+}

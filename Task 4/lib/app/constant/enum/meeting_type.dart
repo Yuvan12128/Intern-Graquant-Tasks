@@ -1,0 +1,4 @@
+enum MeetingType {
+  PLANNED,
+  UNPLANNED,
+}

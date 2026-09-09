@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "name": "SKCL dev",
+      "request": "launch",
+      "program": "lib/skcl_dev.dart",
+      "args": [
+        "--flavor",
+        "skclQa"
+      ],
+      "type": "dart",
+      "flutterMode": "debug"
+    }
+  ]
+}

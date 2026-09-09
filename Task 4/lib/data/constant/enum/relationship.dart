@@ -1,0 +1,12 @@
+enum Relationship {
+  ASSIGNED_TO,
+  ATTACHED_TO,
+  AUTHORIZED_BY,
+  CONFIGURED_BY,
+  BELONGS_TO,
+  IS_GIVEN,
+  PART_OF,
+  RESERVED,
+  USING,
+  MODEL_OF,
+}

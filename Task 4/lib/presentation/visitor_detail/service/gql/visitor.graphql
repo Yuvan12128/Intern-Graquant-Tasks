@@ -1,0 +1,7 @@
+mutation DeleteVisitor($id: ID!, $options: Options) {
+  deleteVisitor(id: $id, options: $options) {
+    source {
+      id
+    }
+  }
+}

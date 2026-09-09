@@ -1,0 +1,1104 @@
+directive @api(objCat: String, operation: String, subOperation: String) on FIELD_DEFINITION
+
+directive @authorization on FIELD_DEFINITION
+
+directive @authenticate on FIELD_DEFINITION
+
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+type Account implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  name: String
+  description: String
+  type: String
+  image1: String
+  image2: String
+  image3: String
+  fileId: ID
+  place: PlacePartial
+  places: [AccountPlace]
+}
+
+input AccountFilter {
+  id: IDFilter
+  name: StringFilter
+  type: StringFilter
+  accountId: IDFilter
+  lifeState: LifeStateFilter
+  placeId: IDFilter
+}
+
+type AccountMutationResponse {
+  source: Account
+}
+
+type AccountPersons {
+  accountFloorId: ID
+  account: Account
+  persons: [Person]
+}
+
+type AccountPlace {
+  id: String
+  name: String
+  description: String
+  blocks: [PlaceBlock]
+}
+
+input AccountRequest {
+  name: String
+  description: String
+  lifeState: LifeState
+  place: PlacePartialRequest
+  image1: String
+  image2: String
+  image3: String
+  fileId: ID
+}
+
+type Accounts {
+  metaInfo: MetaInfo
+  values: [Account]
+}
+
+enum Action {
+  ENABLE
+  DISABLE
+}
+
+type AdditionalDetails {
+  place: Place
+  account: Account
+  block: Block
+  floor: Floor
+  persons: [Person]
+}
+
+input AdditionalTokenInfoRequest {
+  emailAddress: String
+  emailAddressIdToken: String
+}
+
+type Address {
+  address: String
+  buildingName: String
+  no: String
+  parkingLotNo: String
+  floor: String
+  block: String
+  landmark: String
+  street: String
+  area: String
+  town: String
+  taluk: String
+  district: String
+  city: String
+  state: String
+  stateISOCode: String
+  country: String
+  countryISOCode: String
+  pincode: String
+  location: Location
+}
+
+input AddressRequest {
+  address: String
+  buildingName: String
+  no: String
+  parkingLotNo: String
+  floor: String
+  block: String
+  landmark: String
+  street: String
+  area: String
+  town: String
+  taluk: String
+  district: String
+  city: String
+  state: String
+  stateISOCode: String
+  country: String
+  countryISOCode: String
+  pincode: String
+  location: LocationRequest
+}
+
+type Association {
+  id: ID
+  lifeState: LifeState
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  primaryId: ID
+  primaryObjCat: ResourceCategory
+  secondaryId: ID
+  secondaryObjCat: ResourceCategory
+  relationship: Relationship
+  primaryAccountId: ID
+  secondaryAccountId: ID
+  primaryTenantId: ID
+  secondaryTenantId: ID
+  startDate: Date
+  endDate: Date
+  permission: Operation
+  data: JSONObject
+}
+
+type AssociationBulkResponse {
+  metaInfo: MetaInfo
+  values: [Association]
+}
+
+input AssociationFilter {
+  id: IDFilter
+  account: AccountFilter
+  lifeState: LifeStateFilter
+  relationship: StringFilter
+  primaryId: IDFilter
+  primaryObjCat: StringFilter
+  secondaryId: IDFilter
+  secondaryObjCat: StringFilter
+  asOfDate: String
+  assocDateRange: String
+  permission: Operation
+  primaryObj: ObjectFilter
+  secondaryObj: ObjectFilter
+}
+
+type AssociationMutationResponse {
+  source: Association
+}
+
+input AssociationRequest {
+  primaryId: ID
+  secondaryId: ID
+  relationship: Relationship
+  startDate: String
+  endDate: String
+  permission: Operation
+  dataUId: ID
+  data: JSONObject
+}
+
+interface BaseFields {
+  name: String
+  description: String
+  fileId: ID
+}
+
+type Block implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  name: String
+  description: String
+  fileId: ID
+  account: Account
+  place: PlacePartial
+  floors: [Floor]
+}
+
+type BlockFloor {
+  id: ID
+  no: Int
+  accountFloorId: ID
+  persons: [Person]
+}
+
+type BlockMutationResponse {
+  source: Block
+}
+
+input BlockRequest {
+  accountId: ID
+  placeId: ID
+  lifeState: LifeState
+  name: String
+  description: String
+  numberOfBasementFloors: Int
+  numberOfTopFloors: Int
+}
+
+type Blocks {
+  metaInfo: MetaInfo
+  values: [Block]
+}
+
+input BooleanFilter {
+  value: Boolean!
+}
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+type ComingFrom {
+  companyName: String
+  placeName: String
+}
+
+input ComingFromRequest {
+  companyName: String
+  placeName: String
+}
+
+type Countries {
+  metaInfo: MetaInfo
+  values: [Country]
+}
+
+type Country {
+  name: String
+  isoCode: String
+  state(iso_code: String!): State
+  states: [State]
+}
+
+input CountryFilter {
+  isoCode: IDFilter
+}
+
+type Credential implements SystemGeneratedFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  account: Account
+  name: String
+  description: String
+  type: CredentialType
+  uId: String
+  personId: ID
+  person: Person
+}
+
+input CredentialFilter {
+  account: AccountFilter
+  id: IDFilter
+  lifeState: LifeStateFilter
+  name: StringFilter
+  personId: StringFilter
+  type: CredentialTypeFilter
+  uId: StringFilter
+}
+
+type CredentialMutationResponse {
+  source: Credential
+}
+
+input CredentialRequest {
+  accountId: ID
+  lifeState: LifeState
+  name: String
+  description: String
+  personId: String
+  type: CredentialType
+  uId: String
+}
+
+type Credentials {
+  metaInfo: MetaInfo
+  values: [Credential]
+}
+
+enum CredentialType {
+  EMAIL
+  ISO14443
+  PHONE
+}
+
+input CredentialTypeFilter {
+  value: [CredentialType!]!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+input DateOnlyRangeFilter {
+  startDate: String
+  endDate: String
+}
+
+input DateRangeFilter {
+  startDate: String
+  endDate: String
+}
+
+enum EndExistingAssociations {
+  SINGLE
+  PMRY_OBJ
+  SCDY_OBJ
+  BOTH
+}
+
+type Feature implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  name: String
+  description: String
+  fileId: ID
+  account: Account
+  type: FeatureType
+  code: ID
+}
+
+input FeatureFilter {
+  id: IDFilter
+  name: StringFilter
+  account: AccountFilter
+  lifeState: LifeStateFilter
+  type: FeatureTypeFilter
+}
+
+type FeatureMutationResponse {
+  source: Feature
+}
+
+input FeatureRequest {
+  name: String
+  description: String
+  accountId: ID
+  lifeState: LifeState
+  type: FeatureType
+  fileId: ID
+}
+
+type Features {
+  metaInfo: MetaInfo
+  accountId: ID
+  values: [Feature]
+}
+
+enum FeatureType {
+  OBJECT
+  ASSOCIATION
+  OTHER
+}
+
+input FeatureTypeFilter {
+  value: [FeatureType!]!
+}
+
+input FloatRangeFilter {
+  min: Float
+  max: Float
+}
+
+type Floor implements SystemGeneratedFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  account: Account
+  no: Int
+  block: Block
+  accountPersons: [AccountPersons]
+}
+
+type FloorMutationResponse {
+  source: Floor
+}
+
+input FloorRequest {
+  accountId: ID
+  blockId: ID
+  lifeState: LifeState
+  no: Int
+}
+
+type Floors {
+  metaInfo: MetaInfo
+  values: [Floor]
+}
+
+input GeoBoundingBoxFilter {
+  topLeft: LocationRequest!
+  bottomRight: LocationRequest!
+}
+
+input GeoDistanceFilter {
+  location: LocationRequest!
+  distance: String
+}
+
+enum GrantType {
+  AUTHORIZATION_CODE
+  CLIENT_CREDENTIALS
+}
+
+input IDFilter {
+  value: [ID!]!
+}
+
+type IDProof {
+  type1: String
+  value1: String
+  type2: String
+  value2: String
+}
+
+input IDProofRequest {
+  type1: String
+  value1: String
+  type2: String
+  value2: String
+}
+
+input IntFilter {
+  value: [Int]
+}
+
+scalar JSONArray
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+enum LifeState {
+  ACTIVE
+  INACTIVE
+  DELETED
+  REQUESTED_FOR_DELETION
+}
+
+input LifeStateFilter {
+  value: [LifeState!]!
+}
+
+type Location {
+  latitude: Float
+  longitude: Float
+}
+
+input LocationRequest {
+  latitude: Float!
+  longitude: Float!
+}
+
+type MetaInfo {
+  offset: Int
+  first: Int
+  count: Int
+  maxFirst: Int
+  defaultFirst: Int
+  sortBy: [String]
+  allowTogglePagination: Boolean
+  skipPagination: Boolean
+}
+
+type Mutation {
+  _: Boolean
+  createPerson(payload: PersonRequest!): PersonMutationResponse!
+  updatePerson(id: ID!, payload: PersonRequest!): PersonMutationResponse!
+  deletePerson(id: ID!, options: Options): PersonMutationResponse!
+  createFeatureInAccount(accountId: ID!, featureId: ID!): AssociationMutationResponse!
+  deleteAccountFeature(accountFeatureId: ID!): AssociationMutationResponse!
+  createRole(payload: RoleRequest!): RoleMutationResponse!
+  updateRole(id: ID!, payload: RoleRequest!): RoleMutationResponse!
+  deleteRole(id: ID!, options: Options): RoleMutationResponse!
+  assignAccountFeatureToRole(roleId: ID!, accountFeatureId: ID!): AssociationMutationResponse!
+  unassignAccountFeatureFromRole(id: ID!): AssociationMutationResponse!
+  createAssociation(payload: AssociationRequest!, options: Options): AssociationMutationResponse!
+  updateAssociation(id: ID!, payload: AssociationRequest!, options: Options): AssociationMutationResponse!
+  deleteAssociation(id: ID!, options: Options): AssociationMutationResponse!
+  createAccount(payload: AccountRequest!): AccountMutationResponse!
+  updateAccount(id: ID!, payload: AccountRequest!): AccountMutationResponse!
+  deleteAccount(id: ID!, options: Options): AccountMutationResponse!
+  assignAccountToFloor(accountId: ID!, floorId: ID!): AssociationMutationResponse!
+  unassignAccountFromFloor(accountFloorAssociationId: ID!): AssociationMutationResponse!
+  assignPersonToAccountFloor(personId: ID!, accountFloorId: ID!): AssociationMutationResponse!
+  unassignPersonFromAccountFloor(personAccountFloorAssociationId: ID!): AssociationMutationResponse!
+  accessToken(payload: TokenRequest!): TokenResponse
+  refreshToken(payload: RefreshTokenRequest!): TokenResponse
+  createPlace(payload: PlaceRequest!): PlaceMutationResponse!
+  updatePlace(id: ID!, payload: PlaceRequest!): PlaceMutationResponse!
+  deletePlace(id: ID!, options: Options): PlaceMutationResponse!
+  createPlaceBlocksFloors(payload: PlaceBlocksFloorsRequest!): PlaceMutationResponse!
+  createCredential(payload: CredentialRequest!): CredentialMutationResponse!
+  updateCredential(id: ID!, payload: CredentialRequest!): CredentialMutationResponse!
+  deleteCredential(id: ID!, options: Options): CredentialMutationResponse!
+  createBlock(payload: BlockRequest!): BlockMutationResponse!
+  updateBlock(id: ID!, payload: BlockRequest!): BlockMutationResponse!
+  deleteBlock(id: ID!, options: Options): BlockMutationResponse!
+  createFloor(payload: FloorRequest!): FloorMutationResponse!
+  updateFloor(id: ID!, payload: FloorRequest!): FloorMutationResponse!
+  deleteFloor(id: ID!, options: Options): FloorMutationResponse!
+  createVisitor(payload: VisitorRequest!): VisitorMutationResponse!
+  updateVisitor(id: ID!, payload: VisitorRequest!): VisitorMutationResponse!
+  deleteVisitor(id: ID!, options: Options): VisitorMutationResponse!
+  createPersonCredential(payload: PersonCredentialRequest!): PersonCredentialMutationResponse!
+  updatePersonCredential(id: ID!, payload: PersonCredentialRequest!): PersonCredentialMutationResponse!
+  deletePersonCredential(id: ID!, options: Options): PersonCredentialMutationResponse!
+}
+
+type OAuthResponse {
+  accessToken: ID!
+  refreshToken: ID
+  tokenType: String!
+  expiresIn: Int!
+}
+
+type ObjectAssociation {
+  primaryObj: JSONObject
+  secondaryObj: JSONObject
+  association: Association
+}
+
+type ObjectAssociationBulkResponse {
+  metaInfo: MetaInfo
+  values: [ObjectAssociation]
+}
+
+input ObjectFilter {
+  type: StringFilter
+}
+
+enum Operation {
+  C
+  R
+  U
+  D
+}
+
+input Options {
+  isHardDelete: Boolean
+  ignoreLifeState: Boolean
+  upsert: Boolean
+  skipPagination: Boolean
+  isGlobal: Boolean
+  endExistingAssociations: EndExistingAssociations
+  exceptionOnConflict: Boolean
+  primaryObjCat: ResourceCategory
+  secondaryObjCat: ResourceCategory
+  isRefresh: Boolean
+}
+
+type Person implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  roles: [Role]
+  rolesCount: Int
+  name: String
+  description: String
+  fileId: ID
+  account: Account
+  emailAddress: String
+  phoneNumber: String
+  firstName: String
+  lastName: String
+  type: String
+  credentials(filters: CredentialFilter): [Credential]
+  roleType: String
+}
+
+type PersonCredentialMutationResponse {
+  source: Person
+}
+
+input PersonCredentialRequest {
+  emailAddress: String
+  phoneNumber: String
+  accountId: ID
+  lifeState: LifeState
+  name: String
+  firstName: String
+  lastName: String
+  description: String
+  fileId: ID
+  roleType: String
+}
+
+input PersonFilter {
+  id: IDFilter
+  account: AccountFilter
+  name: StringFilter
+  lifeState: LifeStateFilter
+  emailAddress: StringFilter
+  phoneNumber: StringFilter
+  roleType: StringFilter
+}
+
+type PersonMutationResponse {
+  source: Person
+}
+
+input PersonRequest {
+  emailAddress: String
+  phoneNumber: String
+  accountId: ID
+  lifeState: LifeState
+  name: String
+  firstName: String
+  lastName: String
+  type: String
+  description: String
+  fileId: ID
+  roleType: String
+}
+
+type Persons {
+  metaInfo: MetaInfo
+  values: [Person]
+}
+
+type Place implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  name: String
+  description: String
+  fileId: ID
+  account: Account
+  type: String
+  address: Address
+  image1: String
+  image2: String
+  image3: String
+  blocks: [Block]
+}
+
+type PlaceBlock {
+  id: String
+  name: String
+  description: String
+  floors: [BlockFloor]
+}
+
+input PlaceBlocksFloorsRequest {
+  accountId: ID
+  lifeState: LifeState
+  name: String
+  description: String
+  type: String
+  address: AddressRequest
+  fileId: ID
+  image1: String
+  image2: String
+  image3: String
+  blocks: [BlockRequest]
+}
+
+input PlaceFilter {
+  id: IDFilter
+  name: StringFilter
+  account: AccountFilter
+  lifeState: LifeStateFilter
+  type: StringFilter
+}
+
+type PlaceMutationResponse {
+  source: Place
+}
+
+type PlacePartial {
+  name: String
+  type: String
+  address: Address
+}
+
+input PlacePartialRequest {
+  name: String
+  type: String
+  address: AddressRequest
+}
+
+input PlaceRequest {
+  accountId: ID
+  lifeState: LifeState
+  name: String
+  description: String
+  type: String
+  address: AddressRequest
+  fileId: ID
+}
+
+type Places {
+  metaInfo: MetaInfo
+  values: [Place]
+}
+
+type Query {
+  _: Boolean
+  me: UserInfo!
+  person(id: ID!, options: Options): Person!
+  persons(filters: PersonFilter, offset: Int, first: Int, sortBy: [String], options: Options): Persons!
+  features(accountId: ID, options: Options): Features!
+  role(id: ID!, options: Options): Role!
+  roles(filters: RoleFilter, offset: Int, first: Int, sortBy: [String], options: Options): Roles!
+  associations(filters: AssociationFilter, offset: Int, first: Int, sortBy: [String], options: Options): AssociationBulkResponse
+  association(id: ID!, options: Options): Association!
+  objectAssociation(id: ID!, options: Options): ObjectAssociation!
+  objectAssociations(filters: AssociationFilter, offset: Int, first: Int, sortBy: [String], options: Options): ObjectAssociationBulkResponse
+  account(id: ID!, options: Options): Account!
+  accounts(filters: AccountFilter, offset: Int, first: Int, sortBy: [String], options: Options): Accounts!
+  country(isoCode: String!): Country!
+  countries(filters: CountryFilter, offset: Int, first: Int, sortBy: [String], options: Options): Countries!
+  place(id: ID!, options: Options): Place!
+  places(filters: PlaceFilter, offset: Int, first: Int, sortBy: [String], options: Options): Places!
+  credential(id: ID!, options: Options): Credential!
+  credentials(filters: CredentialFilter, offset: Int, first: Int, sortBy: [String], options: Options): Credentials!
+  areCredentialsAuthorizedBySamePerson(sourceCredentialId: String!, targetCredentialId: String!): Boolean!
+  getFeaturesByPersonId(personId: ID, accountId: ID): Features!
+  visitor(id: ID!, options: Options): Visitor!
+  visitors(filters: VisitorFilter, offset: Int, first: Int, sortBy: [String], options: Options): Visitors!
+}
+
+input RefreshTokenRequest {
+  refreshToken: String
+}
+
+enum Relationship {
+  ASSIGNED_TO
+  ATTACHED_TO
+  AUTHORIZED_BY
+  ACCEPTED_BY
+  CONFIGURED_BY
+  BELONGS_TO
+  IS_GIVEN
+  PART_OF
+  RESERVED
+  USING
+  MODEL_OF
+  TRIGGERED
+  ALLOWED
+}
+
+enum ResourceCategory {
+  ACCOUNT
+  ASSOCIATION
+  CREDENTIAL
+  FEATURE
+  PERSON
+  TENANT
+  ROLE
+  STATE
+  TOKEN
+  COUNTRY
+  ACTION
+  FLOOR
+  BLOCK
+  PLACE
+  ACCOUNT_FLOOR
+}
+
+type Role implements SystemGeneratedFields & BaseFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  features: [Feature]
+  persons: [Person]
+  personsCount: Int
+  name: String
+  description: String
+  fileId: ID
+  account: Account
+  type: String
+  tenantLevelAccess: Boolean
+}
+
+input RoleFilter {
+  id: IDFilter
+  name: StringFilter
+  account: AccountFilter
+  lifeState: LifeStateFilter
+  type: StringFilter
+  tenantLevelAccess: BooleanFilter
+}
+
+type RoleMutationResponse {
+  source: Role
+}
+
+input RoleRequest {
+  name: String
+  description: String
+  accountId: ID
+  lifeState: LifeState
+  type: String
+  tenantLevelAccess: Boolean
+  fileId: ID
+}
+
+type Roles {
+  metaInfo: MetaInfo
+  values: [Role]
+}
+
+enum SearchType {
+  CONTAINS
+  ENDS_WITH
+  MATCHES
+  STARTS_WITH
+}
+
+type Source {
+  id: ID!
+  objCat: ResourceCategory!
+  source: JSONObject
+}
+
+type State {
+  name: String
+  isoCode: String
+}
+
+type States {
+  values: [State]
+}
+
+input StringFilter {
+  value: [String!]!
+  searchType: SearchType
+  ignoreCase: Boolean
+}
+
+interface SystemGeneratedFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+}
+
+input TokenRequest {
+  grantType: GrantType!
+  clientId: String
+  clientSecret: String
+  code: String
+  appName: String
+  oAuthProviderName: String
+  accountId: ID
+  additionalTokenInfo: AdditionalTokenInfoRequest
+}
+
+type TokenResponse {
+  oAuth: OAuthResponse
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UserInfo {
+  person: Person
+  credential: Credential
+  account: Account
+  roles: [Role]
+  isAppUser: Boolean
+}
+
+type Visitor implements SystemGeneratedFields {
+  id: ID
+  tenantId: ID
+  lifeState: LifeState
+  objCat: ResourceCategory
+  createdDate: Date
+  updatedDate: Date
+  createdByCredentialId: ID
+  updatedByCredentialId: ID
+  createdByCredentialType: CredentialType
+  updatedByCredentialType: CredentialType
+  createdByCredentialUId: String
+  updatedByCredentialUId: String
+  createdByPersonId: ID
+  updatedByPersonId: ID
+  createdByAppId: ID
+  updatedByAppId: ID
+  readOnly: Boolean
+  firstName: String!
+  lastName: String
+  emailAddress: String
+  phoneNumber: String
+  accountFloorId: ID!
+  placeId: ID!
+  visitingDate: Date
+  comingFrom: ComingFrom
+  createdByPerson: Person
+  additionalDetails: AdditionalDetails
+  type: VisitorType!
+  plannedVisit: Boolean!
+  idProof: IDProof
+  notes: String
+  tools: String
+  purposeOfVisit: String
+  checkInDate: Date
+}
+
+input VisitorFilter {
+  id: IDFilter
+  emailAddress: StringFilter
+  phoneNumber: StringFilter
+  visitingDate: DateRangeFilter
+  type: StringFilter
+  fullText: StringFilter
+  placeId: IDFilter
+  accountId: IDFilter
+  accountFloorAssociationId: IDFilter
+  plannedVisit: BooleanFilter
+}
+
+type VisitorMutationResponse {
+  source: Visitor
+}
+
+input VisitorRequest {
+  firstName: String!
+  lastName: String
+  emailAddress: String
+  phoneNumber: String
+  accountFloorId: ID!
+  visitingDate: String!
+  type: VisitorType!
+  plannedVisit: Boolean!
+  comingFrom: ComingFromRequest
+  idProof: IDProofRequest
+  notes: String
+  tools: String
+  purposeOfVisit: String
+  checkInDate: String
+}
+
+type Visitors {
+  metaInfo: MetaInfo
+  values: [Visitor]
+}
+
+enum VisitorType {
+  GENERAL
+  VENDOR
+}
+

@@ -1,0 +1,1 @@
+adb install $HOME/skcl/skcl-visitor-mobile-app/build/app/outputs/flutter-apk/app-skclqa-release.apk

@@ -1,0 +1,11 @@
+mutation ProfileUpdatePerson($id: ID!,$payload: PersonRequest!) {
+  updatePerson(id: $id, payload: $payload) {
+    source {
+      id,
+      firstName,
+      lastName,
+      phoneNumber,
+      emailAddress,
+    }
+  }
+}

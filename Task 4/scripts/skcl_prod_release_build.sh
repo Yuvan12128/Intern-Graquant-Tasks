@@ -1,0 +1,1 @@
+flutter build apk -t lib/skcl_prod.dart --flavor skclProduction --release

@@ -1,0 +1,4 @@
+enum CurrentType {
+  AC,
+  DC,
+}

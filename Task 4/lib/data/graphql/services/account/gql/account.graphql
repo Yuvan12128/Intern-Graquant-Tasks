@@ -1,0 +1,24 @@
+query Accounts($filters: AccountFilter, $offset: Int, $first: Int, $sortBy: [String]) {
+  accounts(filters: $filters, offset: $offset, first: $first, sortBy: $sortBy) {
+    values {
+      id
+      name
+      places {      
+        name
+        blocks {
+          name 
+          floors {
+            no
+            accountFloorId            
+            persons {              
+              firstName
+              lastName
+              emailAddress
+              phoneNumber
+            }   
+          }           
+        }
+      }
+    }    
+  }
+}

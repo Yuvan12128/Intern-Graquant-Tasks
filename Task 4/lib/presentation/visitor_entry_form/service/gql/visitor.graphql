@@ -1,0 +1,23 @@
+mutation CreateVisitor($payload: VisitorRequest!) {
+  createVisitor(payload: $payload) {
+    source {
+      id
+      firstName
+      lastName
+      emailAddress
+      phoneNumber
+    }
+  }
+}
+
+mutation UpdateVisitor($id: ID!, $payload: VisitorRequest!) {
+  updateVisitor(id: $id, payload: $payload) {
+    source {
+      id
+      firstName
+      lastName
+      emailAddress
+      phoneNumber
+    }
+  }
+}

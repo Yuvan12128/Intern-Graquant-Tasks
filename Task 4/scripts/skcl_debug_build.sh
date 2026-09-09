@@ -1,0 +1,1 @@
+flutter run apk -t lib/skcl_dev.dart --flavor skclQa

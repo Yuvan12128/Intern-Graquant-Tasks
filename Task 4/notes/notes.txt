@@ -1,0 +1,2 @@
+flutter version
+Flutter 3.10.0 • channel unknown • unknown source

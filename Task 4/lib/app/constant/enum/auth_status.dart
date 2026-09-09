@@ -1,0 +1,7 @@
+enum AuthStatus {
+  NOTDETERMINED,
+  NOTSIGNEDIN,
+  SIGNEDIN,
+  LOADING,
+  LOGOUT,
+}

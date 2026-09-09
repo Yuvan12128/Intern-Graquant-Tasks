@@ -1,0 +1,22 @@
+fragment LocationResponse on Location {
+  latitude
+  longitude
+}
+
+fragment AddressResponse on Address {
+  no
+  floor
+  block
+  landmark
+  street
+  area
+  city
+  state
+  stateISOCode
+  country
+  countryISOCode
+  pincode
+  location{
+    ...LocationResponse
+  }  
+}

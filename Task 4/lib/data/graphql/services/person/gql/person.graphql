@@ -1,0 +1,21 @@
+query Me {
+  me {
+    person {
+      id
+      firstName
+      lastName
+      phoneNumber
+      emailAddress
+      roleType
+    }
+    account {
+      id
+      lifeState
+    }
+    credential {
+      id
+      uId
+      type
+    }
+  }
+}

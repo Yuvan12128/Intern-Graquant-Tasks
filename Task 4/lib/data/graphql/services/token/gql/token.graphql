@@ -1,0 +1,19 @@
+mutation AccessToken($payload: TokenRequest!) {
+  accessToken(payload: $payload) {
+    oAuth {
+      accessToken
+      refreshToken
+      expiresIn
+    }
+  }
+}
+
+mutation RefreshToken($payload: RefreshTokenRequest!) {
+  refreshToken(payload: $payload) {
+    oAuth {
+      accessToken
+      refreshToken
+      expiresIn
+    }
+  }
+}

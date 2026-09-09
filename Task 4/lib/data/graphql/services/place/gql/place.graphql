@@ -1,0 +1,30 @@
+query Places($filters: PlaceFilter, $offset: Int, $first: Int, $sortBy: [String], $options: Options) {
+  places(filters: $filters, offset: $offset, first: $first, sortBy: $sortBy, options: $options) {
+    values {
+      id
+      name
+      blocks {
+        id
+        name
+        floors {
+          id
+          no 
+          accountPersons {
+            accountFloorId
+            account {
+              id 
+              name
+            }
+            persons {
+              id
+              firstName
+              lastName
+              emailAddress
+              phoneNumber
+            }   
+          }           
+        }
+      }
+    }    
+  }
+}

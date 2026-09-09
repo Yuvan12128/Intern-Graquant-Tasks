@@ -1,0 +1,7 @@
+{
+  "flavourName": "release",
+  "plugzmartGraphqlApiBaseUrl": "https://vms-api.skcl.co.in/api/gql",
+  "appName": "SKCL Business App BOM Prod",
+  "errorImage": "assets/images/error_page/error.png",
+  "easyLoadingColor": "0xFF5B8ECA"
+}

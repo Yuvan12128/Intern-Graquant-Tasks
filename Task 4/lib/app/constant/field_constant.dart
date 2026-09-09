@@ -1,0 +1,35 @@
+class FieldConstant {
+  FieldConstant._();
+  static const String PHONE = 'phone';
+  static const String USER = 'user';
+  static const String FIRST_NAME = 'firtName';
+  static const String LAST_NAME = 'lastName';
+  static const String EMAIL_ADDRESS = 'emailAddress';
+  static const String PHONE_NUMBER = 'phoneNumber';
+  static const String COMPANY_NAME = 'companyName';
+  static const String FLOOR_NO = 'floorNo';
+  static const String ACCOUNT_FLOOR_ID = 'accountFloorId';
+  static const String COMPANY_ID = 'companyId';
+  static const String BUILDING_NAME = 'buildingName';
+  static const String VISITOR_TYPE = 'visitorType';
+  static const String MEETING_TYPE = 'meetingType';
+  static const String BUILDING_ID = 'buildingId';
+  static const String BLOCK_NAME = 'blockName';
+  static const String COMING_FROM_PLACE = 'comingFromPlace';
+  static const String COMING_FROM_COMPANY = 'comingFromCompany';
+  static const String PERSON_ID = 'personId';
+  static const String DATE = 'date';
+  static const String START_DATE = 'startDate';
+  static const String END_DATE = 'endDate';
+  static const String TIME = 'time';
+  static const String DISPLAY_TIME = 'displayTime';
+  static const String ROLE_TYPE = 'roleType';
+  static const String PROOF_ID = 'proofId';
+  static const String PROOF_VALUE = 'proofValue';
+  static const String NOTES = 'notes';
+  static const String PURPOSE_OF_VISIT = 'purposeOfVisit';
+  static const String TOOLS = 'tools';
+  static const String CHECK_IN_DATE = 'checkInDate';
+  static const String PLANNED_VISIT = 'plannedVisit';
+  static const String ID = 'id';
+}

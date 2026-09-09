@@ -1,0 +1,7 @@
+{
+  "flavourName": "dev",
+  "plugzmartGraphqlApiBaseUrl": "http://43.205.253.215:4747/api/gql",
+  "appName": "SKCL Business App Dev",
+  "errorImage": "assets/images/error_page/error.png",
+  "easyLoadingColor": "0xFF5B8ECA"
+}

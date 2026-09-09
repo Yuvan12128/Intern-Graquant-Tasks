@@ -1,0 +1,4 @@
+enum Gateway {
+  WALLET,
+  PAYTM,
+}

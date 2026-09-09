@@ -1,0 +1,129 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+def skclReleaseKeystorePropertiesFile = rootProject.file('skcl_release.properties')
+def skclReleaseKeystoreProperties = new Properties();
+if (skclReleaseKeystorePropertiesFile.exists()) {
+    skclReleaseKeystoreProperties.load(new FileInputStream(skclReleaseKeystorePropertiesFile))
+}
+
+def skclDevKeystorePropertiesFile = rootProject.file('skcl_dev.properties')
+def skclDevKeystoreProperties = new Properties();
+if (skclDevKeystorePropertiesFile.exists()) {
+    skclDevKeystoreProperties.load(new FileInputStream(skclDevKeystorePropertiesFile))
+}
+
+def skclDevEnvJsonFile = rootProject.file('../lib/env_property/skcl/skcl_dev.json')
+def skclDevEnvProperties = new groovy.json.JsonSlurper().parseText(skclDevEnvJsonFile.text)
+
+def skclProdEnvJsonFile = rootProject.file('../lib/env_property/skcl/skcl_prod.json')
+def skclProdEnvProperties = new groovy.json.JsonSlurper().parseText(skclProdEnvJsonFile.text)
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    compileSdkVersion 34
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.skcl.android.apps.visitor"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true        
+    }
+
+    signingConfigs {
+        skclDev {
+           keyAlias skclDevKeystoreProperties['keyAlias']
+           keyPassword skclDevKeystoreProperties['keyPassword']
+           storeFile skclDevKeystoreProperties['storeFile'] ? file(skclDevKeystoreProperties['storeFile']) : null
+           storePassword skclDevKeystoreProperties['storePassword']
+        }
+        skclRelease {
+           keyAlias skclReleaseKeystoreProperties['keyAlias']
+           keyPassword skclReleaseKeystoreProperties['keyPassword']
+           storeFile skclReleaseKeystoreProperties['storeFile'] ? file(skclReleaseKeystoreProperties['storeFile']) : null
+           storePassword skclReleaseKeystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        debug {
+            // signingConfig signingConfigs.skclDev
+            // manifestPlaceholders = [mapPlatformApiKey:skclDevEnvProperties.googleMapPlatformApiKey]
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+            'proguard-rules.pro'
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        skclQa {
+            dimension "app"
+            applicationIdSuffix ".qa"
+            versionNameSuffix "-qa"         
+            versionCode 1 
+            versionName "1.0.0"            
+            signingConfig signingConfigs.skclDev            
+        }
+        skclProduction {
+            dimension "app"      
+            versionCode 7
+            versionName "1.0.6"   
+            signingConfig signingConfigs.skclRelease              
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation "androidx.browser:browser:1.6.0-alpha01"
+    implementation "com.squareup.okhttp3:okhttp:4.8.0"
+    implementation "com.google.android.gms:play-services-location:21.0.1"
+    implementation "com.google.android.gms:play-services-maps:18.1.0"
+}

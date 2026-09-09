@@ -1,0 +1,54 @@
+query Visitors($filters: VisitorFilter, $offset: Int, $first: Int, $sortBy: [String], $options: Options) {
+  visitors(filters: $filters, offset: $offset, first: $first, sortBy: $sortBy, options: $options) {
+    values {
+      id
+      firstName
+      lastName
+      phoneNumber
+      visitingDate
+      type
+      plannedVisit
+      createdDate
+      notes
+      tools
+      purposeOfVisit
+      emailAddress
+      checkInDate
+      accountFloorId
+      comingFrom {
+        companyName
+        placeName
+      }
+      createdByPerson {
+        id
+        firstName
+        lastName
+        phoneNumber
+      }
+      idProof {
+        type1
+        value1
+      }
+      additionalDetails {
+        place {
+          name
+        }
+        account {
+          name
+        }
+        block {
+          name
+        }
+        floor {
+          no
+        }
+        persons {
+          firstName
+          lastName
+          phoneNumber
+          emailAddress
+        }        
+      }
+    }    
+  }
+}

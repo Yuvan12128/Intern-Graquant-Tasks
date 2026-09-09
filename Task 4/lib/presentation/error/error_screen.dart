@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+import './widgets/body.dart';
+
+const String fileName = 'error.screen';
+
+class ErrorScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        body: Body(),
+      ),
+    );
+  }
+}

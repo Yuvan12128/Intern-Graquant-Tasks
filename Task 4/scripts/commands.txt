@@ -1,0 +1,2 @@
+ #while show the release and dev android keys
+ ./gradlew signingReport

@@ -1,0 +1,1 @@
+get-graphql-schema https://vms-api.skcl.co.in/api/gql  > $HOME/skcl/skcl-visitor-mobile-app/lib/data/graphql/component/schema.graphql

@@ -1,0 +1,1 @@
+flutter run apk -t lib/skcl_prod.dart --flavor skclProduction

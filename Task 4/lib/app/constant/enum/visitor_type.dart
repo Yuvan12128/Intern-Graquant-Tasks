@@ -1,0 +1,4 @@
+enum VisitorType {
+  GENERAL,
+  VENDOR,
+}
