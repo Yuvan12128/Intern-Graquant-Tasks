@@ -1,0 +1,2 @@
+/Users/ashok/Downloads/skcl-visitor-mobile-app/android/app/.cxx/Debug/05n2f2q2/x86_64/CMakeFiles/edit_cache.dir
+/Users/ashok/Downloads/skcl-visitor-mobile-app/android/app/.cxx/Debug/05n2f2q2/x86_64/CMakeFiles/rebuild_cache.dir

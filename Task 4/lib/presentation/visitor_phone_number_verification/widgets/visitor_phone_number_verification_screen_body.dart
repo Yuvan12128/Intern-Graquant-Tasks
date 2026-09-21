@@ -65,7 +65,7 @@ class _VisitorPhoneNumberVerificationScreenBodyState
                       null,
                       TextButton(
                         style: ButtonStyle(
-                          overlayColor: MaterialStateProperty.all(
+                          overlayColor: WidgetStateProperty.all(
                               Theme.of(context).primaryColor),
                         ),
                         child: Text(
@@ -101,7 +101,7 @@ class _VisitorPhoneNumberVerificationScreenBodyState
                       false,
                       TextButton(
                         style: ButtonStyle(
-                          overlayColor: MaterialStateProperty.all(
+                          overlayColor: WidgetStateProperty.all(
                               Theme.of(context).primaryColor),
                         ),
                         child: Text(
@@ -125,7 +125,7 @@ class _VisitorPhoneNumberVerificationScreenBodyState
                       ),
                       TextButton(
                         style: ButtonStyle(
-                          overlayColor: MaterialStateProperty.all(
+                          overlayColor: WidgetStateProperty.all(
                               Theme.of(context).primaryColor),
                         ),
                         child: Text(

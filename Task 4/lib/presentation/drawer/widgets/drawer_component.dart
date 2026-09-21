@@ -23,7 +23,7 @@ class DrawerComponent {
       title: Text(
         title,
         style: subtitle1.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
         ),
       ),
       onTap: () async {
@@ -53,7 +53,7 @@ class DrawerComponent {
           title: Text(
             title,
             style: subtitle1.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
             ),
           ),
           trailing: Transform.scale(

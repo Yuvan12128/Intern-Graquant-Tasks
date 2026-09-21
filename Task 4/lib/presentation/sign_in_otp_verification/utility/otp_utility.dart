@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -46,7 +47,7 @@ class OTPUtility {
         TextButton(
           style: ButtonStyle(
             overlayColor:
-                MaterialStateProperty.all(Theme.of(context).primaryColor),
+                WidgetStateProperty.all(Theme.of(context).primaryColor),
           ),
           child: Text(
             "Ok",
@@ -89,9 +90,21 @@ class OTPUtility {
     String fileName,
   ) async {
     try {
-      context
-          .read<SignInBloc>()
-          .add(OnOtpSignInEvent(userIdToken: 'mock-token'));
+      if (verificationId.isNotEmpty) {
+        await FirebaseAuth.instance
+            .signInWithCredential(PhoneAuthProvider.credential(
+          verificationId: verificationId,
+          smsCode: otpCode,
+        ))
+            .then(
+          (value) async {
+            final String? userIdToken = await value.user?.getIdToken();
+            context
+                .read<SignInBloc>()
+                .add(OnOtpSignInEvent(userIdToken: userIdToken));
+          },
+        );
+      }
     } catch (err) {
       Log.error(
         context,

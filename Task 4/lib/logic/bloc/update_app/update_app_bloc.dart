@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:new_version_plus/model/version_status.dart';
 import 'package:new_version_plus/new_version_plus.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'update_app_event.dart';
@@ -17,7 +19,23 @@ class UpdateAppBloc extends Bloc<UpdateAppEvent, UpdateAppState> {
     AppVersionCheckEvent event,
     Emitter<UpdateAppState> emit,
   ) async {
-    emit(UpdateAppState(status: null));
+    try {
+      final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+      if (packageInfo.packageName.split('.').last != 'qa') {
+        final NewVersionPlus newVersion = NewVersionPlus(
+          androidId: packageInfo.packageName,
+        );
+        final VersionStatus? status = await newVersion.getVersionStatus();
+        emit(UpdateAppState(
+          status: status,
+        ));
+      }
+    } catch (err) {
+      emit(UpdateAppErrorState(
+        error: err,
+        status: state.status,
+      ));
+    }
   }
 
   void _updateMaybeLater(

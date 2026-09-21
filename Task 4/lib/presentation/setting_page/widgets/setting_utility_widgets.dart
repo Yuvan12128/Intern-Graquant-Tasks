@@ -40,7 +40,7 @@ class VisitorEntryFormUtilityWidgets {
         hint: Text(
           header,
           style: bodyText2.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
           ),
         ),
         formControlName: formControllerName,
@@ -50,9 +50,9 @@ class VisitorEntryFormUtilityWidgets {
             fontSize: 2.5 * SizeConfig.textMultiplier,
           ),
           labelStyle: bodyText1.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
           hintStyle: bodyText2.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
           contentPadding: EdgeInsets.symmetric(
             horizontal: SizeConfig.widthMultiplier * 5,
             vertical: SizeConfig.widthMultiplier * 5,
@@ -164,7 +164,7 @@ class VisitorEntryFormUtilityWidgets {
         maxLength: maxLength,
         formControlName: formControllerName,
         style: subtitle2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
         ),
         decoration: InputDecoration(
           errorStyle: bodyText2.copyWith(
@@ -173,9 +173,9 @@ class VisitorEntryFormUtilityWidgets {
           ),
           hintText: header,
           labelStyle: bodyText1.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
           hintStyle: bodyText2.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
           contentPadding: EdgeInsets.symmetric(
             horizontal: SizeConfig.widthMultiplier * 5,
             vertical: SizeConfig.widthMultiplier * 5,

@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import 'package:get_it/get_it.dart';
 import 'package:skcl_vms/app/constant/field_constant.dart';
 import 'package:skcl_vms/app/model/app_config.dart';
-import 'package:skcl_vms/data/constant/api_constant.dart';
 import 'package:skcl_vms/data/graphql/component/schema.graphql.dart';
 import 'package:skcl_vms/data/graphql/services/person/gql/person.graphql.dart';
 import 'package:skcl_vms/data/graphql/services/person/person_service.dart';
@@ -35,8 +34,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         );
         if (isSignedIn) {
           final Query$Me$me meInfo = await PersonService.me();
-          await SecureStorage().writeSecureData(
-              ApiConstant.AUTH_INFO, 'mock-auth-info');
           await SecureStorage().writeSecureData(
               FieldConstant.PERSON_ID, meInfo.person?.id ?? '');
           final String? givenName = meInfo.person?.firstName;

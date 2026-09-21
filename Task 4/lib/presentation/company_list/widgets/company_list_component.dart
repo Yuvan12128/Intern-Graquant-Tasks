@@ -75,7 +75,7 @@ class CompanyListComponent {
       // }
       return Card(
         elevation: 10,
-        color: Theme.of(context).colorScheme.onBackground,
+        color: Theme.of(context).colorScheme.onSurface,
         child: Container(
           child: Padding(
             padding: EdgeInsets.symmetric(

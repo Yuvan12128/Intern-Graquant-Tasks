@@ -1,46 +1,39 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorage {
-  static final Map<String, String> _memoryStorage = {};
-
+  static final _storage = FlutterSecureStorage();
   Future writeSecureData(String key, String value) async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString(key, value);
-      _memoryStorage[key] = value;
-      return value;
+      var writeData = await _storage.write(key: key, value: value);
+      return writeData;
     } catch (err) {
-      _memoryStorage[key] = value;
-      return value;
+      throw err;
     }
   }
 
-  Future<String?> readSecureData(String key) async {
+  Future readSecureData(String key) async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      return prefs.getString(key) ?? _memoryStorage[key];
+      var readData = await _storage.read(key: key);
+      return readData;
     } catch (err) {
-      return _memoryStorage[key];
+      throw err;
     }
   }
 
   Future deleteSecureData(String key) async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.remove(key);
-      _memoryStorage.remove(key);
+      var deleteData = await _storage.delete(key: key);
+      return deleteData;
     } catch (err) {
-      _memoryStorage.remove(key);
+      throw err;
     }
   }
 
   Future deleteAll() async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.clear();
-      _memoryStorage.clear();
+      await _storage.deleteAll();
     } catch (err) {
-      _memoryStorage.clear();
+      throw err;
     }
   }
 }

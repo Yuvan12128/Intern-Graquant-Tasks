@@ -12,8 +12,11 @@ class SignInOTPVerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WillPopScope(
-        onWillPop: () => CustomDialog.showExitPopup(context),
+      body: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) {
+          if (!didPop) CustomDialog.showExitPopup(context);
+        },
         child: MultiBlocListener(
           listeners: [
             networkListener(),

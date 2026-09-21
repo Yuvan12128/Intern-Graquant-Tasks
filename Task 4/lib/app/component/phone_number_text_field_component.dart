@@ -43,7 +43,7 @@ class PhoneNumberTextFieldComponent {
             : null,
         enabledBorder: CustomOutlineInputBorder.outlineInputBorder(
           context,
-          Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+          Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
         ),
         focusedBorder: CustomOutlineInputBorder.outlineInputBorder(
           context,

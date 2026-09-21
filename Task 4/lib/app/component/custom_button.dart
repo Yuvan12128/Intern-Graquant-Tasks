@@ -24,21 +24,21 @@ class CustomFlatButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => {onpress()},
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
             return color ?? Theme.of(context).colorScheme.primary;
           }),
-          elevation: MaterialStateProperty.resolveWith<double>((_) {
+          elevation: WidgetStateProperty.resolveWith<double>((_) {
             return 10;
           }),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
             ),
           ),
-          overlayColor: MaterialStateProperty.resolveWith(
+          overlayColor: WidgetStateProperty.resolveWith(
             (states) {
-              return states.contains(MaterialState.pressed)
-                  ? Theme.of(context).colorScheme.tertiary.withOpacity(0.2)
+              return states.contains(WidgetState.pressed)
+                  ? Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.2)
                   : Theme.of(context).colorScheme.primary;
             },
           ),
@@ -74,21 +74,21 @@ class CustomFlatIconButton extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: () => {onpress()},
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
             return color ?? Theme.of(context).colorScheme.primary;
           }),
-          elevation: MaterialStateProperty.resolveWith<double>((_) {
+          elevation: WidgetStateProperty.resolveWith<double>((_) {
             return 10;
           }),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
             ),
           ),
-          overlayColor: MaterialStateProperty.resolveWith(
+          overlayColor: WidgetStateProperty.resolveWith(
             (states) {
-              return states.contains(MaterialState.pressed)
-                  ? Theme.of(context).colorScheme.tertiary.withOpacity(0.2)
+              return states.contains(WidgetState.pressed)
+                  ? Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.2)
                   : Theme.of(context).colorScheme.primary;
             },
           ),
@@ -111,7 +111,7 @@ class CustomDisableButton extends StatelessWidget {
   final Widget widget;
   final double? buttonWidth;
   final double? buttonHeight;
-  final MaterialStateProperty<Color>? color;
+  final WidgetStateProperty<Color>? color;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class CustomDisableButton extends StatelessWidget {
       height: buttonHeight ?? 16 * SizeConfig.widthMultiplier,
       child: ElevatedButton.icon(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
             ),
@@ -232,21 +232,21 @@ class CustomElevatedButton extends StatelessWidget {
         onPressed: onPress,
         child: widget,
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll<Color?>(
+          backgroundColor: WidgetStatePropertyAll<Color?>(
             backgroundColor,
           ),
-          overlayColor: MaterialStatePropertyAll<Color?>(
+          overlayColor: WidgetStatePropertyAll<Color?>(
             overlayColor ?? Colors.transparent,
           ),
-          elevation: MaterialStatePropertyAll<double>(
+          elevation: WidgetStatePropertyAll<double>(
             elevation ?? 10,
           ),
-          fixedSize: MaterialStatePropertyAll<Size>(fixedSize ??
+          fixedSize: WidgetStatePropertyAll<Size>(fixedSize ??
               Size(
                 SizeConfig.widthMultiplier * 50,
                 SizeConfig.heightMultiplier * 10,
               )),
-          shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius ?? 100),
               side: (borderColor != null)
@@ -256,7 +256,7 @@ class CustomElevatedButton extends StatelessWidget {
                   : BorderSide(),
             ),
           ),
-          shadowColor: MaterialStatePropertyAll<Color?>(
+          shadowColor: WidgetStatePropertyAll<Color?>(
             shadowColor,
           ),
         ),

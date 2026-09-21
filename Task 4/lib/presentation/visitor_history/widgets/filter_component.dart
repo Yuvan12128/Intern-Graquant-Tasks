@@ -28,7 +28,7 @@ class FilterComponent {
       widget: Text(
         text,
         style: bodyText1.copyWith(
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
         ),
       ),
     );

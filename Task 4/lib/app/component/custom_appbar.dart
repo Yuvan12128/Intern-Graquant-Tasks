@@ -58,7 +58,7 @@ class CustomAppBar {
               ? leadingIcon
               : _leadingIcon(context)
           : null,
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
     );
   }
 }

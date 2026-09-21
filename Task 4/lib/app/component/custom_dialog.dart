@@ -16,7 +16,7 @@ class CustomDialog {
       return TextButton(
         style: ButtonStyle(
           overlayColor:
-              MaterialStateProperty.all(Theme.of(context).primaryColor),
+              WidgetStateProperty.all(Theme.of(context).primaryColor),
         ),
         child: Text(
           "Try again",
@@ -61,10 +61,8 @@ class CustomDialog {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return WillPopScope(
-            onWillPop: () async {
-              return false;
-            },
+        return PopScope(
+            canPop: false,
             child: alert(context));
       },
     );
@@ -87,7 +85,7 @@ class CustomDialog {
             child: Text(
               'No',
               style: bodyText1.copyWith(
-                  color: Theme.of(context).colorScheme.background),
+                  color: Theme.of(context).colorScheme.surface),
             ),
           ),
           ElevatedButton(
@@ -100,7 +98,7 @@ class CustomDialog {
             child: Text(
               'Yes',
               style: bodyText1.copyWith(
-                  color: Theme.of(context).colorScheme.background),
+                  color: Theme.of(context).colorScheme.surface),
             ),
           ),
         ) ??
@@ -134,7 +132,7 @@ class CustomDialog {
               child: Text(
                 rejectButtonText ?? '',
                 style: bodyText1.copyWith(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                 ),
               ),
             )
@@ -150,7 +148,7 @@ class CustomDialog {
         child: Text(
           acceptButtonText,
           style: bodyText1.copyWith(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
           ),
         ),
       ),

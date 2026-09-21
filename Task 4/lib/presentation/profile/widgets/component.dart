@@ -25,9 +25,9 @@ class Component {
         borderSide: BorderSide(color: Colors.red),
       ),
       labelStyle: bodyText1.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
       hintStyle: bodyText2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
     );
   }
 

@@ -73,7 +73,7 @@
 //       fontSize: 4.0 * SizeConfig.textMultiplier,
 //     ),
 //     filled: true,
-//     fillColor: Theme.of(context).colorScheme.background,
+//     fillColor: Theme.of(context).colorScheme.surface,
 //     contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
 //     suffixIcon: Icon(
 //       Icons.schedule,

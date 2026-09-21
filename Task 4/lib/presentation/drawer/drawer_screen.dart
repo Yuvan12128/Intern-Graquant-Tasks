@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skcl_vms/app/constant/app_constant.dart';
 import 'package:skcl_vms/app/constant/route_name.dart';
 import 'package:skcl_vms/app/constant/size_config.dart';
 import 'package:skcl_vms/app/utility/app_auth_bloc_listener.dart';
@@ -29,7 +30,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
         width: SizeConfig.widthMultiplier * 75,
         child: SafeArea(
           child: Material(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child:
@@ -44,15 +45,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   return ListView(
                     children: <Widget>[
                       LogoContainer(),
-                      DrawerComponent.listTile(
-                        context,
-                        'Study All Pages',
-                        Icons.school_outlined,
-                        () => {
-                          Navigator.of(context)
-                              .pushNamed(RouteName.ALL_PAGES_SCREEN)
-                        },
-                      ),
                       DrawerComponent.listTile(
                         context,
                         'My Profile',
@@ -84,15 +76,17 @@ class _DrawerScreenState extends State<DrawerScreen> {
                               .pushNamed(RouteName.COMPANY_LIST_SCREEN)
                         },
                       ),
-                      DrawerComponent.listTile(
-                        context,
-                        'Settings',
-                        Icons.settings_outlined,
-                        () => {
-                          Navigator.of(context)
-                              .pushNamed(RouteName.SETTING_SCREEN)
-                        },
-                      ),
+                      if (state.roleType == AppConstant.SECURITY) ...[
+                        DrawerComponent.listTile(
+                          context,
+                          'Settings',
+                          Icons.settings_outlined,
+                          () => {
+                            Navigator.of(context)
+                                .pushNamed(RouteName.SETTING_SCREEN)
+                          },
+                        ),
+                      ],
                       DrawerComponent.listTile(
                         context,
                         'Logout',

@@ -105,7 +105,7 @@ class _CompanyListFilterScreen extends State<CompanyListFilterScreen> {
                                   color: Theme.of(context)
                                       .colorScheme
                                       .secondary
-                                      .withOpacity(0.5),
+                                      .withValues(alpha: 0.5),
                                   width: SizeConfig.widthMultiplier * 0.28,
                                 ),
                               ),

@@ -1,3 +1,4 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skcl_vms/app/component/custom_dialog.dart';
@@ -96,7 +97,17 @@ class Log {
     final ConsoleMessage logMessage =
         getLogContent(fileName, methodName, message, identifier);
 
-    debugPrint('[$level][$fileName::$methodName] ${logMessage.toJson()}');
+    if (LogLevel.ERROR == level) {
+      FirebaseCrashlytics.instance.log(logMessage.toJson().toString());
+      FirebaseCrashlytics.instance.recordError(
+        message,
+        StackTrace.fromString(logMessage.toJson().toString()),
+        reason: 'A fatal error',
+        fatal: true,
+      );
+    } else {
+      FirebaseCrashlytics.instance.log(logMessage.toJson().toString());
+    }
 
     if (context != null && doNavigateErrorScreen == true) {
       final bool isUnAuthorizedError =

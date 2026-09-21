@@ -25,7 +25,7 @@ List<Widget> reactiveFormTextField(
       maxLength: maxLength,
       formControlName: formControllerName,
       style: subtitle2.copyWith(
-        color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+        color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
       ),
       decoration: InputDecoration(
         errorStyle: bodyText2.copyWith(
@@ -34,9 +34,9 @@ List<Widget> reactiveFormTextField(
         ),
         hintText: mandatoryField ? header : "$header (Optional)",
         labelStyle: bodyText1.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
         hintStyle: bodyText2.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
         contentPadding: EdgeInsets.symmetric(
           horizontal: SizeConfig.widthMultiplier * 5,
           vertical: SizeConfig.widthMultiplier * 5,
@@ -72,7 +72,7 @@ List<Widget> reactiveFormDropDown(
       hint: Text(
         mandatoryField ? header : "$header (Optional)",
         style: bodyText2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
         ),
       ),
       formControlName: formControllerName,
@@ -82,9 +82,9 @@ List<Widget> reactiveFormDropDown(
           fontSize: 2.5 * SizeConfig.textMultiplier,
         ),
         labelStyle: bodyText1.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
         hintStyle: bodyText2.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
         contentPadding: EdgeInsets.symmetric(
           horizontal: SizeConfig.widthMultiplier * 5,
           vertical: SizeConfig.widthMultiplier * 5,

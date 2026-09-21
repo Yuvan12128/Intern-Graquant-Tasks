@@ -241,7 +241,7 @@ class _VisitorHistoryFilterScreen extends State<VisitorHistoryFilterScreen> {
                                       color: Theme.of(context)
                                           .colorScheme
                                           .secondary
-                                          .withOpacity(0.5),
+                                          .withValues(alpha: 0.5),
                                       width: SizeConfig.widthMultiplier * 0.28,
                                     ),
                                   ),

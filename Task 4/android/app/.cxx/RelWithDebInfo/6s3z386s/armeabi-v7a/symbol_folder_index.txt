@@ -1,0 +1,1 @@
+/Users/ashok/Downloads/skcl-visitor-mobile-app/build/app/intermediates/cxx/RelWithDebInfo/6s3z386s/obj/armeabi-v7a

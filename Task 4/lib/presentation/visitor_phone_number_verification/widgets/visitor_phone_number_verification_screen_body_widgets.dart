@@ -30,7 +30,7 @@ class VisitorPhoneNumberVerificationScreenBodyWidgets {
         child: Text(
           "We will send a code (via SMS text message) to this phone number",
           style: bodyText1.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
           ),
           textAlign: TextAlign.center,
         ),
@@ -102,8 +102,7 @@ class VisitorPhoneNumberVerificationScreenBodyWidgets {
     int? otpCode,
   ) async {
     try {
-      if (userEnterOTPCode == '123456' ||
-          (otpCode != null && otpCode == int.tryParse(userEnterOTPCode))) {
+      if (otpCode != null && otpCode == int.parse(userEnterOTPCode)) {
         EasyLoading.dismiss();
         Navigator.pushNamed(
           context,
@@ -164,7 +163,7 @@ class VisitorPhoneNumberVerificationScreenBodyWidgets {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'OTP code sent to +91 ${visitorPhoneNumberController.text} (Mock OTP: 123456)',
+                            'OTP code sent to +91 ${visitorPhoneNumberController.text}',
                             style: subtitle1.copyWith(
                                 color: Theme.of(context).colorScheme.secondary),
                             textAlign: TextAlign.center,

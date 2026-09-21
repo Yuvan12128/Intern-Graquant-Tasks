@@ -34,8 +34,11 @@ class VisitorRegistryScreen extends StatelessWidget {
           null,
           false,
         ),
-        body: WillPopScope(
-          onWillPop: () => CustomDialog.showExitPopup(context),
+        body: PopScope(
+          canPop: false,
+          onPopInvokedWithResult: (didPop, result) {
+            if (!didPop) CustomDialog.showExitPopup(context);
+          },
           child: BlocProvider.value(
             value: AppRouter.userAuthorizationBloc,
             child: VisitorRegistryScreenBody(),

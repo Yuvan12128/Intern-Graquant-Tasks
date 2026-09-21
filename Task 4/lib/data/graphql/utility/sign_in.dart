@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:skcl_vms/data/graphql/services/token/gql/token.graphql.dart';
+import 'package:skcl_vms/data/graphql/services/token/token_service.dart';
 import 'package:skcl_vms/data/secure_storage/secure_storage.dart';
 
 class SignIn {
@@ -9,7 +11,20 @@ class SignIn {
     String appName,
     String tokenProviderName,
   ) async {
-    return true;
+    bool isSignIn = false;
+    try {
+      final Mutation$AccessToken$accessToken$oAuth oAuthInfo =
+          await TokenService.getAccessToken(
+        idToken,
+        appName,
+        tokenProviderName,
+      );
+      await TokenService.storeTokenValue(oAuthInfo);
+      isSignIn = true;
+      return isSignIn;
+    } catch (err) {
+      throw err;
+    }
   }
 
   // static Future<bool> writePersonIdOnLocalStorage() async {

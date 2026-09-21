@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_version_plus/new_version_plus.dart';
+import 'package:new_version_plus/model/version_status.dart';
 import 'package:skcl_vms/app/component/update_dialog.dart';
 import 'package:skcl_vms/app/log/util/log.dart';
 import 'package:skcl_vms/logic/bloc/update_app/update_app_bloc.dart';

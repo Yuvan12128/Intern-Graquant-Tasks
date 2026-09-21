@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -54,10 +55,62 @@ class _SignInOTPVerificationBodyState extends State<SignInOTPVerificationBody> {
     super.dispose();
   }
 
-  void _verifyPhoneNumber() {
-    setState(() {
-      _verificationId = 'mock_verification_id';
-    });
+  void _verifyPhoneNumber() async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+      phoneNumber: widget.phoneNumber,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        try {
+          await FirebaseAuth.instance.signInWithCredential(credential).then(
+            (value) async {
+              final String? userIdToken = await value.user?.getIdToken();
+              context
+                  .read<SignInBloc>()
+                  .add(OnOtpSignInEvent(userIdToken: userIdToken));
+            },
+          );
+        } catch (err) {
+          Log.error(
+            context,
+            fileName,
+            '_verifyPhoneNumber',
+            err,
+            'Mobile number verificaiton',
+            null,
+            false,
+            null,
+            null,
+          );
+          EasyLoading.showError("Verification failed");
+        }
+      },
+      verificationFailed: (FirebaseAuthException err) {
+        Log.error(
+          context,
+          fileName,
+          '_verifyPhoneNumber',
+          err,
+          'Mobile number verificaiton',
+          null,
+          false,
+          null,
+          null,
+        );
+        EasyLoading.showError("Verification failed");
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        setState(() {
+          _verificationId = verificationId;
+          _resendToken = resendToken;
+        });
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        setState(() {
+          _verificationId = verificationId;
+        });
+      },
+      timeout: Duration(seconds: 60),
+      forceResendingToken: _resendToken,
+    );
   }
 
   void _resendOTP() {

@@ -8,15 +8,14 @@ class Input$AccountFilter {
     Input$IDFilter? accountId,
     Input$LifeStateFilter? lifeState,
     Input$IDFilter? placeId,
-  }) =>
-      Input$AccountFilter._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (type != null) r'type': type,
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (placeId != null) r'placeId': placeId,
-      });
+  }) => Input$AccountFilter._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (type != null) r'type': type,
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (placeId != null) r'placeId': placeId,
+  });
 
   Input$AccountFilter._(this._$data);
 
@@ -51,7 +50,8 @@ class Input$AccountFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('placeId')) {
       final l$placeId = data['placeId'];
@@ -65,12 +65,18 @@ class Input$AccountFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$StringFilter? get type => (_$data['type'] as Input$StringFilter?);
+
   Input$IDFilter? get accountId => (_$data['accountId'] as Input$IDFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$IDFilter? get placeId => (_$data['placeId'] as Input$IDFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -101,16 +107,14 @@ class Input$AccountFilter {
   }
 
   CopyWith$Input$AccountFilter<Input$AccountFilter> get copyWith =>
-      CopyWith$Input$AccountFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$AccountFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AccountFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$AccountFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -212,10 +216,7 @@ abstract class CopyWith$Input$AccountFilter<TRes> {
 
 class _CopyWithImpl$Input$AccountFilter<TRes>
     implements CopyWith$Input$AccountFilter<TRes> {
-  _CopyWithImpl$Input$AccountFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AccountFilter(this._instance, this._then);
 
   final Input$AccountFilter _instance;
 
@@ -230,18 +231,19 @@ class _CopyWithImpl$Input$AccountFilter<TRes>
     Object? accountId = _undefined,
     Object? lifeState = _undefined,
     Object? placeId = _undefined,
-  }) =>
-      _then(Input$AccountFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (type != _undefined) 'type': (type as Input$StringFilter?),
-        if (accountId != _undefined)
-          'accountId': (accountId as Input$IDFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (placeId != _undefined) 'placeId': (placeId as Input$IDFilter?),
-      }));
+  }) => _then(
+    Input$AccountFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (type != _undefined) 'type': (type as Input$StringFilter?),
+      if (accountId != _undefined) 'accountId': (accountId as Input$IDFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (placeId != _undefined) 'placeId': (placeId as Input$IDFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -275,7 +277,9 @@ class _CopyWithImpl$Input$AccountFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$IDFilter<TRes> get placeId {
@@ -299,17 +303,22 @@ class _CopyWithStubImpl$Input$AccountFilter<TRes>
     Input$IDFilter? accountId,
     Input$LifeStateFilter? lifeState,
     Input$IDFilter? placeId,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get type =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get accountId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get placeId =>
       CopyWith$Input$IDFilter.stub(_res);
 }
@@ -324,17 +333,16 @@ class Input$AccountRequest {
     String? image2,
     String? image3,
     String? fileId,
-  }) =>
-      Input$AccountRequest._({
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (place != null) r'place': place,
-        if (image1 != null) r'image1': image1,
-        if (image2 != null) r'image2': image2,
-        if (image3 != null) r'image3': image3,
-        if (fileId != null) r'fileId': fileId,
-      });
+  }) => Input$AccountRequest._({
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (place != null) r'place': place,
+    if (image1 != null) r'image1': image1,
+    if (image2 != null) r'image2': image2,
+    if (image3 != null) r'image3': image3,
+    if (fileId != null) r'fileId': fileId,
+  });
 
   Input$AccountRequest._(this._$data);
 
@@ -359,7 +367,8 @@ class Input$AccountRequest {
       result$data['place'] = l$place == null
           ? null
           : Input$PlacePartialRequest.fromJson(
-              (l$place as Map<String, dynamic>));
+              (l$place as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('image1')) {
       final l$image1 = data['image1'];
@@ -383,14 +392,22 @@ class Input$AccountRequest {
   Map<String, dynamic> _$data;
 
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   Input$PlacePartialRequest? get place =>
       (_$data['place'] as Input$PlacePartialRequest?);
+
   String? get image1 => (_$data['image1'] as String?);
+
   String? get image2 => (_$data['image2'] as String?);
+
   String? get image3 => (_$data['image3'] as String?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('name')) {
@@ -403,8 +420,9 @@ class Input$AccountRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('place')) {
       final l$place = place;
@@ -430,16 +448,14 @@ class Input$AccountRequest {
   }
 
   CopyWith$Input$AccountRequest<Input$AccountRequest> get copyWith =>
-      CopyWith$Input$AccountRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$AccountRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AccountRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$AccountRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$name = name;
@@ -558,10 +574,7 @@ abstract class CopyWith$Input$AccountRequest<TRes> {
 
 class _CopyWithImpl$Input$AccountRequest<TRes>
     implements CopyWith$Input$AccountRequest<TRes> {
-  _CopyWithImpl$Input$AccountRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AccountRequest(this._instance, this._then);
 
   final Input$AccountRequest _instance;
 
@@ -578,25 +591,28 @@ class _CopyWithImpl$Input$AccountRequest<TRes>
     Object? image2 = _undefined,
     Object? image3 = _undefined,
     Object? fileId = _undefined,
-  }) =>
-      _then(Input$AccountRequest._({
-        ..._instance._$data,
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (place != _undefined) 'place': (place as Input$PlacePartialRequest?),
-        if (image1 != _undefined) 'image1': (image1 as String?),
-        if (image2 != _undefined) 'image2': (image2 as String?),
-        if (image3 != _undefined) 'image3': (image3 as String?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-      }));
+  }) => _then(
+    Input$AccountRequest._({
+      ..._instance._$data,
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (place != _undefined) 'place': (place as Input$PlacePartialRequest?),
+      if (image1 != _undefined) 'image1': (image1 as String?),
+      if (image2 != _undefined) 'image2': (image2 as String?),
+      if (image3 != _undefined) 'image3': (image3 as String?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+    }),
+  );
+
   CopyWith$Input$PlacePartialRequest<TRes> get place {
     final local$place = _instance.place;
     return local$place == null
         ? CopyWith$Input$PlacePartialRequest.stub(_then(_instance))
         : CopyWith$Input$PlacePartialRequest(
-            local$place, (e) => call(place: e));
+            local$place,
+            (e) => call(place: e),
+          );
   }
 }
 
@@ -615,8 +631,8 @@ class _CopyWithStubImpl$Input$AccountRequest<TRes>
     String? image2,
     String? image3,
     String? fileId,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$PlacePartialRequest<TRes> get place =>
       CopyWith$Input$PlacePartialRequest.stub(_res);
 }
@@ -625,12 +641,11 @@ class Input$AdditionalTokenInfoRequest {
   factory Input$AdditionalTokenInfoRequest({
     String? emailAddress,
     String? emailAddressIdToken,
-  }) =>
-      Input$AdditionalTokenInfoRequest._({
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (emailAddressIdToken != null)
-          r'emailAddressIdToken': emailAddressIdToken,
-      });
+  }) => Input$AdditionalTokenInfoRequest._({
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (emailAddressIdToken != null)
+      r'emailAddressIdToken': emailAddressIdToken,
+  });
 
   Input$AdditionalTokenInfoRequest._(this._$data);
 
@@ -650,7 +665,9 @@ class Input$AdditionalTokenInfoRequest {
   Map<String, dynamic> _$data;
 
   String? get emailAddress => (_$data['emailAddress'] as String?);
+
   String? get emailAddressIdToken => (_$data['emailAddressIdToken'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('emailAddress')) {
@@ -665,16 +682,14 @@ class Input$AdditionalTokenInfoRequest {
   }
 
   CopyWith$Input$AdditionalTokenInfoRequest<Input$AdditionalTokenInfoRequest>
-      get copyWith => CopyWith$Input$AdditionalTokenInfoRequest(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$AdditionalTokenInfoRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AdditionalTokenInfoRequest) ||
+    if (other is! Input$AdditionalTokenInfoRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -721,18 +736,12 @@ abstract class CopyWith$Input$AdditionalTokenInfoRequest<TRes> {
   factory CopyWith$Input$AdditionalTokenInfoRequest.stub(TRes res) =
       _CopyWithStubImpl$Input$AdditionalTokenInfoRequest;
 
-  TRes call({
-    String? emailAddress,
-    String? emailAddressIdToken,
-  });
+  TRes call({String? emailAddress, String? emailAddressIdToken});
 }
 
 class _CopyWithImpl$Input$AdditionalTokenInfoRequest<TRes>
     implements CopyWith$Input$AdditionalTokenInfoRequest<TRes> {
-  _CopyWithImpl$Input$AdditionalTokenInfoRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AdditionalTokenInfoRequest(this._instance, this._then);
 
   final Input$AdditionalTokenInfoRequest _instance;
 
@@ -743,14 +752,14 @@ class _CopyWithImpl$Input$AdditionalTokenInfoRequest<TRes>
   TRes call({
     Object? emailAddress = _undefined,
     Object? emailAddressIdToken = _undefined,
-  }) =>
-      _then(Input$AdditionalTokenInfoRequest._({
-        ..._instance._$data,
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as String?),
-        if (emailAddressIdToken != _undefined)
-          'emailAddressIdToken': (emailAddressIdToken as String?),
-      }));
+  }) => _then(
+    Input$AdditionalTokenInfoRequest._({
+      ..._instance._$data,
+      if (emailAddress != _undefined) 'emailAddress': (emailAddress as String?),
+      if (emailAddressIdToken != _undefined)
+        'emailAddressIdToken': (emailAddressIdToken as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$AdditionalTokenInfoRequest<TRes>
@@ -759,11 +768,7 @@ class _CopyWithStubImpl$Input$AdditionalTokenInfoRequest<TRes>
 
   TRes _res;
 
-  call({
-    String? emailAddress,
-    String? emailAddressIdToken,
-  }) =>
-      _res;
+  call({String? emailAddress, String? emailAddressIdToken}) => _res;
 }
 
 class Input$AddressRequest {
@@ -787,28 +792,27 @@ class Input$AddressRequest {
     String? countryISOCode,
     String? pincode,
     Input$LocationRequest? location,
-  }) =>
-      Input$AddressRequest._({
-        if (address != null) r'address': address,
-        if (buildingName != null) r'buildingName': buildingName,
-        if (no != null) r'no': no,
-        if (parkingLotNo != null) r'parkingLotNo': parkingLotNo,
-        if (floor != null) r'floor': floor,
-        if (block != null) r'block': block,
-        if (landmark != null) r'landmark': landmark,
-        if (street != null) r'street': street,
-        if (area != null) r'area': area,
-        if (town != null) r'town': town,
-        if (taluk != null) r'taluk': taluk,
-        if (district != null) r'district': district,
-        if (city != null) r'city': city,
-        if (state != null) r'state': state,
-        if (stateISOCode != null) r'stateISOCode': stateISOCode,
-        if (country != null) r'country': country,
-        if (countryISOCode != null) r'countryISOCode': countryISOCode,
-        if (pincode != null) r'pincode': pincode,
-        if (location != null) r'location': location,
-      });
+  }) => Input$AddressRequest._({
+    if (address != null) r'address': address,
+    if (buildingName != null) r'buildingName': buildingName,
+    if (no != null) r'no': no,
+    if (parkingLotNo != null) r'parkingLotNo': parkingLotNo,
+    if (floor != null) r'floor': floor,
+    if (block != null) r'block': block,
+    if (landmark != null) r'landmark': landmark,
+    if (street != null) r'street': street,
+    if (area != null) r'area': area,
+    if (town != null) r'town': town,
+    if (taluk != null) r'taluk': taluk,
+    if (district != null) r'district': district,
+    if (city != null) r'city': city,
+    if (state != null) r'state': state,
+    if (stateISOCode != null) r'stateISOCode': stateISOCode,
+    if (country != null) r'country': country,
+    if (countryISOCode != null) r'countryISOCode': countryISOCode,
+    if (pincode != null) r'pincode': pincode,
+    if (location != null) r'location': location,
+  });
 
   Input$AddressRequest._(this._$data);
 
@@ -891,7 +895,8 @@ class Input$AddressRequest {
       result$data['location'] = l$location == null
           ? null
           : Input$LocationRequest.fromJson(
-              (l$location as Map<String, dynamic>));
+              (l$location as Map<String, dynamic>),
+            );
     }
     return Input$AddressRequest._(result$data);
   }
@@ -899,25 +904,44 @@ class Input$AddressRequest {
   Map<String, dynamic> _$data;
 
   String? get address => (_$data['address'] as String?);
+
   String? get buildingName => (_$data['buildingName'] as String?);
+
   String? get no => (_$data['no'] as String?);
+
   String? get parkingLotNo => (_$data['parkingLotNo'] as String?);
+
   String? get floor => (_$data['floor'] as String?);
+
   String? get block => (_$data['block'] as String?);
+
   String? get landmark => (_$data['landmark'] as String?);
+
   String? get street => (_$data['street'] as String?);
+
   String? get area => (_$data['area'] as String?);
+
   String? get town => (_$data['town'] as String?);
+
   String? get taluk => (_$data['taluk'] as String?);
+
   String? get district => (_$data['district'] as String?);
+
   String? get city => (_$data['city'] as String?);
+
   String? get state => (_$data['state'] as String?);
+
   String? get stateISOCode => (_$data['stateISOCode'] as String?);
+
   String? get country => (_$data['country'] as String?);
+
   String? get countryISOCode => (_$data['countryISOCode'] as String?);
+
   String? get pincode => (_$data['pincode'] as String?);
+
   Input$LocationRequest? get location =>
       (_$data['location'] as Input$LocationRequest?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('address')) {
@@ -1000,16 +1024,14 @@ class Input$AddressRequest {
   }
 
   CopyWith$Input$AddressRequest<Input$AddressRequest> get copyWith =>
-      CopyWith$Input$AddressRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$AddressRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AddressRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$AddressRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$address = address;
@@ -1254,10 +1276,7 @@ abstract class CopyWith$Input$AddressRequest<TRes> {
 
 class _CopyWithImpl$Input$AddressRequest<TRes>
     implements CopyWith$Input$AddressRequest<TRes> {
-  _CopyWithImpl$Input$AddressRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AddressRequest(this._instance, this._then);
 
   final Input$AddressRequest _instance;
 
@@ -1285,40 +1304,41 @@ class _CopyWithImpl$Input$AddressRequest<TRes>
     Object? countryISOCode = _undefined,
     Object? pincode = _undefined,
     Object? location = _undefined,
-  }) =>
-      _then(Input$AddressRequest._({
-        ..._instance._$data,
-        if (address != _undefined) 'address': (address as String?),
-        if (buildingName != _undefined)
-          'buildingName': (buildingName as String?),
-        if (no != _undefined) 'no': (no as String?),
-        if (parkingLotNo != _undefined)
-          'parkingLotNo': (parkingLotNo as String?),
-        if (floor != _undefined) 'floor': (floor as String?),
-        if (block != _undefined) 'block': (block as String?),
-        if (landmark != _undefined) 'landmark': (landmark as String?),
-        if (street != _undefined) 'street': (street as String?),
-        if (area != _undefined) 'area': (area as String?),
-        if (town != _undefined) 'town': (town as String?),
-        if (taluk != _undefined) 'taluk': (taluk as String?),
-        if (district != _undefined) 'district': (district as String?),
-        if (city != _undefined) 'city': (city as String?),
-        if (state != _undefined) 'state': (state as String?),
-        if (stateISOCode != _undefined)
-          'stateISOCode': (stateISOCode as String?),
-        if (country != _undefined) 'country': (country as String?),
-        if (countryISOCode != _undefined)
-          'countryISOCode': (countryISOCode as String?),
-        if (pincode != _undefined) 'pincode': (pincode as String?),
-        if (location != _undefined)
-          'location': (location as Input$LocationRequest?),
-      }));
+  }) => _then(
+    Input$AddressRequest._({
+      ..._instance._$data,
+      if (address != _undefined) 'address': (address as String?),
+      if (buildingName != _undefined) 'buildingName': (buildingName as String?),
+      if (no != _undefined) 'no': (no as String?),
+      if (parkingLotNo != _undefined) 'parkingLotNo': (parkingLotNo as String?),
+      if (floor != _undefined) 'floor': (floor as String?),
+      if (block != _undefined) 'block': (block as String?),
+      if (landmark != _undefined) 'landmark': (landmark as String?),
+      if (street != _undefined) 'street': (street as String?),
+      if (area != _undefined) 'area': (area as String?),
+      if (town != _undefined) 'town': (town as String?),
+      if (taluk != _undefined) 'taluk': (taluk as String?),
+      if (district != _undefined) 'district': (district as String?),
+      if (city != _undefined) 'city': (city as String?),
+      if (state != _undefined) 'state': (state as String?),
+      if (stateISOCode != _undefined) 'stateISOCode': (stateISOCode as String?),
+      if (country != _undefined) 'country': (country as String?),
+      if (countryISOCode != _undefined)
+        'countryISOCode': (countryISOCode as String?),
+      if (pincode != _undefined) 'pincode': (pincode as String?),
+      if (location != _undefined)
+        'location': (location as Input$LocationRequest?),
+    }),
+  );
+
   CopyWith$Input$LocationRequest<TRes> get location {
     final local$location = _instance.location;
     return local$location == null
         ? CopyWith$Input$LocationRequest.stub(_then(_instance))
         : CopyWith$Input$LocationRequest(
-            local$location, (e) => call(location: e));
+            local$location,
+            (e) => call(location: e),
+          );
   }
 }
 
@@ -1348,8 +1368,8 @@ class _CopyWithStubImpl$Input$AddressRequest<TRes>
     String? countryISOCode,
     String? pincode,
     Input$LocationRequest? location,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$LocationRequest<TRes> get location =>
       CopyWith$Input$LocationRequest.stub(_res);
 }
@@ -1369,22 +1389,21 @@ class Input$AssociationFilter {
     Enum$Operation? permission,
     Input$ObjectFilter? primaryObj,
     Input$ObjectFilter? secondaryObj,
-  }) =>
-      Input$AssociationFilter._({
-        if (id != null) r'id': id,
-        if (account != null) r'account': account,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (relationship != null) r'relationship': relationship,
-        if (primaryId != null) r'primaryId': primaryId,
-        if (primaryObjCat != null) r'primaryObjCat': primaryObjCat,
-        if (secondaryId != null) r'secondaryId': secondaryId,
-        if (secondaryObjCat != null) r'secondaryObjCat': secondaryObjCat,
-        if (asOfDate != null) r'asOfDate': asOfDate,
-        if (assocDateRange != null) r'assocDateRange': assocDateRange,
-        if (permission != null) r'permission': permission,
-        if (primaryObj != null) r'primaryObj': primaryObj,
-        if (secondaryObj != null) r'secondaryObj': secondaryObj,
-      });
+  }) => Input$AssociationFilter._({
+    if (id != null) r'id': id,
+    if (account != null) r'account': account,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (relationship != null) r'relationship': relationship,
+    if (primaryId != null) r'primaryId': primaryId,
+    if (primaryObjCat != null) r'primaryObjCat': primaryObjCat,
+    if (secondaryId != null) r'secondaryId': secondaryId,
+    if (secondaryObjCat != null) r'secondaryObjCat': secondaryObjCat,
+    if (asOfDate != null) r'asOfDate': asOfDate,
+    if (assocDateRange != null) r'assocDateRange': assocDateRange,
+    if (permission != null) r'permission': permission,
+    if (primaryObj != null) r'primaryObj': primaryObj,
+    if (secondaryObj != null) r'secondaryObj': secondaryObj,
+  });
 
   Input$AssociationFilter._(this._$data);
 
@@ -1407,14 +1426,16 @@ class Input$AssociationFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('relationship')) {
       final l$relationship = data['relationship'];
       result$data['relationship'] = l$relationship == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$relationship as Map<String, dynamic>));
+              (l$relationship as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('primaryId')) {
       final l$primaryId = data['primaryId'];
@@ -1427,7 +1448,8 @@ class Input$AssociationFilter {
       result$data['primaryObjCat'] = l$primaryObjCat == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$primaryObjCat as Map<String, dynamic>));
+              (l$primaryObjCat as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('secondaryId')) {
       final l$secondaryId = data['secondaryId'];
@@ -1440,7 +1462,8 @@ class Input$AssociationFilter {
       result$data['secondaryObjCat'] = l$secondaryObjCat == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$secondaryObjCat as Map<String, dynamic>));
+              (l$secondaryObjCat as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('asOfDate')) {
       final l$asOfDate = data['asOfDate'];
@@ -1467,7 +1490,8 @@ class Input$AssociationFilter {
       result$data['secondaryObj'] = l$secondaryObj == null
           ? null
           : Input$ObjectFilter.fromJson(
-              (l$secondaryObj as Map<String, dynamic>));
+              (l$secondaryObj as Map<String, dynamic>),
+            );
     }
     return Input$AssociationFilter._(result$data);
   }
@@ -1475,25 +1499,38 @@ class Input$AssociationFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$StringFilter? get relationship =>
       (_$data['relationship'] as Input$StringFilter?);
+
   Input$IDFilter? get primaryId => (_$data['primaryId'] as Input$IDFilter?);
+
   Input$StringFilter? get primaryObjCat =>
       (_$data['primaryObjCat'] as Input$StringFilter?);
+
   Input$IDFilter? get secondaryId => (_$data['secondaryId'] as Input$IDFilter?);
+
   Input$StringFilter? get secondaryObjCat =>
       (_$data['secondaryObjCat'] as Input$StringFilter?);
+
   String? get asOfDate => (_$data['asOfDate'] as String?);
+
   String? get assocDateRange => (_$data['assocDateRange'] as String?);
+
   Enum$Operation? get permission => (_$data['permission'] as Enum$Operation?);
+
   Input$ObjectFilter? get primaryObj =>
       (_$data['primaryObj'] as Input$ObjectFilter?);
+
   Input$ObjectFilter? get secondaryObj =>
       (_$data['secondaryObj'] as Input$ObjectFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -1538,8 +1575,9 @@ class Input$AssociationFilter {
     }
     if (_$data.containsKey('permission')) {
       final l$permission = permission;
-      result$data['permission'] =
-          l$permission == null ? null : toJson$Enum$Operation(l$permission);
+      result$data['permission'] = l$permission == null
+          ? null
+          : toJson$Enum$Operation(l$permission);
     }
     if (_$data.containsKey('primaryObj')) {
       final l$primaryObj = primaryObj;
@@ -1553,17 +1591,14 @@ class Input$AssociationFilter {
   }
 
   CopyWith$Input$AssociationFilter<Input$AssociationFilter> get copyWith =>
-      CopyWith$Input$AssociationFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$AssociationFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AssociationFilter) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$AssociationFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -1755,10 +1790,7 @@ abstract class CopyWith$Input$AssociationFilter<TRes> {
 
 class _CopyWithImpl$Input$AssociationFilter<TRes>
     implements CopyWith$Input$AssociationFilter<TRes> {
-  _CopyWithImpl$Input$AssociationFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AssociationFilter(this._instance, this._then);
 
   final Input$AssociationFilter _instance;
 
@@ -1780,33 +1812,34 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     Object? permission = _undefined,
     Object? primaryObj = _undefined,
     Object? secondaryObj = _undefined,
-  }) =>
-      _then(Input$AssociationFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (relationship != _undefined)
-          'relationship': (relationship as Input$StringFilter?),
-        if (primaryId != _undefined)
-          'primaryId': (primaryId as Input$IDFilter?),
-        if (primaryObjCat != _undefined)
-          'primaryObjCat': (primaryObjCat as Input$StringFilter?),
-        if (secondaryId != _undefined)
-          'secondaryId': (secondaryId as Input$IDFilter?),
-        if (secondaryObjCat != _undefined)
-          'secondaryObjCat': (secondaryObjCat as Input$StringFilter?),
-        if (asOfDate != _undefined) 'asOfDate': (asOfDate as String?),
-        if (assocDateRange != _undefined)
-          'assocDateRange': (assocDateRange as String?),
-        if (permission != _undefined)
-          'permission': (permission as Enum$Operation?),
-        if (primaryObj != _undefined)
-          'primaryObj': (primaryObj as Input$ObjectFilter?),
-        if (secondaryObj != _undefined)
-          'secondaryObj': (secondaryObj as Input$ObjectFilter?),
-      }));
+  }) => _then(
+    Input$AssociationFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (relationship != _undefined)
+        'relationship': (relationship as Input$StringFilter?),
+      if (primaryId != _undefined) 'primaryId': (primaryId as Input$IDFilter?),
+      if (primaryObjCat != _undefined)
+        'primaryObjCat': (primaryObjCat as Input$StringFilter?),
+      if (secondaryId != _undefined)
+        'secondaryId': (secondaryId as Input$IDFilter?),
+      if (secondaryObjCat != _undefined)
+        'secondaryObjCat': (secondaryObjCat as Input$StringFilter?),
+      if (asOfDate != _undefined) 'asOfDate': (asOfDate as String?),
+      if (assocDateRange != _undefined)
+        'assocDateRange': (assocDateRange as String?),
+      if (permission != _undefined)
+        'permission': (permission as Enum$Operation?),
+      if (primaryObj != _undefined)
+        'primaryObj': (primaryObj as Input$ObjectFilter?),
+      if (secondaryObj != _undefined)
+        'secondaryObj': (secondaryObj as Input$ObjectFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -1826,7 +1859,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get relationship {
@@ -1834,7 +1869,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$relationship == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$relationship, (e) => call(relationship: e));
+            local$relationship,
+            (e) => call(relationship: e),
+          );
   }
 
   CopyWith$Input$IDFilter<TRes> get primaryId {
@@ -1849,7 +1886,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$primaryObjCat == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$primaryObjCat, (e) => call(primaryObjCat: e));
+            local$primaryObjCat,
+            (e) => call(primaryObjCat: e),
+          );
   }
 
   CopyWith$Input$IDFilter<TRes> get secondaryId {
@@ -1857,7 +1896,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$secondaryId == null
         ? CopyWith$Input$IDFilter.stub(_then(_instance))
         : CopyWith$Input$IDFilter(
-            local$secondaryId, (e) => call(secondaryId: e));
+            local$secondaryId,
+            (e) => call(secondaryId: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get secondaryObjCat {
@@ -1865,7 +1906,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$secondaryObjCat == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$secondaryObjCat, (e) => call(secondaryObjCat: e));
+            local$secondaryObjCat,
+            (e) => call(secondaryObjCat: e),
+          );
   }
 
   CopyWith$Input$ObjectFilter<TRes> get primaryObj {
@@ -1873,7 +1916,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$primaryObj == null
         ? CopyWith$Input$ObjectFilter.stub(_then(_instance))
         : CopyWith$Input$ObjectFilter(
-            local$primaryObj, (e) => call(primaryObj: e));
+            local$primaryObj,
+            (e) => call(primaryObj: e),
+          );
   }
 
   CopyWith$Input$ObjectFilter<TRes> get secondaryObj {
@@ -1881,7 +1926,9 @@ class _CopyWithImpl$Input$AssociationFilter<TRes>
     return local$secondaryObj == null
         ? CopyWith$Input$ObjectFilter.stub(_then(_instance))
         : CopyWith$Input$ObjectFilter(
-            local$secondaryObj, (e) => call(secondaryObj: e));
+            local$secondaryObj,
+            (e) => call(secondaryObj: e),
+          );
   }
 }
 
@@ -1905,25 +1952,34 @@ class _CopyWithStubImpl$Input$AssociationFilter<TRes>
     Enum$Operation? permission,
     Input$ObjectFilter? primaryObj,
     Input$ObjectFilter? secondaryObj,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get relationship =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get primaryId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get primaryObjCat =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get secondaryId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get secondaryObjCat =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$ObjectFilter<TRes> get primaryObj =>
       CopyWith$Input$ObjectFilter.stub(_res);
+
   CopyWith$Input$ObjectFilter<TRes> get secondaryObj =>
       CopyWith$Input$ObjectFilter.stub(_res);
 }
@@ -1938,17 +1994,16 @@ class Input$AssociationRequest {
     Enum$Operation? permission,
     String? dataUId,
     JsonObjectData? data,
-  }) =>
-      Input$AssociationRequest._({
-        if (primaryId != null) r'primaryId': primaryId,
-        if (secondaryId != null) r'secondaryId': secondaryId,
-        if (relationship != null) r'relationship': relationship,
-        if (startDate != null) r'startDate': startDate,
-        if (endDate != null) r'endDate': endDate,
-        if (permission != null) r'permission': permission,
-        if (dataUId != null) r'dataUId': dataUId,
-        if (data != null) r'data': data,
-      });
+  }) => Input$AssociationRequest._({
+    if (primaryId != null) r'primaryId': primaryId,
+    if (secondaryId != null) r'secondaryId': secondaryId,
+    if (relationship != null) r'relationship': relationship,
+    if (startDate != null) r'startDate': startDate,
+    if (endDate != null) r'endDate': endDate,
+    if (permission != null) r'permission': permission,
+    if (dataUId != null) r'dataUId': dataUId,
+    if (data != null) r'data': data,
+  });
 
   Input$AssociationRequest._(this._$data);
 
@@ -1996,14 +2051,22 @@ class Input$AssociationRequest {
   Map<String, dynamic> _$data;
 
   String? get primaryId => (_$data['primaryId'] as String?);
+
   String? get secondaryId => (_$data['secondaryId'] as String?);
+
   Enum$Relationship? get relationship =>
       (_$data['relationship'] as Enum$Relationship?);
+
   String? get startDate => (_$data['startDate'] as String?);
+
   String? get endDate => (_$data['endDate'] as String?);
+
   Enum$Operation? get permission => (_$data['permission'] as Enum$Operation?);
+
   String? get dataUId => (_$data['dataUId'] as String?);
+
   JsonObjectData? get data => (_$data['data'] as JsonObjectData?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('primaryId')) {
@@ -2030,8 +2093,9 @@ class Input$AssociationRequest {
     }
     if (_$data.containsKey('permission')) {
       final l$permission = permission;
-      result$data['permission'] =
-          l$permission == null ? null : toJson$Enum$Operation(l$permission);
+      result$data['permission'] = l$permission == null
+          ? null
+          : toJson$Enum$Operation(l$permission);
     }
     if (_$data.containsKey('dataUId')) {
       final l$dataUId = dataUId;
@@ -2045,16 +2109,14 @@ class Input$AssociationRequest {
   }
 
   CopyWith$Input$AssociationRequest<Input$AssociationRequest> get copyWith =>
-      CopyWith$Input$AssociationRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$AssociationRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$AssociationRequest) ||
+    if (other is! Input$AssociationRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2176,10 +2238,7 @@ abstract class CopyWith$Input$AssociationRequest<TRes> {
 
 class _CopyWithImpl$Input$AssociationRequest<TRes>
     implements CopyWith$Input$AssociationRequest<TRes> {
-  _CopyWithImpl$Input$AssociationRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$AssociationRequest(this._instance, this._then);
 
   final Input$AssociationRequest _instance;
 
@@ -2196,20 +2255,21 @@ class _CopyWithImpl$Input$AssociationRequest<TRes>
     Object? permission = _undefined,
     Object? dataUId = _undefined,
     Object? data = _undefined,
-  }) =>
-      _then(Input$AssociationRequest._({
-        ..._instance._$data,
-        if (primaryId != _undefined) 'primaryId': (primaryId as String?),
-        if (secondaryId != _undefined) 'secondaryId': (secondaryId as String?),
-        if (relationship != _undefined)
-          'relationship': (relationship as Enum$Relationship?),
-        if (startDate != _undefined) 'startDate': (startDate as String?),
-        if (endDate != _undefined) 'endDate': (endDate as String?),
-        if (permission != _undefined)
-          'permission': (permission as Enum$Operation?),
-        if (dataUId != _undefined) 'dataUId': (dataUId as String?),
-        if (data != _undefined) 'data': (data as JsonObjectData?),
-      }));
+  }) => _then(
+    Input$AssociationRequest._({
+      ..._instance._$data,
+      if (primaryId != _undefined) 'primaryId': (primaryId as String?),
+      if (secondaryId != _undefined) 'secondaryId': (secondaryId as String?),
+      if (relationship != _undefined)
+        'relationship': (relationship as Enum$Relationship?),
+      if (startDate != _undefined) 'startDate': (startDate as String?),
+      if (endDate != _undefined) 'endDate': (endDate as String?),
+      if (permission != _undefined)
+        'permission': (permission as Enum$Operation?),
+      if (dataUId != _undefined) 'dataUId': (dataUId as String?),
+      if (data != _undefined) 'data': (data as JsonObjectData?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$AssociationRequest<TRes>
@@ -2227,8 +2287,7 @@ class _CopyWithStubImpl$Input$AssociationRequest<TRes>
     Enum$Operation? permission,
     String? dataUId,
     JsonObjectData? data,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$BlockRequest {
@@ -2240,17 +2299,16 @@ class Input$BlockRequest {
     String? description,
     int? numberOfBasementFloors,
     int? numberOfTopFloors,
-  }) =>
-      Input$BlockRequest._({
-        if (accountId != null) r'accountId': accountId,
-        if (placeId != null) r'placeId': placeId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (numberOfBasementFloors != null)
-          r'numberOfBasementFloors': numberOfBasementFloors,
-        if (numberOfTopFloors != null) r'numberOfTopFloors': numberOfTopFloors,
-      });
+  }) => Input$BlockRequest._({
+    if (accountId != null) r'accountId': accountId,
+    if (placeId != null) r'placeId': placeId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (numberOfBasementFloors != null)
+      r'numberOfBasementFloors': numberOfBasementFloors,
+    if (numberOfTopFloors != null) r'numberOfTopFloors': numberOfTopFloors,
+  });
 
   Input$BlockRequest._(this._$data);
 
@@ -2293,12 +2351,19 @@ class Input$BlockRequest {
   Map<String, dynamic> _$data;
 
   String? get accountId => (_$data['accountId'] as String?);
+
   String? get placeId => (_$data['placeId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   int? get numberOfBasementFloors => (_$data['numberOfBasementFloors'] as int?);
+
   int? get numberOfTopFloors => (_$data['numberOfTopFloors'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('accountId')) {
@@ -2311,8 +2376,9 @@ class Input$BlockRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -2334,16 +2400,14 @@ class Input$BlockRequest {
   }
 
   CopyWith$Input$BlockRequest<Input$BlockRequest> get copyWith =>
-      CopyWith$Input$BlockRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$BlockRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BlockRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$BlockRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$accountId = accountId;
@@ -2455,10 +2519,7 @@ abstract class CopyWith$Input$BlockRequest<TRes> {
 
 class _CopyWithImpl$Input$BlockRequest<TRes>
     implements CopyWith$Input$BlockRequest<TRes> {
-  _CopyWithImpl$Input$BlockRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$BlockRequest(this._instance, this._then);
 
   final Input$BlockRequest _instance;
 
@@ -2474,20 +2535,20 @@ class _CopyWithImpl$Input$BlockRequest<TRes>
     Object? description = _undefined,
     Object? numberOfBasementFloors = _undefined,
     Object? numberOfTopFloors = _undefined,
-  }) =>
-      _then(Input$BlockRequest._({
-        ..._instance._$data,
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (placeId != _undefined) 'placeId': (placeId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (numberOfBasementFloors != _undefined)
-          'numberOfBasementFloors': (numberOfBasementFloors as int?),
-        if (numberOfTopFloors != _undefined)
-          'numberOfTopFloors': (numberOfTopFloors as int?),
-      }));
+  }) => _then(
+    Input$BlockRequest._({
+      ..._instance._$data,
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (placeId != _undefined) 'placeId': (placeId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (numberOfBasementFloors != _undefined)
+        'numberOfBasementFloors': (numberOfBasementFloors as int?),
+      if (numberOfTopFloors != _undefined)
+        'numberOfTopFloors': (numberOfTopFloors as int?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$BlockRequest<TRes>
@@ -2504,14 +2565,12 @@ class _CopyWithStubImpl$Input$BlockRequest<TRes>
     String? description,
     int? numberOfBasementFloors,
     int? numberOfTopFloors,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$BooleanFilter {
-  factory Input$BooleanFilter({required bool value}) => Input$BooleanFilter._({
-        r'value': value,
-      });
+  factory Input$BooleanFilter({required bool value}) =>
+      Input$BooleanFilter._({r'value': value});
 
   Input$BooleanFilter._(this._$data);
 
@@ -2525,6 +2584,7 @@ class Input$BooleanFilter {
   Map<String, dynamic> _$data;
 
   bool get value => (_$data['value'] as bool);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
@@ -2533,16 +2593,14 @@ class Input$BooleanFilter {
   }
 
   CopyWith$Input$BooleanFilter<Input$BooleanFilter> get copyWith =>
-      CopyWith$Input$BooleanFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$BooleanFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$BooleanFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$BooleanFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -2574,10 +2632,7 @@ abstract class CopyWith$Input$BooleanFilter<TRes> {
 
 class _CopyWithImpl$Input$BooleanFilter<TRes>
     implements CopyWith$Input$BooleanFilter<TRes> {
-  _CopyWithImpl$Input$BooleanFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$BooleanFilter(this._instance, this._then);
 
   final Input$BooleanFilter _instance;
 
@@ -2585,10 +2640,12 @@ class _CopyWithImpl$Input$BooleanFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) => _then(Input$BooleanFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null) 'value': (value as bool),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$BooleanFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null) 'value': (value as bool),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$BooleanFilter<TRes>
@@ -2601,10 +2658,7 @@ class _CopyWithStubImpl$Input$BooleanFilter<TRes>
 }
 
 class Input$ComingFromRequest {
-  factory Input$ComingFromRequest({
-    String? companyName,
-    String? placeName,
-  }) =>
+  factory Input$ComingFromRequest({String? companyName, String? placeName}) =>
       Input$ComingFromRequest._({
         if (companyName != null) r'companyName': companyName,
         if (placeName != null) r'placeName': placeName,
@@ -2628,7 +2682,9 @@ class Input$ComingFromRequest {
   Map<String, dynamic> _$data;
 
   String? get companyName => (_$data['companyName'] as String?);
+
   String? get placeName => (_$data['placeName'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('companyName')) {
@@ -2643,17 +2699,14 @@ class Input$ComingFromRequest {
   }
 
   CopyWith$Input$ComingFromRequest<Input$ComingFromRequest> get copyWith =>
-      CopyWith$Input$ComingFromRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$ComingFromRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$ComingFromRequest) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$ComingFromRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$companyName = companyName;
@@ -2697,18 +2750,12 @@ abstract class CopyWith$Input$ComingFromRequest<TRes> {
   factory CopyWith$Input$ComingFromRequest.stub(TRes res) =
       _CopyWithStubImpl$Input$ComingFromRequest;
 
-  TRes call({
-    String? companyName,
-    String? placeName,
-  });
+  TRes call({String? companyName, String? placeName});
 }
 
 class _CopyWithImpl$Input$ComingFromRequest<TRes>
     implements CopyWith$Input$ComingFromRequest<TRes> {
-  _CopyWithImpl$Input$ComingFromRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$ComingFromRequest(this._instance, this._then);
 
   final Input$ComingFromRequest _instance;
 
@@ -2719,12 +2766,13 @@ class _CopyWithImpl$Input$ComingFromRequest<TRes>
   TRes call({
     Object? companyName = _undefined,
     Object? placeName = _undefined,
-  }) =>
-      _then(Input$ComingFromRequest._({
-        ..._instance._$data,
-        if (companyName != _undefined) 'companyName': (companyName as String?),
-        if (placeName != _undefined) 'placeName': (placeName as String?),
-      }));
+  }) => _then(
+    Input$ComingFromRequest._({
+      ..._instance._$data,
+      if (companyName != _undefined) 'companyName': (companyName as String?),
+      if (placeName != _undefined) 'placeName': (placeName as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$ComingFromRequest<TRes>
@@ -2733,18 +2781,12 @@ class _CopyWithStubImpl$Input$ComingFromRequest<TRes>
 
   TRes _res;
 
-  call({
-    String? companyName,
-    String? placeName,
-  }) =>
-      _res;
+  call({String? companyName, String? placeName}) => _res;
 }
 
 class Input$CountryFilter {
   factory Input$CountryFilter({Input$IDFilter? isoCode}) =>
-      Input$CountryFilter._({
-        if (isoCode != null) r'isoCode': isoCode,
-      });
+      Input$CountryFilter._({if (isoCode != null) r'isoCode': isoCode});
 
   Input$CountryFilter._(this._$data);
 
@@ -2762,6 +2804,7 @@ class Input$CountryFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get isoCode => (_$data['isoCode'] as Input$IDFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('isoCode')) {
@@ -2772,16 +2815,14 @@ class Input$CountryFilter {
   }
 
   CopyWith$Input$CountryFilter<Input$CountryFilter> get copyWith =>
-      CopyWith$Input$CountryFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$CountryFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$CountryFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$CountryFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$isoCode = isoCode;
@@ -2798,8 +2839,9 @@ class Input$CountryFilter {
   @override
   int get hashCode {
     final l$isoCode = isoCode;
-    return Object.hashAll(
-        [_$data.containsKey('isoCode') ? l$isoCode : const {}]);
+    return Object.hashAll([
+      _$data.containsKey('isoCode') ? l$isoCode : const {},
+    ]);
   }
 }
 
@@ -2818,10 +2860,7 @@ abstract class CopyWith$Input$CountryFilter<TRes> {
 
 class _CopyWithImpl$Input$CountryFilter<TRes>
     implements CopyWith$Input$CountryFilter<TRes> {
-  _CopyWithImpl$Input$CountryFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$CountryFilter(this._instance, this._then);
 
   final Input$CountryFilter _instance;
 
@@ -2829,10 +2868,13 @@ class _CopyWithImpl$Input$CountryFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? isoCode = _undefined}) => _then(Input$CountryFilter._({
-        ..._instance._$data,
-        if (isoCode != _undefined) 'isoCode': (isoCode as Input$IDFilter?),
-      }));
+  TRes call({Object? isoCode = _undefined}) => _then(
+    Input$CountryFilter._({
+      ..._instance._$data,
+      if (isoCode != _undefined) 'isoCode': (isoCode as Input$IDFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get isoCode {
     final local$isoCode = _instance.isoCode;
     return local$isoCode == null
@@ -2848,6 +2890,7 @@ class _CopyWithStubImpl$Input$CountryFilter<TRes>
   TRes _res;
 
   call({Input$IDFilter? isoCode}) => _res;
+
   CopyWith$Input$IDFilter<TRes> get isoCode =>
       CopyWith$Input$IDFilter.stub(_res);
 }
@@ -2861,16 +2904,15 @@ class Input$CredentialFilter {
     Input$StringFilter? personId,
     Input$CredentialTypeFilter? type,
     Input$StringFilter? uId,
-  }) =>
-      Input$CredentialFilter._({
-        if (account != null) r'account': account,
-        if (id != null) r'id': id,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (personId != null) r'personId': personId,
-        if (type != null) r'type': type,
-        if (uId != null) r'uId': uId,
-      });
+  }) => Input$CredentialFilter._({
+    if (account != null) r'account': account,
+    if (id != null) r'id': id,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (personId != null) r'personId': personId,
+    if (type != null) r'type': type,
+    if (uId != null) r'uId': uId,
+  });
 
   Input$CredentialFilter._(this._$data);
 
@@ -2893,7 +2935,8 @@ class Input$CredentialFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('name')) {
       final l$name = data['name'];
@@ -2912,7 +2955,8 @@ class Input$CredentialFilter {
       result$data['type'] = l$type == null
           ? null
           : Input$CredentialTypeFilter.fromJson(
-              (l$type as Map<String, dynamic>));
+              (l$type as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('uId')) {
       final l$uId = data['uId'];
@@ -2927,15 +2971,22 @@ class Input$CredentialFilter {
 
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$StringFilter? get personId =>
       (_$data['personId'] as Input$StringFilter?);
+
   Input$CredentialTypeFilter? get type =>
       (_$data['type'] as Input$CredentialTypeFilter?);
+
   Input$StringFilter? get uId => (_$data['uId'] as Input$StringFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('account')) {
@@ -2970,17 +3021,14 @@ class Input$CredentialFilter {
   }
 
   CopyWith$Input$CredentialFilter<Input$CredentialFilter> get copyWith =>
-      CopyWith$Input$CredentialFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$CredentialFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$CredentialFilter) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$CredentialFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$account = account;
@@ -3094,10 +3142,7 @@ abstract class CopyWith$Input$CredentialFilter<TRes> {
 
 class _CopyWithImpl$Input$CredentialFilter<TRes>
     implements CopyWith$Input$CredentialFilter<TRes> {
-  _CopyWithImpl$Input$CredentialFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$CredentialFilter(this._instance, this._then);
 
   final Input$CredentialFilter _instance;
 
@@ -3113,19 +3158,20 @@ class _CopyWithImpl$Input$CredentialFilter<TRes>
     Object? personId = _undefined,
     Object? type = _undefined,
     Object? uId = _undefined,
-  }) =>
-      _then(Input$CredentialFilter._({
-        ..._instance._$data,
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (personId != _undefined)
-          'personId': (personId as Input$StringFilter?),
-        if (type != _undefined) 'type': (type as Input$CredentialTypeFilter?),
-        if (uId != _undefined) 'uId': (uId as Input$StringFilter?),
-      }));
+  }) => _then(
+    Input$CredentialFilter._({
+      ..._instance._$data,
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (personId != _undefined) 'personId': (personId as Input$StringFilter?),
+      if (type != _undefined) 'type': (type as Input$CredentialTypeFilter?),
+      if (uId != _undefined) 'uId': (uId as Input$StringFilter?),
+    }),
+  );
+
   CopyWith$Input$AccountFilter<TRes> get account {
     final local$account = _instance.account;
     return local$account == null
@@ -3145,7 +3191,9 @@ class _CopyWithImpl$Input$CredentialFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get name {
@@ -3191,19 +3239,25 @@ class _CopyWithStubImpl$Input$CredentialFilter<TRes>
     Input$StringFilter? personId,
     Input$CredentialTypeFilter? type,
     Input$StringFilter? uId,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get personId =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$CredentialTypeFilter<TRes> get type =>
       CopyWith$Input$CredentialTypeFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get uId =>
       CopyWith$Input$StringFilter.stub(_res);
 }
@@ -3217,16 +3271,15 @@ class Input$CredentialRequest {
     String? personId,
     Enum$CredentialType? type,
     String? uId,
-  }) =>
-      Input$CredentialRequest._({
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (personId != null) r'personId': personId,
-        if (type != null) r'type': type,
-        if (uId != null) r'uId': uId,
-      });
+  }) => Input$CredentialRequest._({
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (personId != null) r'personId': personId,
+    if (type != null) r'type': type,
+    if (uId != null) r'uId': uId,
+  });
 
   Input$CredentialRequest._(this._$data);
 
@@ -3270,12 +3323,19 @@ class Input$CredentialRequest {
   Map<String, dynamic> _$data;
 
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get personId => (_$data['personId'] as String?);
+
   Enum$CredentialType? get type => (_$data['type'] as Enum$CredentialType?);
+
   String? get uId => (_$data['uId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('accountId')) {
@@ -3284,8 +3344,9 @@ class Input$CredentialRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -3301,8 +3362,9 @@ class Input$CredentialRequest {
     }
     if (_$data.containsKey('type')) {
       final l$type = type;
-      result$data['type'] =
-          l$type == null ? null : toJson$Enum$CredentialType(l$type);
+      result$data['type'] = l$type == null
+          ? null
+          : toJson$Enum$CredentialType(l$type);
     }
     if (_$data.containsKey('uId')) {
       final l$uId = uId;
@@ -3312,17 +3374,14 @@ class Input$CredentialRequest {
   }
 
   CopyWith$Input$CredentialRequest<Input$CredentialRequest> get copyWith =>
-      CopyWith$Input$CredentialRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$CredentialRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$CredentialRequest) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$CredentialRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$accountId = accountId;
@@ -3431,10 +3490,7 @@ abstract class CopyWith$Input$CredentialRequest<TRes> {
 
 class _CopyWithImpl$Input$CredentialRequest<TRes>
     implements CopyWith$Input$CredentialRequest<TRes> {
-  _CopyWithImpl$Input$CredentialRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$CredentialRequest(this._instance, this._then);
 
   final Input$CredentialRequest _instance;
 
@@ -3450,18 +3506,18 @@ class _CopyWithImpl$Input$CredentialRequest<TRes>
     Object? personId = _undefined,
     Object? type = _undefined,
     Object? uId = _undefined,
-  }) =>
-      _then(Input$CredentialRequest._({
-        ..._instance._$data,
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (personId != _undefined) 'personId': (personId as String?),
-        if (type != _undefined) 'type': (type as Enum$CredentialType?),
-        if (uId != _undefined) 'uId': (uId as String?),
-      }));
+  }) => _then(
+    Input$CredentialRequest._({
+      ..._instance._$data,
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (personId != _undefined) 'personId': (personId as String?),
+      if (type != _undefined) 'type': (type as Enum$CredentialType?),
+      if (uId != _undefined) 'uId': (uId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$CredentialRequest<TRes>
@@ -3478,16 +3534,13 @@ class _CopyWithStubImpl$Input$CredentialRequest<TRes>
     String? personId,
     Enum$CredentialType? type,
     String? uId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$CredentialTypeFilter {
-  factory Input$CredentialTypeFilter(
-          {required List<Enum$CredentialType> value}) =>
-      Input$CredentialTypeFilter._({
-        r'value': value,
-      });
+  factory Input$CredentialTypeFilter({
+    required List<Enum$CredentialType> value,
+  }) => Input$CredentialTypeFilter._({r'value': value});
 
   Input$CredentialTypeFilter._(this._$data);
 
@@ -3504,25 +3557,25 @@ class Input$CredentialTypeFilter {
 
   List<Enum$CredentialType> get value =>
       (_$data['value'] as List<Enum$CredentialType>);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
-    result$data['value'] =
-        l$value.map((e) => toJson$Enum$CredentialType(e)).toList();
+    result$data['value'] = l$value
+        .map((e) => toJson$Enum$CredentialType(e))
+        .toList();
     return result$data;
   }
 
   CopyWith$Input$CredentialTypeFilter<Input$CredentialTypeFilter>
-      get copyWith => CopyWith$Input$CredentialTypeFilter(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$CredentialTypeFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$CredentialTypeFilter) ||
+    if (other is! Input$CredentialTypeFilter ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3562,10 +3615,7 @@ abstract class CopyWith$Input$CredentialTypeFilter<TRes> {
 
 class _CopyWithImpl$Input$CredentialTypeFilter<TRes>
     implements CopyWith$Input$CredentialTypeFilter<TRes> {
-  _CopyWithImpl$Input$CredentialTypeFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$CredentialTypeFilter(this._instance, this._then);
 
   final Input$CredentialTypeFilter _instance;
 
@@ -3573,12 +3623,13 @@ class _CopyWithImpl$Input$CredentialTypeFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) =>
-      _then(Input$CredentialTypeFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null)
-          'value': (value as List<Enum$CredentialType>),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$CredentialTypeFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null)
+        'value': (value as List<Enum$CredentialType>),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$CredentialTypeFilter<TRes>
@@ -3591,10 +3642,7 @@ class _CopyWithStubImpl$Input$CredentialTypeFilter<TRes>
 }
 
 class Input$DateOnlyRangeFilter {
-  factory Input$DateOnlyRangeFilter({
-    String? startDate,
-    String? endDate,
-  }) =>
+  factory Input$DateOnlyRangeFilter({String? startDate, String? endDate}) =>
       Input$DateOnlyRangeFilter._({
         if (startDate != null) r'startDate': startDate,
         if (endDate != null) r'endDate': endDate,
@@ -3618,7 +3666,9 @@ class Input$DateOnlyRangeFilter {
   Map<String, dynamic> _$data;
 
   String? get startDate => (_$data['startDate'] as String?);
+
   String? get endDate => (_$data['endDate'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('startDate')) {
@@ -3633,16 +3683,14 @@ class Input$DateOnlyRangeFilter {
   }
 
   CopyWith$Input$DateOnlyRangeFilter<Input$DateOnlyRangeFilter> get copyWith =>
-      CopyWith$Input$DateOnlyRangeFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$DateOnlyRangeFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$DateOnlyRangeFilter) ||
+    if (other is! Input$DateOnlyRangeFilter ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3686,18 +3734,12 @@ abstract class CopyWith$Input$DateOnlyRangeFilter<TRes> {
   factory CopyWith$Input$DateOnlyRangeFilter.stub(TRes res) =
       _CopyWithStubImpl$Input$DateOnlyRangeFilter;
 
-  TRes call({
-    String? startDate,
-    String? endDate,
-  });
+  TRes call({String? startDate, String? endDate});
 }
 
 class _CopyWithImpl$Input$DateOnlyRangeFilter<TRes>
     implements CopyWith$Input$DateOnlyRangeFilter<TRes> {
-  _CopyWithImpl$Input$DateOnlyRangeFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$DateOnlyRangeFilter(this._instance, this._then);
 
   final Input$DateOnlyRangeFilter _instance;
 
@@ -3705,15 +3747,14 @@ class _CopyWithImpl$Input$DateOnlyRangeFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? startDate = _undefined,
-    Object? endDate = _undefined,
-  }) =>
-      _then(Input$DateOnlyRangeFilter._({
-        ..._instance._$data,
-        if (startDate != _undefined) 'startDate': (startDate as String?),
-        if (endDate != _undefined) 'endDate': (endDate as String?),
-      }));
+  TRes call({Object? startDate = _undefined, Object? endDate = _undefined}) =>
+      _then(
+        Input$DateOnlyRangeFilter._({
+          ..._instance._$data,
+          if (startDate != _undefined) 'startDate': (startDate as String?),
+          if (endDate != _undefined) 'endDate': (endDate as String?),
+        }),
+      );
 }
 
 class _CopyWithStubImpl$Input$DateOnlyRangeFilter<TRes>
@@ -3722,18 +3763,11 @@ class _CopyWithStubImpl$Input$DateOnlyRangeFilter<TRes>
 
   TRes _res;
 
-  call({
-    String? startDate,
-    String? endDate,
-  }) =>
-      _res;
+  call({String? startDate, String? endDate}) => _res;
 }
 
 class Input$DateRangeFilter {
-  factory Input$DateRangeFilter({
-    String? startDate,
-    String? endDate,
-  }) =>
+  factory Input$DateRangeFilter({String? startDate, String? endDate}) =>
       Input$DateRangeFilter._({
         if (startDate != null) r'startDate': startDate,
         if (endDate != null) r'endDate': endDate,
@@ -3757,7 +3791,9 @@ class Input$DateRangeFilter {
   Map<String, dynamic> _$data;
 
   String? get startDate => (_$data['startDate'] as String?);
+
   String? get endDate => (_$data['endDate'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('startDate')) {
@@ -3772,16 +3808,14 @@ class Input$DateRangeFilter {
   }
 
   CopyWith$Input$DateRangeFilter<Input$DateRangeFilter> get copyWith =>
-      CopyWith$Input$DateRangeFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$DateRangeFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$DateRangeFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$DateRangeFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$startDate = startDate;
@@ -3824,18 +3858,12 @@ abstract class CopyWith$Input$DateRangeFilter<TRes> {
   factory CopyWith$Input$DateRangeFilter.stub(TRes res) =
       _CopyWithStubImpl$Input$DateRangeFilter;
 
-  TRes call({
-    String? startDate,
-    String? endDate,
-  });
+  TRes call({String? startDate, String? endDate});
 }
 
 class _CopyWithImpl$Input$DateRangeFilter<TRes>
     implements CopyWith$Input$DateRangeFilter<TRes> {
-  _CopyWithImpl$Input$DateRangeFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$DateRangeFilter(this._instance, this._then);
 
   final Input$DateRangeFilter _instance;
 
@@ -3843,15 +3871,14 @@ class _CopyWithImpl$Input$DateRangeFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? startDate = _undefined,
-    Object? endDate = _undefined,
-  }) =>
-      _then(Input$DateRangeFilter._({
-        ..._instance._$data,
-        if (startDate != _undefined) 'startDate': (startDate as String?),
-        if (endDate != _undefined) 'endDate': (endDate as String?),
-      }));
+  TRes call({Object? startDate = _undefined, Object? endDate = _undefined}) =>
+      _then(
+        Input$DateRangeFilter._({
+          ..._instance._$data,
+          if (startDate != _undefined) 'startDate': (startDate as String?),
+          if (endDate != _undefined) 'endDate': (endDate as String?),
+        }),
+      );
 }
 
 class _CopyWithStubImpl$Input$DateRangeFilter<TRes>
@@ -3860,11 +3887,7 @@ class _CopyWithStubImpl$Input$DateRangeFilter<TRes>
 
   TRes _res;
 
-  call({
-    String? startDate,
-    String? endDate,
-  }) =>
-      _res;
+  call({String? startDate, String? endDate}) => _res;
 }
 
 class Input$FeatureFilter {
@@ -3874,14 +3897,13 @@ class Input$FeatureFilter {
     Input$AccountFilter? account,
     Input$LifeStateFilter? lifeState,
     Input$FeatureTypeFilter? type,
-  }) =>
-      Input$FeatureFilter._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (account != null) r'account': account,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (type != null) r'type': type,
-      });
+  }) => Input$FeatureFilter._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (account != null) r'account': account,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (type != null) r'type': type,
+  });
 
   Input$FeatureFilter._(this._$data);
 
@@ -3910,7 +3932,8 @@ class Input$FeatureFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('type')) {
       final l$type = data['type'];
@@ -3924,13 +3947,18 @@ class Input$FeatureFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$FeatureTypeFilter? get type =>
       (_$data['type'] as Input$FeatureTypeFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -3957,16 +3985,14 @@ class Input$FeatureFilter {
   }
 
   CopyWith$Input$FeatureFilter<Input$FeatureFilter> get copyWith =>
-      CopyWith$Input$FeatureFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$FeatureFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$FeatureFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$FeatureFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -4055,10 +4081,7 @@ abstract class CopyWith$Input$FeatureFilter<TRes> {
 
 class _CopyWithImpl$Input$FeatureFilter<TRes>
     implements CopyWith$Input$FeatureFilter<TRes> {
-  _CopyWithImpl$Input$FeatureFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$FeatureFilter(this._instance, this._then);
 
   final Input$FeatureFilter _instance;
 
@@ -4072,16 +4095,18 @@ class _CopyWithImpl$Input$FeatureFilter<TRes>
     Object? account = _undefined,
     Object? lifeState = _undefined,
     Object? type = _undefined,
-  }) =>
-      _then(Input$FeatureFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (type != _undefined) 'type': (type as Input$FeatureTypeFilter?),
-      }));
+  }) => _then(
+    Input$FeatureFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (type != _undefined) 'type': (type as Input$FeatureTypeFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -4108,7 +4133,9 @@ class _CopyWithImpl$Input$FeatureFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$FeatureTypeFilter<TRes> get type {
@@ -4131,15 +4158,19 @@ class _CopyWithStubImpl$Input$FeatureFilter<TRes>
     Input$AccountFilter? account,
     Input$LifeStateFilter? lifeState,
     Input$FeatureTypeFilter? type,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$FeatureTypeFilter<TRes> get type =>
       CopyWith$Input$FeatureTypeFilter.stub(_res);
 }
@@ -4152,15 +4183,14 @@ class Input$FeatureRequest {
     Enum$LifeState? lifeState,
     Enum$FeatureType? type,
     String? fileId,
-  }) =>
-      Input$FeatureRequest._({
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (type != null) r'type': type,
-        if (fileId != null) r'fileId': fileId,
-      });
+  }) => Input$FeatureRequest._({
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (type != null) r'type': type,
+    if (fileId != null) r'fileId': fileId,
+  });
 
   Input$FeatureRequest._(this._$data);
 
@@ -4186,8 +4216,9 @@ class Input$FeatureRequest {
     }
     if (data.containsKey('type')) {
       final l$type = data['type'];
-      result$data['type'] =
-          l$type == null ? null : fromJson$Enum$FeatureType((l$type as String));
+      result$data['type'] = l$type == null
+          ? null
+          : fromJson$Enum$FeatureType((l$type as String));
     }
     if (data.containsKey('fileId')) {
       final l$fileId = data['fileId'];
@@ -4199,11 +4230,17 @@ class Input$FeatureRequest {
   Map<String, dynamic> _$data;
 
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   Enum$FeatureType? get type => (_$data['type'] as Enum$FeatureType?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('name')) {
@@ -4220,13 +4257,15 @@ class Input$FeatureRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('type')) {
       final l$type = type;
-      result$data['type'] =
-          l$type == null ? null : toJson$Enum$FeatureType(l$type);
+      result$data['type'] = l$type == null
+          ? null
+          : toJson$Enum$FeatureType(l$type);
     }
     if (_$data.containsKey('fileId')) {
       final l$fileId = fileId;
@@ -4236,16 +4275,14 @@ class Input$FeatureRequest {
   }
 
   CopyWith$Input$FeatureRequest<Input$FeatureRequest> get copyWith =>
-      CopyWith$Input$FeatureRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$FeatureRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$FeatureRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$FeatureRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$name = name;
@@ -4342,10 +4379,7 @@ abstract class CopyWith$Input$FeatureRequest<TRes> {
 
 class _CopyWithImpl$Input$FeatureRequest<TRes>
     implements CopyWith$Input$FeatureRequest<TRes> {
-  _CopyWithImpl$Input$FeatureRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$FeatureRequest(this._instance, this._then);
 
   final Input$FeatureRequest _instance;
 
@@ -4360,17 +4394,17 @@ class _CopyWithImpl$Input$FeatureRequest<TRes>
     Object? lifeState = _undefined,
     Object? type = _undefined,
     Object? fileId = _undefined,
-  }) =>
-      _then(Input$FeatureRequest._({
-        ..._instance._$data,
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (type != _undefined) 'type': (type as Enum$FeatureType?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-      }));
+  }) => _then(
+    Input$FeatureRequest._({
+      ..._instance._$data,
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (type != _undefined) 'type': (type as Enum$FeatureType?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$FeatureRequest<TRes>
@@ -4386,15 +4420,12 @@ class _CopyWithStubImpl$Input$FeatureRequest<TRes>
     Enum$LifeState? lifeState,
     Enum$FeatureType? type,
     String? fileId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$FeatureTypeFilter {
   factory Input$FeatureTypeFilter({required List<Enum$FeatureType> value}) =>
-      Input$FeatureTypeFilter._({
-        r'value': value,
-      });
+      Input$FeatureTypeFilter._({r'value': value});
 
   Input$FeatureTypeFilter._(this._$data);
 
@@ -4411,26 +4442,25 @@ class Input$FeatureTypeFilter {
 
   List<Enum$FeatureType> get value =>
       (_$data['value'] as List<Enum$FeatureType>);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
-    result$data['value'] =
-        l$value.map((e) => toJson$Enum$FeatureType(e)).toList();
+    result$data['value'] = l$value
+        .map((e) => toJson$Enum$FeatureType(e))
+        .toList();
     return result$data;
   }
 
   CopyWith$Input$FeatureTypeFilter<Input$FeatureTypeFilter> get copyWith =>
-      CopyWith$Input$FeatureTypeFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$FeatureTypeFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$FeatureTypeFilter) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$FeatureTypeFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -4469,10 +4499,7 @@ abstract class CopyWith$Input$FeatureTypeFilter<TRes> {
 
 class _CopyWithImpl$Input$FeatureTypeFilter<TRes>
     implements CopyWith$Input$FeatureTypeFilter<TRes> {
-  _CopyWithImpl$Input$FeatureTypeFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$FeatureTypeFilter(this._instance, this._then);
 
   final Input$FeatureTypeFilter _instance;
 
@@ -4480,11 +4507,13 @@ class _CopyWithImpl$Input$FeatureTypeFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) => _then(Input$FeatureTypeFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null)
-          'value': (value as List<Enum$FeatureType>),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$FeatureTypeFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null)
+        'value': (value as List<Enum$FeatureType>),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$FeatureTypeFilter<TRes>
@@ -4497,10 +4526,7 @@ class _CopyWithStubImpl$Input$FeatureTypeFilter<TRes>
 }
 
 class Input$FloatRangeFilter {
-  factory Input$FloatRangeFilter({
-    double? min,
-    double? max,
-  }) =>
+  factory Input$FloatRangeFilter({double? min, double? max}) =>
       Input$FloatRangeFilter._({
         if (min != null) r'min': min,
         if (max != null) r'max': max,
@@ -4524,7 +4550,9 @@ class Input$FloatRangeFilter {
   Map<String, dynamic> _$data;
 
   double? get min => (_$data['min'] as double?);
+
   double? get max => (_$data['max'] as double?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('min')) {
@@ -4539,17 +4567,14 @@ class Input$FloatRangeFilter {
   }
 
   CopyWith$Input$FloatRangeFilter<Input$FloatRangeFilter> get copyWith =>
-      CopyWith$Input$FloatRangeFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$FloatRangeFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$FloatRangeFilter) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$FloatRangeFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$min = min;
@@ -4591,18 +4616,12 @@ abstract class CopyWith$Input$FloatRangeFilter<TRes> {
   factory CopyWith$Input$FloatRangeFilter.stub(TRes res) =
       _CopyWithStubImpl$Input$FloatRangeFilter;
 
-  TRes call({
-    double? min,
-    double? max,
-  });
+  TRes call({double? min, double? max});
 }
 
 class _CopyWithImpl$Input$FloatRangeFilter<TRes>
     implements CopyWith$Input$FloatRangeFilter<TRes> {
-  _CopyWithImpl$Input$FloatRangeFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$FloatRangeFilter(this._instance, this._then);
 
   final Input$FloatRangeFilter _instance;
 
@@ -4610,15 +4629,13 @@ class _CopyWithImpl$Input$FloatRangeFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? min = _undefined,
-    Object? max = _undefined,
-  }) =>
-      _then(Input$FloatRangeFilter._({
-        ..._instance._$data,
-        if (min != _undefined) 'min': (min as double?),
-        if (max != _undefined) 'max': (max as double?),
-      }));
+  TRes call({Object? min = _undefined, Object? max = _undefined}) => _then(
+    Input$FloatRangeFilter._({
+      ..._instance._$data,
+      if (min != _undefined) 'min': (min as double?),
+      if (max != _undefined) 'max': (max as double?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$FloatRangeFilter<TRes>
@@ -4627,11 +4644,7 @@ class _CopyWithStubImpl$Input$FloatRangeFilter<TRes>
 
   TRes _res;
 
-  call({
-    double? min,
-    double? max,
-  }) =>
-      _res;
+  call({double? min, double? max}) => _res;
 }
 
 class Input$FloorRequest {
@@ -4640,13 +4653,12 @@ class Input$FloorRequest {
     String? blockId,
     Enum$LifeState? lifeState,
     int? no,
-  }) =>
-      Input$FloorRequest._({
-        if (accountId != null) r'accountId': accountId,
-        if (blockId != null) r'blockId': blockId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (no != null) r'no': no,
-      });
+  }) => Input$FloorRequest._({
+    if (accountId != null) r'accountId': accountId,
+    if (blockId != null) r'blockId': blockId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (no != null) r'no': no,
+  });
 
   Input$FloorRequest._(this._$data);
 
@@ -4676,9 +4688,13 @@ class Input$FloorRequest {
   Map<String, dynamic> _$data;
 
   String? get accountId => (_$data['accountId'] as String?);
+
   String? get blockId => (_$data['blockId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   int? get no => (_$data['no'] as int?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('accountId')) {
@@ -4691,8 +4707,9 @@ class Input$FloorRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('no')) {
       final l$no = no;
@@ -4702,16 +4719,14 @@ class Input$FloorRequest {
   }
 
   CopyWith$Input$FloorRequest<Input$FloorRequest> get copyWith =>
-      CopyWith$Input$FloorRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$FloorRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$FloorRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$FloorRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$accountId = accountId;
@@ -4785,10 +4800,7 @@ abstract class CopyWith$Input$FloorRequest<TRes> {
 
 class _CopyWithImpl$Input$FloorRequest<TRes>
     implements CopyWith$Input$FloorRequest<TRes> {
-  _CopyWithImpl$Input$FloorRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$FloorRequest(this._instance, this._then);
 
   final Input$FloorRequest _instance;
 
@@ -4801,15 +4813,15 @@ class _CopyWithImpl$Input$FloorRequest<TRes>
     Object? blockId = _undefined,
     Object? lifeState = _undefined,
     Object? no = _undefined,
-  }) =>
-      _then(Input$FloorRequest._({
-        ..._instance._$data,
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (blockId != _undefined) 'blockId': (blockId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (no != _undefined) 'no': (no as int?),
-      }));
+  }) => _then(
+    Input$FloorRequest._({
+      ..._instance._$data,
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (blockId != _undefined) 'blockId': (blockId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (no != _undefined) 'no': (no as int?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$FloorRequest<TRes>
@@ -4823,30 +4835,30 @@ class _CopyWithStubImpl$Input$FloorRequest<TRes>
     String? blockId,
     Enum$LifeState? lifeState,
     int? no,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$GeoBoundingBoxFilter {
   factory Input$GeoBoundingBoxFilter({
     required Input$LocationRequest topLeft,
     required Input$LocationRequest bottomRight,
-  }) =>
-      Input$GeoBoundingBoxFilter._({
-        r'topLeft': topLeft,
-        r'bottomRight': bottomRight,
-      });
+  }) => Input$GeoBoundingBoxFilter._({
+    r'topLeft': topLeft,
+    r'bottomRight': bottomRight,
+  });
 
   Input$GeoBoundingBoxFilter._(this._$data);
 
   factory Input$GeoBoundingBoxFilter.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$topLeft = data['topLeft'];
-    result$data['topLeft'] =
-        Input$LocationRequest.fromJson((l$topLeft as Map<String, dynamic>));
+    result$data['topLeft'] = Input$LocationRequest.fromJson(
+      (l$topLeft as Map<String, dynamic>),
+    );
     final l$bottomRight = data['bottomRight'];
-    result$data['bottomRight'] =
-        Input$LocationRequest.fromJson((l$bottomRight as Map<String, dynamic>));
+    result$data['bottomRight'] = Input$LocationRequest.fromJson(
+      (l$bottomRight as Map<String, dynamic>),
+    );
     return Input$GeoBoundingBoxFilter._(result$data);
   }
 
@@ -4854,8 +4866,10 @@ class Input$GeoBoundingBoxFilter {
 
   Input$LocationRequest get topLeft =>
       (_$data['topLeft'] as Input$LocationRequest);
+
   Input$LocationRequest get bottomRight =>
       (_$data['bottomRight'] as Input$LocationRequest);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$topLeft = topLeft;
@@ -4866,16 +4880,14 @@ class Input$GeoBoundingBoxFilter {
   }
 
   CopyWith$Input$GeoBoundingBoxFilter<Input$GeoBoundingBoxFilter>
-      get copyWith => CopyWith$Input$GeoBoundingBoxFilter(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$GeoBoundingBoxFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$GeoBoundingBoxFilter) ||
+    if (other is! Input$GeoBoundingBoxFilter ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -4896,10 +4908,7 @@ class Input$GeoBoundingBoxFilter {
   int get hashCode {
     final l$topLeft = topLeft;
     final l$bottomRight = bottomRight;
-    return Object.hashAll([
-      l$topLeft,
-      l$bottomRight,
-    ]);
+    return Object.hashAll([l$topLeft, l$bottomRight]);
   }
 }
 
@@ -4922,10 +4931,7 @@ abstract class CopyWith$Input$GeoBoundingBoxFilter<TRes> {
 
 class _CopyWithImpl$Input$GeoBoundingBoxFilter<TRes>
     implements CopyWith$Input$GeoBoundingBoxFilter<TRes> {
-  _CopyWithImpl$Input$GeoBoundingBoxFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$GeoBoundingBoxFilter(this._instance, this._then);
 
   final Input$GeoBoundingBoxFilter _instance;
 
@@ -4933,27 +4939,31 @@ class _CopyWithImpl$Input$GeoBoundingBoxFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? topLeft = _undefined,
-    Object? bottomRight = _undefined,
-  }) =>
-      _then(Input$GeoBoundingBoxFilter._({
-        ..._instance._$data,
-        if (topLeft != _undefined && topLeft != null)
-          'topLeft': (topLeft as Input$LocationRequest),
-        if (bottomRight != _undefined && bottomRight != null)
-          'bottomRight': (bottomRight as Input$LocationRequest),
-      }));
+  TRes call({Object? topLeft = _undefined, Object? bottomRight = _undefined}) =>
+      _then(
+        Input$GeoBoundingBoxFilter._({
+          ..._instance._$data,
+          if (topLeft != _undefined && topLeft != null)
+            'topLeft': (topLeft as Input$LocationRequest),
+          if (bottomRight != _undefined && bottomRight != null)
+            'bottomRight': (bottomRight as Input$LocationRequest),
+        }),
+      );
+
   CopyWith$Input$LocationRequest<TRes> get topLeft {
     final local$topLeft = _instance.topLeft;
     return CopyWith$Input$LocationRequest(
-        local$topLeft, (e) => call(topLeft: e));
+      local$topLeft,
+      (e) => call(topLeft: e),
+    );
   }
 
   CopyWith$Input$LocationRequest<TRes> get bottomRight {
     final local$bottomRight = _instance.bottomRight;
     return CopyWith$Input$LocationRequest(
-        local$bottomRight, (e) => call(bottomRight: e));
+      local$bottomRight,
+      (e) => call(bottomRight: e),
+    );
   }
 }
 
@@ -4963,13 +4973,12 @@ class _CopyWithStubImpl$Input$GeoBoundingBoxFilter<TRes>
 
   TRes _res;
 
-  call({
-    Input$LocationRequest? topLeft,
-    Input$LocationRequest? bottomRight,
-  }) =>
+  call({Input$LocationRequest? topLeft, Input$LocationRequest? bottomRight}) =>
       _res;
+
   CopyWith$Input$LocationRequest<TRes> get topLeft =>
       CopyWith$Input$LocationRequest.stub(_res);
+
   CopyWith$Input$LocationRequest<TRes> get bottomRight =>
       CopyWith$Input$LocationRequest.stub(_res);
 }
@@ -4978,19 +4987,19 @@ class Input$GeoDistanceFilter {
   factory Input$GeoDistanceFilter({
     required Input$LocationRequest location,
     String? distance,
-  }) =>
-      Input$GeoDistanceFilter._({
-        r'location': location,
-        if (distance != null) r'distance': distance,
-      });
+  }) => Input$GeoDistanceFilter._({
+    r'location': location,
+    if (distance != null) r'distance': distance,
+  });
 
   Input$GeoDistanceFilter._(this._$data);
 
   factory Input$GeoDistanceFilter.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$location = data['location'];
-    result$data['location'] =
-        Input$LocationRequest.fromJson((l$location as Map<String, dynamic>));
+    result$data['location'] = Input$LocationRequest.fromJson(
+      (l$location as Map<String, dynamic>),
+    );
     if (data.containsKey('distance')) {
       final l$distance = data['distance'];
       result$data['distance'] = (l$distance as String?);
@@ -5002,7 +5011,9 @@ class Input$GeoDistanceFilter {
 
   Input$LocationRequest get location =>
       (_$data['location'] as Input$LocationRequest);
+
   String? get distance => (_$data['distance'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$location = location;
@@ -5015,17 +5026,14 @@ class Input$GeoDistanceFilter {
   }
 
   CopyWith$Input$GeoDistanceFilter<Input$GeoDistanceFilter> get copyWith =>
-      CopyWith$Input$GeoDistanceFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$GeoDistanceFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$GeoDistanceFilter) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Input$GeoDistanceFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$location = location;
@@ -5065,19 +5073,13 @@ abstract class CopyWith$Input$GeoDistanceFilter<TRes> {
   factory CopyWith$Input$GeoDistanceFilter.stub(TRes res) =
       _CopyWithStubImpl$Input$GeoDistanceFilter;
 
-  TRes call({
-    Input$LocationRequest? location,
-    String? distance,
-  });
+  TRes call({Input$LocationRequest? location, String? distance});
   CopyWith$Input$LocationRequest<TRes> get location;
 }
 
 class _CopyWithImpl$Input$GeoDistanceFilter<TRes>
     implements CopyWith$Input$GeoDistanceFilter<TRes> {
-  _CopyWithImpl$Input$GeoDistanceFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$GeoDistanceFilter(this._instance, this._then);
 
   final Input$GeoDistanceFilter _instance;
 
@@ -5085,20 +5087,22 @@ class _CopyWithImpl$Input$GeoDistanceFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? location = _undefined,
-    Object? distance = _undefined,
-  }) =>
-      _then(Input$GeoDistanceFilter._({
-        ..._instance._$data,
-        if (location != _undefined && location != null)
-          'location': (location as Input$LocationRequest),
-        if (distance != _undefined) 'distance': (distance as String?),
-      }));
+  TRes call({Object? location = _undefined, Object? distance = _undefined}) =>
+      _then(
+        Input$GeoDistanceFilter._({
+          ..._instance._$data,
+          if (location != _undefined && location != null)
+            'location': (location as Input$LocationRequest),
+          if (distance != _undefined) 'distance': (distance as String?),
+        }),
+      );
+
   CopyWith$Input$LocationRequest<TRes> get location {
     final local$location = _instance.location;
     return CopyWith$Input$LocationRequest(
-        local$location, (e) => call(location: e));
+      local$location,
+      (e) => call(location: e),
+    );
   }
 }
 
@@ -5108,33 +5112,31 @@ class _CopyWithStubImpl$Input$GeoDistanceFilter<TRes>
 
   TRes _res;
 
-  call({
-    Input$LocationRequest? location,
-    String? distance,
-  }) =>
-      _res;
+  call({Input$LocationRequest? location, String? distance}) => _res;
+
   CopyWith$Input$LocationRequest<TRes> get location =>
       CopyWith$Input$LocationRequest.stub(_res);
 }
 
 class Input$IDFilter {
-  factory Input$IDFilter({required List<String> value}) => Input$IDFilter._({
-        r'value': value,
-      });
+  factory Input$IDFilter({required List<String> value}) =>
+      Input$IDFilter._({r'value': value});
 
   Input$IDFilter._(this._$data);
 
   factory Input$IDFilter.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$value = data['value'];
-    result$data['value'] =
-        (l$value as List<dynamic>).map((e) => (e as String)).toList();
+    result$data['value'] = (l$value as List<dynamic>)
+        .map((e) => (e as String))
+        .toList();
     return Input$IDFilter._(result$data);
   }
 
   Map<String, dynamic> _$data;
 
   List<String> get value => (_$data['value'] as List<String>);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
@@ -5143,16 +5145,14 @@ class Input$IDFilter {
   }
 
   CopyWith$Input$IDFilter<Input$IDFilter> get copyWith =>
-      CopyWith$Input$IDFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$IDFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IDFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$IDFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -5191,10 +5191,7 @@ abstract class CopyWith$Input$IDFilter<TRes> {
 
 class _CopyWithImpl$Input$IDFilter<TRes>
     implements CopyWith$Input$IDFilter<TRes> {
-  _CopyWithImpl$Input$IDFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IDFilter(this._instance, this._then);
 
   final Input$IDFilter _instance;
 
@@ -5202,11 +5199,13 @@ class _CopyWithImpl$Input$IDFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) => _then(Input$IDFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null)
-          'value': (value as List<String>),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$IDFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null)
+        'value': (value as List<String>),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IDFilter<TRes>
@@ -5224,13 +5223,12 @@ class Input$IDProofRequest {
     String? value1,
     String? type2,
     String? value2,
-  }) =>
-      Input$IDProofRequest._({
-        if (type1 != null) r'type1': type1,
-        if (value1 != null) r'value1': value1,
-        if (type2 != null) r'type2': type2,
-        if (value2 != null) r'value2': value2,
-      });
+  }) => Input$IDProofRequest._({
+    if (type1 != null) r'type1': type1,
+    if (value1 != null) r'value1': value1,
+    if (type2 != null) r'type2': type2,
+    if (value2 != null) r'value2': value2,
+  });
 
   Input$IDProofRequest._(this._$data);
 
@@ -5258,9 +5256,13 @@ class Input$IDProofRequest {
   Map<String, dynamic> _$data;
 
   String? get type1 => (_$data['type1'] as String?);
+
   String? get value1 => (_$data['value1'] as String?);
+
   String? get type2 => (_$data['type2'] as String?);
+
   String? get value2 => (_$data['value2'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('type1')) {
@@ -5283,16 +5285,14 @@ class Input$IDProofRequest {
   }
 
   CopyWith$Input$IDProofRequest<Input$IDProofRequest> get copyWith =>
-      CopyWith$Input$IDProofRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$IDProofRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IDProofRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$IDProofRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$type1 = type1;
@@ -5354,20 +5354,12 @@ abstract class CopyWith$Input$IDProofRequest<TRes> {
   factory CopyWith$Input$IDProofRequest.stub(TRes res) =
       _CopyWithStubImpl$Input$IDProofRequest;
 
-  TRes call({
-    String? type1,
-    String? value1,
-    String? type2,
-    String? value2,
-  });
+  TRes call({String? type1, String? value1, String? type2, String? value2});
 }
 
 class _CopyWithImpl$Input$IDProofRequest<TRes>
     implements CopyWith$Input$IDProofRequest<TRes> {
-  _CopyWithImpl$Input$IDProofRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IDProofRequest(this._instance, this._then);
 
   final Input$IDProofRequest _instance;
 
@@ -5380,14 +5372,15 @@ class _CopyWithImpl$Input$IDProofRequest<TRes>
     Object? value1 = _undefined,
     Object? type2 = _undefined,
     Object? value2 = _undefined,
-  }) =>
-      _then(Input$IDProofRequest._({
-        ..._instance._$data,
-        if (type1 != _undefined) 'type1': (type1 as String?),
-        if (value1 != _undefined) 'value1': (value1 as String?),
-        if (type2 != _undefined) 'type2': (type2 as String?),
-        if (value2 != _undefined) 'value2': (value2 as String?),
-      }));
+  }) => _then(
+    Input$IDProofRequest._({
+      ..._instance._$data,
+      if (type1 != _undefined) 'type1': (type1 as String?),
+      if (value1 != _undefined) 'value1': (value1 as String?),
+      if (type2 != _undefined) 'type2': (type2 as String?),
+      if (value2 != _undefined) 'value2': (value2 as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IDProofRequest<TRes>
@@ -5396,19 +5389,12 @@ class _CopyWithStubImpl$Input$IDProofRequest<TRes>
 
   TRes _res;
 
-  call({
-    String? type1,
-    String? value1,
-    String? type2,
-    String? value2,
-  }) =>
-      _res;
+  call({String? type1, String? value1, String? type2, String? value2}) => _res;
 }
 
 class Input$IntFilter {
-  factory Input$IntFilter({List<int?>? value}) => Input$IntFilter._({
-        if (value != null) r'value': value,
-      });
+  factory Input$IntFilter({List<int?>? value}) =>
+      Input$IntFilter._({if (value != null) r'value': value});
 
   Input$IntFilter._(this._$data);
 
@@ -5416,8 +5402,9 @@ class Input$IntFilter {
     final result$data = <String, dynamic>{};
     if (data.containsKey('value')) {
       final l$value = data['value'];
-      result$data['value'] =
-          (l$value as List<dynamic>?)?.map((e) => (e as int?)).toList();
+      result$data['value'] = (l$value as List<dynamic>?)
+          ?.map((e) => (e as int?))
+          .toList();
     }
     return Input$IntFilter._(result$data);
   }
@@ -5425,6 +5412,7 @@ class Input$IntFilter {
   Map<String, dynamic> _$data;
 
   List<int?>? get value => (_$data['value'] as List<int?>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('value')) {
@@ -5435,16 +5423,14 @@ class Input$IntFilter {
   }
 
   CopyWith$Input$IntFilter<Input$IntFilter> get copyWith =>
-      CopyWith$Input$IntFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$IntFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$IntFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$IntFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -5475,9 +5461,9 @@ class Input$IntFilter {
     return Object.hashAll([
       _$data.containsKey('value')
           ? l$value == null
-              ? null
-              : Object.hashAll(l$value.map((v) => v))
-          : const {}
+                ? null
+                : Object.hashAll(l$value.map((v) => v))
+          : const {},
     ]);
   }
 }
@@ -5496,10 +5482,7 @@ abstract class CopyWith$Input$IntFilter<TRes> {
 
 class _CopyWithImpl$Input$IntFilter<TRes>
     implements CopyWith$Input$IntFilter<TRes> {
-  _CopyWithImpl$Input$IntFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$IntFilter(this._instance, this._then);
 
   final Input$IntFilter _instance;
 
@@ -5507,10 +5490,12 @@ class _CopyWithImpl$Input$IntFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) => _then(Input$IntFilter._({
-        ..._instance._$data,
-        if (value != _undefined) 'value': (value as List<int?>?),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$IntFilter._({
+      ..._instance._$data,
+      if (value != _undefined) 'value': (value as List<int?>?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$IntFilter<TRes>
@@ -5524,9 +5509,7 @@ class _CopyWithStubImpl$Input$IntFilter<TRes>
 
 class Input$LifeStateFilter {
   factory Input$LifeStateFilter({required List<Enum$LifeState> value}) =>
-      Input$LifeStateFilter._({
-        r'value': value,
-      });
+      Input$LifeStateFilter._({r'value': value});
 
   Input$LifeStateFilter._(this._$data);
 
@@ -5542,25 +5525,25 @@ class Input$LifeStateFilter {
   Map<String, dynamic> _$data;
 
   List<Enum$LifeState> get value => (_$data['value'] as List<Enum$LifeState>);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
-    result$data['value'] =
-        l$value.map((e) => toJson$Enum$LifeState(e)).toList();
+    result$data['value'] = l$value
+        .map((e) => toJson$Enum$LifeState(e))
+        .toList();
     return result$data;
   }
 
   CopyWith$Input$LifeStateFilter<Input$LifeStateFilter> get copyWith =>
-      CopyWith$Input$LifeStateFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$LifeStateFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$LifeStateFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$LifeStateFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -5599,10 +5582,7 @@ abstract class CopyWith$Input$LifeStateFilter<TRes> {
 
 class _CopyWithImpl$Input$LifeStateFilter<TRes>
     implements CopyWith$Input$LifeStateFilter<TRes> {
-  _CopyWithImpl$Input$LifeStateFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$LifeStateFilter(this._instance, this._then);
 
   final Input$LifeStateFilter _instance;
 
@@ -5610,11 +5590,13 @@ class _CopyWithImpl$Input$LifeStateFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? value = _undefined}) => _then(Input$LifeStateFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null)
-          'value': (value as List<Enum$LifeState>),
-      }));
+  TRes call({Object? value = _undefined}) => _then(
+    Input$LifeStateFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null)
+        'value': (value as List<Enum$LifeState>),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$LifeStateFilter<TRes>
@@ -5631,10 +5613,7 @@ class Input$LocationRequest {
     required double latitude,
     required double longitude,
   }) =>
-      Input$LocationRequest._({
-        r'latitude': latitude,
-        r'longitude': longitude,
-      });
+      Input$LocationRequest._({r'latitude': latitude, r'longitude': longitude});
 
   Input$LocationRequest._(this._$data);
 
@@ -5650,7 +5629,9 @@ class Input$LocationRequest {
   Map<String, dynamic> _$data;
 
   double get latitude => (_$data['latitude'] as double);
+
   double get longitude => (_$data['longitude'] as double);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$latitude = latitude;
@@ -5661,16 +5642,14 @@ class Input$LocationRequest {
   }
 
   CopyWith$Input$LocationRequest<Input$LocationRequest> get copyWith =>
-      CopyWith$Input$LocationRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$LocationRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$LocationRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$LocationRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$latitude = latitude;
@@ -5690,10 +5669,7 @@ class Input$LocationRequest {
   int get hashCode {
     final l$latitude = latitude;
     final l$longitude = longitude;
-    return Object.hashAll([
-      l$latitude,
-      l$longitude,
-    ]);
+    return Object.hashAll([l$latitude, l$longitude]);
   }
 }
 
@@ -5706,18 +5682,12 @@ abstract class CopyWith$Input$LocationRequest<TRes> {
   factory CopyWith$Input$LocationRequest.stub(TRes res) =
       _CopyWithStubImpl$Input$LocationRequest;
 
-  TRes call({
-    double? latitude,
-    double? longitude,
-  });
+  TRes call({double? latitude, double? longitude});
 }
 
 class _CopyWithImpl$Input$LocationRequest<TRes>
     implements CopyWith$Input$LocationRequest<TRes> {
-  _CopyWithImpl$Input$LocationRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$LocationRequest(this._instance, this._then);
 
   final Input$LocationRequest _instance;
 
@@ -5725,17 +5695,16 @@ class _CopyWithImpl$Input$LocationRequest<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? latitude = _undefined,
-    Object? longitude = _undefined,
-  }) =>
-      _then(Input$LocationRequest._({
-        ..._instance._$data,
-        if (latitude != _undefined && latitude != null)
-          'latitude': (latitude as double),
-        if (longitude != _undefined && longitude != null)
-          'longitude': (longitude as double),
-      }));
+  TRes call({Object? latitude = _undefined, Object? longitude = _undefined}) =>
+      _then(
+        Input$LocationRequest._({
+          ..._instance._$data,
+          if (latitude != _undefined && latitude != null)
+            'latitude': (latitude as double),
+          if (longitude != _undefined && longitude != null)
+            'longitude': (longitude as double),
+        }),
+      );
 }
 
 class _CopyWithStubImpl$Input$LocationRequest<TRes>
@@ -5744,18 +5713,12 @@ class _CopyWithStubImpl$Input$LocationRequest<TRes>
 
   TRes _res;
 
-  call({
-    double? latitude,
-    double? longitude,
-  }) =>
-      _res;
+  call({double? latitude, double? longitude}) => _res;
 }
 
 class Input$ObjectFilter {
   factory Input$ObjectFilter({Input$StringFilter? type}) =>
-      Input$ObjectFilter._({
-        if (type != null) r'type': type,
-      });
+      Input$ObjectFilter._({if (type != null) r'type': type});
 
   Input$ObjectFilter._(this._$data);
 
@@ -5773,6 +5736,7 @@ class Input$ObjectFilter {
   Map<String, dynamic> _$data;
 
   Input$StringFilter? get type => (_$data['type'] as Input$StringFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('type')) {
@@ -5783,16 +5747,14 @@ class Input$ObjectFilter {
   }
 
   CopyWith$Input$ObjectFilter<Input$ObjectFilter> get copyWith =>
-      CopyWith$Input$ObjectFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$ObjectFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$ObjectFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$ObjectFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$type = type;
@@ -5828,10 +5790,7 @@ abstract class CopyWith$Input$ObjectFilter<TRes> {
 
 class _CopyWithImpl$Input$ObjectFilter<TRes>
     implements CopyWith$Input$ObjectFilter<TRes> {
-  _CopyWithImpl$Input$ObjectFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$ObjectFilter(this._instance, this._then);
 
   final Input$ObjectFilter _instance;
 
@@ -5839,10 +5798,13 @@ class _CopyWithImpl$Input$ObjectFilter<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? type = _undefined}) => _then(Input$ObjectFilter._({
-        ..._instance._$data,
-        if (type != _undefined) 'type': (type as Input$StringFilter?),
-      }));
+  TRes call({Object? type = _undefined}) => _then(
+    Input$ObjectFilter._({
+      ..._instance._$data,
+      if (type != _undefined) 'type': (type as Input$StringFilter?),
+    }),
+  );
+
   CopyWith$Input$StringFilter<TRes> get type {
     final local$type = _instance.type;
     return local$type == null
@@ -5858,6 +5820,7 @@ class _CopyWithStubImpl$Input$ObjectFilter<TRes>
   TRes _res;
 
   call({Input$StringFilter? type}) => _res;
+
   CopyWith$Input$StringFilter<TRes> get type =>
       CopyWith$Input$StringFilter.stub(_res);
 }
@@ -5874,21 +5837,20 @@ class Input$Options {
     Enum$ResourceCategory? primaryObjCat,
     Enum$ResourceCategory? secondaryObjCat,
     bool? isRefresh,
-  }) =>
-      Input$Options._({
-        if (isHardDelete != null) r'isHardDelete': isHardDelete,
-        if (ignoreLifeState != null) r'ignoreLifeState': ignoreLifeState,
-        if (upsert != null) r'upsert': upsert,
-        if (skipPagination != null) r'skipPagination': skipPagination,
-        if (isGlobal != null) r'isGlobal': isGlobal,
-        if (endExistingAssociations != null)
-          r'endExistingAssociations': endExistingAssociations,
-        if (exceptionOnConflict != null)
-          r'exceptionOnConflict': exceptionOnConflict,
-        if (primaryObjCat != null) r'primaryObjCat': primaryObjCat,
-        if (secondaryObjCat != null) r'secondaryObjCat': secondaryObjCat,
-        if (isRefresh != null) r'isRefresh': isRefresh,
-      });
+  }) => Input$Options._({
+    if (isHardDelete != null) r'isHardDelete': isHardDelete,
+    if (ignoreLifeState != null) r'ignoreLifeState': ignoreLifeState,
+    if (upsert != null) r'upsert': upsert,
+    if (skipPagination != null) r'skipPagination': skipPagination,
+    if (isGlobal != null) r'isGlobal': isGlobal,
+    if (endExistingAssociations != null)
+      r'endExistingAssociations': endExistingAssociations,
+    if (exceptionOnConflict != null)
+      r'exceptionOnConflict': exceptionOnConflict,
+    if (primaryObjCat != null) r'primaryObjCat': primaryObjCat,
+    if (secondaryObjCat != null) r'secondaryObjCat': secondaryObjCat,
+    if (isRefresh != null) r'isRefresh': isRefresh,
+  });
 
   Input$Options._(this._$data);
 
@@ -5919,7 +5881,8 @@ class Input$Options {
       result$data['endExistingAssociations'] = l$endExistingAssociations == null
           ? null
           : fromJson$Enum$EndExistingAssociations(
-              (l$endExistingAssociations as String));
+              (l$endExistingAssociations as String),
+            );
     }
     if (data.containsKey('exceptionOnConflict')) {
       final l$exceptionOnConflict = data['exceptionOnConflict'];
@@ -5947,18 +5910,28 @@ class Input$Options {
   Map<String, dynamic> _$data;
 
   bool? get isHardDelete => (_$data['isHardDelete'] as bool?);
+
   bool? get ignoreLifeState => (_$data['ignoreLifeState'] as bool?);
+
   bool? get upsert => (_$data['upsert'] as bool?);
+
   bool? get skipPagination => (_$data['skipPagination'] as bool?);
+
   bool? get isGlobal => (_$data['isGlobal'] as bool?);
+
   Enum$EndExistingAssociations? get endExistingAssociations =>
       (_$data['endExistingAssociations'] as Enum$EndExistingAssociations?);
+
   bool? get exceptionOnConflict => (_$data['exceptionOnConflict'] as bool?);
+
   Enum$ResourceCategory? get primaryObjCat =>
       (_$data['primaryObjCat'] as Enum$ResourceCategory?);
+
   Enum$ResourceCategory? get secondaryObjCat =>
       (_$data['secondaryObjCat'] as Enum$ResourceCategory?);
+
   bool? get isRefresh => (_$data['isRefresh'] as bool?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('isHardDelete')) {
@@ -6010,16 +5983,15 @@ class Input$Options {
     return result$data;
   }
 
-  CopyWith$Input$Options<Input$Options> get copyWith => CopyWith$Input$Options(
-        this,
-        (i) => i,
-      );
+  CopyWith$Input$Options<Input$Options> get copyWith =>
+      CopyWith$Input$Options(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$Options) || runtimeType != other.runtimeType) {
+    if (other is! Input$Options || runtimeType != other.runtimeType) {
       return false;
     }
     final l$isHardDelete = isHardDelete;
@@ -6170,10 +6142,7 @@ abstract class CopyWith$Input$Options<TRes> {
 
 class _CopyWithImpl$Input$Options<TRes>
     implements CopyWith$Input$Options<TRes> {
-  _CopyWithImpl$Input$Options(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$Options(this._instance, this._then);
 
   final Input$Options _instance;
 
@@ -6192,27 +6161,28 @@ class _CopyWithImpl$Input$Options<TRes>
     Object? primaryObjCat = _undefined,
     Object? secondaryObjCat = _undefined,
     Object? isRefresh = _undefined,
-  }) =>
-      _then(Input$Options._({
-        ..._instance._$data,
-        if (isHardDelete != _undefined) 'isHardDelete': (isHardDelete as bool?),
-        if (ignoreLifeState != _undefined)
-          'ignoreLifeState': (ignoreLifeState as bool?),
-        if (upsert != _undefined) 'upsert': (upsert as bool?),
-        if (skipPagination != _undefined)
-          'skipPagination': (skipPagination as bool?),
-        if (isGlobal != _undefined) 'isGlobal': (isGlobal as bool?),
-        if (endExistingAssociations != _undefined)
-          'endExistingAssociations':
-              (endExistingAssociations as Enum$EndExistingAssociations?),
-        if (exceptionOnConflict != _undefined)
-          'exceptionOnConflict': (exceptionOnConflict as bool?),
-        if (primaryObjCat != _undefined)
-          'primaryObjCat': (primaryObjCat as Enum$ResourceCategory?),
-        if (secondaryObjCat != _undefined)
-          'secondaryObjCat': (secondaryObjCat as Enum$ResourceCategory?),
-        if (isRefresh != _undefined) 'isRefresh': (isRefresh as bool?),
-      }));
+  }) => _then(
+    Input$Options._({
+      ..._instance._$data,
+      if (isHardDelete != _undefined) 'isHardDelete': (isHardDelete as bool?),
+      if (ignoreLifeState != _undefined)
+        'ignoreLifeState': (ignoreLifeState as bool?),
+      if (upsert != _undefined) 'upsert': (upsert as bool?),
+      if (skipPagination != _undefined)
+        'skipPagination': (skipPagination as bool?),
+      if (isGlobal != _undefined) 'isGlobal': (isGlobal as bool?),
+      if (endExistingAssociations != _undefined)
+        'endExistingAssociations':
+            (endExistingAssociations as Enum$EndExistingAssociations?),
+      if (exceptionOnConflict != _undefined)
+        'exceptionOnConflict': (exceptionOnConflict as bool?),
+      if (primaryObjCat != _undefined)
+        'primaryObjCat': (primaryObjCat as Enum$ResourceCategory?),
+      if (secondaryObjCat != _undefined)
+        'secondaryObjCat': (secondaryObjCat as Enum$ResourceCategory?),
+      if (isRefresh != _undefined) 'isRefresh': (isRefresh as bool?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$Options<TRes>
@@ -6232,8 +6202,7 @@ class _CopyWithStubImpl$Input$Options<TRes>
     Enum$ResourceCategory? primaryObjCat,
     Enum$ResourceCategory? secondaryObjCat,
     bool? isRefresh,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$PersonCredentialRequest {
@@ -6248,19 +6217,18 @@ class Input$PersonCredentialRequest {
     String? description,
     String? fileId,
     String? roleType,
-  }) =>
-      Input$PersonCredentialRequest._({
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (phoneNumber != null) r'phoneNumber': phoneNumber,
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (firstName != null) r'firstName': firstName,
-        if (lastName != null) r'lastName': lastName,
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (roleType != null) r'roleType': roleType,
-      });
+  }) => Input$PersonCredentialRequest._({
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (phoneNumber != null) r'phoneNumber': phoneNumber,
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (firstName != null) r'firstName': firstName,
+    if (lastName != null) r'lastName': lastName,
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (roleType != null) r'roleType': roleType,
+  });
 
   Input$PersonCredentialRequest._(this._$data);
 
@@ -6314,15 +6282,25 @@ class Input$PersonCredentialRequest {
   Map<String, dynamic> _$data;
 
   String? get emailAddress => (_$data['emailAddress'] as String?);
+
   String? get phoneNumber => (_$data['phoneNumber'] as String?);
+
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get firstName => (_$data['firstName'] as String?);
+
   String? get lastName => (_$data['lastName'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   String? get roleType => (_$data['roleType'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('emailAddress')) {
@@ -6339,8 +6317,9 @@ class Input$PersonCredentialRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -6370,16 +6349,14 @@ class Input$PersonCredentialRequest {
   }
 
   CopyWith$Input$PersonCredentialRequest<Input$PersonCredentialRequest>
-      get copyWith => CopyWith$Input$PersonCredentialRequest(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$PersonCredentialRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PersonCredentialRequest) ||
+    if (other is! Input$PersonCredentialRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -6526,10 +6503,7 @@ abstract class CopyWith$Input$PersonCredentialRequest<TRes> {
 
 class _CopyWithImpl$Input$PersonCredentialRequest<TRes>
     implements CopyWith$Input$PersonCredentialRequest<TRes> {
-  _CopyWithImpl$Input$PersonCredentialRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PersonCredentialRequest(this._instance, this._then);
 
   final Input$PersonCredentialRequest _instance;
 
@@ -6548,22 +6522,21 @@ class _CopyWithImpl$Input$PersonCredentialRequest<TRes>
     Object? description = _undefined,
     Object? fileId = _undefined,
     Object? roleType = _undefined,
-  }) =>
-      _then(Input$PersonCredentialRequest._({
-        ..._instance._$data,
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as String?),
-        if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (firstName != _undefined) 'firstName': (firstName as String?),
-        if (lastName != _undefined) 'lastName': (lastName as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-        if (roleType != _undefined) 'roleType': (roleType as String?),
-      }));
+  }) => _then(
+    Input$PersonCredentialRequest._({
+      ..._instance._$data,
+      if (emailAddress != _undefined) 'emailAddress': (emailAddress as String?),
+      if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (firstName != _undefined) 'firstName': (firstName as String?),
+      if (lastName != _undefined) 'lastName': (lastName as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+      if (roleType != _undefined) 'roleType': (roleType as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$PersonCredentialRequest<TRes>
@@ -6583,8 +6556,7 @@ class _CopyWithStubImpl$Input$PersonCredentialRequest<TRes>
     String? description,
     String? fileId,
     String? roleType,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$PersonFilter {
@@ -6596,16 +6568,15 @@ class Input$PersonFilter {
     Input$StringFilter? emailAddress,
     Input$StringFilter? phoneNumber,
     Input$StringFilter? roleType,
-  }) =>
-      Input$PersonFilter._({
-        if (id != null) r'id': id,
-        if (account != null) r'account': account,
-        if (name != null) r'name': name,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (phoneNumber != null) r'phoneNumber': phoneNumber,
-        if (roleType != null) r'roleType': roleType,
-      });
+  }) => Input$PersonFilter._({
+    if (id != null) r'id': id,
+    if (account != null) r'account': account,
+    if (name != null) r'name': name,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (phoneNumber != null) r'phoneNumber': phoneNumber,
+    if (roleType != null) r'roleType': roleType,
+  });
 
   Input$PersonFilter._(this._$data);
 
@@ -6634,21 +6605,24 @@ class Input$PersonFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('emailAddress')) {
       final l$emailAddress = data['emailAddress'];
       result$data['emailAddress'] = l$emailAddress == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$emailAddress as Map<String, dynamic>));
+              (l$emailAddress as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('phoneNumber')) {
       final l$phoneNumber = data['phoneNumber'];
       result$data['phoneNumber'] = l$phoneNumber == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$phoneNumber as Map<String, dynamic>));
+              (l$phoneNumber as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('roleType')) {
       final l$roleType = data['roleType'];
@@ -6662,17 +6636,24 @@ class Input$PersonFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$StringFilter? get emailAddress =>
       (_$data['emailAddress'] as Input$StringFilter?);
+
   Input$StringFilter? get phoneNumber =>
       (_$data['phoneNumber'] as Input$StringFilter?);
+
   Input$StringFilter? get roleType =>
       (_$data['roleType'] as Input$StringFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -6707,16 +6688,14 @@ class Input$PersonFilter {
   }
 
   CopyWith$Input$PersonFilter<Input$PersonFilter> get copyWith =>
-      CopyWith$Input$PersonFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$PersonFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PersonFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$PersonFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -6832,10 +6811,7 @@ abstract class CopyWith$Input$PersonFilter<TRes> {
 
 class _CopyWithImpl$Input$PersonFilter<TRes>
     implements CopyWith$Input$PersonFilter<TRes> {
-  _CopyWithImpl$Input$PersonFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PersonFilter(this._instance, this._then);
 
   final Input$PersonFilter _instance;
 
@@ -6851,21 +6827,22 @@ class _CopyWithImpl$Input$PersonFilter<TRes>
     Object? emailAddress = _undefined,
     Object? phoneNumber = _undefined,
     Object? roleType = _undefined,
-  }) =>
-      _then(Input$PersonFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as Input$StringFilter?),
-        if (phoneNumber != _undefined)
-          'phoneNumber': (phoneNumber as Input$StringFilter?),
-        if (roleType != _undefined)
-          'roleType': (roleType as Input$StringFilter?),
-      }));
+  }) => _then(
+    Input$PersonFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (emailAddress != _undefined)
+        'emailAddress': (emailAddress as Input$StringFilter?),
+      if (phoneNumber != _undefined)
+        'phoneNumber': (phoneNumber as Input$StringFilter?),
+      if (roleType != _undefined) 'roleType': (roleType as Input$StringFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -6892,7 +6869,9 @@ class _CopyWithImpl$Input$PersonFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get emailAddress {
@@ -6900,7 +6879,9 @@ class _CopyWithImpl$Input$PersonFilter<TRes>
     return local$emailAddress == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$emailAddress, (e) => call(emailAddress: e));
+            local$emailAddress,
+            (e) => call(emailAddress: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get phoneNumber {
@@ -6908,7 +6889,9 @@ class _CopyWithImpl$Input$PersonFilter<TRes>
     return local$phoneNumber == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$phoneNumber, (e) => call(phoneNumber: e));
+            local$phoneNumber,
+            (e) => call(phoneNumber: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get roleType {
@@ -6933,19 +6916,25 @@ class _CopyWithStubImpl$Input$PersonFilter<TRes>
     Input$StringFilter? emailAddress,
     Input$StringFilter? phoneNumber,
     Input$StringFilter? roleType,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get emailAddress =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get phoneNumber =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get roleType =>
       CopyWith$Input$StringFilter.stub(_res);
 }
@@ -6963,20 +6952,19 @@ class Input$PersonRequest {
     String? description,
     String? fileId,
     String? roleType,
-  }) =>
-      Input$PersonRequest._({
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (phoneNumber != null) r'phoneNumber': phoneNumber,
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (firstName != null) r'firstName': firstName,
-        if (lastName != null) r'lastName': lastName,
-        if (type != null) r'type': type,
-        if (description != null) r'description': description,
-        if (fileId != null) r'fileId': fileId,
-        if (roleType != null) r'roleType': roleType,
-      });
+  }) => Input$PersonRequest._({
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (phoneNumber != null) r'phoneNumber': phoneNumber,
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (firstName != null) r'firstName': firstName,
+    if (lastName != null) r'lastName': lastName,
+    if (type != null) r'type': type,
+    if (description != null) r'description': description,
+    if (fileId != null) r'fileId': fileId,
+    if (roleType != null) r'roleType': roleType,
+  });
 
   Input$PersonRequest._(this._$data);
 
@@ -7034,16 +7022,27 @@ class Input$PersonRequest {
   Map<String, dynamic> _$data;
 
   String? get emailAddress => (_$data['emailAddress'] as String?);
+
   String? get phoneNumber => (_$data['phoneNumber'] as String?);
+
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get firstName => (_$data['firstName'] as String?);
+
   String? get lastName => (_$data['lastName'] as String?);
+
   String? get type => (_$data['type'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   String? get roleType => (_$data['roleType'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('emailAddress')) {
@@ -7060,8 +7059,9 @@ class Input$PersonRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -7095,16 +7095,14 @@ class Input$PersonRequest {
   }
 
   CopyWith$Input$PersonRequest<Input$PersonRequest> get copyWith =>
-      CopyWith$Input$PersonRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$PersonRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PersonRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$PersonRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$emailAddress = emailAddress;
@@ -7261,10 +7259,7 @@ abstract class CopyWith$Input$PersonRequest<TRes> {
 
 class _CopyWithImpl$Input$PersonRequest<TRes>
     implements CopyWith$Input$PersonRequest<TRes> {
-  _CopyWithImpl$Input$PersonRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PersonRequest(this._instance, this._then);
 
   final Input$PersonRequest _instance;
 
@@ -7284,23 +7279,22 @@ class _CopyWithImpl$Input$PersonRequest<TRes>
     Object? description = _undefined,
     Object? fileId = _undefined,
     Object? roleType = _undefined,
-  }) =>
-      _then(Input$PersonRequest._({
-        ..._instance._$data,
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as String?),
-        if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (firstName != _undefined) 'firstName': (firstName as String?),
-        if (lastName != _undefined) 'lastName': (lastName as String?),
-        if (type != _undefined) 'type': (type as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-        if (roleType != _undefined) 'roleType': (roleType as String?),
-      }));
+  }) => _then(
+    Input$PersonRequest._({
+      ..._instance._$data,
+      if (emailAddress != _undefined) 'emailAddress': (emailAddress as String?),
+      if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (firstName != _undefined) 'firstName': (firstName as String?),
+      if (lastName != _undefined) 'lastName': (lastName as String?),
+      if (type != _undefined) 'type': (type as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+      if (roleType != _undefined) 'roleType': (roleType as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$PersonRequest<TRes>
@@ -7321,8 +7315,7 @@ class _CopyWithStubImpl$Input$PersonRequest<TRes>
     String? description,
     String? fileId,
     String? roleType,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$PlaceBlocksFloorsRequest {
@@ -7338,20 +7331,19 @@ class Input$PlaceBlocksFloorsRequest {
     String? image2,
     String? image3,
     List<Input$BlockRequest?>? blocks,
-  }) =>
-      Input$PlaceBlocksFloorsRequest._({
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (type != null) r'type': type,
-        if (address != null) r'address': address,
-        if (fileId != null) r'fileId': fileId,
-        if (image1 != null) r'image1': image1,
-        if (image2 != null) r'image2': image2,
-        if (image3 != null) r'image3': image3,
-        if (blocks != null) r'blocks': blocks,
-      });
+  }) => Input$PlaceBlocksFloorsRequest._({
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (type != null) r'type': type,
+    if (address != null) r'address': address,
+    if (fileId != null) r'fileId': fileId,
+    if (image1 != null) r'image1': image1,
+    if (image2 != null) r'image2': image2,
+    if (image3 != null) r'image3': image3,
+    if (blocks != null) r'blocks': blocks,
+  });
 
   Input$PlaceBlocksFloorsRequest._(this._$data);
 
@@ -7404,9 +7396,11 @@ class Input$PlaceBlocksFloorsRequest {
     if (data.containsKey('blocks')) {
       final l$blocks = data['blocks'];
       result$data['blocks'] = (l$blocks as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Input$BlockRequest.fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Input$BlockRequest.fromJson((e as Map<String, dynamic>)),
+          )
           .toList();
     }
     return Input$PlaceBlocksFloorsRequest._(result$data);
@@ -7415,18 +7409,29 @@ class Input$PlaceBlocksFloorsRequest {
   Map<String, dynamic> _$data;
 
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get type => (_$data['type'] as String?);
+
   Input$AddressRequest? get address =>
       (_$data['address'] as Input$AddressRequest?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   String? get image1 => (_$data['image1'] as String?);
+
   String? get image2 => (_$data['image2'] as String?);
+
   String? get image3 => (_$data['image3'] as String?);
+
   List<Input$BlockRequest?>? get blocks =>
       (_$data['blocks'] as List<Input$BlockRequest?>?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('accountId')) {
@@ -7435,8 +7440,9 @@ class Input$PlaceBlocksFloorsRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -7478,16 +7484,14 @@ class Input$PlaceBlocksFloorsRequest {
   }
 
   CopyWith$Input$PlaceBlocksFloorsRequest<Input$PlaceBlocksFloorsRequest>
-      get copyWith => CopyWith$Input$PlaceBlocksFloorsRequest(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Input$PlaceBlocksFloorsRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PlaceBlocksFloorsRequest) ||
+    if (other is! Input$PlaceBlocksFloorsRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -7622,8 +7626,8 @@ class Input$PlaceBlocksFloorsRequest {
       _$data.containsKey('image3') ? l$image3 : const {},
       _$data.containsKey('blocks')
           ? l$blocks == null
-              ? null
-              : Object.hashAll(l$blocks.map((v) => v))
+                ? null
+                : Object.hashAll(l$blocks.map((v) => v))
           : const {},
     ]);
   }
@@ -7653,17 +7657,16 @@ abstract class CopyWith$Input$PlaceBlocksFloorsRequest<TRes> {
   });
   CopyWith$Input$AddressRequest<TRes> get address;
   TRes blocks(
-      Iterable<Input$BlockRequest?>? Function(
-              Iterable<CopyWith$Input$BlockRequest<Input$BlockRequest>?>?)
-          _fn);
+    Iterable<Input$BlockRequest?>? Function(
+      Iterable<CopyWith$Input$BlockRequest<Input$BlockRequest>?>?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Input$PlaceBlocksFloorsRequest<TRes>
     implements CopyWith$Input$PlaceBlocksFloorsRequest<TRes> {
-  _CopyWithImpl$Input$PlaceBlocksFloorsRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PlaceBlocksFloorsRequest(this._instance, this._then);
 
   final Input$PlaceBlocksFloorsRequest _instance;
 
@@ -7683,24 +7686,24 @@ class _CopyWithImpl$Input$PlaceBlocksFloorsRequest<TRes>
     Object? image2 = _undefined,
     Object? image3 = _undefined,
     Object? blocks = _undefined,
-  }) =>
-      _then(Input$PlaceBlocksFloorsRequest._({
-        ..._instance._$data,
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (type != _undefined) 'type': (type as String?),
-        if (address != _undefined)
-          'address': (address as Input$AddressRequest?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-        if (image1 != _undefined) 'image1': (image1 as String?),
-        if (image2 != _undefined) 'image2': (image2 as String?),
-        if (image3 != _undefined) 'image3': (image3 as String?),
-        if (blocks != _undefined)
-          'blocks': (blocks as List<Input$BlockRequest?>?),
-      }));
+  }) => _then(
+    Input$PlaceBlocksFloorsRequest._({
+      ..._instance._$data,
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (type != _undefined) 'type': (type as String?),
+      if (address != _undefined) 'address': (address as Input$AddressRequest?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+      if (image1 != _undefined) 'image1': (image1 as String?),
+      if (image2 != _undefined) 'image2': (image2 as String?),
+      if (image3 != _undefined) 'image3': (image3 as String?),
+      if (blocks != _undefined)
+        'blocks': (blocks as List<Input$BlockRequest?>?),
+    }),
+  );
+
   CopyWith$Input$AddressRequest<TRes> get address {
     final local$address = _instance.address;
     return local$address == null
@@ -7709,16 +7712,17 @@ class _CopyWithImpl$Input$PlaceBlocksFloorsRequest<TRes>
   }
 
   TRes blocks(
-          Iterable<Input$BlockRequest?>? Function(
-                  Iterable<CopyWith$Input$BlockRequest<Input$BlockRequest>?>?)
-              _fn) =>
-      call(
-          blocks: _fn(_instance.blocks?.map((e) => e == null
-              ? null
-              : CopyWith$Input$BlockRequest(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Input$BlockRequest?>? Function(
+      Iterable<CopyWith$Input$BlockRequest<Input$BlockRequest>?>?,
+    )
+    _fn,
+  ) => call(
+    blocks: _fn(
+      _instance.blocks?.map(
+        (e) => e == null ? null : CopyWith$Input$BlockRequest(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Input$PlaceBlocksFloorsRequest<TRes>
@@ -7739,10 +7743,11 @@ class _CopyWithStubImpl$Input$PlaceBlocksFloorsRequest<TRes>
     String? image2,
     String? image3,
     List<Input$BlockRequest?>? blocks,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$AddressRequest<TRes> get address =>
       CopyWith$Input$AddressRequest.stub(_res);
+
   blocks(_fn) => _res;
 }
 
@@ -7753,14 +7758,13 @@ class Input$PlaceFilter {
     Input$AccountFilter? account,
     Input$LifeStateFilter? lifeState,
     Input$StringFilter? type,
-  }) =>
-      Input$PlaceFilter._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (account != null) r'account': account,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (type != null) r'type': type,
-      });
+  }) => Input$PlaceFilter._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (account != null) r'account': account,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (type != null) r'type': type,
+  });
 
   Input$PlaceFilter._(this._$data);
 
@@ -7789,7 +7793,8 @@ class Input$PlaceFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('type')) {
       final l$type = data['type'];
@@ -7803,12 +7808,17 @@ class Input$PlaceFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$StringFilter? get type => (_$data['type'] as Input$StringFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -7835,16 +7845,14 @@ class Input$PlaceFilter {
   }
 
   CopyWith$Input$PlaceFilter<Input$PlaceFilter> get copyWith =>
-      CopyWith$Input$PlaceFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$PlaceFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PlaceFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$PlaceFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -7933,10 +7941,7 @@ abstract class CopyWith$Input$PlaceFilter<TRes> {
 
 class _CopyWithImpl$Input$PlaceFilter<TRes>
     implements CopyWith$Input$PlaceFilter<TRes> {
-  _CopyWithImpl$Input$PlaceFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PlaceFilter(this._instance, this._then);
 
   final Input$PlaceFilter _instance;
 
@@ -7950,16 +7955,18 @@ class _CopyWithImpl$Input$PlaceFilter<TRes>
     Object? account = _undefined,
     Object? lifeState = _undefined,
     Object? type = _undefined,
-  }) =>
-      _then(Input$PlaceFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (type != _undefined) 'type': (type as Input$StringFilter?),
-      }));
+  }) => _then(
+    Input$PlaceFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (type != _undefined) 'type': (type as Input$StringFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -7986,7 +7993,9 @@ class _CopyWithImpl$Input$PlaceFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get type {
@@ -8009,15 +8018,19 @@ class _CopyWithStubImpl$Input$PlaceFilter<TRes>
     Input$AccountFilter? account,
     Input$LifeStateFilter? lifeState,
     Input$StringFilter? type,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get type =>
       CopyWith$Input$StringFilter.stub(_res);
 }
@@ -8027,12 +8040,11 @@ class Input$PlacePartialRequest {
     String? name,
     String? type,
     Input$AddressRequest? address,
-  }) =>
-      Input$PlacePartialRequest._({
-        if (name != null) r'name': name,
-        if (type != null) r'type': type,
-        if (address != null) r'address': address,
-      });
+  }) => Input$PlacePartialRequest._({
+    if (name != null) r'name': name,
+    if (type != null) r'type': type,
+    if (address != null) r'address': address,
+  });
 
   Input$PlacePartialRequest._(this._$data);
 
@@ -8058,9 +8070,12 @@ class Input$PlacePartialRequest {
   Map<String, dynamic> _$data;
 
   String? get name => (_$data['name'] as String?);
+
   String? get type => (_$data['type'] as String?);
+
   Input$AddressRequest? get address =>
       (_$data['address'] as Input$AddressRequest?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('name')) {
@@ -8079,16 +8094,14 @@ class Input$PlacePartialRequest {
   }
 
   CopyWith$Input$PlacePartialRequest<Input$PlacePartialRequest> get copyWith =>
-      CopyWith$Input$PlacePartialRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$PlacePartialRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PlacePartialRequest) ||
+    if (other is! Input$PlacePartialRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8141,20 +8154,13 @@ abstract class CopyWith$Input$PlacePartialRequest<TRes> {
   factory CopyWith$Input$PlacePartialRequest.stub(TRes res) =
       _CopyWithStubImpl$Input$PlacePartialRequest;
 
-  TRes call({
-    String? name,
-    String? type,
-    Input$AddressRequest? address,
-  });
+  TRes call({String? name, String? type, Input$AddressRequest? address});
   CopyWith$Input$AddressRequest<TRes> get address;
 }
 
 class _CopyWithImpl$Input$PlacePartialRequest<TRes>
     implements CopyWith$Input$PlacePartialRequest<TRes> {
-  _CopyWithImpl$Input$PlacePartialRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PlacePartialRequest(this._instance, this._then);
 
   final Input$PlacePartialRequest _instance;
 
@@ -8166,14 +8172,15 @@ class _CopyWithImpl$Input$PlacePartialRequest<TRes>
     Object? name = _undefined,
     Object? type = _undefined,
     Object? address = _undefined,
-  }) =>
-      _then(Input$PlacePartialRequest._({
-        ..._instance._$data,
-        if (name != _undefined) 'name': (name as String?),
-        if (type != _undefined) 'type': (type as String?),
-        if (address != _undefined)
-          'address': (address as Input$AddressRequest?),
-      }));
+  }) => _then(
+    Input$PlacePartialRequest._({
+      ..._instance._$data,
+      if (name != _undefined) 'name': (name as String?),
+      if (type != _undefined) 'type': (type as String?),
+      if (address != _undefined) 'address': (address as Input$AddressRequest?),
+    }),
+  );
+
   CopyWith$Input$AddressRequest<TRes> get address {
     final local$address = _instance.address;
     return local$address == null
@@ -8188,12 +8195,8 @@ class _CopyWithStubImpl$Input$PlacePartialRequest<TRes>
 
   TRes _res;
 
-  call({
-    String? name,
-    String? type,
-    Input$AddressRequest? address,
-  }) =>
-      _res;
+  call({String? name, String? type, Input$AddressRequest? address}) => _res;
+
   CopyWith$Input$AddressRequest<TRes> get address =>
       CopyWith$Input$AddressRequest.stub(_res);
 }
@@ -8207,16 +8210,15 @@ class Input$PlaceRequest {
     String? type,
     Input$AddressRequest? address,
     String? fileId,
-  }) =>
-      Input$PlaceRequest._({
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (type != null) r'type': type,
-        if (address != null) r'address': address,
-        if (fileId != null) r'fileId': fileId,
-      });
+  }) => Input$PlaceRequest._({
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (type != null) r'type': type,
+    if (address != null) r'address': address,
+    if (fileId != null) r'fileId': fileId,
+  });
 
   Input$PlaceRequest._(this._$data);
 
@@ -8260,13 +8262,20 @@ class Input$PlaceRequest {
   Map<String, dynamic> _$data;
 
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get type => (_$data['type'] as String?);
+
   Input$AddressRequest? get address =>
       (_$data['address'] as Input$AddressRequest?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('accountId')) {
@@ -8275,8 +8284,9 @@ class Input$PlaceRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('name')) {
       final l$name = name;
@@ -8302,16 +8312,14 @@ class Input$PlaceRequest {
   }
 
   CopyWith$Input$PlaceRequest<Input$PlaceRequest> get copyWith =>
-      CopyWith$Input$PlaceRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$PlaceRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$PlaceRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$PlaceRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$accountId = accountId;
@@ -8420,10 +8428,7 @@ abstract class CopyWith$Input$PlaceRequest<TRes> {
 
 class _CopyWithImpl$Input$PlaceRequest<TRes>
     implements CopyWith$Input$PlaceRequest<TRes> {
-  _CopyWithImpl$Input$PlaceRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$PlaceRequest(this._instance, this._then);
 
   final Input$PlaceRequest _instance;
 
@@ -8439,19 +8444,19 @@ class _CopyWithImpl$Input$PlaceRequest<TRes>
     Object? type = _undefined,
     Object? address = _undefined,
     Object? fileId = _undefined,
-  }) =>
-      _then(Input$PlaceRequest._({
-        ..._instance._$data,
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (type != _undefined) 'type': (type as String?),
-        if (address != _undefined)
-          'address': (address as Input$AddressRequest?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-      }));
+  }) => _then(
+    Input$PlaceRequest._({
+      ..._instance._$data,
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (type != _undefined) 'type': (type as String?),
+      if (address != _undefined) 'address': (address as Input$AddressRequest?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+    }),
+  );
+
   CopyWith$Input$AddressRequest<TRes> get address {
     final local$address = _instance.address;
     return local$address == null
@@ -8474,8 +8479,8 @@ class _CopyWithStubImpl$Input$PlaceRequest<TRes>
     String? type,
     Input$AddressRequest? address,
     String? fileId,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$AddressRequest<TRes> get address =>
       CopyWith$Input$AddressRequest.stub(_res);
 }
@@ -8500,6 +8505,7 @@ class Input$RefreshTokenRequest {
   Map<String, dynamic> _$data;
 
   String? get refreshToken => (_$data['refreshToken'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('refreshToken')) {
@@ -8510,16 +8516,14 @@ class Input$RefreshTokenRequest {
   }
 
   CopyWith$Input$RefreshTokenRequest<Input$RefreshTokenRequest> get copyWith =>
-      CopyWith$Input$RefreshTokenRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$RefreshTokenRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RefreshTokenRequest) ||
+    if (other is! Input$RefreshTokenRequest ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -8538,8 +8542,9 @@ class Input$RefreshTokenRequest {
   @override
   int get hashCode {
     final l$refreshToken = refreshToken;
-    return Object.hashAll(
-        [_$data.containsKey('refreshToken') ? l$refreshToken : const {}]);
+    return Object.hashAll([
+      _$data.containsKey('refreshToken') ? l$refreshToken : const {},
+    ]);
   }
 }
 
@@ -8557,10 +8562,7 @@ abstract class CopyWith$Input$RefreshTokenRequest<TRes> {
 
 class _CopyWithImpl$Input$RefreshTokenRequest<TRes>
     implements CopyWith$Input$RefreshTokenRequest<TRes> {
-  _CopyWithImpl$Input$RefreshTokenRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RefreshTokenRequest(this._instance, this._then);
 
   final Input$RefreshTokenRequest _instance;
 
@@ -8568,12 +8570,12 @@ class _CopyWithImpl$Input$RefreshTokenRequest<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? refreshToken = _undefined}) =>
-      _then(Input$RefreshTokenRequest._({
-        ..._instance._$data,
-        if (refreshToken != _undefined)
-          'refreshToken': (refreshToken as String?),
-      }));
+  TRes call({Object? refreshToken = _undefined}) => _then(
+    Input$RefreshTokenRequest._({
+      ..._instance._$data,
+      if (refreshToken != _undefined) 'refreshToken': (refreshToken as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RefreshTokenRequest<TRes>
@@ -8593,15 +8595,14 @@ class Input$RoleFilter {
     Input$LifeStateFilter? lifeState,
     Input$StringFilter? type,
     Input$BooleanFilter? tenantLevelAccess,
-  }) =>
-      Input$RoleFilter._({
-        if (id != null) r'id': id,
-        if (name != null) r'name': name,
-        if (account != null) r'account': account,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (type != null) r'type': type,
-        if (tenantLevelAccess != null) r'tenantLevelAccess': tenantLevelAccess,
-      });
+  }) => Input$RoleFilter._({
+    if (id != null) r'id': id,
+    if (name != null) r'name': name,
+    if (account != null) r'account': account,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (type != null) r'type': type,
+    if (tenantLevelAccess != null) r'tenantLevelAccess': tenantLevelAccess,
+  });
 
   Input$RoleFilter._(this._$data);
 
@@ -8630,7 +8631,8 @@ class Input$RoleFilter {
       result$data['lifeState'] = l$lifeState == null
           ? null
           : Input$LifeStateFilter.fromJson(
-              (l$lifeState as Map<String, dynamic>));
+              (l$lifeState as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('type')) {
       final l$type = data['type'];
@@ -8643,7 +8645,8 @@ class Input$RoleFilter {
       result$data['tenantLevelAccess'] = l$tenantLevelAccess == null
           ? null
           : Input$BooleanFilter.fromJson(
-              (l$tenantLevelAccess as Map<String, dynamic>));
+              (l$tenantLevelAccess as Map<String, dynamic>),
+            );
     }
     return Input$RoleFilter._(result$data);
   }
@@ -8651,14 +8654,20 @@ class Input$RoleFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$StringFilter? get name => (_$data['name'] as Input$StringFilter?);
+
   Input$AccountFilter? get account =>
       (_$data['account'] as Input$AccountFilter?);
+
   Input$LifeStateFilter? get lifeState =>
       (_$data['lifeState'] as Input$LifeStateFilter?);
+
   Input$StringFilter? get type => (_$data['type'] as Input$StringFilter?);
+
   Input$BooleanFilter? get tenantLevelAccess =>
       (_$data['tenantLevelAccess'] as Input$BooleanFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -8689,16 +8698,14 @@ class Input$RoleFilter {
   }
 
   CopyWith$Input$RoleFilter<Input$RoleFilter> get copyWith =>
-      CopyWith$Input$RoleFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$RoleFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RoleFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$RoleFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -8800,10 +8807,7 @@ abstract class CopyWith$Input$RoleFilter<TRes> {
 
 class _CopyWithImpl$Input$RoleFilter<TRes>
     implements CopyWith$Input$RoleFilter<TRes> {
-  _CopyWithImpl$Input$RoleFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RoleFilter(this._instance, this._then);
 
   final Input$RoleFilter _instance;
 
@@ -8818,18 +8822,20 @@ class _CopyWithImpl$Input$RoleFilter<TRes>
     Object? lifeState = _undefined,
     Object? type = _undefined,
     Object? tenantLevelAccess = _undefined,
-  }) =>
-      _then(Input$RoleFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (name != _undefined) 'name': (name as Input$StringFilter?),
-        if (account != _undefined) 'account': (account as Input$AccountFilter?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Input$LifeStateFilter?),
-        if (type != _undefined) 'type': (type as Input$StringFilter?),
-        if (tenantLevelAccess != _undefined)
-          'tenantLevelAccess': (tenantLevelAccess as Input$BooleanFilter?),
-      }));
+  }) => _then(
+    Input$RoleFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (name != _undefined) 'name': (name as Input$StringFilter?),
+      if (account != _undefined) 'account': (account as Input$AccountFilter?),
+      if (lifeState != _undefined)
+        'lifeState': (lifeState as Input$LifeStateFilter?),
+      if (type != _undefined) 'type': (type as Input$StringFilter?),
+      if (tenantLevelAccess != _undefined)
+        'tenantLevelAccess': (tenantLevelAccess as Input$BooleanFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -8856,7 +8862,9 @@ class _CopyWithImpl$Input$RoleFilter<TRes>
     return local$lifeState == null
         ? CopyWith$Input$LifeStateFilter.stub(_then(_instance))
         : CopyWith$Input$LifeStateFilter(
-            local$lifeState, (e) => call(lifeState: e));
+            local$lifeState,
+            (e) => call(lifeState: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get type {
@@ -8871,7 +8879,9 @@ class _CopyWithImpl$Input$RoleFilter<TRes>
     return local$tenantLevelAccess == null
         ? CopyWith$Input$BooleanFilter.stub(_then(_instance))
         : CopyWith$Input$BooleanFilter(
-            local$tenantLevelAccess, (e) => call(tenantLevelAccess: e));
+            local$tenantLevelAccess,
+            (e) => call(tenantLevelAccess: e),
+          );
   }
 }
 
@@ -8888,17 +8898,22 @@ class _CopyWithStubImpl$Input$RoleFilter<TRes>
     Input$LifeStateFilter? lifeState,
     Input$StringFilter? type,
     Input$BooleanFilter? tenantLevelAccess,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get name =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$AccountFilter<TRes> get account =>
       CopyWith$Input$AccountFilter.stub(_res);
+
   CopyWith$Input$LifeStateFilter<TRes> get lifeState =>
       CopyWith$Input$LifeStateFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get type =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$BooleanFilter<TRes> get tenantLevelAccess =>
       CopyWith$Input$BooleanFilter.stub(_res);
 }
@@ -8912,16 +8927,15 @@ class Input$RoleRequest {
     String? type,
     bool? tenantLevelAccess,
     String? fileId,
-  }) =>
-      Input$RoleRequest._({
-        if (name != null) r'name': name,
-        if (description != null) r'description': description,
-        if (accountId != null) r'accountId': accountId,
-        if (lifeState != null) r'lifeState': lifeState,
-        if (type != null) r'type': type,
-        if (tenantLevelAccess != null) r'tenantLevelAccess': tenantLevelAccess,
-        if (fileId != null) r'fileId': fileId,
-      });
+  }) => Input$RoleRequest._({
+    if (name != null) r'name': name,
+    if (description != null) r'description': description,
+    if (accountId != null) r'accountId': accountId,
+    if (lifeState != null) r'lifeState': lifeState,
+    if (type != null) r'type': type,
+    if (tenantLevelAccess != null) r'tenantLevelAccess': tenantLevelAccess,
+    if (fileId != null) r'fileId': fileId,
+  });
 
   Input$RoleRequest._(this._$data);
 
@@ -8963,12 +8977,19 @@ class Input$RoleRequest {
   Map<String, dynamic> _$data;
 
   String? get name => (_$data['name'] as String?);
+
   String? get description => (_$data['description'] as String?);
+
   String? get accountId => (_$data['accountId'] as String?);
+
   Enum$LifeState? get lifeState => (_$data['lifeState'] as Enum$LifeState?);
+
   String? get type => (_$data['type'] as String?);
+
   bool? get tenantLevelAccess => (_$data['tenantLevelAccess'] as bool?);
+
   String? get fileId => (_$data['fileId'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('name')) {
@@ -8985,8 +9006,9 @@ class Input$RoleRequest {
     }
     if (_$data.containsKey('lifeState')) {
       final l$lifeState = lifeState;
-      result$data['lifeState'] =
-          l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+      result$data['lifeState'] = l$lifeState == null
+          ? null
+          : toJson$Enum$LifeState(l$lifeState);
     }
     if (_$data.containsKey('type')) {
       final l$type = type;
@@ -9004,16 +9026,14 @@ class Input$RoleRequest {
   }
 
   CopyWith$Input$RoleRequest<Input$RoleRequest> get copyWith =>
-      CopyWith$Input$RoleRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$RoleRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$RoleRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$RoleRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$name = name;
@@ -9122,10 +9142,7 @@ abstract class CopyWith$Input$RoleRequest<TRes> {
 
 class _CopyWithImpl$Input$RoleRequest<TRes>
     implements CopyWith$Input$RoleRequest<TRes> {
-  _CopyWithImpl$Input$RoleRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$RoleRequest(this._instance, this._then);
 
   final Input$RoleRequest _instance;
 
@@ -9141,19 +9158,19 @@ class _CopyWithImpl$Input$RoleRequest<TRes>
     Object? type = _undefined,
     Object? tenantLevelAccess = _undefined,
     Object? fileId = _undefined,
-  }) =>
-      _then(Input$RoleRequest._({
-        ..._instance._$data,
-        if (name != _undefined) 'name': (name as String?),
-        if (description != _undefined) 'description': (description as String?),
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (lifeState != _undefined)
-          'lifeState': (lifeState as Enum$LifeState?),
-        if (type != _undefined) 'type': (type as String?),
-        if (tenantLevelAccess != _undefined)
-          'tenantLevelAccess': (tenantLevelAccess as bool?),
-        if (fileId != _undefined) 'fileId': (fileId as String?),
-      }));
+  }) => _then(
+    Input$RoleRequest._({
+      ..._instance._$data,
+      if (name != _undefined) 'name': (name as String?),
+      if (description != _undefined) 'description': (description as String?),
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (lifeState != _undefined) 'lifeState': (lifeState as Enum$LifeState?),
+      if (type != _undefined) 'type': (type as String?),
+      if (tenantLevelAccess != _undefined)
+        'tenantLevelAccess': (tenantLevelAccess as bool?),
+      if (fileId != _undefined) 'fileId': (fileId as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$RoleRequest<TRes>
@@ -9170,8 +9187,7 @@ class _CopyWithStubImpl$Input$RoleRequest<TRes>
     String? type,
     bool? tenantLevelAccess,
     String? fileId,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Input$StringFilter {
@@ -9179,20 +9195,20 @@ class Input$StringFilter {
     required List<String> value,
     Enum$SearchType? searchType,
     bool? ignoreCase,
-  }) =>
-      Input$StringFilter._({
-        r'value': value,
-        if (searchType != null) r'searchType': searchType,
-        if (ignoreCase != null) r'ignoreCase': ignoreCase,
-      });
+  }) => Input$StringFilter._({
+    r'value': value,
+    if (searchType != null) r'searchType': searchType,
+    if (ignoreCase != null) r'ignoreCase': ignoreCase,
+  });
 
   Input$StringFilter._(this._$data);
 
   factory Input$StringFilter.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$value = data['value'];
-    result$data['value'] =
-        (l$value as List<dynamic>).map((e) => (e as String)).toList();
+    result$data['value'] = (l$value as List<dynamic>)
+        .map((e) => (e as String))
+        .toList();
     if (data.containsKey('searchType')) {
       final l$searchType = data['searchType'];
       result$data['searchType'] = l$searchType == null
@@ -9209,16 +9225,20 @@ class Input$StringFilter {
   Map<String, dynamic> _$data;
 
   List<String> get value => (_$data['value'] as List<String>);
+
   Enum$SearchType? get searchType => (_$data['searchType'] as Enum$SearchType?);
+
   bool? get ignoreCase => (_$data['ignoreCase'] as bool?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$value = value;
     result$data['value'] = l$value.map((e) => e).toList();
     if (_$data.containsKey('searchType')) {
       final l$searchType = searchType;
-      result$data['searchType'] =
-          l$searchType == null ? null : toJson$Enum$SearchType(l$searchType);
+      result$data['searchType'] = l$searchType == null
+          ? null
+          : toJson$Enum$SearchType(l$searchType);
     }
     if (_$data.containsKey('ignoreCase')) {
       final l$ignoreCase = ignoreCase;
@@ -9228,16 +9248,14 @@ class Input$StringFilter {
   }
 
   CopyWith$Input$StringFilter<Input$StringFilter> get copyWith =>
-      CopyWith$Input$StringFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$StringFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$StringFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$StringFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$value = value;
@@ -9304,10 +9322,7 @@ abstract class CopyWith$Input$StringFilter<TRes> {
 
 class _CopyWithImpl$Input$StringFilter<TRes>
     implements CopyWith$Input$StringFilter<TRes> {
-  _CopyWithImpl$Input$StringFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$StringFilter(this._instance, this._then);
 
   final Input$StringFilter _instance;
 
@@ -9319,15 +9334,16 @@ class _CopyWithImpl$Input$StringFilter<TRes>
     Object? value = _undefined,
     Object? searchType = _undefined,
     Object? ignoreCase = _undefined,
-  }) =>
-      _then(Input$StringFilter._({
-        ..._instance._$data,
-        if (value != _undefined && value != null)
-          'value': (value as List<String>),
-        if (searchType != _undefined)
-          'searchType': (searchType as Enum$SearchType?),
-        if (ignoreCase != _undefined) 'ignoreCase': (ignoreCase as bool?),
-      }));
+  }) => _then(
+    Input$StringFilter._({
+      ..._instance._$data,
+      if (value != _undefined && value != null)
+        'value': (value as List<String>),
+      if (searchType != _undefined)
+        'searchType': (searchType as Enum$SearchType?),
+      if (ignoreCase != _undefined) 'ignoreCase': (ignoreCase as bool?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Input$StringFilter<TRes>
@@ -9336,11 +9352,7 @@ class _CopyWithStubImpl$Input$StringFilter<TRes>
 
   TRes _res;
 
-  call({
-    List<String>? value,
-    Enum$SearchType? searchType,
-    bool? ignoreCase,
-  }) =>
+  call({List<String>? value, Enum$SearchType? searchType, bool? ignoreCase}) =>
       _res;
 }
 
@@ -9354,18 +9366,17 @@ class Input$TokenRequest {
     String? oAuthProviderName,
     String? accountId,
     Input$AdditionalTokenInfoRequest? additionalTokenInfo,
-  }) =>
-      Input$TokenRequest._({
-        r'grantType': grantType,
-        if (clientId != null) r'clientId': clientId,
-        if (clientSecret != null) r'clientSecret': clientSecret,
-        if (code != null) r'code': code,
-        if (appName != null) r'appName': appName,
-        if (oAuthProviderName != null) r'oAuthProviderName': oAuthProviderName,
-        if (accountId != null) r'accountId': accountId,
-        if (additionalTokenInfo != null)
-          r'additionalTokenInfo': additionalTokenInfo,
-      });
+  }) => Input$TokenRequest._({
+    r'grantType': grantType,
+    if (clientId != null) r'clientId': clientId,
+    if (clientSecret != null) r'clientSecret': clientSecret,
+    if (code != null) r'code': code,
+    if (appName != null) r'appName': appName,
+    if (oAuthProviderName != null) r'oAuthProviderName': oAuthProviderName,
+    if (accountId != null) r'accountId': accountId,
+    if (additionalTokenInfo != null)
+      r'additionalTokenInfo': additionalTokenInfo,
+  });
 
   Input$TokenRequest._(this._$data);
 
@@ -9402,7 +9413,8 @@ class Input$TokenRequest {
       result$data['additionalTokenInfo'] = l$additionalTokenInfo == null
           ? null
           : Input$AdditionalTokenInfoRequest.fromJson(
-              (l$additionalTokenInfo as Map<String, dynamic>));
+              (l$additionalTokenInfo as Map<String, dynamic>),
+            );
     }
     return Input$TokenRequest._(result$data);
   }
@@ -9410,14 +9422,22 @@ class Input$TokenRequest {
   Map<String, dynamic> _$data;
 
   Enum$GrantType get grantType => (_$data['grantType'] as Enum$GrantType);
+
   String? get clientId => (_$data['clientId'] as String?);
+
   String? get clientSecret => (_$data['clientSecret'] as String?);
+
   String? get code => (_$data['code'] as String?);
+
   String? get appName => (_$data['appName'] as String?);
+
   String? get oAuthProviderName => (_$data['oAuthProviderName'] as String?);
+
   String? get accountId => (_$data['accountId'] as String?);
+
   Input$AdditionalTokenInfoRequest? get additionalTokenInfo =>
       (_$data['additionalTokenInfo'] as Input$AdditionalTokenInfoRequest?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$grantType = grantType;
@@ -9454,16 +9474,14 @@ class Input$TokenRequest {
   }
 
   CopyWith$Input$TokenRequest<Input$TokenRequest> get copyWith =>
-      CopyWith$Input$TokenRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$TokenRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$TokenRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$TokenRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$grantType = grantType;
@@ -9584,10 +9602,7 @@ abstract class CopyWith$Input$TokenRequest<TRes> {
 
 class _CopyWithImpl$Input$TokenRequest<TRes>
     implements CopyWith$Input$TokenRequest<TRes> {
-  _CopyWithImpl$Input$TokenRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$TokenRequest(this._instance, this._then);
 
   final Input$TokenRequest _instance;
 
@@ -9604,29 +9619,32 @@ class _CopyWithImpl$Input$TokenRequest<TRes>
     Object? oAuthProviderName = _undefined,
     Object? accountId = _undefined,
     Object? additionalTokenInfo = _undefined,
-  }) =>
-      _then(Input$TokenRequest._({
-        ..._instance._$data,
-        if (grantType != _undefined && grantType != null)
-          'grantType': (grantType as Enum$GrantType),
-        if (clientId != _undefined) 'clientId': (clientId as String?),
-        if (clientSecret != _undefined)
-          'clientSecret': (clientSecret as String?),
-        if (code != _undefined) 'code': (code as String?),
-        if (appName != _undefined) 'appName': (appName as String?),
-        if (oAuthProviderName != _undefined)
-          'oAuthProviderName': (oAuthProviderName as String?),
-        if (accountId != _undefined) 'accountId': (accountId as String?),
-        if (additionalTokenInfo != _undefined)
-          'additionalTokenInfo':
-              (additionalTokenInfo as Input$AdditionalTokenInfoRequest?),
-      }));
+  }) => _then(
+    Input$TokenRequest._({
+      ..._instance._$data,
+      if (grantType != _undefined && grantType != null)
+        'grantType': (grantType as Enum$GrantType),
+      if (clientId != _undefined) 'clientId': (clientId as String?),
+      if (clientSecret != _undefined) 'clientSecret': (clientSecret as String?),
+      if (code != _undefined) 'code': (code as String?),
+      if (appName != _undefined) 'appName': (appName as String?),
+      if (oAuthProviderName != _undefined)
+        'oAuthProviderName': (oAuthProviderName as String?),
+      if (accountId != _undefined) 'accountId': (accountId as String?),
+      if (additionalTokenInfo != _undefined)
+        'additionalTokenInfo':
+            (additionalTokenInfo as Input$AdditionalTokenInfoRequest?),
+    }),
+  );
+
   CopyWith$Input$AdditionalTokenInfoRequest<TRes> get additionalTokenInfo {
     final local$additionalTokenInfo = _instance.additionalTokenInfo;
     return local$additionalTokenInfo == null
         ? CopyWith$Input$AdditionalTokenInfoRequest.stub(_then(_instance))
         : CopyWith$Input$AdditionalTokenInfoRequest(
-            local$additionalTokenInfo, (e) => call(additionalTokenInfo: e));
+            local$additionalTokenInfo,
+            (e) => call(additionalTokenInfo: e),
+          );
   }
 }
 
@@ -9645,8 +9663,8 @@ class _CopyWithStubImpl$Input$TokenRequest<TRes>
     String? oAuthProviderName,
     String? accountId,
     Input$AdditionalTokenInfoRequest? additionalTokenInfo,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$AdditionalTokenInfoRequest<TRes> get additionalTokenInfo =>
       CopyWith$Input$AdditionalTokenInfoRequest.stub(_res);
 }
@@ -9663,20 +9681,19 @@ class Input$VisitorFilter {
     Input$IDFilter? accountId,
     Input$IDFilter? accountFloorAssociationId,
     Input$BooleanFilter? plannedVisit,
-  }) =>
-      Input$VisitorFilter._({
-        if (id != null) r'id': id,
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (phoneNumber != null) r'phoneNumber': phoneNumber,
-        if (visitingDate != null) r'visitingDate': visitingDate,
-        if (type != null) r'type': type,
-        if (fullText != null) r'fullText': fullText,
-        if (placeId != null) r'placeId': placeId,
-        if (accountId != null) r'accountId': accountId,
-        if (accountFloorAssociationId != null)
-          r'accountFloorAssociationId': accountFloorAssociationId,
-        if (plannedVisit != null) r'plannedVisit': plannedVisit,
-      });
+  }) => Input$VisitorFilter._({
+    if (id != null) r'id': id,
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (phoneNumber != null) r'phoneNumber': phoneNumber,
+    if (visitingDate != null) r'visitingDate': visitingDate,
+    if (type != null) r'type': type,
+    if (fullText != null) r'fullText': fullText,
+    if (placeId != null) r'placeId': placeId,
+    if (accountId != null) r'accountId': accountId,
+    if (accountFloorAssociationId != null)
+      r'accountFloorAssociationId': accountFloorAssociationId,
+    if (plannedVisit != null) r'plannedVisit': plannedVisit,
+  });
 
   Input$VisitorFilter._(this._$data);
 
@@ -9693,21 +9710,24 @@ class Input$VisitorFilter {
       result$data['emailAddress'] = l$emailAddress == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$emailAddress as Map<String, dynamic>));
+              (l$emailAddress as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('phoneNumber')) {
       final l$phoneNumber = data['phoneNumber'];
       result$data['phoneNumber'] = l$phoneNumber == null
           ? null
           : Input$StringFilter.fromJson(
-              (l$phoneNumber as Map<String, dynamic>));
+              (l$phoneNumber as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('visitingDate')) {
       final l$visitingDate = data['visitingDate'];
       result$data['visitingDate'] = l$visitingDate == null
           ? null
           : Input$DateRangeFilter.fromJson(
-              (l$visitingDate as Map<String, dynamic>));
+              (l$visitingDate as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('type')) {
       final l$type = data['type'];
@@ -9737,16 +9757,18 @@ class Input$VisitorFilter {
       final l$accountFloorAssociationId = data['accountFloorAssociationId'];
       result$data['accountFloorAssociationId'] =
           l$accountFloorAssociationId == null
-              ? null
-              : Input$IDFilter.fromJson(
-                  (l$accountFloorAssociationId as Map<String, dynamic>));
+          ? null
+          : Input$IDFilter.fromJson(
+              (l$accountFloorAssociationId as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('plannedVisit')) {
       final l$plannedVisit = data['plannedVisit'];
       result$data['plannedVisit'] = l$plannedVisit == null
           ? null
           : Input$BooleanFilter.fromJson(
-              (l$plannedVisit as Map<String, dynamic>));
+              (l$plannedVisit as Map<String, dynamic>),
+            );
     }
     return Input$VisitorFilter._(result$data);
   }
@@ -9754,21 +9776,31 @@ class Input$VisitorFilter {
   Map<String, dynamic> _$data;
 
   Input$IDFilter? get id => (_$data['id'] as Input$IDFilter?);
+
   Input$StringFilter? get emailAddress =>
       (_$data['emailAddress'] as Input$StringFilter?);
+
   Input$StringFilter? get phoneNumber =>
       (_$data['phoneNumber'] as Input$StringFilter?);
+
   Input$DateRangeFilter? get visitingDate =>
       (_$data['visitingDate'] as Input$DateRangeFilter?);
+
   Input$StringFilter? get type => (_$data['type'] as Input$StringFilter?);
+
   Input$StringFilter? get fullText =>
       (_$data['fullText'] as Input$StringFilter?);
+
   Input$IDFilter? get placeId => (_$data['placeId'] as Input$IDFilter?);
+
   Input$IDFilter? get accountId => (_$data['accountId'] as Input$IDFilter?);
+
   Input$IDFilter? get accountFloorAssociationId =>
       (_$data['accountFloorAssociationId'] as Input$IDFilter?);
+
   Input$BooleanFilter? get plannedVisit =>
       (_$data['plannedVisit'] as Input$BooleanFilter?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('id')) {
@@ -9805,8 +9837,8 @@ class Input$VisitorFilter {
     }
     if (_$data.containsKey('accountFloorAssociationId')) {
       final l$accountFloorAssociationId = accountFloorAssociationId;
-      result$data['accountFloorAssociationId'] =
-          l$accountFloorAssociationId?.toJson();
+      result$data['accountFloorAssociationId'] = l$accountFloorAssociationId
+          ?.toJson();
     }
     if (_$data.containsKey('plannedVisit')) {
       final l$plannedVisit = plannedVisit;
@@ -9816,16 +9848,14 @@ class Input$VisitorFilter {
   }
 
   CopyWith$Input$VisitorFilter<Input$VisitorFilter> get copyWith =>
-      CopyWith$Input$VisitorFilter(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$VisitorFilter(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$VisitorFilter) || runtimeType != other.runtimeType) {
+    if (other is! Input$VisitorFilter || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -9982,10 +10012,7 @@ abstract class CopyWith$Input$VisitorFilter<TRes> {
 
 class _CopyWithImpl$Input$VisitorFilter<TRes>
     implements CopyWith$Input$VisitorFilter<TRes> {
-  _CopyWithImpl$Input$VisitorFilter(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$VisitorFilter(this._instance, this._then);
 
   final Input$VisitorFilter _instance;
 
@@ -10004,28 +10031,28 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     Object? accountId = _undefined,
     Object? accountFloorAssociationId = _undefined,
     Object? plannedVisit = _undefined,
-  }) =>
-      _then(Input$VisitorFilter._({
-        ..._instance._$data,
-        if (id != _undefined) 'id': (id as Input$IDFilter?),
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as Input$StringFilter?),
-        if (phoneNumber != _undefined)
-          'phoneNumber': (phoneNumber as Input$StringFilter?),
-        if (visitingDate != _undefined)
-          'visitingDate': (visitingDate as Input$DateRangeFilter?),
-        if (type != _undefined) 'type': (type as Input$StringFilter?),
-        if (fullText != _undefined)
-          'fullText': (fullText as Input$StringFilter?),
-        if (placeId != _undefined) 'placeId': (placeId as Input$IDFilter?),
-        if (accountId != _undefined)
-          'accountId': (accountId as Input$IDFilter?),
-        if (accountFloorAssociationId != _undefined)
-          'accountFloorAssociationId':
-              (accountFloorAssociationId as Input$IDFilter?),
-        if (plannedVisit != _undefined)
-          'plannedVisit': (plannedVisit as Input$BooleanFilter?),
-      }));
+  }) => _then(
+    Input$VisitorFilter._({
+      ..._instance._$data,
+      if (id != _undefined) 'id': (id as Input$IDFilter?),
+      if (emailAddress != _undefined)
+        'emailAddress': (emailAddress as Input$StringFilter?),
+      if (phoneNumber != _undefined)
+        'phoneNumber': (phoneNumber as Input$StringFilter?),
+      if (visitingDate != _undefined)
+        'visitingDate': (visitingDate as Input$DateRangeFilter?),
+      if (type != _undefined) 'type': (type as Input$StringFilter?),
+      if (fullText != _undefined) 'fullText': (fullText as Input$StringFilter?),
+      if (placeId != _undefined) 'placeId': (placeId as Input$IDFilter?),
+      if (accountId != _undefined) 'accountId': (accountId as Input$IDFilter?),
+      if (accountFloorAssociationId != _undefined)
+        'accountFloorAssociationId':
+            (accountFloorAssociationId as Input$IDFilter?),
+      if (plannedVisit != _undefined)
+        'plannedVisit': (plannedVisit as Input$BooleanFilter?),
+    }),
+  );
+
   CopyWith$Input$IDFilter<TRes> get id {
     final local$id = _instance.id;
     return local$id == null
@@ -10038,7 +10065,9 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     return local$emailAddress == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$emailAddress, (e) => call(emailAddress: e));
+            local$emailAddress,
+            (e) => call(emailAddress: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get phoneNumber {
@@ -10046,7 +10075,9 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     return local$phoneNumber == null
         ? CopyWith$Input$StringFilter.stub(_then(_instance))
         : CopyWith$Input$StringFilter(
-            local$phoneNumber, (e) => call(phoneNumber: e));
+            local$phoneNumber,
+            (e) => call(phoneNumber: e),
+          );
   }
 
   CopyWith$Input$DateRangeFilter<TRes> get visitingDate {
@@ -10054,7 +10085,9 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     return local$visitingDate == null
         ? CopyWith$Input$DateRangeFilter.stub(_then(_instance))
         : CopyWith$Input$DateRangeFilter(
-            local$visitingDate, (e) => call(visitingDate: e));
+            local$visitingDate,
+            (e) => call(visitingDate: e),
+          );
   }
 
   CopyWith$Input$StringFilter<TRes> get type {
@@ -10089,8 +10122,10 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     final local$accountFloorAssociationId = _instance.accountFloorAssociationId;
     return local$accountFloorAssociationId == null
         ? CopyWith$Input$IDFilter.stub(_then(_instance))
-        : CopyWith$Input$IDFilter(local$accountFloorAssociationId,
-            (e) => call(accountFloorAssociationId: e));
+        : CopyWith$Input$IDFilter(
+            local$accountFloorAssociationId,
+            (e) => call(accountFloorAssociationId: e),
+          );
   }
 
   CopyWith$Input$BooleanFilter<TRes> get plannedVisit {
@@ -10098,7 +10133,9 @@ class _CopyWithImpl$Input$VisitorFilter<TRes>
     return local$plannedVisit == null
         ? CopyWith$Input$BooleanFilter.stub(_then(_instance))
         : CopyWith$Input$BooleanFilter(
-            local$plannedVisit, (e) => call(plannedVisit: e));
+            local$plannedVisit,
+            (e) => call(plannedVisit: e),
+          );
   }
 }
 
@@ -10119,25 +10156,34 @@ class _CopyWithStubImpl$Input$VisitorFilter<TRes>
     Input$IDFilter? accountId,
     Input$IDFilter? accountFloorAssociationId,
     Input$BooleanFilter? plannedVisit,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$IDFilter<TRes> get id => CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get emailAddress =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get phoneNumber =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$DateRangeFilter<TRes> get visitingDate =>
       CopyWith$Input$DateRangeFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get type =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$StringFilter<TRes> get fullText =>
       CopyWith$Input$StringFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get placeId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get accountId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$IDFilter<TRes> get accountFloorAssociationId =>
       CopyWith$Input$IDFilter.stub(_res);
+
   CopyWith$Input$BooleanFilter<TRes> get plannedVisit =>
       CopyWith$Input$BooleanFilter.stub(_res);
 }
@@ -10158,23 +10204,22 @@ class Input$VisitorRequest {
     String? tools,
     String? purposeOfVisit,
     String? checkInDate,
-  }) =>
-      Input$VisitorRequest._({
-        r'firstName': firstName,
-        if (lastName != null) r'lastName': lastName,
-        if (emailAddress != null) r'emailAddress': emailAddress,
-        if (phoneNumber != null) r'phoneNumber': phoneNumber,
-        r'accountFloorId': accountFloorId,
-        r'visitingDate': visitingDate,
-        r'type': type,
-        r'plannedVisit': plannedVisit,
-        if (comingFrom != null) r'comingFrom': comingFrom,
-        if (idProof != null) r'idProof': idProof,
-        if (notes != null) r'notes': notes,
-        if (tools != null) r'tools': tools,
-        if (purposeOfVisit != null) r'purposeOfVisit': purposeOfVisit,
-        if (checkInDate != null) r'checkInDate': checkInDate,
-      });
+  }) => Input$VisitorRequest._({
+    r'firstName': firstName,
+    if (lastName != null) r'lastName': lastName,
+    if (emailAddress != null) r'emailAddress': emailAddress,
+    if (phoneNumber != null) r'phoneNumber': phoneNumber,
+    r'accountFloorId': accountFloorId,
+    r'visitingDate': visitingDate,
+    r'type': type,
+    r'plannedVisit': plannedVisit,
+    if (comingFrom != null) r'comingFrom': comingFrom,
+    if (idProof != null) r'idProof': idProof,
+    if (notes != null) r'notes': notes,
+    if (tools != null) r'tools': tools,
+    if (purposeOfVisit != null) r'purposeOfVisit': purposeOfVisit,
+    if (checkInDate != null) r'checkInDate': checkInDate,
+  });
 
   Input$VisitorRequest._(this._$data);
 
@@ -10207,7 +10252,8 @@ class Input$VisitorRequest {
       result$data['comingFrom'] = l$comingFrom == null
           ? null
           : Input$ComingFromRequest.fromJson(
-              (l$comingFrom as Map<String, dynamic>));
+              (l$comingFrom as Map<String, dynamic>),
+            );
     }
     if (data.containsKey('idProof')) {
       final l$idProof = data['idProof'];
@@ -10237,21 +10283,35 @@ class Input$VisitorRequest {
   Map<String, dynamic> _$data;
 
   String get firstName => (_$data['firstName'] as String);
+
   String? get lastName => (_$data['lastName'] as String?);
+
   String? get emailAddress => (_$data['emailAddress'] as String?);
+
   String? get phoneNumber => (_$data['phoneNumber'] as String?);
+
   String get accountFloorId => (_$data['accountFloorId'] as String);
+
   String get visitingDate => (_$data['visitingDate'] as String);
+
   Enum$VisitorType get type => (_$data['type'] as Enum$VisitorType);
+
   bool get plannedVisit => (_$data['plannedVisit'] as bool);
+
   Input$ComingFromRequest? get comingFrom =>
       (_$data['comingFrom'] as Input$ComingFromRequest?);
+
   Input$IDProofRequest? get idProof =>
       (_$data['idProof'] as Input$IDProofRequest?);
+
   String? get notes => (_$data['notes'] as String?);
+
   String? get tools => (_$data['tools'] as String?);
+
   String? get purposeOfVisit => (_$data['purposeOfVisit'] as String?);
+
   String? get checkInDate => (_$data['checkInDate'] as String?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$firstName = firstName;
@@ -10304,16 +10364,14 @@ class Input$VisitorRequest {
   }
 
   CopyWith$Input$VisitorRequest<Input$VisitorRequest> get copyWith =>
-      CopyWith$Input$VisitorRequest(
-        this,
-        (i) => i,
-      );
+      CopyWith$Input$VisitorRequest(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Input$VisitorRequest) || runtimeType != other.runtimeType) {
+    if (other is! Input$VisitorRequest || runtimeType != other.runtimeType) {
       return false;
     }
     final l$firstName = firstName;
@@ -10488,10 +10546,7 @@ abstract class CopyWith$Input$VisitorRequest<TRes> {
 
 class _CopyWithImpl$Input$VisitorRequest<TRes>
     implements CopyWith$Input$VisitorRequest<TRes> {
-  _CopyWithImpl$Input$VisitorRequest(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Input$VisitorRequest(this._instance, this._then);
 
   final Input$VisitorRequest _instance;
 
@@ -10514,39 +10569,41 @@ class _CopyWithImpl$Input$VisitorRequest<TRes>
     Object? tools = _undefined,
     Object? purposeOfVisit = _undefined,
     Object? checkInDate = _undefined,
-  }) =>
-      _then(Input$VisitorRequest._({
-        ..._instance._$data,
-        if (firstName != _undefined && firstName != null)
-          'firstName': (firstName as String),
-        if (lastName != _undefined) 'lastName': (lastName as String?),
-        if (emailAddress != _undefined)
-          'emailAddress': (emailAddress as String?),
-        if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
-        if (accountFloorId != _undefined && accountFloorId != null)
-          'accountFloorId': (accountFloorId as String),
-        if (visitingDate != _undefined && visitingDate != null)
-          'visitingDate': (visitingDate as String),
-        if (type != _undefined && type != null)
-          'type': (type as Enum$VisitorType),
-        if (plannedVisit != _undefined && plannedVisit != null)
-          'plannedVisit': (plannedVisit as bool),
-        if (comingFrom != _undefined)
-          'comingFrom': (comingFrom as Input$ComingFromRequest?),
-        if (idProof != _undefined)
-          'idProof': (idProof as Input$IDProofRequest?),
-        if (notes != _undefined) 'notes': (notes as String?),
-        if (tools != _undefined) 'tools': (tools as String?),
-        if (purposeOfVisit != _undefined)
-          'purposeOfVisit': (purposeOfVisit as String?),
-        if (checkInDate != _undefined) 'checkInDate': (checkInDate as String?),
-      }));
+  }) => _then(
+    Input$VisitorRequest._({
+      ..._instance._$data,
+      if (firstName != _undefined && firstName != null)
+        'firstName': (firstName as String),
+      if (lastName != _undefined) 'lastName': (lastName as String?),
+      if (emailAddress != _undefined) 'emailAddress': (emailAddress as String?),
+      if (phoneNumber != _undefined) 'phoneNumber': (phoneNumber as String?),
+      if (accountFloorId != _undefined && accountFloorId != null)
+        'accountFloorId': (accountFloorId as String),
+      if (visitingDate != _undefined && visitingDate != null)
+        'visitingDate': (visitingDate as String),
+      if (type != _undefined && type != null)
+        'type': (type as Enum$VisitorType),
+      if (plannedVisit != _undefined && plannedVisit != null)
+        'plannedVisit': (plannedVisit as bool),
+      if (comingFrom != _undefined)
+        'comingFrom': (comingFrom as Input$ComingFromRequest?),
+      if (idProof != _undefined) 'idProof': (idProof as Input$IDProofRequest?),
+      if (notes != _undefined) 'notes': (notes as String?),
+      if (tools != _undefined) 'tools': (tools as String?),
+      if (purposeOfVisit != _undefined)
+        'purposeOfVisit': (purposeOfVisit as String?),
+      if (checkInDate != _undefined) 'checkInDate': (checkInDate as String?),
+    }),
+  );
+
   CopyWith$Input$ComingFromRequest<TRes> get comingFrom {
     final local$comingFrom = _instance.comingFrom;
     return local$comingFrom == null
         ? CopyWith$Input$ComingFromRequest.stub(_then(_instance))
         : CopyWith$Input$ComingFromRequest(
-            local$comingFrom, (e) => call(comingFrom: e));
+            local$comingFrom,
+            (e) => call(comingFrom: e),
+          );
   }
 
   CopyWith$Input$IDProofRequest<TRes> get idProof {
@@ -10578,15 +10635,24 @@ class _CopyWithStubImpl$Input$VisitorRequest<TRes>
     String? tools,
     String? purposeOfVisit,
     String? checkInDate,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Input$ComingFromRequest<TRes> get comingFrom =>
       CopyWith$Input$ComingFromRequest.stub(_res);
+
   CopyWith$Input$IDProofRequest<TRes> get idProof =>
       CopyWith$Input$IDProofRequest.stub(_res);
 }
 
-enum Enum$Action { ENABLE, DISABLE, $unknown }
+enum Enum$Action {
+  ENABLE,
+  DISABLE,
+  $unknown;
+
+  factory Enum$Action.fromJson(String value) => fromJson$Enum$Action(value);
+
+  String toJson() => toJson$Enum$Action(this);
+}
 
 String toJson$Enum$Action(Enum$Action e) {
   switch (e) {
@@ -10610,7 +10676,16 @@ Enum$Action fromJson$Enum$Action(String value) {
   }
 }
 
-enum Enum$CacheControlScope { PUBLIC, PRIVATE, $unknown }
+enum Enum$CacheControlScope {
+  PUBLIC,
+  PRIVATE,
+  $unknown;
+
+  factory Enum$CacheControlScope.fromJson(String value) =>
+      fromJson$Enum$CacheControlScope(value);
+
+  String toJson() => toJson$Enum$CacheControlScope(this);
+}
 
 String toJson$Enum$CacheControlScope(Enum$CacheControlScope e) {
   switch (e) {
@@ -10634,7 +10709,17 @@ Enum$CacheControlScope fromJson$Enum$CacheControlScope(String value) {
   }
 }
 
-enum Enum$CredentialType { EMAIL, ISO14443, PHONE, $unknown }
+enum Enum$CredentialType {
+  EMAIL,
+  ISO14443,
+  PHONE,
+  $unknown;
+
+  factory Enum$CredentialType.fromJson(String value) =>
+      fromJson$Enum$CredentialType(value);
+
+  String toJson() => toJson$Enum$CredentialType(this);
+}
 
 String toJson$Enum$CredentialType(Enum$CredentialType e) {
   switch (e) {
@@ -10662,7 +10747,18 @@ Enum$CredentialType fromJson$Enum$CredentialType(String value) {
   }
 }
 
-enum Enum$EndExistingAssociations { SINGLE, PMRY_OBJ, SCDY_OBJ, BOTH, $unknown }
+enum Enum$EndExistingAssociations {
+  SINGLE,
+  PMRY_OBJ,
+  SCDY_OBJ,
+  BOTH,
+  $unknown;
+
+  factory Enum$EndExistingAssociations.fromJson(String value) =>
+      fromJson$Enum$EndExistingAssociations(value);
+
+  String toJson() => toJson$Enum$EndExistingAssociations(this);
+}
 
 String toJson$Enum$EndExistingAssociations(Enum$EndExistingAssociations e) {
   switch (e) {
@@ -10680,7 +10776,8 @@ String toJson$Enum$EndExistingAssociations(Enum$EndExistingAssociations e) {
 }
 
 Enum$EndExistingAssociations fromJson$Enum$EndExistingAssociations(
-    String value) {
+  String value,
+) {
   switch (value) {
     case r'SINGLE':
       return Enum$EndExistingAssociations.SINGLE;
@@ -10695,7 +10792,17 @@ Enum$EndExistingAssociations fromJson$Enum$EndExistingAssociations(
   }
 }
 
-enum Enum$FeatureType { OBJECT, ASSOCIATION, OTHER, $unknown }
+enum Enum$FeatureType {
+  OBJECT,
+  ASSOCIATION,
+  OTHER,
+  $unknown;
+
+  factory Enum$FeatureType.fromJson(String value) =>
+      fromJson$Enum$FeatureType(value);
+
+  String toJson() => toJson$Enum$FeatureType(this);
+}
 
 String toJson$Enum$FeatureType(Enum$FeatureType e) {
   switch (e) {
@@ -10723,7 +10830,16 @@ Enum$FeatureType fromJson$Enum$FeatureType(String value) {
   }
 }
 
-enum Enum$GrantType { AUTHORIZATION_CODE, CLIENT_CREDENTIALS, $unknown }
+enum Enum$GrantType {
+  AUTHORIZATION_CODE,
+  CLIENT_CREDENTIALS,
+  $unknown;
+
+  factory Enum$GrantType.fromJson(String value) =>
+      fromJson$Enum$GrantType(value);
+
+  String toJson() => toJson$Enum$GrantType(this);
+}
 
 String toJson$Enum$GrantType(Enum$GrantType e) {
   switch (e) {
@@ -10752,7 +10868,12 @@ enum Enum$LifeState {
   INACTIVE,
   DELETED,
   REQUESTED_FOR_DELETION,
-  $unknown
+  $unknown;
+
+  factory Enum$LifeState.fromJson(String value) =>
+      fromJson$Enum$LifeState(value);
+
+  String toJson() => toJson$Enum$LifeState(this);
 }
 
 String toJson$Enum$LifeState(Enum$LifeState e) {
@@ -10785,7 +10906,18 @@ Enum$LifeState fromJson$Enum$LifeState(String value) {
   }
 }
 
-enum Enum$Operation { C, R, U, D, $unknown }
+enum Enum$Operation {
+  C,
+  R,
+  U,
+  D,
+  $unknown;
+
+  factory Enum$Operation.fromJson(String value) =>
+      fromJson$Enum$Operation(value);
+
+  String toJson() => toJson$Enum$Operation(this);
+}
 
 String toJson$Enum$Operation(Enum$Operation e) {
   switch (e) {
@@ -10831,7 +10963,12 @@ enum Enum$Relationship {
   MODEL_OF,
   TRIGGERED,
   ALLOWED,
-  $unknown
+  $unknown;
+
+  factory Enum$Relationship.fromJson(String value) =>
+      fromJson$Enum$Relationship(value);
+
+  String toJson() => toJson$Enum$Relationship(this);
 }
 
 String toJson$Enum$Relationship(Enum$Relationship e) {
@@ -10916,7 +11053,12 @@ enum Enum$ResourceCategory {
   BLOCK,
   PLACE,
   ACCOUNT_FLOOR,
-  $unknown
+  $unknown;
+
+  factory Enum$ResourceCategory.fromJson(String value) =>
+      fromJson$Enum$ResourceCategory(value);
+
+  String toJson() => toJson$Enum$ResourceCategory(this);
 }
 
 String toJson$Enum$ResourceCategory(Enum$ResourceCategory e) {
@@ -10993,7 +11135,18 @@ Enum$ResourceCategory fromJson$Enum$ResourceCategory(String value) {
   }
 }
 
-enum Enum$SearchType { CONTAINS, ENDS_WITH, MATCHES, STARTS_WITH, $unknown }
+enum Enum$SearchType {
+  CONTAINS,
+  ENDS_WITH,
+  MATCHES,
+  STARTS_WITH,
+  $unknown;
+
+  factory Enum$SearchType.fromJson(String value) =>
+      fromJson$Enum$SearchType(value);
+
+  String toJson() => toJson$Enum$SearchType(this);
+}
 
 String toJson$Enum$SearchType(Enum$SearchType e) {
   switch (e) {
@@ -11025,7 +11178,16 @@ Enum$SearchType fromJson$Enum$SearchType(String value) {
   }
 }
 
-enum Enum$VisitorType { GENERAL, VENDOR, $unknown }
+enum Enum$VisitorType {
+  GENERAL,
+  VENDOR,
+  $unknown;
+
+  factory Enum$VisitorType.fromJson(String value) =>
+      fromJson$Enum$VisitorType(value);
+
+  String toJson() => toJson$Enum$VisitorType(this);
+}
 
 String toJson$Enum$VisitorType(Enum$VisitorType e) {
   switch (e) {
@@ -11049,6 +11211,187 @@ Enum$VisitorType fromJson$Enum$VisitorType(String value) {
   }
 }
 
+enum Enum$__TypeKind {
+  SCALAR,
+  OBJECT,
+  INTERFACE,
+  UNION,
+  ENUM,
+  INPUT_OBJECT,
+  LIST,
+  NON_NULL,
+  $unknown;
+
+  factory Enum$__TypeKind.fromJson(String value) =>
+      fromJson$Enum$__TypeKind(value);
+
+  String toJson() => toJson$Enum$__TypeKind(this);
+}
+
+String toJson$Enum$__TypeKind(Enum$__TypeKind e) {
+  switch (e) {
+    case Enum$__TypeKind.SCALAR:
+      return r'SCALAR';
+    case Enum$__TypeKind.OBJECT:
+      return r'OBJECT';
+    case Enum$__TypeKind.INTERFACE:
+      return r'INTERFACE';
+    case Enum$__TypeKind.UNION:
+      return r'UNION';
+    case Enum$__TypeKind.ENUM:
+      return r'ENUM';
+    case Enum$__TypeKind.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum$__TypeKind.LIST:
+      return r'LIST';
+    case Enum$__TypeKind.NON_NULL:
+      return r'NON_NULL';
+    case Enum$__TypeKind.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$__TypeKind fromJson$Enum$__TypeKind(String value) {
+  switch (value) {
+    case r'SCALAR':
+      return Enum$__TypeKind.SCALAR;
+    case r'OBJECT':
+      return Enum$__TypeKind.OBJECT;
+    case r'INTERFACE':
+      return Enum$__TypeKind.INTERFACE;
+    case r'UNION':
+      return Enum$__TypeKind.UNION;
+    case r'ENUM':
+      return Enum$__TypeKind.ENUM;
+    case r'INPUT_OBJECT':
+      return Enum$__TypeKind.INPUT_OBJECT;
+    case r'LIST':
+      return Enum$__TypeKind.LIST;
+    case r'NON_NULL':
+      return Enum$__TypeKind.NON_NULL;
+    default:
+      return Enum$__TypeKind.$unknown;
+  }
+}
+
+enum Enum$__DirectiveLocation {
+  QUERY,
+  MUTATION,
+  SUBSCRIPTION,
+  FIELD,
+  FRAGMENT_DEFINITION,
+  FRAGMENT_SPREAD,
+  INLINE_FRAGMENT,
+  VARIABLE_DEFINITION,
+  SCHEMA,
+  SCALAR,
+  OBJECT,
+  FIELD_DEFINITION,
+  ARGUMENT_DEFINITION,
+  INTERFACE,
+  UNION,
+  ENUM,
+  ENUM_VALUE,
+  INPUT_OBJECT,
+  INPUT_FIELD_DEFINITION,
+  $unknown;
+
+  factory Enum$__DirectiveLocation.fromJson(String value) =>
+      fromJson$Enum$__DirectiveLocation(value);
+
+  String toJson() => toJson$Enum$__DirectiveLocation(this);
+}
+
+String toJson$Enum$__DirectiveLocation(Enum$__DirectiveLocation e) {
+  switch (e) {
+    case Enum$__DirectiveLocation.QUERY:
+      return r'QUERY';
+    case Enum$__DirectiveLocation.MUTATION:
+      return r'MUTATION';
+    case Enum$__DirectiveLocation.SUBSCRIPTION:
+      return r'SUBSCRIPTION';
+    case Enum$__DirectiveLocation.FIELD:
+      return r'FIELD';
+    case Enum$__DirectiveLocation.FRAGMENT_DEFINITION:
+      return r'FRAGMENT_DEFINITION';
+    case Enum$__DirectiveLocation.FRAGMENT_SPREAD:
+      return r'FRAGMENT_SPREAD';
+    case Enum$__DirectiveLocation.INLINE_FRAGMENT:
+      return r'INLINE_FRAGMENT';
+    case Enum$__DirectiveLocation.VARIABLE_DEFINITION:
+      return r'VARIABLE_DEFINITION';
+    case Enum$__DirectiveLocation.SCHEMA:
+      return r'SCHEMA';
+    case Enum$__DirectiveLocation.SCALAR:
+      return r'SCALAR';
+    case Enum$__DirectiveLocation.OBJECT:
+      return r'OBJECT';
+    case Enum$__DirectiveLocation.FIELD_DEFINITION:
+      return r'FIELD_DEFINITION';
+    case Enum$__DirectiveLocation.ARGUMENT_DEFINITION:
+      return r'ARGUMENT_DEFINITION';
+    case Enum$__DirectiveLocation.INTERFACE:
+      return r'INTERFACE';
+    case Enum$__DirectiveLocation.UNION:
+      return r'UNION';
+    case Enum$__DirectiveLocation.ENUM:
+      return r'ENUM';
+    case Enum$__DirectiveLocation.ENUM_VALUE:
+      return r'ENUM_VALUE';
+    case Enum$__DirectiveLocation.INPUT_OBJECT:
+      return r'INPUT_OBJECT';
+    case Enum$__DirectiveLocation.INPUT_FIELD_DEFINITION:
+      return r'INPUT_FIELD_DEFINITION';
+    case Enum$__DirectiveLocation.$unknown:
+      return r'$unknown';
+  }
+}
+
+Enum$__DirectiveLocation fromJson$Enum$__DirectiveLocation(String value) {
+  switch (value) {
+    case r'QUERY':
+      return Enum$__DirectiveLocation.QUERY;
+    case r'MUTATION':
+      return Enum$__DirectiveLocation.MUTATION;
+    case r'SUBSCRIPTION':
+      return Enum$__DirectiveLocation.SUBSCRIPTION;
+    case r'FIELD':
+      return Enum$__DirectiveLocation.FIELD;
+    case r'FRAGMENT_DEFINITION':
+      return Enum$__DirectiveLocation.FRAGMENT_DEFINITION;
+    case r'FRAGMENT_SPREAD':
+      return Enum$__DirectiveLocation.FRAGMENT_SPREAD;
+    case r'INLINE_FRAGMENT':
+      return Enum$__DirectiveLocation.INLINE_FRAGMENT;
+    case r'VARIABLE_DEFINITION':
+      return Enum$__DirectiveLocation.VARIABLE_DEFINITION;
+    case r'SCHEMA':
+      return Enum$__DirectiveLocation.SCHEMA;
+    case r'SCALAR':
+      return Enum$__DirectiveLocation.SCALAR;
+    case r'OBJECT':
+      return Enum$__DirectiveLocation.OBJECT;
+    case r'FIELD_DEFINITION':
+      return Enum$__DirectiveLocation.FIELD_DEFINITION;
+    case r'ARGUMENT_DEFINITION':
+      return Enum$__DirectiveLocation.ARGUMENT_DEFINITION;
+    case r'INTERFACE':
+      return Enum$__DirectiveLocation.INTERFACE;
+    case r'UNION':
+      return Enum$__DirectiveLocation.UNION;
+    case r'ENUM':
+      return Enum$__DirectiveLocation.ENUM;
+    case r'ENUM_VALUE':
+      return Enum$__DirectiveLocation.ENUM_VALUE;
+    case r'INPUT_OBJECT':
+      return Enum$__DirectiveLocation.INPUT_OBJECT;
+    case r'INPUT_FIELD_DEFINITION':
+      return Enum$__DirectiveLocation.INPUT_FIELD_DEFINITION;
+    default:
+      return Enum$__DirectiveLocation.$unknown;
+  }
+}
+
 const possibleTypesMap = <String, Set<String>>{
   'SystemGeneratedFields': {
     'Account',
@@ -11061,12 +11404,5 @@ const possibleTypesMap = <String, Set<String>>{
     'Role',
     'Visitor',
   },
-  'BaseFields': {
-    'Account',
-    'Block',
-    'Feature',
-    'Person',
-    'Place',
-    'Role',
-  },
+  'BaseFields': {'Account', 'Block', 'Feature', 'Person', 'Place', 'Role'},
 };

@@ -46,17 +46,6 @@ class MobileAuthComponent {
               phoneNumberController,
             ),
           ],
-          SizedBox(height: 3 * SizeConfig.heightMultiplier),
-          TextButton.icon(
-            onPressed: () {
-              Navigator.pushNamed(context, RouteName.ALL_PAGES_SCREEN);
-            },
-            icon: Icon(Icons.school_outlined, size: 18),
-            label: Text(
-              "Study All Pages Directly",
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-            ),
-          ),
         ],
       ),
     );

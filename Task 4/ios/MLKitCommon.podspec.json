@@ -5,7 +5,7 @@
       "~> 2.1"
     ],
     "GoogleDataTransport": [
-      "~> 9.0"
+      "~> 10.0"
     ],
     "GoogleToolboxForMac/Logger": [
       "~> 2.1"

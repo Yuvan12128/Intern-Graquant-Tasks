@@ -1,43 +1,29 @@
-// Basic smoke test for the SKCL VMS app.
+// This is a basic Flutter widget test.
 //
-// AppContainer pulls in AppConfig and a GraphQLClient from GetIt (normally
-// registered in appMain()), so this test registers lightweight stand-ins
-// before pumping the widget tree, then just verifies the app builds without
-// throwing.
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility that Flutter provides. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get_it/get_it.dart';
-import 'package:graphql/client.dart';
-import 'package:skcl_vms/app/model/app_config.dart';
 import 'package:skcl_vms/app_container.dart';
-import 'package:skcl_vms/env_property/skcl/theme/skcl_app_theme.dart';
 
 void main() {
-  setUp(() {
-    GetIt.instance.reset();
-    GetIt.instance.registerSingleton<AppConfig>(
-      AppConfig(
-        flavorName: 'test',
-        plugzmartGraphqlApiBaseUrl: 'https://example.com/graphql',
-        appName: 'SKCL VMS',
-        lightThemeData: SKCLAppTheme.lightTheme,
-        darkThemeData: SKCLAppTheme.darkTheme,
-        errorImage: '',
-        easyLoadingColor: '#000000',
-      ),
-    );
-    GetIt.instance.registerSingleton<GraphQLClient>(
-      GraphQLClient(
-        link: HttpLink('https://example.com/graphql'),
-        cache: GraphQLCache(),
-      ),
-    );
-  });
-
-  testWidgets('App builds without throwing', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
     await tester.pumpWidget(AppContainer());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
 
-    expect(find.byType(AppContainer), findsOneWidget);
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
 }

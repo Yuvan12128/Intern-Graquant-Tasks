@@ -45,7 +45,7 @@ Map<String, dynamic> _$JsonObjectDataToJson(JsonObjectData instance) =>
     };
 
 Evse _$EvseFromJson(Map<String, dynamic> json) => Evse(
-      port: json['port'] as int?,
+      port: (json['port'] as num?)?.toInt(),
       power: (json['power'] as num?)?.toDouble(),
       current: (json['current'] as num?)?.toDouble(),
       voltage: (json['voltage'] as num?)?.toDouble(),
@@ -67,7 +67,7 @@ Map<String, dynamic> _$EvseToJson(Evse instance) => <String, dynamic>{
     };
 
 Connector _$ConnectorFromJson(Map<String, dynamic> json) => Connector(
-      port: json['port'] as int?,
+      port: (json['port'] as num?)?.toInt(),
       type: json['type'] as String?,
       iconPath: json['iconPath'] as String?,
       isAvailable: json['isAvailable'] as bool?,

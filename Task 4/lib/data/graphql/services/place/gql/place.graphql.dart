@@ -1,5 +1,7 @@
 import '../../../component/schema.graphql.dart';
+
 import 'dart:async';
+
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
@@ -10,14 +12,13 @@ class Variables$Query$Places {
     int? first,
     List<String?>? sortBy,
     Input$Options? options,
-  }) =>
-      Variables$Query$Places._({
-        if (filters != null) r'filters': filters,
-        if (offset != null) r'offset': offset,
-        if (first != null) r'first': first,
-        if (sortBy != null) r'sortBy': sortBy,
-        if (options != null) r'options': options,
-      });
+  }) => Variables$Query$Places._({
+    if (filters != null) r'filters': filters,
+    if (offset != null) r'offset': offset,
+    if (first != null) r'first': first,
+    if (sortBy != null) r'sortBy': sortBy,
+    if (options != null) r'options': options,
+  });
 
   Variables$Query$Places._(this._$data);
 
@@ -39,8 +40,9 @@ class Variables$Query$Places {
     }
     if (data.containsKey('sortBy')) {
       final l$sortBy = data['sortBy'];
-      result$data['sortBy'] =
-          (l$sortBy as List<dynamic>?)?.map((e) => (e as String?)).toList();
+      result$data['sortBy'] = (l$sortBy as List<dynamic>?)
+          ?.map((e) => (e as String?))
+          .toList();
     }
     if (data.containsKey('options')) {
       final l$options = data['options'];
@@ -54,10 +56,15 @@ class Variables$Query$Places {
   Map<String, dynamic> _$data;
 
   Input$PlaceFilter? get filters => (_$data['filters'] as Input$PlaceFilter?);
+
   int? get offset => (_$data['offset'] as int?);
+
   int? get first => (_$data['first'] as int?);
+
   List<String?>? get sortBy => (_$data['sortBy'] as List<String?>?);
+
   Input$Options? get options => (_$data['options'] as Input$Options?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('filters')) {
@@ -84,17 +91,14 @@ class Variables$Query$Places {
   }
 
   CopyWith$Variables$Query$Places<Variables$Query$Places> get copyWith =>
-      CopyWith$Variables$Query$Places(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$Places(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$Places) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Variables$Query$Places || runtimeType != other.runtimeType) {
       return false;
     }
     final l$filters = filters;
@@ -164,8 +168,8 @@ class Variables$Query$Places {
       _$data.containsKey('first') ? l$first : const {},
       _$data.containsKey('sortBy')
           ? l$sortBy == null
-              ? null
-              : Object.hashAll(l$sortBy.map((v) => v))
+                ? null
+                : Object.hashAll(l$sortBy.map((v) => v))
           : const {},
       _$data.containsKey('options') ? l$options : const {},
     ]);
@@ -192,10 +196,7 @@ abstract class CopyWith$Variables$Query$Places<TRes> {
 
 class _CopyWithImpl$Variables$Query$Places<TRes>
     implements CopyWith$Variables$Query$Places<TRes> {
-  _CopyWithImpl$Variables$Query$Places(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$Places(this._instance, this._then);
 
   final Variables$Query$Places _instance;
 
@@ -209,15 +210,16 @@ class _CopyWithImpl$Variables$Query$Places<TRes>
     Object? first = _undefined,
     Object? sortBy = _undefined,
     Object? options = _undefined,
-  }) =>
-      _then(Variables$Query$Places._({
-        ..._instance._$data,
-        if (filters != _undefined) 'filters': (filters as Input$PlaceFilter?),
-        if (offset != _undefined) 'offset': (offset as int?),
-        if (first != _undefined) 'first': (first as int?),
-        if (sortBy != _undefined) 'sortBy': (sortBy as List<String?>?),
-        if (options != _undefined) 'options': (options as Input$Options?),
-      }));
+  }) => _then(
+    Variables$Query$Places._({
+      ..._instance._$data,
+      if (filters != _undefined) 'filters': (filters as Input$PlaceFilter?),
+      if (offset != _undefined) 'offset': (offset as int?),
+      if (first != _undefined) 'first': (first as int?),
+      if (sortBy != _undefined) 'sortBy': (sortBy as List<String?>?),
+      if (options != _undefined) 'options': (options as Input$Options?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$Places<TRes>
@@ -232,15 +234,11 @@ class _CopyWithStubImpl$Variables$Query$Places<TRes>
     int? first,
     List<String?>? sortBy,
     Input$Options? options,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$Places {
-  Query$Places({
-    required this.places,
-    this.$__typename = 'Query',
-  });
+  Query$Places({required this.places, this.$__typename = 'Query'});
 
   factory Query$Places.fromJson(Map<String, dynamic> json) {
     final l$places = json['places'];
@@ -268,10 +266,7 @@ class Query$Places {
   int get hashCode {
     final l$places = places;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$places,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$places, l$$__typename]);
   }
 
   @override
@@ -279,7 +274,7 @@ class Query$Places {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places) || runtimeType != other.runtimeType) {
+    if (other is! Query$Places || runtimeType != other.runtimeType) {
       return false;
     }
     final l$places = places;
@@ -297,10 +292,8 @@ class Query$Places {
 }
 
 extension UtilityExtension$Query$Places on Query$Places {
-  CopyWith$Query$Places<Query$Places> get copyWith => CopyWith$Query$Places(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$Places<Query$Places> get copyWith =>
+      CopyWith$Query$Places(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Places<TRes> {
@@ -311,18 +304,12 @@ abstract class CopyWith$Query$Places<TRes> {
 
   factory CopyWith$Query$Places.stub(TRes res) = _CopyWithStubImpl$Query$Places;
 
-  TRes call({
-    Query$Places$places? places,
-    String? $__typename,
-  });
+  TRes call({Query$Places$places? places, String? $__typename});
   CopyWith$Query$Places$places<TRes> get places;
 }
 
 class _CopyWithImpl$Query$Places<TRes> implements CopyWith$Query$Places<TRes> {
-  _CopyWithImpl$Query$Places(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Places(this._instance, this._then);
 
   final Query$Places _instance;
 
@@ -330,18 +317,18 @@ class _CopyWithImpl$Query$Places<TRes> implements CopyWith$Query$Places<TRes> {
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? places = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places(
-        places: places == _undefined || places == null
-            ? _instance.places
-            : (places as Query$Places$places),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? places = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Places(
+          places: places == _undefined || places == null
+              ? _instance.places
+              : (places as Query$Places$places),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   CopyWith$Query$Places$places<TRes> get places {
     final local$places = _instance.places;
     return CopyWith$Query$Places$places(local$places, (e) => call(places: e));
@@ -354,144 +341,99 @@ class _CopyWithStubImpl$Query$Places<TRes>
 
   TRes _res;
 
-  call({
-    Query$Places$places? places,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$Places$places? places, String? $__typename}) => _res;
+
   CopyWith$Query$Places$places<TRes> get places =>
       CopyWith$Query$Places$places.stub(_res);
 }
 
-const documentNodeQueryPlaces = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'Places'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'filters')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'PlaceFilter'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'offset')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'sortBy')),
-        type: ListTypeNode(
+const documentNodeQueryPlaces = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'Places'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'filters')),
           type: NamedTypeNode(
-            name: NameNode(value: 'String'),
+            name: NameNode(value: 'PlaceFilter'),
             isNonNull: false,
           ),
-          isNonNull: false,
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'options')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Options'),
-          isNonNull: false,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'offset')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'places'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'filters'),
-            value: VariableNode(name: NameNode(value: 'filters')),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'sortBy')),
+          type: ListTypeNode(
+            type: NamedTypeNode(
+              name: NameNode(value: 'String'),
+              isNonNull: false,
+            ),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'offset'),
-            value: VariableNode(name: NameNode(value: 'offset')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'options')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'Options'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'sortBy'),
-            value: VariableNode(name: NameNode(value: 'sortBy')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'options'),
-            value: VariableNode(name: NameNode(value: 'options')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'values'),
+            name: NameNode(value: 'places'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'filters'),
+                value: VariableNode(name: NameNode(value: 'filters')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'offset'),
+                value: VariableNode(name: NameNode(value: 'offset')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'sortBy'),
+                value: VariableNode(name: NameNode(value: 'sortBy')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'options'),
+                value: VariableNode(name: NameNode(value: 'options')),
+              ),
+            ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'name'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'blocks'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'floors'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'values'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
                       FieldNode(
                         name: NameNode(value: 'id'),
                         alias: null,
@@ -500,112 +442,194 @@ const documentNodeQueryPlaces = DocumentNode(definitions: [
                         selectionSet: null,
                       ),
                       FieldNode(
-                        name: NameNode(value: 'no'),
+                        name: NameNode(value: 'name'),
                         alias: null,
                         arguments: [],
                         directives: [],
                         selectionSet: null,
                       ),
                       FieldNode(
-                        name: NameNode(value: 'accountPersons'),
+                        name: NameNode(value: 'blocks'),
                         alias: null,
                         arguments: [],
                         directives: [],
-                        selectionSet: SelectionSetNode(selections: [
-                          FieldNode(
-                            name: NameNode(value: 'accountFloorId'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: null,
-                          ),
-                          FieldNode(
-                            name: NameNode(value: 'account'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: SelectionSetNode(selections: [
-                              FieldNode(
-                                name: NameNode(value: 'id'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'floors'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'id'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'no'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'accountPersons'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: SelectionSetNode(
+                                      selections: [
+                                        FieldNode(
+                                          name: NameNode(
+                                            value: 'accountFloorId',
+                                          ),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: null,
+                                        ),
+                                        FieldNode(
+                                          name: NameNode(value: 'account'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: SelectionSetNode(
+                                            selections: [
+                                              FieldNode(
+                                                name: NameNode(value: 'id'),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(value: 'name'),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: '__typename',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        FieldNode(
+                                          name: NameNode(value: 'persons'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: SelectionSetNode(
+                                            selections: [
+                                              FieldNode(
+                                                name: NameNode(value: 'id'),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'firstName',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'lastName',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'emailAddress',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'phoneNumber',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: '__typename',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        FieldNode(
+                                          name: NameNode(value: '__typename'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: null,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
                               ),
-                              FieldNode(
-                                name: NameNode(value: 'name'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: '__typename'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                            ]),
-                          ),
-                          FieldNode(
-                            name: NameNode(value: 'persons'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: SelectionSetNode(selections: [
-                              FieldNode(
-                                name: NameNode(value: 'id'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: 'firstName'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: 'lastName'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: 'emailAddress'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: 'phoneNumber'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                              FieldNode(
-                                name: NameNode(value: '__typename'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                            ]),
-                          ),
-                          FieldNode(
-                            name: NameNode(value: '__typename'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: null,
-                          ),
-                        ]),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
                       ),
                       FieldNode(
                         name: NameNode(value: '__typename'),
@@ -614,25 +638,18 @@ const documentNodeQueryPlaces = DocumentNode(definitions: [
                         directives: [],
                         selectionSet: null,
                       ),
-                    ]),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -641,18 +658,11 @@ const documentNodeQueryPlaces = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Query$Places _parserFn$Query$Places(Map<String, dynamic> data) =>
     Query$Places.fromJson(data);
 typedef OnQueryComplete$Query$Places = FutureOr<void> Function(
@@ -673,36 +683,36 @@ class Options$Query$Places extends graphql.QueryOptions<Query$Places> {
     graphql.Context? context,
     OnQueryComplete$Query$Places? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables?.toJson() ?? {},
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$Places(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryPlaces,
-          parserFn: _parserFn$Query$Places,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables?.toJson() ?? {},
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$Places(data),
+               ),
+         onError: onError,
+         document: documentNodeQueryPlaces,
+         parserFn: _parserFn$Query$Places,
+       );
 
   final OnQueryComplete$Query$Places? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$Places
@@ -721,20 +731,20 @@ class WatchOptions$Query$Places
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables?.toJson() ?? {},
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryPlaces,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$Places,
-        );
+         variables: variables?.toJson() ?? {},
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryPlaces,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$Places,
+       );
 }
 
 class FetchMoreOptions$Query$Places extends graphql.FetchMoreOptions {
@@ -742,32 +752,34 @@ class FetchMoreOptions$Query$Places extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     Variables$Query$Places? variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables?.toJson() ?? {},
-          document: documentNodeQueryPlaces,
-        );
+         updateQuery: updateQuery,
+         variables: variables?.toJson() ?? {},
+         document: documentNodeQueryPlaces,
+       );
 }
 
 extension ClientExtension$Query$Places on graphql.GraphQLClient {
-  Future<graphql.QueryResult<Query$Places>> query$Places(
-          [Options$Query$Places? options]) async =>
-      await this.query(options ?? Options$Query$Places());
-  graphql.ObservableQuery<Query$Places> watchQuery$Places(
-          [WatchOptions$Query$Places? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$Places());
+  Future<graphql.QueryResult<Query$Places>> query$Places([
+    Options$Query$Places? options,
+  ]) async => await this.query(options ?? Options$Query$Places());
+
+  graphql.ObservableQuery<Query$Places> watchQuery$Places([
+    WatchOptions$Query$Places? options,
+  ]) => this.watchQuery(options ?? WatchOptions$Query$Places());
+
   void writeQuery$Places({
     required Query$Places data,
     Variables$Query$Places? variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryPlaces),
-          variables: variables?.toJson() ?? const {},
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQueryPlaces),
+      variables: variables?.toJson() ?? const {},
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
+
   Query$Places? readQuery$Places({
     Variables$Query$Places? variables,
     bool optimistic = true,
@@ -784,20 +796,20 @@ extension ClientExtension$Query$Places on graphql.GraphQLClient {
 }
 
 class Query$Places$places {
-  Query$Places$places({
-    this.values,
-    this.$__typename = 'Places',
-  });
+  Query$Places$places({this.values, this.$__typename = 'Places'});
 
   factory Query$Places$places.fromJson(Map<String, dynamic> json) {
     final l$values = json['values'];
     final l$$__typename = json['__typename'];
     return Query$Places$places(
       values: (l$values as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Places$places$values.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Places$places$values.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -831,7 +843,7 @@ class Query$Places$places {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places$places) || runtimeType != other.runtimeType) {
+    if (other is! Query$Places$places || runtimeType != other.runtimeType) {
       return false;
     }
     final l$values = values;
@@ -861,10 +873,7 @@ class Query$Places$places {
 
 extension UtilityExtension$Query$Places$places on Query$Places$places {
   CopyWith$Query$Places$places<Query$Places$places> get copyWith =>
-      CopyWith$Query$Places$places(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Places$places(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Places$places<TRes> {
@@ -876,24 +885,20 @@ abstract class CopyWith$Query$Places$places<TRes> {
   factory CopyWith$Query$Places$places.stub(TRes res) =
       _CopyWithStubImpl$Query$Places$places;
 
-  TRes call({
-    List<Query$Places$places$values?>? values,
-    String? $__typename,
-  });
+  TRes call({List<Query$Places$places$values?>? values, String? $__typename});
   TRes values(
-      Iterable<Query$Places$places$values?>? Function(
-              Iterable<
-                  CopyWith$Query$Places$places$values<
-                      Query$Places$places$values>?>?)
-          _fn);
+    Iterable<Query$Places$places$values?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values<Query$Places$places$values>?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Places$places<TRes>
     implements CopyWith$Query$Places$places<TRes> {
-  _CopyWithImpl$Query$Places$places(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Places$places(this._instance, this._then);
 
   final Query$Places$places _instance;
 
@@ -901,31 +906,33 @@ class _CopyWithImpl$Query$Places$places<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? values = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places(
-        values: values == _undefined
-            ? _instance.values
-            : (values as List<Query$Places$places$values?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? values = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Places$places(
+          values: values == _undefined
+              ? _instance.values
+              : (values as List<Query$Places$places$values?>?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   TRes values(
-          Iterable<Query$Places$places$values?>? Function(
-                  Iterable<
-                      CopyWith$Query$Places$places$values<
-                          Query$Places$places$values>?>?)
-              _fn) =>
-      call(
-          values: _fn(_instance.values?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Places$places$values(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Places$places$values?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values<Query$Places$places$values>?
+      >?,
+    )
+    _fn,
+  ) => call(
+    values: _fn(
+      _instance.values?.map(
+        (e) =>
+            e == null ? null : CopyWith$Query$Places$places$values(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places<TRes>
@@ -934,11 +941,9 @@ class _CopyWithStubImpl$Query$Places$places<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$Places$places$values?>? values,
-    String? $__typename,
-  }) =>
+  call({List<Query$Places$places$values?>? values, String? $__typename}) =>
       _res;
+
   values(_fn) => _res;
 }
 
@@ -959,10 +964,13 @@ class Query$Places$places$values {
       id: (l$id as String?),
       name: (l$name as String?),
       blocks: (l$blocks as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Places$places$values$blocks.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Places$places$values$blocks.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1008,7 +1016,7 @@ class Query$Places$places$values {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places$places$values) ||
+    if (other is! Query$Places$places$values ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1050,10 +1058,7 @@ class Query$Places$places$values {
 extension UtilityExtension$Query$Places$places$values
     on Query$Places$places$values {
   CopyWith$Query$Places$places$values<Query$Places$places$values>
-      get copyWith => CopyWith$Query$Places$places$values(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$Places$places$values(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Places$places$values<TRes> {
@@ -1072,19 +1077,20 @@ abstract class CopyWith$Query$Places$places$values<TRes> {
     String? $__typename,
   });
   TRes blocks(
-      Iterable<Query$Places$places$values$blocks?>? Function(
-              Iterable<
-                  CopyWith$Query$Places$places$values$blocks<
-                      Query$Places$places$values$blocks>?>?)
-          _fn);
+    Iterable<Query$Places$places$values$blocks?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks<
+          Query$Places$places$values$blocks
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Places$places$values<TRes>
     implements CopyWith$Query$Places$places$values<TRes> {
-  _CopyWithImpl$Query$Places$places$values(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Places$places$values(this._instance, this._then);
 
   final Query$Places$places$values _instance;
 
@@ -1097,30 +1103,37 @@ class _CopyWithImpl$Query$Places$places$values<TRes>
     Object? name = _undefined,
     Object? blocks = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values(
-        id: id == _undefined ? _instance.id : (id as String?),
-        name: name == _undefined ? _instance.name : (name as String?),
-        blocks: blocks == _undefined
-            ? _instance.blocks
-            : (blocks as List<Query$Places$places$values$blocks?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Places$places$values(
+      id: id == _undefined ? _instance.id : (id as String?),
+      name: name == _undefined ? _instance.name : (name as String?),
+      blocks: blocks == _undefined
+          ? _instance.blocks
+          : (blocks as List<Query$Places$places$values$blocks?>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   TRes blocks(
-          Iterable<Query$Places$places$values$blocks?>? Function(
-                  Iterable<
-                      CopyWith$Query$Places$places$values$blocks<
-                          Query$Places$places$values$blocks>?>?)
-              _fn) =>
-      call(
-          blocks: _fn(_instance.blocks?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Places$places$values$blocks(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Places$places$values$blocks?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks<
+          Query$Places$places$values$blocks
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    blocks: _fn(
+      _instance.blocks?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Places$places$values$blocks(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values<TRes>
@@ -1134,8 +1147,8 @@ class _CopyWithStubImpl$Query$Places$places$values<TRes>
     String? name,
     List<Query$Places$places$values$blocks?>? blocks,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   blocks(_fn) => _res;
 }
 
@@ -1148,7 +1161,8 @@ class Query$Places$places$values$blocks {
   });
 
   factory Query$Places$places$values$blocks.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$floors = json['floors'];
@@ -1157,10 +1171,13 @@ class Query$Places$places$values$blocks {
       id: (l$id as String?),
       name: (l$name as String?),
       floors: (l$floors as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Places$places$values$blocks$floors.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Places$places$values$blocks$floors.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1206,7 +1223,7 @@ class Query$Places$places$values$blocks {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places$places$values$blocks) ||
+    if (other is! Query$Places$places$values$blocks ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1248,10 +1265,7 @@ class Query$Places$places$values$blocks {
 extension UtilityExtension$Query$Places$places$values$blocks
     on Query$Places$places$values$blocks {
   CopyWith$Query$Places$places$values$blocks<Query$Places$places$values$blocks>
-      get copyWith => CopyWith$Query$Places$places$values$blocks(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$Places$places$values$blocks(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Places$places$values$blocks<TRes> {
@@ -1270,19 +1284,20 @@ abstract class CopyWith$Query$Places$places$values$blocks<TRes> {
     String? $__typename,
   });
   TRes floors(
-      Iterable<Query$Places$places$values$blocks$floors?>? Function(
-              Iterable<
-                  CopyWith$Query$Places$places$values$blocks$floors<
-                      Query$Places$places$values$blocks$floors>?>?)
-          _fn);
+    Iterable<Query$Places$places$values$blocks$floors?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors<
+          Query$Places$places$values$blocks$floors
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Places$places$values$blocks<TRes>
     implements CopyWith$Query$Places$places$values$blocks<TRes> {
-  _CopyWithImpl$Query$Places$places$values$blocks(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Places$places$values$blocks(this._instance, this._then);
 
   final Query$Places$places$values$blocks _instance;
 
@@ -1295,30 +1310,37 @@ class _CopyWithImpl$Query$Places$places$values$blocks<TRes>
     Object? name = _undefined,
     Object? floors = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values$blocks(
-        id: id == _undefined ? _instance.id : (id as String?),
-        name: name == _undefined ? _instance.name : (name as String?),
-        floors: floors == _undefined
-            ? _instance.floors
-            : (floors as List<Query$Places$places$values$blocks$floors?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Places$places$values$blocks(
+      id: id == _undefined ? _instance.id : (id as String?),
+      name: name == _undefined ? _instance.name : (name as String?),
+      floors: floors == _undefined
+          ? _instance.floors
+          : (floors as List<Query$Places$places$values$blocks$floors?>?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   TRes floors(
-          Iterable<Query$Places$places$values$blocks$floors?>? Function(
-                  Iterable<
-                      CopyWith$Query$Places$places$values$blocks$floors<
-                          Query$Places$places$values$blocks$floors>?>?)
-              _fn) =>
-      call(
-          floors: _fn(_instance.floors?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Places$places$values$blocks$floors(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Places$places$values$blocks$floors?>? Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors<
+          Query$Places$places$values$blocks$floors
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    floors: _fn(
+      _instance.floors?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Places$places$values$blocks$floors(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values$blocks<TRes>
@@ -1332,8 +1354,8 @@ class _CopyWithStubImpl$Query$Places$places$values$blocks<TRes>
     String? name,
     List<Query$Places$places$values$blocks$floors?>? floors,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   floors(_fn) => _res;
 }
 
@@ -1346,7 +1368,8 @@ class Query$Places$places$values$blocks$floors {
   });
 
   factory Query$Places$places$values$blocks$floors.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$no = json['no'];
     final l$accountPersons = json['accountPersons'];
@@ -1355,10 +1378,13 @@ class Query$Places$places$values$blocks$floors {
       id: (l$id as String?),
       no: (l$no as int?),
       accountPersons: (l$accountPersons as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Places$places$values$blocks$floors$accountPersons
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Places$places$values$blocks$floors$accountPersons.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1369,7 +1395,7 @@ class Query$Places$places$values$blocks$floors {
   final int? no;
 
   final List<Query$Places$places$values$blocks$floors$accountPersons?>?
-      accountPersons;
+  accountPersons;
 
   final String $__typename;
 
@@ -1380,8 +1406,9 @@ class Query$Places$places$values$blocks$floors {
     final l$no = no;
     _resultData['no'] = l$no;
     final l$accountPersons = accountPersons;
-    _resultData['accountPersons'] =
-        l$accountPersons?.map((e) => e?.toJson()).toList();
+    _resultData['accountPersons'] = l$accountPersons
+        ?.map((e) => e?.toJson())
+        .toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -1408,7 +1435,7 @@ class Query$Places$places$values$blocks$floors {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places$places$values$blocks$floors) ||
+    if (other is! Query$Places$places$values$blocks$floors ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1450,11 +1477,10 @@ class Query$Places$places$values$blocks$floors {
 extension UtilityExtension$Query$Places$places$values$blocks$floors
     on Query$Places$places$values$blocks$floors {
   CopyWith$Query$Places$places$values$blocks$floors<
-          Query$Places$places$values$blocks$floors>
-      get copyWith => CopyWith$Query$Places$places$values$blocks$floors(
-            this,
-            (i) => i,
-          );
+    Query$Places$places$values$blocks$floors
+  >
+  get copyWith =>
+      CopyWith$Query$Places$places$values$blocks$floors(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Places$places$values$blocks$floors<TRes> {
@@ -1470,15 +1496,20 @@ abstract class CopyWith$Query$Places$places$values$blocks$floors<TRes> {
     String? id,
     int? no,
     List<Query$Places$places$values$blocks$floors$accountPersons?>?
-        accountPersons,
+    accountPersons,
     String? $__typename,
   });
   TRes accountPersons(
-      Iterable<Query$Places$places$values$blocks$floors$accountPersons?>? Function(
-              Iterable<
-                  CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
-                      Query$Places$places$values$blocks$floors$accountPersons>?>?)
-          _fn);
+    Iterable<Query$Places$places$values$blocks$floors$accountPersons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
+          Query$Places$places$values$blocks$floors$accountPersons
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Places$places$values$blocks$floors<TRes>
@@ -1499,31 +1530,44 @@ class _CopyWithImpl$Query$Places$places$values$blocks$floors<TRes>
     Object? no = _undefined,
     Object? accountPersons = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values$blocks$floors(
-        id: id == _undefined ? _instance.id : (id as String?),
-        no: no == _undefined ? _instance.no : (no as int?),
-        accountPersons: accountPersons == _undefined
-            ? _instance.accountPersons
-            : (accountPersons as List<
-                Query$Places$places$values$blocks$floors$accountPersons?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Places$places$values$blocks$floors(
+      id: id == _undefined ? _instance.id : (id as String?),
+      no: no == _undefined ? _instance.no : (no as int?),
+      accountPersons: accountPersons == _undefined
+          ? _instance.accountPersons
+          : (accountPersons
+                as List<
+                  Query$Places$places$values$blocks$floors$accountPersons?
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   TRes accountPersons(
-          Iterable<Query$Places$places$values$blocks$floors$accountPersons?>? Function(
-                  Iterable<
-                      CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
-                          Query$Places$places$values$blocks$floors$accountPersons>?>?)
-              _fn) =>
-      call(
-          accountPersons: _fn(_instance.accountPersons?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Places$places$values$blocks$floors$accountPersons(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Places$places$values$blocks$floors$accountPersons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
+          Query$Places$places$values$blocks$floors$accountPersons
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    accountPersons: _fn(
+      _instance.accountPersons?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Places$places$values$blocks$floors$accountPersons(
+                e,
+                (i) => i,
+              ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values$blocks$floors<TRes>
@@ -1536,10 +1580,10 @@ class _CopyWithStubImpl$Query$Places$places$values$blocks$floors<TRes>
     String? id,
     int? no,
     List<Query$Places$places$values$blocks$floors$accountPersons?>?
-        accountPersons,
+    accountPersons,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   accountPersons(_fn) => _res;
 }
 
@@ -1552,7 +1596,8 @@ class Query$Places$places$values$blocks$floors$accountPersons {
   });
 
   factory Query$Places$places$values$blocks$floors$accountPersons.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$accountFloorId = json['accountFloorId'];
     final l$account = json['account'];
     final l$persons = json['persons'];
@@ -1561,13 +1606,17 @@ class Query$Places$places$values$blocks$floors$accountPersons {
       accountFloorId: (l$accountFloorId as String?),
       account: l$account == null
           ? null
-          : Query$Places$places$values$blocks$floors$accountPersons$account
-              .fromJson((l$account as Map<String, dynamic>)),
+          : Query$Places$places$values$blocks$floors$accountPersons$account.fromJson(
+              (l$account as Map<String, dynamic>),
+            ),
       persons: (l$persons as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Places$places$values$blocks$floors$accountPersons$persons
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Places$places$values$blocks$floors$accountPersons$persons.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1576,10 +1625,10 @@ class Query$Places$places$values$blocks$floors$accountPersons {
   final String? accountFloorId;
 
   final Query$Places$places$values$blocks$floors$accountPersons$account?
-      account;
+  account;
 
   final List<Query$Places$places$values$blocks$floors$accountPersons$persons?>?
-      persons;
+  persons;
 
   final String $__typename;
 
@@ -1615,7 +1664,7 @@ class Query$Places$places$values$blocks$floors$accountPersons {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Places$places$values$blocks$floors$accountPersons) ||
+    if (other is! Query$Places$places$values$blocks$floors$accountPersons ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1657,44 +1706,52 @@ class Query$Places$places$values$blocks$floors$accountPersons {
 extension UtilityExtension$Query$Places$places$values$blocks$floors$accountPersons
     on Query$Places$places$values$blocks$floors$accountPersons {
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
-          Query$Places$places$values$blocks$floors$accountPersons>
-      get copyWith =>
-          CopyWith$Query$Places$places$values$blocks$floors$accountPersons(
-            this,
-            (i) => i,
-          );
+    Query$Places$places$values$blocks$floors$accountPersons
+  >
+  get copyWith =>
+      CopyWith$Query$Places$places$values$blocks$floors$accountPersons(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Places$places$values$blocks$floors$accountPersons<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons(
     Query$Places$places$values$blocks$floors$accountPersons instance,
     TRes Function(Query$Places$places$values$blocks$floors$accountPersons) then,
   ) = _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons;
 
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons;
 
   TRes call({
     String? accountFloorId,
     Query$Places$places$values$blocks$floors$accountPersons$account? account,
     List<Query$Places$places$values$blocks$floors$accountPersons$persons?>?
-        persons,
+    persons,
     String? $__typename,
   });
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<TRes>
-      get account;
+  get account;
   TRes persons(
-      Iterable<Query$Places$places$values$blocks$floors$accountPersons$persons?>? Function(
-              Iterable<
-                  CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-                      Query$Places$places$values$blocks$floors$accountPersons$persons>?>?)
-          _fn);
+    Iterable<Query$Places$places$values$blocks$floors$accountPersons$persons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
+          Query$Places$places$values$blocks$floors$accountPersons$persons
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons<TRes> {
   _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons(
@@ -1705,7 +1762,7 @@ class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons<
   final Query$Places$places$values$blocks$floors$accountPersons _instance;
 
   final TRes Function(Query$Places$places$values$blocks$floors$accountPersons)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1714,54 +1771,72 @@ class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons<
     Object? account = _undefined,
     Object? persons = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values$blocks$floors$accountPersons(
-        accountFloorId: accountFloorId == _undefined
-            ? _instance.accountFloorId
-            : (accountFloorId as String?),
-        account: account == _undefined
-            ? _instance.account
-            : (account
+  }) => _then(
+    Query$Places$places$values$blocks$floors$accountPersons(
+      accountFloorId: accountFloorId == _undefined
+          ? _instance.accountFloorId
+          : (accountFloorId as String?),
+      account: account == _undefined
+          ? _instance.account
+          : (account
                 as Query$Places$places$values$blocks$floors$accountPersons$account?),
-        persons: persons == _undefined
-            ? _instance.persons
-            : (persons as List<
-                Query$Places$places$values$blocks$floors$accountPersons$persons?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      persons: persons == _undefined
+          ? _instance.persons
+          : (persons
+                as List<
+                  Query$Places$places$values$blocks$floors$accountPersons$persons?
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<TRes>
-      get account {
+  get account {
     final local$account = _instance.account;
     return local$account == null
-        ? CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account
-            .stub(_then(_instance))
+        ? CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account.stub(
+            _then(_instance),
+          )
         : CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account(
-            local$account, (e) => call(account: e));
+            local$account,
+            (e) => call(account: e),
+          );
   }
 
   TRes persons(
-          Iterable<Query$Places$places$values$blocks$floors$accountPersons$persons?>? Function(
-                  Iterable<
-                      CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-                          Query$Places$places$values$blocks$floors$accountPersons$persons>?>?)
-              _fn) =>
-      call(
-          persons: _fn(_instance.persons?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Places$places$values$blocks$floors$accountPersons$persons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
+          Query$Places$places$values$blocks$floors$accountPersons$persons
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    persons: _fn(
+      _instance.persons?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons(
+                e,
+                (i) => i,
+              ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons<TRes> {
   _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1769,14 +1844,16 @@ class _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons<
     String? accountFloorId,
     Query$Places$places$values$blocks$floors$accountPersons$account? account,
     List<Query$Places$places$values$blocks$floors$accountPersons$persons?>?
-        persons,
+    persons,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<TRes>
-      get account =>
-          CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account
-              .stub(_res);
+  get account =>
+      CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account.stub(
+        _res,
+      );
+
   persons(_fn) => _res;
 }
 
@@ -1788,7 +1865,8 @@ class Query$Places$places$values$blocks$floors$accountPersons$account {
   });
 
   factory Query$Places$places$values$blocks$floors$accountPersons$account.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
@@ -1821,11 +1899,7 @@ class Query$Places$places$values$blocks$floors$accountPersons$account {
     final l$id = id;
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$name, l$$__typename]);
   }
 
   @override
@@ -1833,8 +1907,8 @@ class Query$Places$places$values$blocks$floors$accountPersons$account {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$Places$places$values$blocks$floors$accountPersons$account) ||
+    if (other
+            is! Query$Places$places$values$blocks$floors$accountPersons$account ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1860,49 +1934,52 @@ class Query$Places$places$values$blocks$floors$accountPersons$account {
 extension UtilityExtension$Query$Places$places$values$blocks$floors$accountPersons$account
     on Query$Places$places$values$blocks$floors$accountPersons$account {
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<
-          Query$Places$places$values$blocks$floors$accountPersons$account>
-      get copyWith =>
-          CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account(
-            this,
-            (i) => i,
-          );
+    Query$Places$places$values$blocks$floors$accountPersons$account
+  >
+  get copyWith =>
+      CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account(
     Query$Places$places$values$blocks$floors$accountPersons$account instance,
     TRes Function(
-            Query$Places$places$values$blocks$floors$accountPersons$account)
-        then,
+      Query$Places$places$values$blocks$floors$accountPersons$account,
+    )
+    then,
   ) = _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$account;
 
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$account;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$account;
 
-  TRes call({
-    String? id,
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? id, String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$account<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$account(
     this._instance,
     this._then,
   );
 
   final Query$Places$places$values$blocks$floors$accountPersons$account
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$Places$places$values$blocks$floors$accountPersons$account) _then;
+    Query$Places$places$values$blocks$floors$accountPersons$account,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1910,32 +1987,31 @@ class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$acco
     Object? id = _undefined,
     Object? name = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values$blocks$floors$accountPersons$account(
-        id: id == _undefined ? _instance.id : (id as String?),
-        name: name == _undefined ? _instance.name : (name as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Places$places$values$blocks$floors$accountPersons$account(
+      id: id == _undefined ? _instance.id : (id as String?),
+      name: name == _undefined ? _instance.name : (name as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$account<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons$account<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$account(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? id,
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? name, String? $__typename}) => _res;
 }
 
 class Query$Places$places$values$blocks$floors$accountPersons$persons {
@@ -1949,7 +2025,8 @@ class Query$Places$places$values$blocks$floors$accountPersons$persons {
   });
 
   factory Query$Places$places$values$blocks$floors$accountPersons$persons.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
@@ -2018,8 +2095,8 @@ class Query$Places$places$values$blocks$floors$accountPersons$persons {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other
-            is Query$Places$places$values$blocks$floors$accountPersons$persons) ||
+    if (other
+            is! Query$Places$places$values$blocks$floors$accountPersons$persons ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2060,26 +2137,29 @@ class Query$Places$places$values$blocks$floors$accountPersons$persons {
 extension UtilityExtension$Query$Places$places$values$blocks$floors$accountPersons$persons
     on Query$Places$places$values$blocks$floors$accountPersons$persons {
   CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-          Query$Places$places$values$blocks$floors$accountPersons$persons>
-      get copyWith =>
-          CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons(
-            this,
-            (i) => i,
-          );
+    Query$Places$places$values$blocks$floors$accountPersons$persons
+  >
+  get copyWith =>
+      CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons(
     Query$Places$places$values$blocks$floors$accountPersons$persons instance,
     TRes Function(
-            Query$Places$places$values$blocks$floors$accountPersons$persons)
-        then,
+      Query$Places$places$values$blocks$floors$accountPersons$persons,
+    )
+    then,
   ) = _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$persons;
 
   factory CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$persons;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$persons;
 
   TRes call({
     String? id,
@@ -2092,20 +2172,24 @@ abstract class CopyWith$Query$Places$places$values$blocks$floors$accountPersons$
 }
 
 class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$persons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$persons(
     this._instance,
     this._then,
   );
 
   final Query$Places$places$values$blocks$floors$accountPersons$persons
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$Places$places$values$blocks$floors$accountPersons$persons) _then;
+    Query$Places$places$values$blocks$floors$accountPersons$persons,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -2116,33 +2200,38 @@ class _CopyWithImpl$Query$Places$places$values$blocks$floors$accountPersons$pers
     Object? emailAddress = _undefined,
     Object? phoneNumber = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Places$places$values$blocks$floors$accountPersons$persons(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined
-            ? _instance.firstName
-            : (firstName as String?),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Places$places$values$blocks$floors$accountPersons$persons(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined
+          ? _instance.firstName
+          : (firstName as String?),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$persons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Places$places$values$blocks$floors$accountPersons$persons<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$persons(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2153,6 +2242,5 @@ class _CopyWithStubImpl$Query$Places$places$values$blocks$floors$accountPersons$
     String? emailAddress,
     String? phoneNumber,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

@@ -1,13 +1,12 @@
 import '../../../component/schema.graphql.dart';
+
 import 'dart:async';
+
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
 class Query$Me {
-  Query$Me({
-    required this.me,
-    this.$__typename = 'Query',
-  });
+  Query$Me({required this.me, this.$__typename = 'Query'});
 
   factory Query$Me.fromJson(Map<String, dynamic> json) {
     final l$me = json['me'];
@@ -35,10 +34,7 @@ class Query$Me {
   int get hashCode {
     final l$me = me;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$me,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$me, l$$__typename]);
   }
 
   @override
@@ -46,7 +42,7 @@ class Query$Me {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Me) || runtimeType != other.runtimeType) {
+    if (other is! Query$Me || runtimeType != other.runtimeType) {
       return false;
     }
     final l$me = me;
@@ -64,32 +60,21 @@ class Query$Me {
 }
 
 extension UtilityExtension$Query$Me on Query$Me {
-  CopyWith$Query$Me<Query$Me> get copyWith => CopyWith$Query$Me(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$Me<Query$Me> get copyWith => CopyWith$Query$Me(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Me<TRes> {
-  factory CopyWith$Query$Me(
-    Query$Me instance,
-    TRes Function(Query$Me) then,
-  ) = _CopyWithImpl$Query$Me;
+  factory CopyWith$Query$Me(Query$Me instance, TRes Function(Query$Me) then) =
+      _CopyWithImpl$Query$Me;
 
   factory CopyWith$Query$Me.stub(TRes res) = _CopyWithStubImpl$Query$Me;
 
-  TRes call({
-    Query$Me$me? me,
-    String? $__typename,
-  });
+  TRes call({Query$Me$me? me, String? $__typename});
   CopyWith$Query$Me$me<TRes> get me;
 }
 
 class _CopyWithImpl$Query$Me<TRes> implements CopyWith$Query$Me<TRes> {
-  _CopyWithImpl$Query$Me(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Me(this._instance, this._then);
 
   final Query$Me _instance;
 
@@ -97,16 +82,18 @@ class _CopyWithImpl$Query$Me<TRes> implements CopyWith$Query$Me<TRes> {
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? me = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Me(
-        me: me == _undefined || me == null ? _instance.me : (me as Query$Me$me),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? me = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Me(
+          me: me == _undefined || me == null
+              ? _instance.me
+              : (me as Query$Me$me),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   CopyWith$Query$Me$me<TRes> get me {
     final local$me = _instance.me;
     return CopyWith$Query$Me$me(local$me, (e) => call(me: e));
@@ -118,148 +105,164 @@ class _CopyWithStubImpl$Query$Me<TRes> implements CopyWith$Query$Me<TRes> {
 
   TRes _res;
 
-  call({
-    Query$Me$me? me,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$Me$me? me, String? $__typename}) => _res;
+
   CopyWith$Query$Me$me<TRes> get me => CopyWith$Query$Me$me.stub(_res);
 }
 
-const documentNodeQueryMe = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'Me'),
-    variableDefinitions: [],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'me'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+const documentNodeQueryMe = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'Me'),
+      variableDefinitions: [],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'person'),
+            name: NameNode(value: 'me'),
             alias: null,
             arguments: [],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'firstName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'lastName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'phoneNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'emailAddress'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'roleType'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'account'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'lifeState'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
-          ),
-          FieldNode(
-            name: NameNode(value: 'credential'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'uId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'type'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'person'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'firstName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lastName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'phoneNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'emailAddress'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'roleType'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'account'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lifeState'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: 'credential'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'uId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'type'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -268,18 +271,11 @@ const documentNodeQueryMe = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Query$Me _parserFn$Query$Me(Map<String, dynamic> data) =>
     Query$Me.fromJson(data);
 typedef OnQueryComplete$Query$Me = FutureOr<void> Function(
@@ -299,35 +295,35 @@ class Options$Query$Me extends graphql.QueryOptions<Query$Me> {
     graphql.Context? context,
     OnQueryComplete$Query$Me? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$Me(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryMe,
-          parserFn: _parserFn$Query$Me,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$Me(data),
+               ),
+         onError: onError,
+         document: documentNodeQueryMe,
+         parserFn: _parserFn$Query$Me,
+       );
 
   final OnQueryComplete$Query$Me? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$Me extends graphql.WatchQueryOptions<Query$Me> {
@@ -344,50 +340,49 @@ class WatchOptions$Query$Me extends graphql.WatchQueryOptions<Query$Me> {
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryMe,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$Me,
-        );
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryMe,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$Me,
+       );
 }
 
 class FetchMoreOptions$Query$Me extends graphql.FetchMoreOptions {
   FetchMoreOptions$Query$Me({required graphql.UpdateQuery updateQuery})
-      : super(
-          updateQuery: updateQuery,
-          document: documentNodeQueryMe,
-        );
+    : super(updateQuery: updateQuery, document: documentNodeQueryMe);
 }
 
 extension ClientExtension$Query$Me on graphql.GraphQLClient {
-  Future<graphql.QueryResult<Query$Me>> query$Me(
-          [Options$Query$Me? options]) async =>
-      await this.query(options ?? Options$Query$Me());
-  graphql.ObservableQuery<Query$Me> watchQuery$Me(
-          [WatchOptions$Query$Me? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$Me());
-  void writeQuery$Me({
-    required Query$Me data,
-    bool broadcast = true,
-  }) =>
+  Future<graphql.QueryResult<Query$Me>> query$Me([
+    Options$Query$Me? options,
+  ]) async => await this.query(options ?? Options$Query$Me());
+
+  graphql.ObservableQuery<Query$Me> watchQuery$Me([
+    WatchOptions$Query$Me? options,
+  ]) => this.watchQuery(options ?? WatchOptions$Query$Me());
+
+  void writeQuery$Me({required Query$Me data, bool broadcast = true}) =>
       this.writeQuery(
         graphql.Request(
-            operation: graphql.Operation(document: documentNodeQueryMe)),
+          operation: graphql.Operation(document: documentNodeQueryMe),
+        ),
         data: data.toJson(),
         broadcast: broadcast,
       );
+
   Query$Me? readQuery$Me({bool optimistic = true}) {
     final result = this.readQuery(
       graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryMe)),
+        operation: graphql.Operation(document: documentNodeQueryMe),
+      ),
       optimistic: optimistic,
     );
     return result == null ? null : Query$Me.fromJson(result);
@@ -417,7 +412,8 @@ class Query$Me$me {
       credential: l$credential == null
           ? null
           : Query$Me$me$credential.fromJson(
-              (l$credential as Map<String, dynamic>)),
+              (l$credential as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -449,12 +445,7 @@ class Query$Me$me {
     final l$account = account;
     final l$credential = credential;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$person,
-      l$account,
-      l$credential,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$person, l$account, l$credential, l$$__typename]);
   }
 
   @override
@@ -462,7 +453,7 @@ class Query$Me$me {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Me$me) || runtimeType != other.runtimeType) {
+    if (other is! Query$Me$me || runtimeType != other.runtimeType) {
       return false;
     }
     final l$person = person;
@@ -490,10 +481,8 @@ class Query$Me$me {
 }
 
 extension UtilityExtension$Query$Me$me on Query$Me$me {
-  CopyWith$Query$Me$me<Query$Me$me> get copyWith => CopyWith$Query$Me$me(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$Me$me<Query$Me$me> get copyWith =>
+      CopyWith$Query$Me$me(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Me$me<TRes> {
@@ -516,10 +505,7 @@ abstract class CopyWith$Query$Me$me<TRes> {
 }
 
 class _CopyWithImpl$Query$Me$me<TRes> implements CopyWith$Query$Me$me<TRes> {
-  _CopyWithImpl$Query$Me$me(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Me$me(this._instance, this._then);
 
   final Query$Me$me _instance;
 
@@ -532,21 +518,23 @@ class _CopyWithImpl$Query$Me$me<TRes> implements CopyWith$Query$Me$me<TRes> {
     Object? account = _undefined,
     Object? credential = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Me$me(
-        person: person == _undefined
-            ? _instance.person
-            : (person as Query$Me$me$person?),
-        account: account == _undefined
-            ? _instance.account
-            : (account as Query$Me$me$account?),
-        credential: credential == _undefined
-            ? _instance.credential
-            : (credential as Query$Me$me$credential?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Me$me(
+      person: person == _undefined
+          ? _instance.person
+          : (person as Query$Me$me$person?),
+      account: account == _undefined
+          ? _instance.account
+          : (account as Query$Me$me$account?),
+      credential: credential == _undefined
+          ? _instance.credential
+          : (credential as Query$Me$me$credential?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Query$Me$me$person<TRes> get person {
     final local$person = _instance.person;
     return local$person == null
@@ -566,7 +554,9 @@ class _CopyWithImpl$Query$Me$me<TRes> implements CopyWith$Query$Me$me<TRes> {
     return local$credential == null
         ? CopyWith$Query$Me$me$credential.stub(_then(_instance))
         : CopyWith$Query$Me$me$credential(
-            local$credential, (e) => call(credential: e));
+            local$credential,
+            (e) => call(credential: e),
+          );
   }
 }
 
@@ -581,12 +571,14 @@ class _CopyWithStubImpl$Query$Me$me<TRes>
     Query$Me$me$account? account,
     Query$Me$me$credential? credential,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Query$Me$me$person<TRes> get person =>
       CopyWith$Query$Me$me$person.stub(_res);
+
   CopyWith$Query$Me$me$account<TRes> get account =>
       CopyWith$Query$Me$me$account.stub(_res);
+
   CopyWith$Query$Me$me$credential<TRes> get credential =>
       CopyWith$Query$Me$me$credential.stub(_res);
 }
@@ -679,7 +671,7 @@ class Query$Me$me$person {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Me$me$person) || runtimeType != other.runtimeType) {
+    if (other is! Query$Me$me$person || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -723,10 +715,7 @@ class Query$Me$me$person {
 
 extension UtilityExtension$Query$Me$me$person on Query$Me$me$person {
   CopyWith$Query$Me$me$person<Query$Me$me$person> get copyWith =>
-      CopyWith$Query$Me$me$person(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Me$me$person(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Me$me$person<TRes> {
@@ -751,10 +740,7 @@ abstract class CopyWith$Query$Me$me$person<TRes> {
 
 class _CopyWithImpl$Query$Me$me$person<TRes>
     implements CopyWith$Query$Me$me$person<TRes> {
-  _CopyWithImpl$Query$Me$me$person(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Me$me$person(this._instance, this._then);
 
   final Query$Me$me$person _instance;
 
@@ -770,26 +756,29 @@ class _CopyWithImpl$Query$Me$me$person<TRes>
     Object? emailAddress = _undefined,
     Object? roleType = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Me$me$person(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined
-            ? _instance.firstName
-            : (firstName as String?),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        roleType:
-            roleType == _undefined ? _instance.roleType : (roleType as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Me$me$person(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined
+          ? _instance.firstName
+          : (firstName as String?),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      roleType: roleType == _undefined
+          ? _instance.roleType
+          : (roleType as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Me$me$person<TRes>
@@ -806,16 +795,11 @@ class _CopyWithStubImpl$Query$Me$me$person<TRes>
     String? emailAddress,
     String? roleType,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$Me$me$account {
-  Query$Me$me$account({
-    this.id,
-    this.lifeState,
-    this.$__typename = 'Account',
-  });
+  Query$Me$me$account({this.id, this.lifeState, this.$__typename = 'Account'});
 
   factory Query$Me$me$account.fromJson(Map<String, dynamic> json) {
     final l$id = json['id'];
@@ -841,8 +825,9 @@ class Query$Me$me$account {
     final l$id = id;
     _resultData['id'] = l$id;
     final l$lifeState = lifeState;
-    _resultData['lifeState'] =
-        l$lifeState == null ? null : toJson$Enum$LifeState(l$lifeState);
+    _resultData['lifeState'] = l$lifeState == null
+        ? null
+        : toJson$Enum$LifeState(l$lifeState);
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -853,11 +838,7 @@ class Query$Me$me$account {
     final l$id = id;
     final l$lifeState = lifeState;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$lifeState,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$lifeState, l$$__typename]);
   }
 
   @override
@@ -865,7 +846,7 @@ class Query$Me$me$account {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Me$me$account) || runtimeType != other.runtimeType) {
+    if (other is! Query$Me$me$account || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -889,10 +870,7 @@ class Query$Me$me$account {
 
 extension UtilityExtension$Query$Me$me$account on Query$Me$me$account {
   CopyWith$Query$Me$me$account<Query$Me$me$account> get copyWith =>
-      CopyWith$Query$Me$me$account(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Me$me$account(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Me$me$account<TRes> {
@@ -904,19 +882,12 @@ abstract class CopyWith$Query$Me$me$account<TRes> {
   factory CopyWith$Query$Me$me$account.stub(TRes res) =
       _CopyWithStubImpl$Query$Me$me$account;
 
-  TRes call({
-    String? id,
-    Enum$LifeState? lifeState,
-    String? $__typename,
-  });
+  TRes call({String? id, Enum$LifeState? lifeState, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Me$me$account<TRes>
     implements CopyWith$Query$Me$me$account<TRes> {
-  _CopyWithImpl$Query$Me$me$account(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Me$me$account(this._instance, this._then);
 
   final Query$Me$me$account _instance;
 
@@ -928,16 +899,17 @@ class _CopyWithImpl$Query$Me$me$account<TRes>
     Object? id = _undefined,
     Object? lifeState = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Me$me$account(
-        id: id == _undefined ? _instance.id : (id as String?),
-        lifeState: lifeState == _undefined
-            ? _instance.lifeState
-            : (lifeState as Enum$LifeState?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Me$me$account(
+      id: id == _undefined ? _instance.id : (id as String?),
+      lifeState: lifeState == _undefined
+          ? _instance.lifeState
+          : (lifeState as Enum$LifeState?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Me$me$account<TRes>
@@ -946,12 +918,7 @@ class _CopyWithStubImpl$Query$Me$me$account<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    Enum$LifeState? lifeState,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, Enum$LifeState? lifeState, String? $__typename}) => _res;
 }
 
 class Query$Me$me$credential {
@@ -992,8 +959,9 @@ class Query$Me$me$credential {
     final l$uId = uId;
     _resultData['uId'] = l$uId;
     final l$type = type;
-    _resultData['type'] =
-        l$type == null ? null : toJson$Enum$CredentialType(l$type);
+    _resultData['type'] = l$type == null
+        ? null
+        : toJson$Enum$CredentialType(l$type);
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -1005,12 +973,7 @@ class Query$Me$me$credential {
     final l$uId = uId;
     final l$type = type;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$uId,
-      l$type,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$uId, l$type, l$$__typename]);
   }
 
   @override
@@ -1018,8 +981,7 @@ class Query$Me$me$credential {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Me$me$credential) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Query$Me$me$credential || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -1048,10 +1010,7 @@ class Query$Me$me$credential {
 
 extension UtilityExtension$Query$Me$me$credential on Query$Me$me$credential {
   CopyWith$Query$Me$me$credential<Query$Me$me$credential> get copyWith =>
-      CopyWith$Query$Me$me$credential(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Me$me$credential(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Me$me$credential<TRes> {
@@ -1073,10 +1032,7 @@ abstract class CopyWith$Query$Me$me$credential<TRes> {
 
 class _CopyWithImpl$Query$Me$me$credential<TRes>
     implements CopyWith$Query$Me$me$credential<TRes> {
-  _CopyWithImpl$Query$Me$me$credential(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Me$me$credential(this._instance, this._then);
 
   final Query$Me$me$credential _instance;
 
@@ -1089,17 +1045,18 @@ class _CopyWithImpl$Query$Me$me$credential<TRes>
     Object? uId = _undefined,
     Object? type = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Me$me$credential(
-        id: id == _undefined ? _instance.id : (id as String?),
-        uId: uId == _undefined ? _instance.uId : (uId as String?),
-        type: type == _undefined
-            ? _instance.type
-            : (type as Enum$CredentialType?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Me$me$credential(
+      id: id == _undefined ? _instance.id : (id as String?),
+      uId: uId == _undefined ? _instance.uId : (uId as String?),
+      type: type == _undefined
+          ? _instance.type
+          : (type as Enum$CredentialType?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Me$me$credential<TRes>
@@ -1113,6 +1070,5 @@ class _CopyWithStubImpl$Query$Me$me$credential<TRes>
     String? uId,
     Enum$CredentialType? type,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

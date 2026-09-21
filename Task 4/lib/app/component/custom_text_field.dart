@@ -83,7 +83,7 @@ class CustomUnderlineInputBorder {
     return UnderlineInputBorder(
       borderSide: BorderSide(
         color:
-            color ?? Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+            color ?? Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
       ),
     );
   }
@@ -97,7 +97,7 @@ class CustomOutlineInputBorder {
     return OutlineInputBorder(
       borderSide: BorderSide(
         color:
-            color ?? Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+            color ?? Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
       ),
       borderRadius: BorderRadius.all(
         Radius.circular(

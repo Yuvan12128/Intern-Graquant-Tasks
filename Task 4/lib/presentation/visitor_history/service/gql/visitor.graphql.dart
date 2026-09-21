@@ -1,5 +1,7 @@
 import '../../../../data/graphql/component/schema.graphql.dart';
+
 import 'dart:async';
+
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
@@ -10,14 +12,13 @@ class Variables$Query$Visitors {
     int? first,
     List<String?>? sortBy,
     Input$Options? options,
-  }) =>
-      Variables$Query$Visitors._({
-        if (filters != null) r'filters': filters,
-        if (offset != null) r'offset': offset,
-        if (first != null) r'first': first,
-        if (sortBy != null) r'sortBy': sortBy,
-        if (options != null) r'options': options,
-      });
+  }) => Variables$Query$Visitors._({
+    if (filters != null) r'filters': filters,
+    if (offset != null) r'offset': offset,
+    if (first != null) r'first': first,
+    if (sortBy != null) r'sortBy': sortBy,
+    if (options != null) r'options': options,
+  });
 
   Variables$Query$Visitors._(this._$data);
 
@@ -39,8 +40,9 @@ class Variables$Query$Visitors {
     }
     if (data.containsKey('sortBy')) {
       final l$sortBy = data['sortBy'];
-      result$data['sortBy'] =
-          (l$sortBy as List<dynamic>?)?.map((e) => (e as String?)).toList();
+      result$data['sortBy'] = (l$sortBy as List<dynamic>?)
+          ?.map((e) => (e as String?))
+          .toList();
     }
     if (data.containsKey('options')) {
       final l$options = data['options'];
@@ -55,10 +57,15 @@ class Variables$Query$Visitors {
 
   Input$VisitorFilter? get filters =>
       (_$data['filters'] as Input$VisitorFilter?);
+
   int? get offset => (_$data['offset'] as int?);
+
   int? get first => (_$data['first'] as int?);
+
   List<String?>? get sortBy => (_$data['sortBy'] as List<String?>?);
+
   Input$Options? get options => (_$data['options'] as Input$Options?);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     if (_$data.containsKey('filters')) {
@@ -85,16 +92,14 @@ class Variables$Query$Visitors {
   }
 
   CopyWith$Variables$Query$Visitors<Variables$Query$Visitors> get copyWith =>
-      CopyWith$Variables$Query$Visitors(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$Visitors(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Query$Visitors) ||
+    if (other is! Variables$Query$Visitors ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -165,8 +170,8 @@ class Variables$Query$Visitors {
       _$data.containsKey('first') ? l$first : const {},
       _$data.containsKey('sortBy')
           ? l$sortBy == null
-              ? null
-              : Object.hashAll(l$sortBy.map((v) => v))
+                ? null
+                : Object.hashAll(l$sortBy.map((v) => v))
           : const {},
       _$data.containsKey('options') ? l$options : const {},
     ]);
@@ -193,10 +198,7 @@ abstract class CopyWith$Variables$Query$Visitors<TRes> {
 
 class _CopyWithImpl$Variables$Query$Visitors<TRes>
     implements CopyWith$Variables$Query$Visitors<TRes> {
-  _CopyWithImpl$Variables$Query$Visitors(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$Visitors(this._instance, this._then);
 
   final Variables$Query$Visitors _instance;
 
@@ -210,15 +212,16 @@ class _CopyWithImpl$Variables$Query$Visitors<TRes>
     Object? first = _undefined,
     Object? sortBy = _undefined,
     Object? options = _undefined,
-  }) =>
-      _then(Variables$Query$Visitors._({
-        ..._instance._$data,
-        if (filters != _undefined) 'filters': (filters as Input$VisitorFilter?),
-        if (offset != _undefined) 'offset': (offset as int?),
-        if (first != _undefined) 'first': (first as int?),
-        if (sortBy != _undefined) 'sortBy': (sortBy as List<String?>?),
-        if (options != _undefined) 'options': (options as Input$Options?),
-      }));
+  }) => _then(
+    Variables$Query$Visitors._({
+      ..._instance._$data,
+      if (filters != _undefined) 'filters': (filters as Input$VisitorFilter?),
+      if (offset != _undefined) 'offset': (offset as int?),
+      if (first != _undefined) 'first': (first as int?),
+      if (sortBy != _undefined) 'sortBy': (sortBy as List<String?>?),
+      if (options != _undefined) 'options': (options as Input$Options?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$Visitors<TRes>
@@ -233,22 +236,19 @@ class _CopyWithStubImpl$Variables$Query$Visitors<TRes>
     int? first,
     List<String?>? sortBy,
     Input$Options? options,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$Visitors {
-  Query$Visitors({
-    required this.visitors,
-    this.$__typename = 'Query',
-  });
+  Query$Visitors({required this.visitors, this.$__typename = 'Query'});
 
   factory Query$Visitors.fromJson(Map<String, dynamic> json) {
     final l$visitors = json['visitors'];
     final l$$__typename = json['__typename'];
     return Query$Visitors(
       visitors: Query$Visitors$visitors.fromJson(
-          (l$visitors as Map<String, dynamic>)),
+        (l$visitors as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -270,10 +270,7 @@ class Query$Visitors {
   int get hashCode {
     final l$visitors = visitors;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$visitors,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$visitors, l$$__typename]);
   }
 
   @override
@@ -281,7 +278,7 @@ class Query$Visitors {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors) || runtimeType != other.runtimeType) {
+    if (other is! Query$Visitors || runtimeType != other.runtimeType) {
       return false;
     }
     final l$visitors = visitors;
@@ -300,10 +297,7 @@ class Query$Visitors {
 
 extension UtilityExtension$Query$Visitors on Query$Visitors {
   CopyWith$Query$Visitors<Query$Visitors> get copyWith =>
-      CopyWith$Query$Visitors(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Visitors(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors<TRes> {
@@ -315,19 +309,13 @@ abstract class CopyWith$Query$Visitors<TRes> {
   factory CopyWith$Query$Visitors.stub(TRes res) =
       _CopyWithStubImpl$Query$Visitors;
 
-  TRes call({
-    Query$Visitors$visitors? visitors,
-    String? $__typename,
-  });
+  TRes call({Query$Visitors$visitors? visitors, String? $__typename});
   CopyWith$Query$Visitors$visitors<TRes> get visitors;
 }
 
 class _CopyWithImpl$Query$Visitors<TRes>
     implements CopyWith$Query$Visitors<TRes> {
-  _CopyWithImpl$Query$Visitors(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Visitors(this._instance, this._then);
 
   final Query$Visitors _instance;
 
@@ -338,19 +326,23 @@ class _CopyWithImpl$Query$Visitors<TRes>
   TRes call({
     Object? visitors = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors(
-        visitors: visitors == _undefined || visitors == null
-            ? _instance.visitors
-            : (visitors as Query$Visitors$visitors),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Visitors(
+      visitors: visitors == _undefined || visitors == null
+          ? _instance.visitors
+          : (visitors as Query$Visitors$visitors),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Query$Visitors$visitors<TRes> get visitors {
     final local$visitors = _instance.visitors;
     return CopyWith$Query$Visitors$visitors(
-        local$visitors, (e) => call(visitors: e));
+      local$visitors,
+      (e) => call(visitors: e),
+    );
   }
 }
 
@@ -360,403 +352,106 @@ class _CopyWithStubImpl$Query$Visitors<TRes>
 
   TRes _res;
 
-  call({
-    Query$Visitors$visitors? visitors,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$Visitors$visitors? visitors, String? $__typename}) => _res;
+
   CopyWith$Query$Visitors$visitors<TRes> get visitors =>
       CopyWith$Query$Visitors$visitors.stub(_res);
 }
 
-const documentNodeQueryVisitors = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'Visitors'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'filters')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'VisitorFilter'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'offset')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'first')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: false,
-        ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'sortBy')),
-        type: ListTypeNode(
+const documentNodeQueryVisitors = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'Visitors'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'filters')),
           type: NamedTypeNode(
-            name: NameNode(value: 'String'),
+            name: NameNode(value: 'VisitorFilter'),
             isNonNull: false,
           ),
-          isNonNull: false,
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'options')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Options'),
-          isNonNull: false,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'offset')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'visitors'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'filters'),
-            value: VariableNode(name: NameNode(value: 'filters')),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'first')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: false),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'sortBy')),
+          type: ListTypeNode(
+            type: NamedTypeNode(
+              name: NameNode(value: 'String'),
+              isNonNull: false,
+            ),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'offset'),
-            value: VariableNode(name: NameNode(value: 'offset')),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'options')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'Options'),
+            isNonNull: false,
           ),
-          ArgumentNode(
-            name: NameNode(value: 'first'),
-            value: VariableNode(name: NameNode(value: 'first')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'sortBy'),
-            value: VariableNode(name: NameNode(value: 'sortBy')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'options'),
-            value: VariableNode(name: NameNode(value: 'options')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
+        ),
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'values'),
+            name: NameNode(value: 'visitors'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'filters'),
+                value: VariableNode(name: NameNode(value: 'filters')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'offset'),
+                value: VariableNode(name: NameNode(value: 'offset')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'first'),
+                value: VariableNode(name: NameNode(value: 'first')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'sortBy'),
+                value: VariableNode(name: NameNode(value: 'sortBy')),
+              ),
+              ArgumentNode(
+                name: NameNode(value: 'options'),
+                value: VariableNode(name: NameNode(value: 'options')),
+              ),
+            ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'firstName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'lastName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'phoneNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'visitingDate'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'type'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'plannedVisit'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdDate'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'notes'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'tools'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'purposeOfVisit'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'emailAddress'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'checkInDate'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'accountFloorId'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'comingFrom'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'companyName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'placeName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'createdByPerson'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'firstName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'lastName'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'phoneNumber'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'idProof'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'type1'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'value1'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'additionalDetails'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'place'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'values'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
                       FieldNode(
-                        name: NameNode(value: 'name'),
+                        name: NameNode(value: 'id'),
                         alias: null,
                         arguments: [],
                         directives: [],
                         selectionSet: null,
                       ),
-                      FieldNode(
-                        name: NameNode(value: '__typename'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                    ]),
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'account'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                        name: NameNode(value: 'name'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: '__typename'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                    ]),
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'block'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                        name: NameNode(value: 'name'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: '__typename'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                    ]),
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'floor'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                        name: NameNode(value: 'no'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: '__typename'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                    ]),
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'persons'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
                       FieldNode(
                         name: NameNode(value: 'firstName'),
                         alias: null,
@@ -779,11 +474,339 @@ const documentNodeQueryVisitors = DocumentNode(definitions: [
                         selectionSet: null,
                       ),
                       FieldNode(
+                        name: NameNode(value: 'visitingDate'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'type'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'plannedVisit'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdDate'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'notes'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'tools'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'purposeOfVisit'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
                         name: NameNode(value: 'emailAddress'),
                         alias: null,
                         arguments: [],
                         directives: [],
                         selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'checkInDate'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'accountFloorId'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'comingFrom'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'companyName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'placeName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'createdByPerson'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'firstName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'lastName'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'phoneNumber'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'idProof'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'type1'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'value1'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'additionalDetails'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'place'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'name'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'account'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'name'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'block'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'name'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'floor'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'no'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'persons'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'firstName'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'lastName'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'phoneNumber'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'emailAddress'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
                       ),
                       FieldNode(
                         name: NameNode(value: '__typename'),
@@ -792,25 +815,18 @@ const documentNodeQueryVisitors = DocumentNode(definitions: [
                         directives: [],
                         selectionSet: null,
                       ),
-                    ]),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -819,18 +835,11 @@ const documentNodeQueryVisitors = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Query$Visitors _parserFn$Query$Visitors(Map<String, dynamic> data) =>
     Query$Visitors.fromJson(data);
 typedef OnQueryComplete$Query$Visitors = FutureOr<void> Function(
@@ -851,36 +860,36 @@ class Options$Query$Visitors extends graphql.QueryOptions<Query$Visitors> {
     graphql.Context? context,
     OnQueryComplete$Query$Visitors? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables?.toJson() ?? {},
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$Visitors(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryVisitors,
-          parserFn: _parserFn$Query$Visitors,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables?.toJson() ?? {},
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$Visitors(data),
+               ),
+         onError: onError,
+         document: documentNodeQueryVisitors,
+         parserFn: _parserFn$Query$Visitors,
+       );
 
   final OnQueryComplete$Query$Visitors? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$Visitors
@@ -899,20 +908,20 @@ class WatchOptions$Query$Visitors
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables?.toJson() ?? {},
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryVisitors,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$Visitors,
-        );
+         variables: variables?.toJson() ?? {},
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryVisitors,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$Visitors,
+       );
 }
 
 class FetchMoreOptions$Query$Visitors extends graphql.FetchMoreOptions {
@@ -920,32 +929,34 @@ class FetchMoreOptions$Query$Visitors extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     Variables$Query$Visitors? variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables?.toJson() ?? {},
-          document: documentNodeQueryVisitors,
-        );
+         updateQuery: updateQuery,
+         variables: variables?.toJson() ?? {},
+         document: documentNodeQueryVisitors,
+       );
 }
 
 extension ClientExtension$Query$Visitors on graphql.GraphQLClient {
-  Future<graphql.QueryResult<Query$Visitors>> query$Visitors(
-          [Options$Query$Visitors? options]) async =>
-      await this.query(options ?? Options$Query$Visitors());
-  graphql.ObservableQuery<Query$Visitors> watchQuery$Visitors(
-          [WatchOptions$Query$Visitors? options]) =>
-      this.watchQuery(options ?? WatchOptions$Query$Visitors());
+  Future<graphql.QueryResult<Query$Visitors>> query$Visitors([
+    Options$Query$Visitors? options,
+  ]) async => await this.query(options ?? Options$Query$Visitors());
+
+  graphql.ObservableQuery<Query$Visitors> watchQuery$Visitors([
+    WatchOptions$Query$Visitors? options,
+  ]) => this.watchQuery(options ?? WatchOptions$Query$Visitors());
+
   void writeQuery$Visitors({
     required Query$Visitors data,
     Variables$Query$Visitors? variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryVisitors),
-          variables: variables?.toJson() ?? const {},
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQueryVisitors),
+      variables: variables?.toJson() ?? const {},
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
+
   Query$Visitors? readQuery$Visitors({
     Variables$Query$Visitors? variables,
     bool optimistic = true,
@@ -962,20 +973,20 @@ extension ClientExtension$Query$Visitors on graphql.GraphQLClient {
 }
 
 class Query$Visitors$visitors {
-  Query$Visitors$visitors({
-    this.values,
-    this.$__typename = 'Visitors',
-  });
+  Query$Visitors$visitors({this.values, this.$__typename = 'Visitors'});
 
   factory Query$Visitors$visitors.fromJson(Map<String, dynamic> json) {
     final l$values = json['values'];
     final l$$__typename = json['__typename'];
     return Query$Visitors$visitors(
       values: (l$values as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Visitors$visitors$values.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Visitors$visitors$values.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -1009,8 +1020,7 @@ class Query$Visitors$visitors {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Query$Visitors$visitors || runtimeType != other.runtimeType) {
       return false;
     }
     final l$values = values;
@@ -1040,10 +1050,7 @@ class Query$Visitors$visitors {
 
 extension UtilityExtension$Query$Visitors$visitors on Query$Visitors$visitors {
   CopyWith$Query$Visitors$visitors<Query$Visitors$visitors> get copyWith =>
-      CopyWith$Query$Visitors$visitors(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Visitors$visitors(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors<TRes> {
@@ -1060,19 +1067,18 @@ abstract class CopyWith$Query$Visitors$visitors<TRes> {
     String? $__typename,
   });
   TRes values(
-      Iterable<Query$Visitors$visitors$values?>? Function(
-              Iterable<
-                  CopyWith$Query$Visitors$visitors$values<
-                      Query$Visitors$visitors$values>?>?)
-          _fn);
+    Iterable<Query$Visitors$visitors$values?>? Function(
+      Iterable<
+        CopyWith$Query$Visitors$visitors$values<Query$Visitors$visitors$values>?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Visitors$visitors<TRes>
     implements CopyWith$Query$Visitors$visitors<TRes> {
-  _CopyWithImpl$Query$Visitors$visitors(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Visitors$visitors(this._instance, this._then);
 
   final Query$Visitors$visitors _instance;
 
@@ -1080,31 +1086,34 @@ class _CopyWithImpl$Query$Visitors$visitors<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? values = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors(
-        values: values == _undefined
-            ? _instance.values
-            : (values as List<Query$Visitors$visitors$values?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? values = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Visitors$visitors(
+          values: values == _undefined
+              ? _instance.values
+              : (values as List<Query$Visitors$visitors$values?>?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   TRes values(
-          Iterable<Query$Visitors$visitors$values?>? Function(
-                  Iterable<
-                      CopyWith$Query$Visitors$visitors$values<
-                          Query$Visitors$visitors$values>?>?)
-              _fn) =>
-      call(
-          values: _fn(_instance.values?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Visitors$visitors$values(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Visitors$visitors$values?>? Function(
+      Iterable<
+        CopyWith$Query$Visitors$visitors$values<Query$Visitors$visitors$values>?
+      >?,
+    )
+    _fn,
+  ) => call(
+    values: _fn(
+      _instance.values?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Visitors$visitors$values(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors<TRes>
@@ -1113,11 +1122,9 @@ class _CopyWithStubImpl$Query$Visitors$visitors<TRes>
 
   TRes _res;
 
-  call({
-    List<Query$Visitors$visitors$values?>? values,
-    String? $__typename,
-  }) =>
+  call({List<Query$Visitors$visitors$values?>? values, String? $__typename}) =>
       _res;
+
   values(_fn) => _res;
 }
 
@@ -1188,19 +1195,23 @@ class Query$Visitors$visitors$values {
       comingFrom: l$comingFrom == null
           ? null
           : Query$Visitors$visitors$values$comingFrom.fromJson(
-              (l$comingFrom as Map<String, dynamic>)),
+              (l$comingFrom as Map<String, dynamic>),
+            ),
       createdByPerson: l$createdByPerson == null
           ? null
           : Query$Visitors$visitors$values$createdByPerson.fromJson(
-              (l$createdByPerson as Map<String, dynamic>)),
+              (l$createdByPerson as Map<String, dynamic>),
+            ),
       idProof: l$idProof == null
           ? null
           : Query$Visitors$visitors$values$idProof.fromJson(
-              (l$idProof as Map<String, dynamic>)),
+              (l$idProof as Map<String, dynamic>),
+            ),
       additionalDetails: l$additionalDetails == null
           ? null
           : Query$Visitors$visitors$values$additionalDetails.fromJson(
-              (l$additionalDetails as Map<String, dynamic>)),
+              (l$additionalDetails as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1335,7 +1346,7 @@ class Query$Visitors$visitors$values {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values) ||
+    if (other is! Query$Visitors$visitors$values ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1441,10 +1452,7 @@ class Query$Visitors$visitors$values {
 extension UtilityExtension$Query$Visitors$visitors$values
     on Query$Visitors$visitors$values {
   CopyWith$Query$Visitors$visitors$values<Query$Visitors$visitors$values>
-      get copyWith => CopyWith$Query$Visitors$visitors$values(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$Visitors$visitors$values(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values<TRes> {
@@ -1479,18 +1487,15 @@ abstract class CopyWith$Query$Visitors$visitors$values<TRes> {
   });
   CopyWith$Query$Visitors$visitors$values$comingFrom<TRes> get comingFrom;
   CopyWith$Query$Visitors$visitors$values$createdByPerson<TRes>
-      get createdByPerson;
+  get createdByPerson;
   CopyWith$Query$Visitors$visitors$values$idProof<TRes> get idProof;
   CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes>
-      get additionalDetails;
+  get additionalDetails;
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values<TRes>
     implements CopyWith$Query$Visitors$visitors$values<TRes> {
-  _CopyWithImpl$Query$Visitors$visitors$values(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Visitors$visitors$values(this._instance, this._then);
 
   final Query$Visitors$visitors$values _instance;
 
@@ -1518,78 +1523,87 @@ class _CopyWithImpl$Query$Visitors$visitors$values<TRes>
     Object? idProof = _undefined,
     Object? additionalDetails = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined || firstName == null
-            ? _instance.firstName
-            : (firstName as String),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        visitingDate: visitingDate == _undefined
-            ? _instance.visitingDate
-            : (visitingDate as DateTime?),
-        type: type == _undefined || type == null
-            ? _instance.type
-            : (type as Enum$VisitorType),
-        plannedVisit: plannedVisit == _undefined || plannedVisit == null
-            ? _instance.plannedVisit
-            : (plannedVisit as bool),
-        createdDate: createdDate == _undefined
-            ? _instance.createdDate
-            : (createdDate as DateTime?),
-        notes: notes == _undefined ? _instance.notes : (notes as String?),
-        tools: tools == _undefined ? _instance.tools : (tools as String?),
-        purposeOfVisit: purposeOfVisit == _undefined
-            ? _instance.purposeOfVisit
-            : (purposeOfVisit as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        checkInDate: checkInDate == _undefined
-            ? _instance.checkInDate
-            : (checkInDate as DateTime?),
-        accountFloorId: accountFloorId == _undefined || accountFloorId == null
-            ? _instance.accountFloorId
-            : (accountFloorId as String),
-        comingFrom: comingFrom == _undefined
-            ? _instance.comingFrom
-            : (comingFrom as Query$Visitors$visitors$values$comingFrom?),
-        createdByPerson: createdByPerson == _undefined
-            ? _instance.createdByPerson
-            : (createdByPerson
+  }) => _then(
+    Query$Visitors$visitors$values(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined || firstName == null
+          ? _instance.firstName
+          : (firstName as String),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      visitingDate: visitingDate == _undefined
+          ? _instance.visitingDate
+          : (visitingDate as DateTime?),
+      type: type == _undefined || type == null
+          ? _instance.type
+          : (type as Enum$VisitorType),
+      plannedVisit: plannedVisit == _undefined || plannedVisit == null
+          ? _instance.plannedVisit
+          : (plannedVisit as bool),
+      createdDate: createdDate == _undefined
+          ? _instance.createdDate
+          : (createdDate as DateTime?),
+      notes: notes == _undefined ? _instance.notes : (notes as String?),
+      tools: tools == _undefined ? _instance.tools : (tools as String?),
+      purposeOfVisit: purposeOfVisit == _undefined
+          ? _instance.purposeOfVisit
+          : (purposeOfVisit as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      checkInDate: checkInDate == _undefined
+          ? _instance.checkInDate
+          : (checkInDate as DateTime?),
+      accountFloorId: accountFloorId == _undefined || accountFloorId == null
+          ? _instance.accountFloorId
+          : (accountFloorId as String),
+      comingFrom: comingFrom == _undefined
+          ? _instance.comingFrom
+          : (comingFrom as Query$Visitors$visitors$values$comingFrom?),
+      createdByPerson: createdByPerson == _undefined
+          ? _instance.createdByPerson
+          : (createdByPerson
                 as Query$Visitors$visitors$values$createdByPerson?),
-        idProof: idProof == _undefined
-            ? _instance.idProof
-            : (idProof as Query$Visitors$visitors$values$idProof?),
-        additionalDetails: additionalDetails == _undefined
-            ? _instance.additionalDetails
-            : (additionalDetails
+      idProof: idProof == _undefined
+          ? _instance.idProof
+          : (idProof as Query$Visitors$visitors$values$idProof?),
+      additionalDetails: additionalDetails == _undefined
+          ? _instance.additionalDetails
+          : (additionalDetails
                 as Query$Visitors$visitors$values$additionalDetails?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Query$Visitors$visitors$values$comingFrom<TRes> get comingFrom {
     final local$comingFrom = _instance.comingFrom;
     return local$comingFrom == null
         ? CopyWith$Query$Visitors$visitors$values$comingFrom.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$comingFrom(
-            local$comingFrom, (e) => call(comingFrom: e));
+            local$comingFrom,
+            (e) => call(comingFrom: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$createdByPerson<TRes>
-      get createdByPerson {
+  get createdByPerson {
     final local$createdByPerson = _instance.createdByPerson;
     return local$createdByPerson == null
         ? CopyWith$Query$Visitors$visitors$values$createdByPerson.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$createdByPerson(
-            local$createdByPerson, (e) => call(createdByPerson: e));
+            local$createdByPerson,
+            (e) => call(createdByPerson: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$idProof<TRes> get idProof {
@@ -1597,17 +1611,22 @@ class _CopyWithImpl$Query$Visitors$visitors$values<TRes>
     return local$idProof == null
         ? CopyWith$Query$Visitors$visitors$values$idProof.stub(_then(_instance))
         : CopyWith$Query$Visitors$visitors$values$idProof(
-            local$idProof, (e) => call(idProof: e));
+            local$idProof,
+            (e) => call(idProof: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes>
-      get additionalDetails {
+  get additionalDetails {
     final local$additionalDetails = _instance.additionalDetails;
     return local$additionalDetails == null
         ? CopyWith$Query$Visitors$visitors$values$additionalDetails.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$additionalDetails(
-            local$additionalDetails, (e) => call(additionalDetails: e));
+            local$additionalDetails,
+            (e) => call(additionalDetails: e),
+          );
   }
 }
 
@@ -1637,18 +1656,21 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values<TRes>
     Query$Visitors$visitors$values$idProof? idProof,
     Query$Visitors$visitors$values$additionalDetails? additionalDetails,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Query$Visitors$visitors$values$comingFrom<TRes> get comingFrom =>
       CopyWith$Query$Visitors$visitors$values$comingFrom.stub(_res);
+
   CopyWith$Query$Visitors$visitors$values$createdByPerson<TRes>
-      get createdByPerson =>
-          CopyWith$Query$Visitors$visitors$values$createdByPerson.stub(_res);
+  get createdByPerson =>
+      CopyWith$Query$Visitors$visitors$values$createdByPerson.stub(_res);
+
   CopyWith$Query$Visitors$visitors$values$idProof<TRes> get idProof =>
       CopyWith$Query$Visitors$visitors$values$idProof.stub(_res);
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes>
-      get additionalDetails =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails.stub(_res);
+  get additionalDetails =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails.stub(_res);
 }
 
 class Query$Visitors$visitors$values$comingFrom {
@@ -1659,7 +1681,8 @@ class Query$Visitors$visitors$values$comingFrom {
   });
 
   factory Query$Visitors$visitors$values$comingFrom.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$companyName = json['companyName'];
     final l$placeName = json['placeName'];
     final l$$__typename = json['__typename'];
@@ -1692,11 +1715,7 @@ class Query$Visitors$visitors$values$comingFrom {
     final l$companyName = companyName;
     final l$placeName = placeName;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$companyName,
-      l$placeName,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$companyName, l$placeName, l$$__typename]);
   }
 
   @override
@@ -1704,7 +1723,7 @@ class Query$Visitors$visitors$values$comingFrom {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$comingFrom) ||
+    if (other is! Query$Visitors$visitors$values$comingFrom ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1730,11 +1749,10 @@ class Query$Visitors$visitors$values$comingFrom {
 extension UtilityExtension$Query$Visitors$visitors$values$comingFrom
     on Query$Visitors$visitors$values$comingFrom {
   CopyWith$Query$Visitors$visitors$values$comingFrom<
-          Query$Visitors$visitors$values$comingFrom>
-      get copyWith => CopyWith$Query$Visitors$visitors$values$comingFrom(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$comingFrom
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$comingFrom(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$comingFrom<TRes> {
@@ -1746,11 +1764,7 @@ abstract class CopyWith$Query$Visitors$visitors$values$comingFrom<TRes> {
   factory CopyWith$Query$Visitors$visitors$values$comingFrom.stub(TRes res) =
       _CopyWithStubImpl$Query$Visitors$visitors$values$comingFrom;
 
-  TRes call({
-    String? companyName,
-    String? placeName,
-    String? $__typename,
-  });
+  TRes call({String? companyName, String? placeName, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$comingFrom<TRes>
@@ -1770,18 +1784,19 @@ class _CopyWithImpl$Query$Visitors$visitors$values$comingFrom<TRes>
     Object? companyName = _undefined,
     Object? placeName = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$comingFrom(
-        companyName: companyName == _undefined
-            ? _instance.companyName
-            : (companyName as String?),
-        placeName: placeName == _undefined
-            ? _instance.placeName
-            : (placeName as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Visitors$visitors$values$comingFrom(
+      companyName: companyName == _undefined
+          ? _instance.companyName
+          : (companyName as String?),
+      placeName: placeName == _undefined
+          ? _instance.placeName
+          : (placeName as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$comingFrom<TRes>
@@ -1790,12 +1805,7 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values$comingFrom<TRes>
 
   TRes _res;
 
-  call({
-    String? companyName,
-    String? placeName,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? companyName, String? placeName, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$createdByPerson {
@@ -1808,7 +1818,8 @@ class Query$Visitors$visitors$values$createdByPerson {
   });
 
   factory Query$Visitors$visitors$values$createdByPerson.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
@@ -1869,7 +1880,7 @@ class Query$Visitors$visitors$values$createdByPerson {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$createdByPerson) ||
+    if (other is! Query$Visitors$visitors$values$createdByPerson ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1905,11 +1916,10 @@ class Query$Visitors$visitors$values$createdByPerson {
 extension UtilityExtension$Query$Visitors$visitors$values$createdByPerson
     on Query$Visitors$visitors$values$createdByPerson {
   CopyWith$Query$Visitors$visitors$values$createdByPerson<
-          Query$Visitors$visitors$values$createdByPerson>
-      get copyWith => CopyWith$Query$Visitors$visitors$values$createdByPerson(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$createdByPerson
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$createdByPerson(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$createdByPerson<TRes> {
@@ -1919,8 +1929,8 @@ abstract class CopyWith$Query$Visitors$visitors$values$createdByPerson<TRes> {
   ) = _CopyWithImpl$Query$Visitors$visitors$values$createdByPerson;
 
   factory CopyWith$Query$Visitors$visitors$values$createdByPerson.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$createdByPerson;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$createdByPerson;
 
   TRes call({
     String? id,
@@ -1950,21 +1960,23 @@ class _CopyWithImpl$Query$Visitors$visitors$values$createdByPerson<TRes>
     Object? lastName = _undefined,
     Object? phoneNumber = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$createdByPerson(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined
-            ? _instance.firstName
-            : (firstName as String?),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Visitors$visitors$values$createdByPerson(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined
+          ? _instance.firstName
+          : (firstName as String?),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$createdByPerson<TRes>
@@ -1979,8 +1991,7 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values$createdByPerson<TRes>
     String? lastName,
     String? phoneNumber,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Query$Visitors$visitors$values$idProof {
@@ -1991,7 +2002,8 @@ class Query$Visitors$visitors$values$idProof {
   });
 
   factory Query$Visitors$visitors$values$idProof.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$type1 = json['type1'];
     final l$value1 = json['value1'];
     final l$$__typename = json['__typename'];
@@ -2024,11 +2036,7 @@ class Query$Visitors$visitors$values$idProof {
     final l$type1 = type1;
     final l$value1 = value1;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$type1,
-      l$value1,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$type1, l$value1, l$$__typename]);
   }
 
   @override
@@ -2036,7 +2044,7 @@ class Query$Visitors$visitors$values$idProof {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$idProof) ||
+    if (other is! Query$Visitors$visitors$values$idProof ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2062,11 +2070,10 @@ class Query$Visitors$visitors$values$idProof {
 extension UtilityExtension$Query$Visitors$visitors$values$idProof
     on Query$Visitors$visitors$values$idProof {
   CopyWith$Query$Visitors$visitors$values$idProof<
-          Query$Visitors$visitors$values$idProof>
-      get copyWith => CopyWith$Query$Visitors$visitors$values$idProof(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$idProof
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$idProof(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$idProof<TRes> {
@@ -2078,11 +2085,7 @@ abstract class CopyWith$Query$Visitors$visitors$values$idProof<TRes> {
   factory CopyWith$Query$Visitors$visitors$values$idProof.stub(TRes res) =
       _CopyWithStubImpl$Query$Visitors$visitors$values$idProof;
 
-  TRes call({
-    String? type1,
-    String? value1,
-    String? $__typename,
-  });
+  TRes call({String? type1, String? value1, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$idProof<TRes>
@@ -2102,14 +2105,15 @@ class _CopyWithImpl$Query$Visitors$visitors$values$idProof<TRes>
     Object? type1 = _undefined,
     Object? value1 = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$idProof(
-        type1: type1 == _undefined ? _instance.type1 : (type1 as String?),
-        value1: value1 == _undefined ? _instance.value1 : (value1 as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Visitors$visitors$values$idProof(
+      type1: type1 == _undefined ? _instance.type1 : (type1 as String?),
+      value1: value1 == _undefined ? _instance.value1 : (value1 as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$idProof<TRes>
@@ -2118,12 +2122,7 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values$idProof<TRes>
 
   TRes _res;
 
-  call({
-    String? type1,
-    String? value1,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? type1, String? value1, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$additionalDetails {
@@ -2137,7 +2136,8 @@ class Query$Visitors$visitors$values$additionalDetails {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$place = json['place'];
     final l$account = json['account'];
     final l$block = json['block'];
@@ -2148,24 +2148,31 @@ class Query$Visitors$visitors$values$additionalDetails {
       place: l$place == null
           ? null
           : Query$Visitors$visitors$values$additionalDetails$place.fromJson(
-              (l$place as Map<String, dynamic>)),
+              (l$place as Map<String, dynamic>),
+            ),
       account: l$account == null
           ? null
           : Query$Visitors$visitors$values$additionalDetails$account.fromJson(
-              (l$account as Map<String, dynamic>)),
+              (l$account as Map<String, dynamic>),
+            ),
       block: l$block == null
           ? null
           : Query$Visitors$visitors$values$additionalDetails$block.fromJson(
-              (l$block as Map<String, dynamic>)),
+              (l$block as Map<String, dynamic>),
+            ),
       floor: l$floor == null
           ? null
           : Query$Visitors$visitors$values$additionalDetails$floor.fromJson(
-              (l$floor as Map<String, dynamic>)),
+              (l$floor as Map<String, dynamic>),
+            ),
       persons: (l$persons as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Visitors$visitors$values$additionalDetails$persons
-                  .fromJson((e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Visitors$visitors$values$additionalDetails$persons.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -2180,7 +2187,7 @@ class Query$Visitors$visitors$values$additionalDetails {
   final Query$Visitors$visitors$values$additionalDetails$floor? floor;
 
   final List<Query$Visitors$visitors$values$additionalDetails$persons?>?
-      persons;
+  persons;
 
   final String $__typename;
 
@@ -2224,7 +2231,7 @@ class Query$Visitors$visitors$values$additionalDetails {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2276,11 +2283,10 @@ class Query$Visitors$visitors$values$additionalDetails {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails
     on Query$Visitors$visitors$values$additionalDetails {
   CopyWith$Query$Visitors$visitors$values$additionalDetails<
-          Query$Visitors$visitors$values$additionalDetails>
-      get copyWith => CopyWith$Query$Visitors$visitors$values$additionalDetails(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes> {
@@ -2290,8 +2296,8 @@ abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes> {
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails;
 
   TRes call({
     Query$Visitors$visitors$values$additionalDetails$place? place,
@@ -2302,19 +2308,24 @@ abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails<TRes> {
     String? $__typename,
   });
   CopyWith$Query$Visitors$visitors$values$additionalDetails$place<TRes>
-      get place;
+  get place;
   CopyWith$Query$Visitors$visitors$values$additionalDetails$account<TRes>
-      get account;
+  get account;
   CopyWith$Query$Visitors$visitors$values$additionalDetails$block<TRes>
-      get block;
+  get block;
   CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<TRes>
-      get floor;
+  get floor;
   TRes persons(
-      Iterable<Query$Visitors$visitors$values$additionalDetails$persons?>? Function(
-              Iterable<
-                  CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-                      Query$Visitors$visitors$values$additionalDetails$persons>?>?)
-          _fn);
+    Iterable<Query$Visitors$visitors$values$additionalDetails$persons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
+          Query$Visitors$visitors$values$additionalDetails$persons
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails<TRes>
@@ -2337,85 +2348,107 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails<TRes>
     Object? floor = _undefined,
     Object? persons = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails(
-        place: place == _undefined
-            ? _instance.place
-            : (place
-                as Query$Visitors$visitors$values$additionalDetails$place?),
-        account: account == _undefined
-            ? _instance.account
-            : (account
+  }) => _then(
+    Query$Visitors$visitors$values$additionalDetails(
+      place: place == _undefined
+          ? _instance.place
+          : (place as Query$Visitors$visitors$values$additionalDetails$place?),
+      account: account == _undefined
+          ? _instance.account
+          : (account
                 as Query$Visitors$visitors$values$additionalDetails$account?),
-        block: block == _undefined
-            ? _instance.block
-            : (block
-                as Query$Visitors$visitors$values$additionalDetails$block?),
-        floor: floor == _undefined
-            ? _instance.floor
-            : (floor
-                as Query$Visitors$visitors$values$additionalDetails$floor?),
-        persons: persons == _undefined
-            ? _instance.persons
-            : (persons as List<
-                Query$Visitors$visitors$values$additionalDetails$persons?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+      block: block == _undefined
+          ? _instance.block
+          : (block as Query$Visitors$visitors$values$additionalDetails$block?),
+      floor: floor == _undefined
+          ? _instance.floor
+          : (floor as Query$Visitors$visitors$values$additionalDetails$floor?),
+      persons: persons == _undefined
+          ? _instance.persons
+          : (persons
+                as List<
+                  Query$Visitors$visitors$values$additionalDetails$persons?
+                >?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails$place<TRes>
-      get place {
+  get place {
     final local$place = _instance.place;
     return local$place == null
         ? CopyWith$Query$Visitors$visitors$values$additionalDetails$place.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$additionalDetails$place(
-            local$place, (e) => call(place: e));
+            local$place,
+            (e) => call(place: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$additionalDetails$account<TRes>
-      get account {
+  get account {
     final local$account = _instance.account;
     return local$account == null
-        ? CopyWith$Query$Visitors$visitors$values$additionalDetails$account
-            .stub(_then(_instance))
+        ? CopyWith$Query$Visitors$visitors$values$additionalDetails$account.stub(
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$additionalDetails$account(
-            local$account, (e) => call(account: e));
+            local$account,
+            (e) => call(account: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$additionalDetails$block<TRes>
-      get block {
+  get block {
     final local$block = _instance.block;
     return local$block == null
         ? CopyWith$Query$Visitors$visitors$values$additionalDetails$block.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$additionalDetails$block(
-            local$block, (e) => call(block: e));
+            local$block,
+            (e) => call(block: e),
+          );
   }
 
   CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<TRes>
-      get floor {
+  get floor {
     final local$floor = _instance.floor;
     return local$floor == null
         ? CopyWith$Query$Visitors$visitors$values$additionalDetails$floor.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Visitors$visitors$values$additionalDetails$floor(
-            local$floor, (e) => call(floor: e));
+            local$floor,
+            (e) => call(floor: e),
+          );
   }
 
   TRes persons(
-          Iterable<Query$Visitors$visitors$values$additionalDetails$persons?>? Function(
-                  Iterable<
-                      CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-                          Query$Visitors$visitors$values$additionalDetails$persons>?>?)
-              _fn) =>
-      call(
-          persons: _fn(_instance.persons?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Visitors$visitors$values$additionalDetails$persons(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Visitors$visitors$values$additionalDetails$persons?>?
+    Function(
+      Iterable<
+        CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
+          Query$Visitors$visitors$values$additionalDetails$persons
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    persons: _fn(
+      _instance.persons?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Visitors$visitors$values$additionalDetails$persons(
+                e,
+                (i) => i,
+              ),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails<TRes>
@@ -2431,24 +2464,32 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails<TRes>
     Query$Visitors$visitors$values$additionalDetails$floor? floor,
     List<Query$Visitors$visitors$values$additionalDetails$persons?>? persons,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails$place<TRes>
-      get place =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$place.stub(
-              _res);
+  get place =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$place.stub(
+        _res,
+      );
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails$account<TRes>
-      get account =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$account
-              .stub(_res);
+  get account =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$account.stub(
+        _res,
+      );
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails$block<TRes>
-      get block =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$block.stub(
-              _res);
+  get block =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$block.stub(
+        _res,
+      );
+
   CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<TRes>
-      get floor =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$floor.stub(
-              _res);
+  get floor =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$floor.stub(
+        _res,
+      );
+
   persons(_fn) => _res;
 }
 
@@ -2459,7 +2500,8 @@ class Query$Visitors$visitors$values$additionalDetails$place {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails$place.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
     return Query$Visitors$visitors$values$additionalDetails$place(
@@ -2485,10 +2527,7 @@ class Query$Visitors$visitors$values$additionalDetails$place {
   int get hashCode {
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$name, l$$__typename]);
   }
 
   @override
@@ -2496,7 +2535,7 @@ class Query$Visitors$visitors$values$additionalDetails$place {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails$place) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails$place ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2517,29 +2556,28 @@ class Query$Visitors$visitors$values$additionalDetails$place {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails$place
     on Query$Visitors$visitors$values$additionalDetails$place {
   CopyWith$Query$Visitors$visitors$values$additionalDetails$place<
-          Query$Visitors$visitors$values$additionalDetails$place>
-      get copyWith =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$place(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails$place
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$place(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$place<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$place(
     Query$Visitors$visitors$values$additionalDetails$place instance,
     TRes Function(Query$Visitors$visitors$values$additionalDetails$place) then,
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$place;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$place.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$place;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$place;
 
-  TRes call({
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$place<TRes>
@@ -2553,36 +2591,33 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$place<TRes>
   final Query$Visitors$visitors$values$additionalDetails$place _instance;
 
   final TRes Function(Query$Visitors$visitors$values$additionalDetails$place)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? name = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails$place(
-        name: name == _undefined ? _instance.name : (name as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? name = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Visitors$visitors$values$additionalDetails$place(
+          name: name == _undefined ? _instance.name : (name as String?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$place<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$place<TRes> {
   _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$place(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? name, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$additionalDetails$account {
@@ -2592,7 +2627,8 @@ class Query$Visitors$visitors$values$additionalDetails$account {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails$account.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
     return Query$Visitors$visitors$values$additionalDetails$account(
@@ -2618,10 +2654,7 @@ class Query$Visitors$visitors$values$additionalDetails$account {
   int get hashCode {
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$name, l$$__typename]);
   }
 
   @override
@@ -2629,7 +2662,7 @@ class Query$Visitors$visitors$values$additionalDetails$account {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails$account) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails$account ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2650,37 +2683,38 @@ class Query$Visitors$visitors$values$additionalDetails$account {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails$account
     on Query$Visitors$visitors$values$additionalDetails$account {
   CopyWith$Query$Visitors$visitors$values$additionalDetails$account<
-          Query$Visitors$visitors$values$additionalDetails$account>
-      get copyWith =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$account(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails$account
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$account(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$account<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$account(
     Query$Visitors$visitors$values$additionalDetails$account instance,
     TRes Function(Query$Visitors$visitors$values$additionalDetails$account)
-        then,
+    then,
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$account;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$account.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$account;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$account;
 
-  TRes call({
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$account<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$account<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$account(
     this._instance,
     this._then,
@@ -2689,37 +2723,35 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$account<
   final Query$Visitors$visitors$values$additionalDetails$account _instance;
 
   final TRes Function(Query$Visitors$visitors$values$additionalDetails$account)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? name = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails$account(
-        name: name == _undefined ? _instance.name : (name as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? name = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Visitors$visitors$values$additionalDetails$account(
+          name: name == _undefined ? _instance.name : (name as String?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$account<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$account<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$account(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? name, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$additionalDetails$block {
@@ -2729,7 +2761,8 @@ class Query$Visitors$visitors$values$additionalDetails$block {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails$block.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$$__typename = json['__typename'];
     return Query$Visitors$visitors$values$additionalDetails$block(
@@ -2755,10 +2788,7 @@ class Query$Visitors$visitors$values$additionalDetails$block {
   int get hashCode {
     final l$name = name;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$name,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$name, l$$__typename]);
   }
 
   @override
@@ -2766,7 +2796,7 @@ class Query$Visitors$visitors$values$additionalDetails$block {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails$block) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails$block ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2787,29 +2817,28 @@ class Query$Visitors$visitors$values$additionalDetails$block {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails$block
     on Query$Visitors$visitors$values$additionalDetails$block {
   CopyWith$Query$Visitors$visitors$values$additionalDetails$block<
-          Query$Visitors$visitors$values$additionalDetails$block>
-      get copyWith =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$block(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails$block
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$block(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$block<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$block(
     Query$Visitors$visitors$values$additionalDetails$block instance,
     TRes Function(Query$Visitors$visitors$values$additionalDetails$block) then,
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$block;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$block.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$block;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$block;
 
-  TRes call({
-    String? name,
-    String? $__typename,
-  });
+  TRes call({String? name, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$block<TRes>
@@ -2823,36 +2852,33 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$block<TRes>
   final Query$Visitors$visitors$values$additionalDetails$block _instance;
 
   final TRes Function(Query$Visitors$visitors$values$additionalDetails$block)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? name = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails$block(
-        name: name == _undefined ? _instance.name : (name as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? name = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Visitors$visitors$values$additionalDetails$block(
+          name: name == _undefined ? _instance.name : (name as String?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$block<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$block<TRes> {
   _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$block(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? name,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? name, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$additionalDetails$floor {
@@ -2862,7 +2888,8 @@ class Query$Visitors$visitors$values$additionalDetails$floor {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails$floor.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$no = json['no'];
     final l$$__typename = json['__typename'];
     return Query$Visitors$visitors$values$additionalDetails$floor(
@@ -2888,10 +2915,7 @@ class Query$Visitors$visitors$values$additionalDetails$floor {
   int get hashCode {
     final l$no = no;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$no,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$no, l$$__typename]);
   }
 
   @override
@@ -2899,7 +2923,7 @@ class Query$Visitors$visitors$values$additionalDetails$floor {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails$floor) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails$floor ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2920,29 +2944,28 @@ class Query$Visitors$visitors$values$additionalDetails$floor {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails$floor
     on Query$Visitors$visitors$values$additionalDetails$floor {
   CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<
-          Query$Visitors$visitors$values$additionalDetails$floor>
-      get copyWith =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$floor(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails$floor
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$floor(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$floor(
     Query$Visitors$visitors$values$additionalDetails$floor instance,
     TRes Function(Query$Visitors$visitors$values$additionalDetails$floor) then,
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$floor;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$floor.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$floor;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$floor;
 
-  TRes call({
-    int? no,
-    String? $__typename,
-  });
+  TRes call({int? no, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$floor<TRes>
@@ -2956,36 +2979,33 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$floor<TRes>
   final Query$Visitors$visitors$values$additionalDetails$floor _instance;
 
   final TRes Function(Query$Visitors$visitors$values$additionalDetails$floor)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? no = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails$floor(
-        no: no == _undefined ? _instance.no : (no as int?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? no = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Visitors$visitors$values$additionalDetails$floor(
+          no: no == _undefined ? _instance.no : (no as int?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$floor<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$floor<TRes> {
   _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$floor(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    int? no,
-    String? $__typename,
-  }) =>
-      _res;
+  call({int? no, String? $__typename}) => _res;
 }
 
 class Query$Visitors$visitors$values$additionalDetails$persons {
@@ -2998,7 +3018,8 @@ class Query$Visitors$visitors$values$additionalDetails$persons {
   });
 
   factory Query$Visitors$visitors$values$additionalDetails$persons.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
     final l$phoneNumber = json['phoneNumber'];
@@ -3059,7 +3080,7 @@ class Query$Visitors$visitors$values$additionalDetails$persons {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Query$Visitors$visitors$values$additionalDetails$persons) ||
+    if (other is! Query$Visitors$visitors$values$additionalDetails$persons ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -3095,25 +3116,27 @@ class Query$Visitors$visitors$values$additionalDetails$persons {
 extension UtilityExtension$Query$Visitors$visitors$values$additionalDetails$persons
     on Query$Visitors$visitors$values$additionalDetails$persons {
   CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-          Query$Visitors$visitors$values$additionalDetails$persons>
-      get copyWith =>
-          CopyWith$Query$Visitors$visitors$values$additionalDetails$persons(
-            this,
-            (i) => i,
-          );
+    Query$Visitors$visitors$values$additionalDetails$persons
+  >
+  get copyWith =>
+      CopyWith$Query$Visitors$visitors$values$additionalDetails$persons(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$persons(
     Query$Visitors$visitors$values$additionalDetails$persons instance,
     TRes Function(Query$Visitors$visitors$values$additionalDetails$persons)
-        then,
+    then,
   ) = _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$persons;
 
   factory CopyWith$Query$Visitors$visitors$values$additionalDetails$persons.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$persons;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$persons;
 
   TRes call({
     String? firstName,
@@ -3125,10 +3148,12 @@ abstract class CopyWith$Query$Visitors$visitors$values$additionalDetails$persons
 }
 
 class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$persons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$persons(
     this._instance,
     this._then,
@@ -3137,7 +3162,7 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$persons<
   final Query$Visitors$visitors$values$additionalDetails$persons _instance;
 
   final TRes Function(Query$Visitors$visitors$values$additionalDetails$persons)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -3147,32 +3172,37 @@ class _CopyWithImpl$Query$Visitors$visitors$values$additionalDetails$persons<
     Object? phoneNumber = _undefined,
     Object? emailAddress = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Visitors$visitors$values$additionalDetails$persons(
-        firstName: firstName == _undefined
-            ? _instance.firstName
-            : (firstName as String?),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Visitors$visitors$values$additionalDetails$persons(
+      firstName: firstName == _undefined
+          ? _instance.firstName
+          : (firstName as String?),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$persons<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Visitors$visitors$values$additionalDetails$persons<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$persons(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -3182,6 +3212,5 @@ class _CopyWithStubImpl$Query$Visitors$visitors$values$additionalDetails$persons
     String? phoneNumber,
     String? emailAddress,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

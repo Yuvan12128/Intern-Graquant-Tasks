@@ -20,12 +20,12 @@ class Body extends StatelessWidget {
           Center(
             child: Text(
               "No Internet",
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondary
-                        .withOpacity(0.8),
-                  ),
+              // style: Theme.of(context).textTheme.headline5!.copyWith(
+              //       color: Theme.of(context)
+              //           .colorScheme
+              //           .secondary
+              //           .withValues(alpha: 0.8),
+              //     ),
             ),
           ),
           Container(
@@ -47,7 +47,7 @@ class Body extends StatelessWidget {
             child: Text(
               'Try:',
               style: subtitle2.copyWith(
-                color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
               ),
             ),
           ),
@@ -66,7 +66,7 @@ class Body extends StatelessWidget {
                     color: Theme.of(context)
                         .colorScheme
                         .secondary
-                        .withOpacity(0.5),
+                        .withValues(alpha: 0.5),
                   ),
                 ),
               ),
@@ -88,7 +88,7 @@ class Body extends StatelessWidget {
                     color: Theme.of(context)
                         .colorScheme
                         .secondary
-                        .withOpacity(0.5),
+                        .withValues(alpha: 0.5),
                   ),
                 ),
               ),
@@ -100,7 +100,7 @@ class Body extends StatelessWidget {
               'ERR_INTERNET_DISCONNECTED',
               textAlign: TextAlign.center,
               style: subtitle2.copyWith(
-                color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+                color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
               ),
             ),
           ),

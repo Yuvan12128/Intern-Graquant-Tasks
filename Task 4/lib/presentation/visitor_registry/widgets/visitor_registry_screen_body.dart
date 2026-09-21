@@ -50,72 +50,67 @@ class _VisitorRegisteryScreenBodyState
           },
           builder: (context, state) {
             return Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    if (state.roleType == AppConstant.ADMINISTRATOR ||
-                        state.roleType == AppConstant.SECURITY) ...[
-                      VisitorRegistryWidgets.customButton(
-                          context,
-                          '${state.roleType == AppConstant.ADMINISTRATOR ? "Visitor Without Appointment" : "Visitor Registration"}',
-                          () => {
-                                Navigator.pushNamed(
-                                  context,
-                                  RouteName
-                                      .VISITOR_PHONE_NUMBER_VERIFICATION_SCREEN,
-                                ),
-                              }),
-                      SizedBox(
-                        height: 8 * SizeConfig.heightMultiplier,
-                      ),
-                    ],
-                    if (state.roleType == AppConstant.ADMINISTRATOR ||
-                        state.roleType == AppConstant.RECEPTIONIST) ...[
-                      VisitorRegistryWidgets.customButton(
-                          context,
-                          '${state.roleType == AppConstant.ADMINISTRATOR ? "Visitor With Appointment" : "Schedule an Appointment"}',
-                          () => {
-                                Navigator.pushNamed(
-                                  context,
-                                  RouteName.VISITOR_ENTRY_FORM_SCREEN,
-                                  arguments: VisitorEntry(
-                                    meetingType: MeetingType.PLANNED,
-                                    phoneNumber: null,
-                                    phoneNumberVerified: true,
-                                  ),
-                                ),
-                              }),
-                      SizedBox(
-                        height: 8 * SizeConfig.heightMultiplier,
-                      ),
-                    ],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  if (state.roleType == AppConstant.ADMINISTRATOR ||
+                      state.roleType == AppConstant.SECURITY) ...[
                     VisitorRegistryWidgets.customButton(
                         context,
-                        "View Appointments",
+                        '${state.roleType == AppConstant.ADMINISTRATOR ? "Visitor Without Appointment" : "Visitor Registration"}',
                         () => {
+                              // Navigator.pushNamed(
+                              //   context,
+                              //   RouteName
+                              //       .VISITOR_PHONE_NUMBER_VERIFICATION_SCREEN,
+                              // ),
                               Navigator.pushNamed(
                                 context,
-                                RouteName.VISITOR_HISTORY_SCREEN,
-                                arguments: VisitorHistory(
-                                  doPlannedVisitorRequired: true,
+                                RouteName.VISITOR_ENTRY_FORM_SCREEN,
+                                arguments: VisitorEntry(
+                                  meetingType: MeetingType.UNPLANNED,
+                                  phoneNumber: null,
+                                  phoneNumberVerified: true,
                                 ),
                               ),
                             }),
                     SizedBox(
                       height: 8 * SizeConfig.heightMultiplier,
                     ),
+                  ],
+                  if (state.roleType == AppConstant.ADMINISTRATOR ||
+                      state.roleType == AppConstant.RECEPTIONIST) ...[
                     VisitorRegistryWidgets.customButton(
                         context,
-                        "Study All Pages (Catalog)",
+                        '${state.roleType == AppConstant.ADMINISTRATOR ? "Visitor With Appointment" : "Schedule an Appointment"}',
                         () => {
                               Navigator.pushNamed(
                                 context,
-                                RouteName.ALL_PAGES_SCREEN,
+                                RouteName.VISITOR_ENTRY_FORM_SCREEN,
+                                arguments: VisitorEntry(
+                                  meetingType: MeetingType.PLANNED,
+                                  phoneNumber: null,
+                                  phoneNumberVerified: true,
+                                ),
                               ),
                             }),
+                    SizedBox(
+                      height: 8 * SizeConfig.heightMultiplier,
+                    ),
                   ],
-                ),
+                  VisitorRegistryWidgets.customButton(
+                      context,
+                      "View Appointments",
+                      () => {
+                            Navigator.pushNamed(
+                              context,
+                              RouteName.VISITOR_HISTORY_SCREEN,
+                              arguments: VisitorHistory(
+                                doPlannedVisitorRequired: true,
+                              ),
+                            ),
+                          }),
+                ],
               ),
             );
           },

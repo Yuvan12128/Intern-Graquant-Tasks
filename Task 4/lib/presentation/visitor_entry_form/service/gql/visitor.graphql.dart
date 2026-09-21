@@ -1,22 +1,23 @@
 import '../../../../data/graphql/component/schema.graphql.dart';
+
 import 'dart:async';
+
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
 class Variables$Mutation$CreateVisitor {
-  factory Variables$Mutation$CreateVisitor(
-          {required Input$VisitorRequest payload}) =>
-      Variables$Mutation$CreateVisitor._({
-        r'payload': payload,
-      });
+  factory Variables$Mutation$CreateVisitor({
+    required Input$VisitorRequest payload,
+  }) => Variables$Mutation$CreateVisitor._({r'payload': payload});
 
   Variables$Mutation$CreateVisitor._(this._$data);
 
   factory Variables$Mutation$CreateVisitor.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$payload = data['payload'];
-    result$data['payload'] =
-        Input$VisitorRequest.fromJson((l$payload as Map<String, dynamic>));
+    result$data['payload'] = Input$VisitorRequest.fromJson(
+      (l$payload as Map<String, dynamic>),
+    );
     return Variables$Mutation$CreateVisitor._(result$data);
   }
 
@@ -24,6 +25,7 @@ class Variables$Mutation$CreateVisitor {
 
   Input$VisitorRequest get payload =>
       (_$data['payload'] as Input$VisitorRequest);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$payload = payload;
@@ -32,16 +34,14 @@ class Variables$Mutation$CreateVisitor {
   }
 
   CopyWith$Variables$Mutation$CreateVisitor<Variables$Mutation$CreateVisitor>
-      get copyWith => CopyWith$Variables$Mutation$CreateVisitor(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$CreateVisitor(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$CreateVisitor) ||
+    if (other is! Variables$Mutation$CreateVisitor ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -74,10 +74,7 @@ abstract class CopyWith$Variables$Mutation$CreateVisitor<TRes> {
 
 class _CopyWithImpl$Variables$Mutation$CreateVisitor<TRes>
     implements CopyWith$Variables$Mutation$CreateVisitor<TRes> {
-  _CopyWithImpl$Variables$Mutation$CreateVisitor(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$CreateVisitor(this._instance, this._then);
 
   final Variables$Mutation$CreateVisitor _instance;
 
@@ -85,12 +82,13 @@ class _CopyWithImpl$Variables$Mutation$CreateVisitor<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? payload = _undefined}) =>
-      _then(Variables$Mutation$CreateVisitor._({
-        ..._instance._$data,
-        if (payload != _undefined && payload != null)
-          'payload': (payload as Input$VisitorRequest),
-      }));
+  TRes call({Object? payload = _undefined}) => _then(
+    Variables$Mutation$CreateVisitor._({
+      ..._instance._$data,
+      if (payload != _undefined && payload != null)
+        'payload': (payload as Input$VisitorRequest),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$CreateVisitor<TRes>
@@ -113,7 +111,8 @@ class Mutation$CreateVisitor {
     final l$$__typename = json['__typename'];
     return Mutation$CreateVisitor(
       createVisitor: Mutation$CreateVisitor$createVisitor.fromJson(
-          (l$createVisitor as Map<String, dynamic>)),
+        (l$createVisitor as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -135,10 +134,7 @@ class Mutation$CreateVisitor {
   int get hashCode {
     final l$createVisitor = createVisitor;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$createVisitor,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$createVisitor, l$$__typename]);
   }
 
   @override
@@ -146,8 +142,7 @@ class Mutation$CreateVisitor {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$CreateVisitor) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Mutation$CreateVisitor || runtimeType != other.runtimeType) {
       return false;
     }
     final l$createVisitor = createVisitor;
@@ -166,10 +161,7 @@ class Mutation$CreateVisitor {
 
 extension UtilityExtension$Mutation$CreateVisitor on Mutation$CreateVisitor {
   CopyWith$Mutation$CreateVisitor<Mutation$CreateVisitor> get copyWith =>
-      CopyWith$Mutation$CreateVisitor(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$CreateVisitor(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$CreateVisitor<TRes> {
@@ -190,10 +182,7 @@ abstract class CopyWith$Mutation$CreateVisitor<TRes> {
 
 class _CopyWithImpl$Mutation$CreateVisitor<TRes>
     implements CopyWith$Mutation$CreateVisitor<TRes> {
-  _CopyWithImpl$Mutation$CreateVisitor(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$CreateVisitor(this._instance, this._then);
 
   final Mutation$CreateVisitor _instance;
 
@@ -204,19 +193,23 @@ class _CopyWithImpl$Mutation$CreateVisitor<TRes>
   TRes call({
     Object? createVisitor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$CreateVisitor(
-        createVisitor: createVisitor == _undefined || createVisitor == null
-            ? _instance.createVisitor
-            : (createVisitor as Mutation$CreateVisitor$createVisitor),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$CreateVisitor(
+      createVisitor: createVisitor == _undefined || createVisitor == null
+          ? _instance.createVisitor
+          : (createVisitor as Mutation$CreateVisitor$createVisitor),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Mutation$CreateVisitor$createVisitor<TRes> get createVisitor {
     final local$createVisitor = _instance.createVisitor;
     return CopyWith$Mutation$CreateVisitor$createVisitor(
-        local$createVisitor, (e) => call(createVisitor: e));
+      local$createVisitor,
+      (e) => call(createVisitor: e),
+    );
   }
 }
 
@@ -229,89 +222,104 @@ class _CopyWithStubImpl$Mutation$CreateVisitor<TRes>
   call({
     Mutation$CreateVisitor$createVisitor? createVisitor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$CreateVisitor$createVisitor<TRes> get createVisitor =>
       CopyWith$Mutation$CreateVisitor$createVisitor.stub(_res);
 }
 
-const documentNodeMutationCreateVisitor = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'CreateVisitor'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'payload')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'VisitorRequest'),
-          isNonNull: true,
+const documentNodeMutationCreateVisitor = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'CreateVisitor'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'payload')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'VisitorRequest'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      )
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'createVisitor'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'payload'),
-            value: VariableNode(name: NameNode(value: 'payload')),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'source'),
+            name: NameNode(value: 'createVisitor'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'payload'),
+                value: VariableNode(name: NameNode(value: 'payload')),
+              ),
+            ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'firstName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'lastName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'emailAddress'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'phoneNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'source'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'firstName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lastName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'emailAddress'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'phoneNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -320,21 +328,14 @@ const documentNodeMutationCreateVisitor = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Mutation$CreateVisitor _parserFn$Mutation$CreateVisitor(
-        Map<String, dynamic> data) =>
-    Mutation$CreateVisitor.fromJson(data);
+  Map<String, dynamic> data,
+) => Mutation$CreateVisitor.fromJson(data);
 typedef OnMutationCompleted$Mutation$CreateVisitor = FutureOr<void> Function(
   Map<String, dynamic>?,
   Mutation$CreateVisitor?,
@@ -354,38 +355,36 @@ class Options$Mutation$CreateVisitor
     OnMutationCompleted$Mutation$CreateVisitor? onCompleted,
     graphql.OnMutationUpdate<Mutation$CreateVisitor>? update,
     graphql.OnError? onError,
-  })  : onCompletedWithParsed = onCompleted,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          onCompleted: onCompleted == null
-              ? null
-              : (data) => onCompleted(
-                    data,
-                    data == null
-                        ? null
-                        : _parserFn$Mutation$CreateVisitor(data),
-                  ),
-          update: update,
-          onError: onError,
-          document: documentNodeMutationCreateVisitor,
-          parserFn: _parserFn$Mutation$CreateVisitor,
-        );
+  }) : onCompletedWithParsed = onCompleted,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         onCompleted: onCompleted == null
+             ? null
+             : (data) => onCompleted(
+                 data,
+                 data == null ? null : _parserFn$Mutation$CreateVisitor(data),
+               ),
+         update: update,
+         onError: onError,
+         document: documentNodeMutationCreateVisitor,
+         parserFn: _parserFn$Mutation$CreateVisitor,
+       );
 
   final OnMutationCompleted$Mutation$CreateVisitor? onCompletedWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onCompleted == null
-            ? super.properties
-            : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed,
-      ];
+    ...super.onCompleted == null
+        ? super.properties
+        : super.properties.where((property) => property != onCompleted),
+    onCompletedWithParsed,
+  ];
 }
 
 class WatchOptions$Mutation$CreateVisitor
@@ -404,29 +403,30 @@ class WatchOptions$Mutation$CreateVisitor
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeMutationCreateVisitor,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Mutation$CreateVisitor,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeMutationCreateVisitor,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Mutation$CreateVisitor,
+       );
 }
 
 extension ClientExtension$Mutation$CreateVisitor on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$CreateVisitor>> mutate$CreateVisitor(
-          Options$Mutation$CreateVisitor options) async =>
-      await this.mutate(options);
+    Options$Mutation$CreateVisitor options,
+  ) async => await this.mutate(options);
+
   graphql.ObservableQuery<Mutation$CreateVisitor> watchMutation$CreateVisitor(
-          WatchOptions$Mutation$CreateVisitor options) =>
-      this.watchMutation(options);
+    WatchOptions$Mutation$CreateVisitor options,
+  ) => this.watchMutation(options);
 }
 
 class Mutation$CreateVisitor$createVisitor {
@@ -436,14 +436,16 @@ class Mutation$CreateVisitor$createVisitor {
   });
 
   factory Mutation$CreateVisitor$createVisitor.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$source = json['source'];
     final l$$__typename = json['__typename'];
     return Mutation$CreateVisitor$createVisitor(
       source: l$source == null
           ? null
           : Mutation$CreateVisitor$createVisitor$source.fromJson(
-              (l$source as Map<String, dynamic>)),
+              (l$source as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -465,10 +467,7 @@ class Mutation$CreateVisitor$createVisitor {
   int get hashCode {
     final l$source = source;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$source,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$source, l$$__typename]);
   }
 
   @override
@@ -476,7 +475,7 @@ class Mutation$CreateVisitor$createVisitor {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$CreateVisitor$createVisitor) ||
+    if (other is! Mutation$CreateVisitor$createVisitor ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -497,11 +496,9 @@ class Mutation$CreateVisitor$createVisitor {
 extension UtilityExtension$Mutation$CreateVisitor$createVisitor
     on Mutation$CreateVisitor$createVisitor {
   CopyWith$Mutation$CreateVisitor$createVisitor<
-          Mutation$CreateVisitor$createVisitor>
-      get copyWith => CopyWith$Mutation$CreateVisitor$createVisitor(
-            this,
-            (i) => i,
-          );
+    Mutation$CreateVisitor$createVisitor
+  >
+  get copyWith => CopyWith$Mutation$CreateVisitor$createVisitor(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$CreateVisitor$createVisitor<TRes> {
@@ -533,25 +530,28 @@ class _CopyWithImpl$Mutation$CreateVisitor$createVisitor<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? source = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$CreateVisitor$createVisitor(
-        source: source == _undefined
-            ? _instance.source
-            : (source as Mutation$CreateVisitor$createVisitor$source?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? source = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Mutation$CreateVisitor$createVisitor(
+          source: source == _undefined
+              ? _instance.source
+              : (source as Mutation$CreateVisitor$createVisitor$source?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   CopyWith$Mutation$CreateVisitor$createVisitor$source<TRes> get source {
     final local$source = _instance.source;
     return local$source == null
         ? CopyWith$Mutation$CreateVisitor$createVisitor$source.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Mutation$CreateVisitor$createVisitor$source(
-            local$source, (e) => call(source: e));
+            local$source,
+            (e) => call(source: e),
+          );
   }
 }
 
@@ -564,8 +564,8 @@ class _CopyWithStubImpl$Mutation$CreateVisitor$createVisitor<TRes>
   call({
     Mutation$CreateVisitor$createVisitor$source? source,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$CreateVisitor$createVisitor$source<TRes> get source =>
       CopyWith$Mutation$CreateVisitor$createVisitor$source.stub(_res);
 }
@@ -581,7 +581,8 @@ class Mutation$CreateVisitor$createVisitor$source {
   });
 
   factory Mutation$CreateVisitor$createVisitor$source.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
@@ -650,7 +651,7 @@ class Mutation$CreateVisitor$createVisitor$source {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$CreateVisitor$createVisitor$source) ||
+    if (other is! Mutation$CreateVisitor$createVisitor$source ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -691,11 +692,10 @@ class Mutation$CreateVisitor$createVisitor$source {
 extension UtilityExtension$Mutation$CreateVisitor$createVisitor$source
     on Mutation$CreateVisitor$createVisitor$source {
   CopyWith$Mutation$CreateVisitor$createVisitor$source<
-          Mutation$CreateVisitor$createVisitor$source>
-      get copyWith => CopyWith$Mutation$CreateVisitor$createVisitor$source(
-            this,
-            (i) => i,
-          );
+    Mutation$CreateVisitor$createVisitor$source
+  >
+  get copyWith =>
+      CopyWith$Mutation$CreateVisitor$createVisitor$source(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$CreateVisitor$createVisitor$source<TRes> {
@@ -737,24 +737,26 @@ class _CopyWithImpl$Mutation$CreateVisitor$createVisitor$source<TRes>
     Object? emailAddress = _undefined,
     Object? phoneNumber = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$CreateVisitor$createVisitor$source(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined || firstName == null
-            ? _instance.firstName
-            : (firstName as String),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$CreateVisitor$createVisitor$source(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined || firstName == null
+          ? _instance.firstName
+          : (firstName as String),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$CreateVisitor$createVisitor$source<TRes>
@@ -770,19 +772,14 @@ class _CopyWithStubImpl$Mutation$CreateVisitor$createVisitor$source<TRes>
     String? emailAddress,
     String? phoneNumber,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }
 
 class Variables$Mutation$UpdateVisitor {
   factory Variables$Mutation$UpdateVisitor({
     required String id,
     required Input$VisitorRequest payload,
-  }) =>
-      Variables$Mutation$UpdateVisitor._({
-        r'id': id,
-        r'payload': payload,
-      });
+  }) => Variables$Mutation$UpdateVisitor._({r'id': id, r'payload': payload});
 
   Variables$Mutation$UpdateVisitor._(this._$data);
 
@@ -791,16 +788,19 @@ class Variables$Mutation$UpdateVisitor {
     final l$id = data['id'];
     result$data['id'] = (l$id as String);
     final l$payload = data['payload'];
-    result$data['payload'] =
-        Input$VisitorRequest.fromJson((l$payload as Map<String, dynamic>));
+    result$data['payload'] = Input$VisitorRequest.fromJson(
+      (l$payload as Map<String, dynamic>),
+    );
     return Variables$Mutation$UpdateVisitor._(result$data);
   }
 
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Input$VisitorRequest get payload =>
       (_$data['payload'] as Input$VisitorRequest);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -811,16 +811,14 @@ class Variables$Mutation$UpdateVisitor {
   }
 
   CopyWith$Variables$Mutation$UpdateVisitor<Variables$Mutation$UpdateVisitor>
-      get copyWith => CopyWith$Variables$Mutation$UpdateVisitor(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$UpdateVisitor(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$UpdateVisitor) ||
+    if (other is! Variables$Mutation$UpdateVisitor ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -841,10 +839,7 @@ class Variables$Mutation$UpdateVisitor {
   int get hashCode {
     final l$id = id;
     final l$payload = payload;
-    return Object.hashAll([
-      l$id,
-      l$payload,
-    ]);
+    return Object.hashAll([l$id, l$payload]);
   }
 }
 
@@ -857,18 +852,12 @@ abstract class CopyWith$Variables$Mutation$UpdateVisitor<TRes> {
   factory CopyWith$Variables$Mutation$UpdateVisitor.stub(TRes res) =
       _CopyWithStubImpl$Variables$Mutation$UpdateVisitor;
 
-  TRes call({
-    String? id,
-    Input$VisitorRequest? payload,
-  });
+  TRes call({String? id, Input$VisitorRequest? payload});
 }
 
 class _CopyWithImpl$Variables$Mutation$UpdateVisitor<TRes>
     implements CopyWith$Variables$Mutation$UpdateVisitor<TRes> {
-  _CopyWithImpl$Variables$Mutation$UpdateVisitor(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$UpdateVisitor(this._instance, this._then);
 
   final Variables$Mutation$UpdateVisitor _instance;
 
@@ -876,16 +865,14 @@ class _CopyWithImpl$Variables$Mutation$UpdateVisitor<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? payload = _undefined,
-  }) =>
-      _then(Variables$Mutation$UpdateVisitor._({
-        ..._instance._$data,
-        if (id != _undefined && id != null) 'id': (id as String),
-        if (payload != _undefined && payload != null)
-          'payload': (payload as Input$VisitorRequest),
-      }));
+  TRes call({Object? id = _undefined, Object? payload = _undefined}) => _then(
+    Variables$Mutation$UpdateVisitor._({
+      ..._instance._$data,
+      if (id != _undefined && id != null) 'id': (id as String),
+      if (payload != _undefined && payload != null)
+        'payload': (payload as Input$VisitorRequest),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$UpdateVisitor<TRes>
@@ -894,11 +881,7 @@ class _CopyWithStubImpl$Variables$Mutation$UpdateVisitor<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    Input$VisitorRequest? payload,
-  }) =>
-      _res;
+  call({String? id, Input$VisitorRequest? payload}) => _res;
 }
 
 class Mutation$UpdateVisitor {
@@ -912,7 +895,8 @@ class Mutation$UpdateVisitor {
     final l$$__typename = json['__typename'];
     return Mutation$UpdateVisitor(
       updateVisitor: Mutation$UpdateVisitor$updateVisitor.fromJson(
-          (l$updateVisitor as Map<String, dynamic>)),
+        (l$updateVisitor as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -934,10 +918,7 @@ class Mutation$UpdateVisitor {
   int get hashCode {
     final l$updateVisitor = updateVisitor;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$updateVisitor,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$updateVisitor, l$$__typename]);
   }
 
   @override
@@ -945,8 +926,7 @@ class Mutation$UpdateVisitor {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$UpdateVisitor) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Mutation$UpdateVisitor || runtimeType != other.runtimeType) {
       return false;
     }
     final l$updateVisitor = updateVisitor;
@@ -965,10 +945,7 @@ class Mutation$UpdateVisitor {
 
 extension UtilityExtension$Mutation$UpdateVisitor on Mutation$UpdateVisitor {
   CopyWith$Mutation$UpdateVisitor<Mutation$UpdateVisitor> get copyWith =>
-      CopyWith$Mutation$UpdateVisitor(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$UpdateVisitor(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UpdateVisitor<TRes> {
@@ -989,10 +966,7 @@ abstract class CopyWith$Mutation$UpdateVisitor<TRes> {
 
 class _CopyWithImpl$Mutation$UpdateVisitor<TRes>
     implements CopyWith$Mutation$UpdateVisitor<TRes> {
-  _CopyWithImpl$Mutation$UpdateVisitor(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$UpdateVisitor(this._instance, this._then);
 
   final Mutation$UpdateVisitor _instance;
 
@@ -1003,19 +977,23 @@ class _CopyWithImpl$Mutation$UpdateVisitor<TRes>
   TRes call({
     Object? updateVisitor = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UpdateVisitor(
-        updateVisitor: updateVisitor == _undefined || updateVisitor == null
-            ? _instance.updateVisitor
-            : (updateVisitor as Mutation$UpdateVisitor$updateVisitor),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$UpdateVisitor(
+      updateVisitor: updateVisitor == _undefined || updateVisitor == null
+          ? _instance.updateVisitor
+          : (updateVisitor as Mutation$UpdateVisitor$updateVisitor),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Mutation$UpdateVisitor$updateVisitor<TRes> get updateVisitor {
     final local$updateVisitor = _instance.updateVisitor;
     return CopyWith$Mutation$UpdateVisitor$updateVisitor(
-        local$updateVisitor, (e) => call(updateVisitor: e));
+      local$updateVisitor,
+      (e) => call(updateVisitor: e),
+    );
   }
 }
 
@@ -1028,102 +1006,114 @@ class _CopyWithStubImpl$Mutation$UpdateVisitor<TRes>
   call({
     Mutation$UpdateVisitor$updateVisitor? updateVisitor,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$UpdateVisitor$updateVisitor<TRes> get updateVisitor =>
       CopyWith$Mutation$UpdateVisitor$updateVisitor.stub(_res);
 }
 
-const documentNodeMutationUpdateVisitor = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'UpdateVisitor'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'id')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'ID'),
-          isNonNull: true,
+const documentNodeMutationUpdateVisitor = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'UpdateVisitor'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'id')),
+          type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'payload')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'VisitorRequest'),
-          isNonNull: true,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'payload')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'VisitorRequest'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'updateVisitor'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'id'),
-            value: VariableNode(name: NameNode(value: 'id')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'payload'),
-            value: VariableNode(name: NameNode(value: 'payload')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'source'),
+            name: NameNode(value: 'updateVisitor'),
             alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
+            arguments: [
+              ArgumentNode(
                 name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
+                value: VariableNode(name: NameNode(value: 'id')),
               ),
-              FieldNode(
-                name: NameNode(value: 'firstName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
+              ArgumentNode(
+                name: NameNode(value: 'payload'),
+                value: VariableNode(name: NameNode(value: 'payload')),
               ),
-              FieldNode(
-                name: NameNode(value: 'lastName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'emailAddress'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'phoneNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'source'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'firstName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lastName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'emailAddress'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'phoneNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -1132,21 +1122,14 @@ const documentNodeMutationUpdateVisitor = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Mutation$UpdateVisitor _parserFn$Mutation$UpdateVisitor(
-        Map<String, dynamic> data) =>
-    Mutation$UpdateVisitor.fromJson(data);
+  Map<String, dynamic> data,
+) => Mutation$UpdateVisitor.fromJson(data);
 typedef OnMutationCompleted$Mutation$UpdateVisitor = FutureOr<void> Function(
   Map<String, dynamic>?,
   Mutation$UpdateVisitor?,
@@ -1166,38 +1149,36 @@ class Options$Mutation$UpdateVisitor
     OnMutationCompleted$Mutation$UpdateVisitor? onCompleted,
     graphql.OnMutationUpdate<Mutation$UpdateVisitor>? update,
     graphql.OnError? onError,
-  })  : onCompletedWithParsed = onCompleted,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          onCompleted: onCompleted == null
-              ? null
-              : (data) => onCompleted(
-                    data,
-                    data == null
-                        ? null
-                        : _parserFn$Mutation$UpdateVisitor(data),
-                  ),
-          update: update,
-          onError: onError,
-          document: documentNodeMutationUpdateVisitor,
-          parserFn: _parserFn$Mutation$UpdateVisitor,
-        );
+  }) : onCompletedWithParsed = onCompleted,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         onCompleted: onCompleted == null
+             ? null
+             : (data) => onCompleted(
+                 data,
+                 data == null ? null : _parserFn$Mutation$UpdateVisitor(data),
+               ),
+         update: update,
+         onError: onError,
+         document: documentNodeMutationUpdateVisitor,
+         parserFn: _parserFn$Mutation$UpdateVisitor,
+       );
 
   final OnMutationCompleted$Mutation$UpdateVisitor? onCompletedWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onCompleted == null
-            ? super.properties
-            : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed,
-      ];
+    ...super.onCompleted == null
+        ? super.properties
+        : super.properties.where((property) => property != onCompleted),
+    onCompletedWithParsed,
+  ];
 }
 
 class WatchOptions$Mutation$UpdateVisitor
@@ -1216,29 +1197,30 @@ class WatchOptions$Mutation$UpdateVisitor
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeMutationUpdateVisitor,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Mutation$UpdateVisitor,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeMutationUpdateVisitor,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Mutation$UpdateVisitor,
+       );
 }
 
 extension ClientExtension$Mutation$UpdateVisitor on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$UpdateVisitor>> mutate$UpdateVisitor(
-          Options$Mutation$UpdateVisitor options) async =>
-      await this.mutate(options);
+    Options$Mutation$UpdateVisitor options,
+  ) async => await this.mutate(options);
+
   graphql.ObservableQuery<Mutation$UpdateVisitor> watchMutation$UpdateVisitor(
-          WatchOptions$Mutation$UpdateVisitor options) =>
-      this.watchMutation(options);
+    WatchOptions$Mutation$UpdateVisitor options,
+  ) => this.watchMutation(options);
 }
 
 class Mutation$UpdateVisitor$updateVisitor {
@@ -1248,14 +1230,16 @@ class Mutation$UpdateVisitor$updateVisitor {
   });
 
   factory Mutation$UpdateVisitor$updateVisitor.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$source = json['source'];
     final l$$__typename = json['__typename'];
     return Mutation$UpdateVisitor$updateVisitor(
       source: l$source == null
           ? null
           : Mutation$UpdateVisitor$updateVisitor$source.fromJson(
-              (l$source as Map<String, dynamic>)),
+              (l$source as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1277,10 +1261,7 @@ class Mutation$UpdateVisitor$updateVisitor {
   int get hashCode {
     final l$source = source;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$source,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$source, l$$__typename]);
   }
 
   @override
@@ -1288,7 +1269,7 @@ class Mutation$UpdateVisitor$updateVisitor {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$UpdateVisitor$updateVisitor) ||
+    if (other is! Mutation$UpdateVisitor$updateVisitor ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1309,11 +1290,9 @@ class Mutation$UpdateVisitor$updateVisitor {
 extension UtilityExtension$Mutation$UpdateVisitor$updateVisitor
     on Mutation$UpdateVisitor$updateVisitor {
   CopyWith$Mutation$UpdateVisitor$updateVisitor<
-          Mutation$UpdateVisitor$updateVisitor>
-      get copyWith => CopyWith$Mutation$UpdateVisitor$updateVisitor(
-            this,
-            (i) => i,
-          );
+    Mutation$UpdateVisitor$updateVisitor
+  >
+  get copyWith => CopyWith$Mutation$UpdateVisitor$updateVisitor(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UpdateVisitor$updateVisitor<TRes> {
@@ -1345,25 +1324,28 @@ class _CopyWithImpl$Mutation$UpdateVisitor$updateVisitor<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? source = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UpdateVisitor$updateVisitor(
-        source: source == _undefined
-            ? _instance.source
-            : (source as Mutation$UpdateVisitor$updateVisitor$source?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? source = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Mutation$UpdateVisitor$updateVisitor(
+          source: source == _undefined
+              ? _instance.source
+              : (source as Mutation$UpdateVisitor$updateVisitor$source?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   CopyWith$Mutation$UpdateVisitor$updateVisitor$source<TRes> get source {
     final local$source = _instance.source;
     return local$source == null
         ? CopyWith$Mutation$UpdateVisitor$updateVisitor$source.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Mutation$UpdateVisitor$updateVisitor$source(
-            local$source, (e) => call(source: e));
+            local$source,
+            (e) => call(source: e),
+          );
   }
 }
 
@@ -1376,8 +1358,8 @@ class _CopyWithStubImpl$Mutation$UpdateVisitor$updateVisitor<TRes>
   call({
     Mutation$UpdateVisitor$updateVisitor$source? source,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$UpdateVisitor$updateVisitor$source<TRes> get source =>
       CopyWith$Mutation$UpdateVisitor$updateVisitor$source.stub(_res);
 }
@@ -1393,7 +1375,8 @@ class Mutation$UpdateVisitor$updateVisitor$source {
   });
 
   factory Mutation$UpdateVisitor$updateVisitor$source.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
@@ -1462,7 +1445,7 @@ class Mutation$UpdateVisitor$updateVisitor$source {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$UpdateVisitor$updateVisitor$source) ||
+    if (other is! Mutation$UpdateVisitor$updateVisitor$source ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1503,11 +1486,10 @@ class Mutation$UpdateVisitor$updateVisitor$source {
 extension UtilityExtension$Mutation$UpdateVisitor$updateVisitor$source
     on Mutation$UpdateVisitor$updateVisitor$source {
   CopyWith$Mutation$UpdateVisitor$updateVisitor$source<
-          Mutation$UpdateVisitor$updateVisitor$source>
-      get copyWith => CopyWith$Mutation$UpdateVisitor$updateVisitor$source(
-            this,
-            (i) => i,
-          );
+    Mutation$UpdateVisitor$updateVisitor$source
+  >
+  get copyWith =>
+      CopyWith$Mutation$UpdateVisitor$updateVisitor$source(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$UpdateVisitor$updateVisitor$source<TRes> {
@@ -1549,24 +1531,26 @@ class _CopyWithImpl$Mutation$UpdateVisitor$updateVisitor$source<TRes>
     Object? emailAddress = _undefined,
     Object? phoneNumber = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$UpdateVisitor$updateVisitor$source(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined || firstName == null
-            ? _instance.firstName
-            : (firstName as String),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$UpdateVisitor$updateVisitor$source(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined || firstName == null
+          ? _instance.firstName
+          : (firstName as String),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$UpdateVisitor$updateVisitor$source<TRes>
@@ -1582,6 +1566,5 @@ class _CopyWithStubImpl$Mutation$UpdateVisitor$updateVisitor$source<TRes>
     String? emailAddress,
     String? phoneNumber,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

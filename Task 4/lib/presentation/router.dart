@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skcl_vms/app/constant/route_name.dart';
-import 'package:skcl_vms/presentation/all_pages/all_pages_screen.dart';
 import 'package:skcl_vms/logic/bloc/account/account_form_bloc.dart';
 import 'package:skcl_vms/logic/bloc/place/place_form_bloc.dart';
 import 'package:skcl_vms/logic/bloc/user_authorization/user_authorization_bloc.dart';
@@ -290,10 +289,6 @@ class AppRouter {
             value: contactNameBloc,
             child: CompanyContactScreen(),
           ),
-        );
-      case RouteName.ALL_PAGES_SCREEN:
-        return MaterialPageRoute(
-          builder: (context) => AllPagesScreen(),
         );
       default:
         return MaterialPageRoute(

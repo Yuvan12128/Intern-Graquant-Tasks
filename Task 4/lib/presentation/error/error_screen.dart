@@ -6,10 +6,8 @@ const String fileName = 'error.screen';
 class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        return false;
-      },
+    return PopScope(
+      canPop: false,
       child: Scaffold(
         body: Body(),
       ),

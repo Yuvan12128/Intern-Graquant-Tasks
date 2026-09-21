@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:skcl_vms/app/constant/app_constant.dart';
 import 'package:skcl_vms/app/constant/enum/auth_status.dart';
+import 'package:skcl_vms/data/constant/api_constant.dart';
 import 'package:skcl_vms/data/graphql/services/person/gql/person.graphql.dart';
 import 'package:skcl_vms/data/graphql/services/person/person_service.dart';
 import 'package:skcl_vms/data/secure_storage/secure_storage.dart';
@@ -27,22 +27,44 @@ class AppAuthBloc extends Bloc<AppAuthEvent, AppAuthState> {
       emit(
         AppAuthState(status: AuthStatus.LOADING),
       );
-      final Query$Me$me meInfo = await PersonService.me();
-      final String roleType =
-          meInfo.person?.roleType ?? AppConstant.ADMINISTRATOR;
-      final String accountId = meInfo.account?.id ?? 'account-skcl-1';
-      userAuthorizationBloc.add(
-        OnUserLogin(
-          roleType: roleType,
-          accountId: accountId,
-        ),
-      );
-      emit(
-        AppAuthState(status: AuthStatus.SIGNEDIN),
-      );
+      final String? authInfo =
+          await SecureStorage().readSecureData(ApiConstant.AUTH_INFO);
+      if (authInfo != null) {
+        final Query$Me$me meInfo = await PersonService.me();
+        final String? phoneNumber = meInfo.person?.phoneNumber;
+        final String? roleType = meInfo.person?.roleType;
+        final String? accountId = meInfo.account?.id;
+        if (phoneNumber!.isNotEmpty) {
+          if (roleType != null && accountId != null) {
+            userAuthorizationBloc.add(
+              OnUserLogin(
+                roleType: roleType,
+                accountId: accountId,
+              ),
+            );
+            emit(
+              AppAuthState(status: AuthStatus.SIGNEDIN),
+            );
+          } else {
+            throw new Exception("User roleType or accountId will be empty");
+          }
+        } else {
+          emit(
+            AppAuthState(status: AuthStatus.NOTSIGNEDIN),
+          );
+        }
+      } else {
+        emit(
+          AppAuthState(status: AuthStatus.NOTSIGNEDIN),
+        );
+      }
     } catch (err) {
+      await SecureStorage().deleteAll();
       emit(
-        AppAuthState(status: AuthStatus.NOTSIGNEDIN),
+        AppAuthStateError(
+          error: err,
+          status: AuthStatus.NOTDETERMINED,
+        ),
       );
     }
   }

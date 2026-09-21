@@ -17,7 +17,7 @@ class CustomSearchDelegate extends SearchDelegate {
   TextStyle? get searchFieldStyle {
     return query.isEmpty
         ? subtitle1.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
           )
         : subtitle1.copyWith(
             color: Theme.of(context).colorScheme.secondary,
@@ -96,7 +96,7 @@ class CustomSearchDelegate extends SearchDelegate {
           title: new Text(
             suggestions[index].getName,
             style: subtitle1.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
             ),
           ),
           visualDensity: VisualDensity(horizontal: 0, vertical: -4),

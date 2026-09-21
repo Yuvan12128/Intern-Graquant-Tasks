@@ -1,10 +1,24 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 part 'network_event.dart';
 part 'network_state.dart';
 
 class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
-  NetworkBloc() : super(NetworkSuccess()) {
+  StreamSubscription? _subscription;
+
+  NetworkBloc() : super(NetworkState()) {
+    _subscription = Connectivity()
+        .onConnectivityChanged
+        .listen((List<ConnectivityResult> result) {
+      if (result.every((r) => r == ConnectivityResult.none)) {
+        add(NetworkDisconnectedEvent());
+      } else {
+        add(NetworkConnectedEvent());
+      }
+    });
     on<NetworkConnectedEvent>(_networkConnected);
     on<NetworkDisconnectedEvent>(_networkDisconnected);
   }
@@ -14,7 +28,12 @@ class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
   }
 
   void _networkDisconnected(NetworkDisconnectedEvent event, emit) {
-    // In study/offline mode, keep NetworkSuccess so navigation is uninterrupted
-    emit(NetworkSuccess());
+    emit(NetworkFailure());
+  }
+
+  @override
+  Future<void> close() {
+    _subscription?.cancel();
+    return super.close();
   }
 }

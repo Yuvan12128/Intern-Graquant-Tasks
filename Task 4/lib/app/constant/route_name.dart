@@ -20,5 +20,4 @@ class RouteName {
   static const String VISITOR_DETAIL_SCREEN = "/visitorDetailScreen";
   static const String ERROR_SCREEN = "/errorScreen";
   static const String NETWORK_ERROR_SCREEN = "/networkErrorScreen";
-  static const String ALL_PAGES_SCREEN = "/allPagesScreen";
 }

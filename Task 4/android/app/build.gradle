@@ -1,3 +1,11 @@
+plugins {
+    id "com.android.application"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "org.jetbrains.kotlin.android"
+    id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -6,10 +14,10 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
+// def flutterRoot = localProperties.getProperty('flutter.sdk')
+// if (flutterRoot == null) {
+//     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+// }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
@@ -39,14 +47,14 @@ def skclDevEnvProperties = new groovy.json.JsonSlurper().parseText(skclDevEnvJso
 def skclProdEnvJsonFile = rootProject.file('../lib/env_property/skcl/skcl_prod.json')
 def skclProdEnvProperties = new groovy.json.JsonSlurper().parseText(skclProdEnvJsonFile.text)
 
-apply plugin: 'com.android.application'
+// apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+// apply plugin: 'com.google.gms.google-services'
+// apply plugin: 'com.google.firebase.crashlytics'
+// apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 34
+    compileSdk = 36
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -54,11 +62,22 @@ android {
 
     defaultConfig {
         applicationId "com.skcl.android.apps.visitor"
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true        
+        multiDexEnabled true
+        ndkVersion '28.2.13676358'
+        ndk {
+            debugSymbolLevel 'FULL'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        // Enable desugaring
+        coreLibraryDesugaringEnabled true
     }
 
     signingConfigs {
@@ -84,8 +103,7 @@ android {
         release {
             shrinkResources true
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
-            'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             ndk {
                 debugSymbolLevel 'SYMBOL_TABLE'
             }
@@ -96,7 +114,9 @@ android {
 
     productFlavors {
         skclQa {
+            namespace "com.skcl.android.apps.visitor"
             dimension "app"
+            applicationId "com.skcl.android.apps.visitor"
             applicationIdSuffix ".qa"
             versionNameSuffix "-qa"         
             versionCode 1 
@@ -104,11 +124,19 @@ android {
             signingConfig signingConfigs.skclDev            
         }
         skclProduction {
-            dimension "app"      
-            versionCode 7
-            versionName "1.0.6"   
+            namespace "com.skcl.android.apps.visitor"
+            dimension "app"   
+            applicationId "com.skcl.android.apps.visitor"   
+            versionCode 8
+            versionName "1.0.7"   
             signingConfig signingConfigs.skclRelease              
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
@@ -117,8 +145,8 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
@@ -126,4 +154,5 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.8.0"
     implementation "com.google.android.gms:play-services-location:21.0.1"
     implementation "com.google.android.gms:play-services-maps:18.1.0"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.4"
 }

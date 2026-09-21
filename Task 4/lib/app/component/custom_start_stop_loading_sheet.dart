@@ -45,12 +45,10 @@ class _StartStopLoadingBottomSheetState
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        return false;
-      },
+    return PopScope(
+      canPop: false,
       child: AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         actions: <Widget>[
           Container(
             height: SizeConfig.heightMultiplier * 25,
@@ -59,7 +57,7 @@ class _StartStopLoadingBottomSheetState
               children: [
                 CustomProgressIndicator.buildProgressBarTile(
                   5,
-                  Theme.of(context).colorScheme.background,
+                  Theme.of(context).colorScheme.surface,
                   Theme.of(context).colorScheme.primary,
                 ),
                 Padding(

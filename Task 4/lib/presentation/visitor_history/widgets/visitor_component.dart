@@ -85,7 +85,7 @@ class VisitorHistoryComponent {
       DateTime? checkinDate = visitoryHistory?.checkInDate;
       return Card(
         elevation: 10,
-        color: Theme.of(context).colorScheme.onBackground,
+        color: Theme.of(context).colorScheme.onSurface,
         child: Container(
           child: Padding(
             padding: EdgeInsets.symmetric(

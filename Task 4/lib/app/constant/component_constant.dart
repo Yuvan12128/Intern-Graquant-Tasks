@@ -25,16 +25,16 @@ InputDecoration underlineInputDecoration(
       borderSide: BorderSide(color: Colors.red),
     ),
     labelStyle: bodyText1.copyWith(
-        color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+        color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
     hintStyle: bodyText2.copyWith(
-        color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+        color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
   );
 }
 
 UnderlineInputBorder underlineInputBorder(BuildContext context) {
   return UnderlineInputBorder(
     borderSide: BorderSide(
-        color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+        color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
   );
 }
 
@@ -70,7 +70,7 @@ Center listViewNoRecordContainer(
           text,
           style: subtitle1.copyWith(
             fontSize: 4.4 * SizeConfig.textMultiplier,
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.7),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.7),
           ),
         ),
       ],
@@ -105,9 +105,9 @@ DropdownButtonFormField dropDownButton(
     decoration: InputDecoration(
       hintText: label,
       labelStyle: bodyText1.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
       hintStyle: bodyText2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
       contentPadding: EdgeInsets.symmetric(
         horizontal: SizeConfig.widthMultiplier * 5,
         vertical: SizeConfig.widthMultiplier * 5,
@@ -115,7 +115,7 @@ DropdownButtonFormField dropDownButton(
     ),
     isExpanded: true,
     iconEnabledColor: Theme.of(context).primaryColor,
-    value: value,
+    initialValue: value,
     onChanged: (dynamic value) {
       onChangedFunc(value);
     },
@@ -137,7 +137,7 @@ TextField textField(
     cursorColor: Theme.of(context).colorScheme.primary,
     controller: textEditingController,
     style: subtitle2.copyWith(
-      color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+      color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
     ),
     onChanged: (String? value) {
       onChangedFun(value);
@@ -147,9 +147,9 @@ TextField textField(
       hintText: hintText,
       errorText: fieldErrorText,
       labelStyle: bodyText1.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
       hintStyle: bodyText2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
       contentPadding: EdgeInsets.symmetric(
         horizontal: SizeConfig.widthMultiplier * 5,
         vertical: SizeConfig.widthMultiplier * 5,
@@ -175,7 +175,7 @@ TextFormField textFormField(
     cursorColor: Theme.of(context).colorScheme.primary,
     maxLength: maxLength,
     style: subtitle2.copyWith(
-      color: Theme.of(context).colorScheme.secondary.withOpacity(0.8),
+      color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
     ),
     onChanged: (String? value) {
       onChangedFun(value);
@@ -188,9 +188,9 @@ TextFormField textFormField(
       ),
       hintText: hintText,
       labelStyle: bodyText1.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.8)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8)),
       hintStyle: bodyText2.copyWith(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.5)),
+          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5)),
       contentPadding: EdgeInsets.symmetric(
         horizontal: SizeConfig.widthMultiplier * 5,
         vertical: SizeConfig.widthMultiplier * 5,

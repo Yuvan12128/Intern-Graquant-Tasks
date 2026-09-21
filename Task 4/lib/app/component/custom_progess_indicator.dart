@@ -36,7 +36,7 @@ class CustomProgressIndicator {
         fontSize: 14,
         color: Colors.white,
       )
-      ..maskColor = Colors.blue.withOpacity(0.5)
+      ..maskColor = Colors.blue.withValues(alpha: 0.5)
       ..userInteractions = false
       ..dismissOnTap = false
       ..toastPosition = EasyLoadingToastPosition.bottom;

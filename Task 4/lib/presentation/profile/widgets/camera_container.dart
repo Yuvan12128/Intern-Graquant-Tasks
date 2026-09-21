@@ -25,7 +25,7 @@ class CameraContainer {
           icon: Icon(
             Icons.camera_alt_rounded,
             color: image != null
-                ? Theme.of(context).primaryColor
+                ? Theme.of(context).colorScheme.primary
                 : Theme.of(context).colorScheme.surface,
           ),
           splashRadius: 25,

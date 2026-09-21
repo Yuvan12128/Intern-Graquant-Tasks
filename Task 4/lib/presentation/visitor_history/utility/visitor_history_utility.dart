@@ -11,7 +11,6 @@ import 'package:skcl_vms/app/utility/capitalize.dart';
 import 'package:skcl_vms/data/model/visitor/visitor_filter.dart';
 import 'package:skcl_vms/presentation/visitor_history/bloc/filter/visitor_history_filter_bloc.dart';
 import 'package:skcl_vms/presentation/visitor_history/bloc/visitor_history/visitor_history_bloc.dart';
-
 const String fileName = 'visitor_history.utility.visitor_history_utility';
 
 class VisitorHistoryUtility {

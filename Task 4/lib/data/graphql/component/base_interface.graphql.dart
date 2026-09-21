@@ -41,11 +41,7 @@ class Fragment$LocationResponse {
     final l$latitude = latitude;
     final l$longitude = longitude;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$latitude,
-      l$longitude,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$latitude, l$longitude, l$$__typename]);
   }
 
   @override
@@ -53,7 +49,7 @@ class Fragment$LocationResponse {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$LocationResponse) ||
+    if (other is! Fragment$LocationResponse ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -79,10 +75,7 @@ class Fragment$LocationResponse {
 extension UtilityExtension$Fragment$LocationResponse
     on Fragment$LocationResponse {
   CopyWith$Fragment$LocationResponse<Fragment$LocationResponse> get copyWith =>
-      CopyWith$Fragment$LocationResponse(
-        this,
-        (i) => i,
-      );
+      CopyWith$Fragment$LocationResponse(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$LocationResponse<TRes> {
@@ -94,19 +87,12 @@ abstract class CopyWith$Fragment$LocationResponse<TRes> {
   factory CopyWith$Fragment$LocationResponse.stub(TRes res) =
       _CopyWithStubImpl$Fragment$LocationResponse;
 
-  TRes call({
-    double? latitude,
-    double? longitude,
-    String? $__typename,
-  });
+  TRes call({double? latitude, double? longitude, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$LocationResponse<TRes>
     implements CopyWith$Fragment$LocationResponse<TRes> {
-  _CopyWithImpl$Fragment$LocationResponse(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$LocationResponse(this._instance, this._then);
 
   final Fragment$LocationResponse _instance;
 
@@ -118,17 +104,19 @@ class _CopyWithImpl$Fragment$LocationResponse<TRes>
     Object? latitude = _undefined,
     Object? longitude = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$LocationResponse(
-        latitude:
-            latitude == _undefined ? _instance.latitude : (latitude as double?),
-        longitude: longitude == _undefined
-            ? _instance.longitude
-            : (longitude as double?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$LocationResponse(
+      latitude: latitude == _undefined
+          ? _instance.latitude
+          : (latitude as double?),
+      longitude: longitude == _undefined
+          ? _instance.longitude
+          : (longitude as double?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Fragment$LocationResponse<TRes>
@@ -137,67 +125,62 @@ class _CopyWithStubImpl$Fragment$LocationResponse<TRes>
 
   TRes _res;
 
-  call({
-    double? latitude,
-    double? longitude,
-    String? $__typename,
-  }) =>
-      _res;
+  call({double? latitude, double? longitude, String? $__typename}) => _res;
 }
 
 const fragmentDefinitionLocationResponse = FragmentDefinitionNode(
   name: NameNode(value: 'LocationResponse'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'Location'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'Location'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'latitude'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'longitude'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'latitude'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'longitude'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentLocationResponse = DocumentNode(definitions: [
-  fragmentDefinitionLocationResponse,
-]);
+const documentNodeFragmentLocationResponse = DocumentNode(
+  definitions: [fragmentDefinitionLocationResponse],
+);
 
 extension ClientExtension$Fragment$LocationResponse on graphql.GraphQLClient {
   void writeFragment$LocationResponse({
     required Fragment$LocationResponse data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'LocationResponse',
-            document: documentNodeFragmentLocationResponse,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'LocationResponse',
+        document: documentNodeFragmentLocationResponse,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
+
   Fragment$LocationResponse? readFragment$LocationResponse({
     required Map<String, dynamic> idFields,
     bool optimistic = true,
@@ -265,7 +248,8 @@ class Fragment$AddressResponse {
       location: l$location == null
           ? null
           : Fragment$LocationResponse.fromJson(
-              (l$location as Map<String, dynamic>)),
+              (l$location as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -370,7 +354,7 @@ class Fragment$AddressResponse {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$AddressResponse) ||
+    if (other is! Fragment$AddressResponse ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -451,10 +435,7 @@ class Fragment$AddressResponse {
 extension UtilityExtension$Fragment$AddressResponse
     on Fragment$AddressResponse {
   CopyWith$Fragment$AddressResponse<Fragment$AddressResponse> get copyWith =>
-      CopyWith$Fragment$AddressResponse(
-        this,
-        (i) => i,
-      );
+      CopyWith$Fragment$AddressResponse(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$AddressResponse<TRes> {
@@ -487,10 +468,7 @@ abstract class CopyWith$Fragment$AddressResponse<TRes> {
 
 class _CopyWithImpl$Fragment$AddressResponse<TRes>
     implements CopyWith$Fragment$AddressResponse<TRes> {
-  _CopyWithImpl$Fragment$AddressResponse(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$AddressResponse(this._instance, this._then);
 
   final Fragment$AddressResponse _instance;
 
@@ -513,40 +491,43 @@ class _CopyWithImpl$Fragment$AddressResponse<TRes>
     Object? pincode = _undefined,
     Object? location = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$AddressResponse(
-        no: no == _undefined ? _instance.no : (no as String?),
-        floor: floor == _undefined ? _instance.floor : (floor as String?),
-        block: block == _undefined ? _instance.block : (block as String?),
-        landmark:
-            landmark == _undefined ? _instance.landmark : (landmark as String?),
-        street: street == _undefined ? _instance.street : (street as String?),
-        area: area == _undefined ? _instance.area : (area as String?),
-        city: city == _undefined ? _instance.city : (city as String?),
-        state: state == _undefined ? _instance.state : (state as String?),
-        stateISOCode: stateISOCode == _undefined
-            ? _instance.stateISOCode
-            : (stateISOCode as String?),
-        country:
-            country == _undefined ? _instance.country : (country as String?),
-        countryISOCode: countryISOCode == _undefined
-            ? _instance.countryISOCode
-            : (countryISOCode as String?),
-        pincode:
-            pincode == _undefined ? _instance.pincode : (pincode as String?),
-        location: location == _undefined
-            ? _instance.location
-            : (location as Fragment$LocationResponse?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Fragment$AddressResponse(
+      no: no == _undefined ? _instance.no : (no as String?),
+      floor: floor == _undefined ? _instance.floor : (floor as String?),
+      block: block == _undefined ? _instance.block : (block as String?),
+      landmark: landmark == _undefined
+          ? _instance.landmark
+          : (landmark as String?),
+      street: street == _undefined ? _instance.street : (street as String?),
+      area: area == _undefined ? _instance.area : (area as String?),
+      city: city == _undefined ? _instance.city : (city as String?),
+      state: state == _undefined ? _instance.state : (state as String?),
+      stateISOCode: stateISOCode == _undefined
+          ? _instance.stateISOCode
+          : (stateISOCode as String?),
+      country: country == _undefined ? _instance.country : (country as String?),
+      countryISOCode: countryISOCode == _undefined
+          ? _instance.countryISOCode
+          : (countryISOCode as String?),
+      pincode: pincode == _undefined ? _instance.pincode : (pincode as String?),
+      location: location == _undefined
+          ? _instance.location
+          : (location as Fragment$LocationResponse?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Fragment$LocationResponse<TRes> get location {
     final local$location = _instance.location;
     return local$location == null
         ? CopyWith$Fragment$LocationResponse.stub(_then(_instance))
         : CopyWith$Fragment$LocationResponse(
-            local$location, (e) => call(location: e));
+            local$location,
+            (e) => call(location: e),
+          );
   }
 }
 
@@ -571,8 +552,8 @@ class _CopyWithStubImpl$Fragment$AddressResponse<TRes>
     String? pincode,
     Fragment$LocationResponse? location,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Fragment$LocationResponse<TRes> get location =>
       CopyWith$Fragment$LocationResponse.stub(_res);
 }
@@ -580,146 +561,150 @@ class _CopyWithStubImpl$Fragment$AddressResponse<TRes>
 const fragmentDefinitionAddressResponse = FragmentDefinitionNode(
   name: NameNode(value: 'AddressResponse'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'Address'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'Address'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'no'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'floor'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'block'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'landmark'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'street'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'area'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'city'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'state'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'stateISOCode'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'country'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'countryISOCode'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'pincode'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: 'location'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: SelectionSetNode(selections: [
-        FragmentSpreadNode(
-          name: NameNode(value: 'LocationResponse'),
-          directives: [],
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'no'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'floor'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'block'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'landmark'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'street'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'area'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'city'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'state'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'stateISOCode'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'country'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'countryISOCode'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'pincode'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: 'location'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(
+          selections: [
+            FragmentSpreadNode(
+              name: NameNode(value: 'LocationResponse'),
+              directives: [],
+            ),
+            FieldNode(
+              name: NameNode(value: '__typename'),
+              alias: null,
+              arguments: [],
+              directives: [],
+              selectionSet: null,
+            ),
+          ],
         ),
-        FieldNode(
-          name: NameNode(value: '__typename'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-      ]),
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentAddressResponse = DocumentNode(definitions: [
-  fragmentDefinitionAddressResponse,
-  fragmentDefinitionLocationResponse,
-]);
+const documentNodeFragmentAddressResponse = DocumentNode(
+  definitions: [
+    fragmentDefinitionAddressResponse,
+    fragmentDefinitionLocationResponse,
+  ],
+);
 
 extension ClientExtension$Fragment$AddressResponse on graphql.GraphQLClient {
   void writeFragment$AddressResponse({
     required Fragment$AddressResponse data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'AddressResponse',
-            document: documentNodeFragmentAddressResponse,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'AddressResponse',
+        document: documentNodeFragmentAddressResponse,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
+
   Fragment$AddressResponse? readFragment$AddressResponse({
     required Map<String, dynamic> idFields,
     bool optimistic = true,

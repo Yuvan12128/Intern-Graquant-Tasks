@@ -285,7 +285,9 @@ class VisitorEntryFormUtility {
               : visitorDetail?.phoneNumber,
           validators: [
             Validators.required,
-            Validators.number,
+            Validators.number(
+              allowNegatives: false,
+            ),
             Validators.maxLength(10),
             Validators.minLength(10),
           ],
@@ -324,7 +326,12 @@ class VisitorEntryFormUtility {
         FieldConstant.FLOOR_NO: visitorDetail == null
             ? FormControl<String>(
                 value: null,
-                validators: [Validators.required, Validators.number],
+                validators: [
+                  Validators.required,
+                  Validators.number(
+                    allowNegatives: false,
+                  ),
+                ],
               )
             : FormControl<String>(
                 value: null,

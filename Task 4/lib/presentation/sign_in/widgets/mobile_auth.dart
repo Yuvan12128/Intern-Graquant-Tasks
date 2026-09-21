@@ -46,7 +46,7 @@ class _MobileAuthState extends State<MobileAuth> {
                     color: Theme.of(context)
                         .colorScheme
                         .secondary
-                        .withOpacity(0.5),
+                        .withValues(alpha: 0.5),
                   ),
                   textAlign: TextAlign.center,
                 ),

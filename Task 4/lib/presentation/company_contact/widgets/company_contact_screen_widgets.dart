@@ -70,7 +70,7 @@ class CompanyContactScreenWidgets {
           Text(
             "No contact listed to call",
             style: subtitle1.copyWith(
-              color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+              color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
             ),
           ),
         );
@@ -87,7 +87,7 @@ class CompanyContactScreenWidgets {
         Text(
           "No contact listed to call",
           style: subtitle1.copyWith(
-            color: Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.5),
           ),
         ),
       );

@@ -2,10 +2,7 @@ import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
 class Fragment$PersonResponse {
-  Fragment$PersonResponse({
-    this.id,
-    this.$__typename = 'Person',
-  });
+  Fragment$PersonResponse({this.id, this.$__typename = 'Person'});
 
   factory Fragment$PersonResponse.fromJson(Map<String, dynamic> json) {
     final l$id = json['id'];
@@ -33,10 +30,7 @@ class Fragment$PersonResponse {
   int get hashCode {
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$$__typename]);
   }
 
   @override
@@ -44,8 +38,7 @@ class Fragment$PersonResponse {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Fragment$PersonResponse) ||
-        runtimeType != other.runtimeType) {
+    if (other is! Fragment$PersonResponse || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -64,10 +57,7 @@ class Fragment$PersonResponse {
 
 extension UtilityExtension$Fragment$PersonResponse on Fragment$PersonResponse {
   CopyWith$Fragment$PersonResponse<Fragment$PersonResponse> get copyWith =>
-      CopyWith$Fragment$PersonResponse(
-        this,
-        (i) => i,
-      );
+      CopyWith$Fragment$PersonResponse(this, (i) => i);
 }
 
 abstract class CopyWith$Fragment$PersonResponse<TRes> {
@@ -79,18 +69,12 @@ abstract class CopyWith$Fragment$PersonResponse<TRes> {
   factory CopyWith$Fragment$PersonResponse.stub(TRes res) =
       _CopyWithStubImpl$Fragment$PersonResponse;
 
-  TRes call({
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Fragment$PersonResponse<TRes>
     implements CopyWith$Fragment$PersonResponse<TRes> {
-  _CopyWithImpl$Fragment$PersonResponse(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Fragment$PersonResponse(this._instance, this._then);
 
   final Fragment$PersonResponse _instance;
 
@@ -98,16 +82,15 @@ class _CopyWithImpl$Fragment$PersonResponse<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Fragment$PersonResponse(
-        id: id == _undefined ? _instance.id : (id as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Fragment$PersonResponse(
+          id: id == _undefined ? _instance.id : (id as String?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Fragment$PersonResponse<TRes>
@@ -116,59 +99,55 @@ class _CopyWithStubImpl$Fragment$PersonResponse<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? $__typename}) => _res;
 }
 
 const fragmentDefinitionPersonResponse = FragmentDefinitionNode(
   name: NameNode(value: 'PersonResponse'),
   typeCondition: TypeConditionNode(
-      on: NamedTypeNode(
-    name: NameNode(value: 'Person'),
-    isNonNull: false,
-  )),
+    on: NamedTypeNode(name: NameNode(value: 'Person'), isNonNull: false),
+  ),
   directives: [],
-  selectionSet: SelectionSetNode(selections: [
-    FieldNode(
-      name: NameNode(value: 'id'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-    FieldNode(
-      name: NameNode(value: '__typename'),
-      alias: null,
-      arguments: [],
-      directives: [],
-      selectionSet: null,
-    ),
-  ]),
+  selectionSet: SelectionSetNode(
+    selections: [
+      FieldNode(
+        name: NameNode(value: 'id'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ],
+  ),
 );
-const documentNodeFragmentPersonResponse = DocumentNode(definitions: [
-  fragmentDefinitionPersonResponse,
-]);
+const documentNodeFragmentPersonResponse = DocumentNode(
+  definitions: [fragmentDefinitionPersonResponse],
+);
 
 extension ClientExtension$Fragment$PersonResponse on graphql.GraphQLClient {
   void writeFragment$PersonResponse({
     required Fragment$PersonResponse data,
     required Map<String, dynamic> idFields,
     bool broadcast = true,
-  }) =>
-      this.writeFragment(
-        graphql.FragmentRequest(
-          idFields: idFields,
-          fragment: const graphql.Fragment(
-            fragmentName: 'PersonResponse',
-            document: documentNodeFragmentPersonResponse,
-          ),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeFragment(
+    graphql.FragmentRequest(
+      idFields: idFields,
+      fragment: const graphql.Fragment(
+        fragmentName: 'PersonResponse',
+        document: documentNodeFragmentPersonResponse,
+      ),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
+
   Fragment$PersonResponse? readFragment$PersonResponse({
     required Map<String, dynamic> idFields,
     bool optimistic = true,

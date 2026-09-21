@@ -1,5 +1,7 @@
 import '../../../../../data/graphql/component/schema.graphql.dart';
+
 import 'dart:async';
+
 import 'package:gql/ast.dart';
 import 'package:graphql/client.dart' as graphql;
 
@@ -7,29 +9,32 @@ class Variables$Mutation$ProfileUpdatePerson {
   factory Variables$Mutation$ProfileUpdatePerson({
     required String id,
     required Input$PersonRequest payload,
-  }) =>
-      Variables$Mutation$ProfileUpdatePerson._({
-        r'id': id,
-        r'payload': payload,
-      });
+  }) => Variables$Mutation$ProfileUpdatePerson._({
+    r'id': id,
+    r'payload': payload,
+  });
 
   Variables$Mutation$ProfileUpdatePerson._(this._$data);
 
   factory Variables$Mutation$ProfileUpdatePerson.fromJson(
-      Map<String, dynamic> data) {
+    Map<String, dynamic> data,
+  ) {
     final result$data = <String, dynamic>{};
     final l$id = data['id'];
     result$data['id'] = (l$id as String);
     final l$payload = data['payload'];
-    result$data['payload'] =
-        Input$PersonRequest.fromJson((l$payload as Map<String, dynamic>));
+    result$data['payload'] = Input$PersonRequest.fromJson(
+      (l$payload as Map<String, dynamic>),
+    );
     return Variables$Mutation$ProfileUpdatePerson._(result$data);
   }
 
   Map<String, dynamic> _$data;
 
   String get id => (_$data['id'] as String);
+
   Input$PersonRequest get payload => (_$data['payload'] as Input$PersonRequest);
+
   Map<String, dynamic> toJson() {
     final result$data = <String, dynamic>{};
     final l$id = id;
@@ -40,17 +45,17 @@ class Variables$Mutation$ProfileUpdatePerson {
   }
 
   CopyWith$Variables$Mutation$ProfileUpdatePerson<
-          Variables$Mutation$ProfileUpdatePerson>
-      get copyWith => CopyWith$Variables$Mutation$ProfileUpdatePerson(
-            this,
-            (i) => i,
-          );
+    Variables$Mutation$ProfileUpdatePerson
+  >
+  get copyWith =>
+      CopyWith$Variables$Mutation$ProfileUpdatePerson(this, (i) => i);
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Variables$Mutation$ProfileUpdatePerson) ||
+    if (other is! Variables$Mutation$ProfileUpdatePerson ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -71,10 +76,7 @@ class Variables$Mutation$ProfileUpdatePerson {
   int get hashCode {
     final l$id = id;
     final l$payload = payload;
-    return Object.hashAll([
-      l$id,
-      l$payload,
-    ]);
+    return Object.hashAll([l$id, l$payload]);
   }
 }
 
@@ -87,10 +89,7 @@ abstract class CopyWith$Variables$Mutation$ProfileUpdatePerson<TRes> {
   factory CopyWith$Variables$Mutation$ProfileUpdatePerson.stub(TRes res) =
       _CopyWithStubImpl$Variables$Mutation$ProfileUpdatePerson;
 
-  TRes call({
-    String? id,
-    Input$PersonRequest? payload,
-  });
+  TRes call({String? id, Input$PersonRequest? payload});
 }
 
 class _CopyWithImpl$Variables$Mutation$ProfileUpdatePerson<TRes>
@@ -106,16 +105,14 @@ class _CopyWithImpl$Variables$Mutation$ProfileUpdatePerson<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? payload = _undefined,
-  }) =>
-      _then(Variables$Mutation$ProfileUpdatePerson._({
-        ..._instance._$data,
-        if (id != _undefined && id != null) 'id': (id as String),
-        if (payload != _undefined && payload != null)
-          'payload': (payload as Input$PersonRequest),
-      }));
+  TRes call({Object? id = _undefined, Object? payload = _undefined}) => _then(
+    Variables$Mutation$ProfileUpdatePerson._({
+      ..._instance._$data,
+      if (id != _undefined && id != null) 'id': (id as String),
+      if (payload != _undefined && payload != null)
+        'payload': (payload as Input$PersonRequest),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$ProfileUpdatePerson<TRes>
@@ -124,11 +121,7 @@ class _CopyWithStubImpl$Variables$Mutation$ProfileUpdatePerson<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    Input$PersonRequest? payload,
-  }) =>
-      _res;
+  call({String? id, Input$PersonRequest? payload}) => _res;
 }
 
 class Mutation$ProfileUpdatePerson {
@@ -142,7 +135,8 @@ class Mutation$ProfileUpdatePerson {
     final l$$__typename = json['__typename'];
     return Mutation$ProfileUpdatePerson(
       updatePerson: Mutation$ProfileUpdatePerson$updatePerson.fromJson(
-          (l$updatePerson as Map<String, dynamic>)),
+        (l$updatePerson as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -164,10 +158,7 @@ class Mutation$ProfileUpdatePerson {
   int get hashCode {
     final l$updatePerson = updatePerson;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$updatePerson,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$updatePerson, l$$__typename]);
   }
 
   @override
@@ -175,7 +166,7 @@ class Mutation$ProfileUpdatePerson {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$ProfileUpdatePerson) ||
+    if (other is! Mutation$ProfileUpdatePerson ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -196,10 +187,7 @@ class Mutation$ProfileUpdatePerson {
 extension UtilityExtension$Mutation$ProfileUpdatePerson
     on Mutation$ProfileUpdatePerson {
   CopyWith$Mutation$ProfileUpdatePerson<Mutation$ProfileUpdatePerson>
-      get copyWith => CopyWith$Mutation$ProfileUpdatePerson(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$ProfileUpdatePerson(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$ProfileUpdatePerson<TRes> {
@@ -220,10 +208,7 @@ abstract class CopyWith$Mutation$ProfileUpdatePerson<TRes> {
 
 class _CopyWithImpl$Mutation$ProfileUpdatePerson<TRes>
     implements CopyWith$Mutation$ProfileUpdatePerson<TRes> {
-  _CopyWithImpl$Mutation$ProfileUpdatePerson(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$ProfileUpdatePerson(this._instance, this._then);
 
   final Mutation$ProfileUpdatePerson _instance;
 
@@ -234,19 +219,23 @@ class _CopyWithImpl$Mutation$ProfileUpdatePerson<TRes>
   TRes call({
     Object? updatePerson = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$ProfileUpdatePerson(
-        updatePerson: updatePerson == _undefined || updatePerson == null
-            ? _instance.updatePerson
-            : (updatePerson as Mutation$ProfileUpdatePerson$updatePerson),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$ProfileUpdatePerson(
+      updatePerson: updatePerson == _undefined || updatePerson == null
+          ? _instance.updatePerson
+          : (updatePerson as Mutation$ProfileUpdatePerson$updatePerson),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
+
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson<TRes> get updatePerson {
     final local$updatePerson = _instance.updatePerson;
     return CopyWith$Mutation$ProfileUpdatePerson$updatePerson(
-        local$updatePerson, (e) => call(updatePerson: e));
+      local$updatePerson,
+      (e) => call(updatePerson: e),
+    );
   }
 }
 
@@ -259,102 +248,114 @@ class _CopyWithStubImpl$Mutation$ProfileUpdatePerson<TRes>
   call({
     Mutation$ProfileUpdatePerson$updatePerson? updatePerson,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson<TRes> get updatePerson =>
       CopyWith$Mutation$ProfileUpdatePerson$updatePerson.stub(_res);
 }
 
-const documentNodeMutationProfileUpdatePerson = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'ProfileUpdatePerson'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'id')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'ID'),
-          isNonNull: true,
+const documentNodeMutationProfileUpdatePerson = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'ProfileUpdatePerson'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'id')),
+          type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'payload')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'PersonRequest'),
-          isNonNull: true,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'payload')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'PersonRequest'),
+            isNonNull: true,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'updatePerson'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'id'),
-            value: VariableNode(name: NameNode(value: 'id')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'payload'),
-            value: VariableNode(name: NameNode(value: 'payload')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'source'),
+            name: NameNode(value: 'updatePerson'),
             alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
+            arguments: [
+              ArgumentNode(
                 name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
+                value: VariableNode(name: NameNode(value: 'id')),
               ),
-              FieldNode(
-                name: NameNode(value: 'firstName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
+              ArgumentNode(
+                name: NameNode(value: 'payload'),
+                value: VariableNode(name: NameNode(value: 'payload')),
               ),
-              FieldNode(
-                name: NameNode(value: 'lastName'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'phoneNumber'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'emailAddress'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            ],
+            directives: [],
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'source'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'firstName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'lastName'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'phoneNumber'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: 'emailAddress'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -363,26 +364,19 @@ const documentNodeMutationProfileUpdatePerson = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
-Mutation$ProfileUpdatePerson _parserFn$Mutation$ProfileUpdatePerson(
-        Map<String, dynamic> data) =>
-    Mutation$ProfileUpdatePerson.fromJson(data);
-typedef OnMutationCompleted$Mutation$ProfileUpdatePerson = FutureOr<void>
-    Function(
-  Map<String, dynamic>?,
-  Mutation$ProfileUpdatePerson?,
+    ),
+  ],
 );
+Mutation$ProfileUpdatePerson _parserFn$Mutation$ProfileUpdatePerson(
+  Map<String, dynamic> data,
+) => Mutation$ProfileUpdatePerson.fromJson(data);
+typedef OnMutationCompleted$Mutation$ProfileUpdatePerson =
+    FutureOr<void> Function(
+      Map<String, dynamic>?,
+      Mutation$ProfileUpdatePerson?,
+    );
 
 class Options$Mutation$ProfileUpdatePerson
     extends graphql.MutationOptions<Mutation$ProfileUpdatePerson> {
@@ -398,38 +392,38 @@ class Options$Mutation$ProfileUpdatePerson
     OnMutationCompleted$Mutation$ProfileUpdatePerson? onCompleted,
     graphql.OnMutationUpdate<Mutation$ProfileUpdatePerson>? update,
     graphql.OnError? onError,
-  })  : onCompletedWithParsed = onCompleted,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          onCompleted: onCompleted == null
-              ? null
-              : (data) => onCompleted(
-                    data,
-                    data == null
-                        ? null
-                        : _parserFn$Mutation$ProfileUpdatePerson(data),
-                  ),
-          update: update,
-          onError: onError,
-          document: documentNodeMutationProfileUpdatePerson,
-          parserFn: _parserFn$Mutation$ProfileUpdatePerson,
-        );
+  }) : onCompletedWithParsed = onCompleted,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         onCompleted: onCompleted == null
+             ? null
+             : (data) => onCompleted(
+                 data,
+                 data == null
+                     ? null
+                     : _parserFn$Mutation$ProfileUpdatePerson(data),
+               ),
+         update: update,
+         onError: onError,
+         document: documentNodeMutationProfileUpdatePerson,
+         parserFn: _parserFn$Mutation$ProfileUpdatePerson,
+       );
 
   final OnMutationCompleted$Mutation$ProfileUpdatePerson? onCompletedWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onCompleted == null
-            ? super.properties
-            : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed,
-      ];
+    ...super.onCompleted == null
+        ? super.properties
+        : super.properties.where((property) => property != onCompleted),
+    onCompletedWithParsed,
+  ];
 }
 
 class WatchOptions$Mutation$ProfileUpdatePerson
@@ -448,32 +442,33 @@ class WatchOptions$Mutation$ProfileUpdatePerson
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeMutationProfileUpdatePerson,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Mutation$ProfileUpdatePerson,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeMutationProfileUpdatePerson,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Mutation$ProfileUpdatePerson,
+       );
 }
 
 extension ClientExtension$Mutation$ProfileUpdatePerson
     on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$ProfileUpdatePerson>>
-      mutate$ProfileUpdatePerson(
-              Options$Mutation$ProfileUpdatePerson options) async =>
-          await this.mutate(options);
+  mutate$ProfileUpdatePerson(
+    Options$Mutation$ProfileUpdatePerson options,
+  ) async => await this.mutate(options);
+
   graphql.ObservableQuery<Mutation$ProfileUpdatePerson>
-      watchMutation$ProfileUpdatePerson(
-              WatchOptions$Mutation$ProfileUpdatePerson options) =>
-          this.watchMutation(options);
+  watchMutation$ProfileUpdatePerson(
+    WatchOptions$Mutation$ProfileUpdatePerson options,
+  ) => this.watchMutation(options);
 }
 
 class Mutation$ProfileUpdatePerson$updatePerson {
@@ -483,14 +478,16 @@ class Mutation$ProfileUpdatePerson$updatePerson {
   });
 
   factory Mutation$ProfileUpdatePerson$updatePerson.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$source = json['source'];
     final l$$__typename = json['__typename'];
     return Mutation$ProfileUpdatePerson$updatePerson(
       source: l$source == null
           ? null
           : Mutation$ProfileUpdatePerson$updatePerson$source.fromJson(
-              (l$source as Map<String, dynamic>)),
+              (l$source as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -512,10 +509,7 @@ class Mutation$ProfileUpdatePerson$updatePerson {
   int get hashCode {
     final l$source = source;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$source,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$source, l$$__typename]);
   }
 
   @override
@@ -523,7 +517,7 @@ class Mutation$ProfileUpdatePerson$updatePerson {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$ProfileUpdatePerson$updatePerson) ||
+    if (other is! Mutation$ProfileUpdatePerson$updatePerson ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -544,11 +538,10 @@ class Mutation$ProfileUpdatePerson$updatePerson {
 extension UtilityExtension$Mutation$ProfileUpdatePerson$updatePerson
     on Mutation$ProfileUpdatePerson$updatePerson {
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson<
-          Mutation$ProfileUpdatePerson$updatePerson>
-      get copyWith => CopyWith$Mutation$ProfileUpdatePerson$updatePerson(
-            this,
-            (i) => i,
-          );
+    Mutation$ProfileUpdatePerson$updatePerson
+  >
+  get copyWith =>
+      CopyWith$Mutation$ProfileUpdatePerson$updatePerson(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$ProfileUpdatePerson$updatePerson<TRes> {
@@ -580,25 +573,28 @@ class _CopyWithImpl$Mutation$ProfileUpdatePerson$updatePerson<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? source = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$ProfileUpdatePerson$updatePerson(
-        source: source == _undefined
-            ? _instance.source
-            : (source as Mutation$ProfileUpdatePerson$updatePerson$source?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? source = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Mutation$ProfileUpdatePerson$updatePerson(
+          source: source == _undefined
+              ? _instance.source
+              : (source as Mutation$ProfileUpdatePerson$updatePerson$source?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
+
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source<TRes> get source {
     final local$source = _instance.source;
     return local$source == null
         ? CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source(
-            local$source, (e) => call(source: e));
+            local$source,
+            (e) => call(source: e),
+          );
   }
 }
 
@@ -611,8 +607,8 @@ class _CopyWithStubImpl$Mutation$ProfileUpdatePerson$updatePerson<TRes>
   call({
     Mutation$ProfileUpdatePerson$updatePerson$source? source,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
+
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source<TRes> get source =>
       CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source.stub(_res);
 }
@@ -628,7 +624,8 @@ class Mutation$ProfileUpdatePerson$updatePerson$source {
   });
 
   factory Mutation$ProfileUpdatePerson$updatePerson$source.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$firstName = json['firstName'];
     final l$lastName = json['lastName'];
@@ -697,7 +694,7 @@ class Mutation$ProfileUpdatePerson$updatePerson$source {
     if (identical(this, other)) {
       return true;
     }
-    if (!(other is Mutation$ProfileUpdatePerson$updatePerson$source) ||
+    if (other is! Mutation$ProfileUpdatePerson$updatePerson$source ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -738,11 +735,10 @@ class Mutation$ProfileUpdatePerson$updatePerson$source {
 extension UtilityExtension$Mutation$ProfileUpdatePerson$updatePerson$source
     on Mutation$ProfileUpdatePerson$updatePerson$source {
   CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source<
-          Mutation$ProfileUpdatePerson$updatePerson$source>
-      get copyWith => CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source(
-            this,
-            (i) => i,
-          );
+    Mutation$ProfileUpdatePerson$updatePerson$source
+  >
+  get copyWith =>
+      CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source<TRes> {
@@ -752,8 +748,8 @@ abstract class CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source<TRes> {
   ) = _CopyWithImpl$Mutation$ProfileUpdatePerson$updatePerson$source;
 
   factory CopyWith$Mutation$ProfileUpdatePerson$updatePerson$source.stub(
-          TRes res) =
-      _CopyWithStubImpl$Mutation$ProfileUpdatePerson$updatePerson$source;
+    TRes res,
+  ) = _CopyWithStubImpl$Mutation$ProfileUpdatePerson$updatePerson$source;
 
   TRes call({
     String? id,
@@ -785,24 +781,26 @@ class _CopyWithImpl$Mutation$ProfileUpdatePerson$updatePerson$source<TRes>
     Object? phoneNumber = _undefined,
     Object? emailAddress = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$ProfileUpdatePerson$updatePerson$source(
-        id: id == _undefined ? _instance.id : (id as String?),
-        firstName: firstName == _undefined
-            ? _instance.firstName
-            : (firstName as String?),
-        lastName:
-            lastName == _undefined ? _instance.lastName : (lastName as String?),
-        phoneNumber: phoneNumber == _undefined
-            ? _instance.phoneNumber
-            : (phoneNumber as String?),
-        emailAddress: emailAddress == _undefined
-            ? _instance.emailAddress
-            : (emailAddress as String?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$ProfileUpdatePerson$updatePerson$source(
+      id: id == _undefined ? _instance.id : (id as String?),
+      firstName: firstName == _undefined
+          ? _instance.firstName
+          : (firstName as String?),
+      lastName: lastName == _undefined
+          ? _instance.lastName
+          : (lastName as String?),
+      phoneNumber: phoneNumber == _undefined
+          ? _instance.phoneNumber
+          : (phoneNumber as String?),
+      emailAddress: emailAddress == _undefined
+          ? _instance.emailAddress
+          : (emailAddress as String?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Mutation$ProfileUpdatePerson$updatePerson$source<TRes>
@@ -818,6 +816,5 @@ class _CopyWithStubImpl$Mutation$ProfileUpdatePerson$updatePerson$source<TRes>
     String? phoneNumber,
     String? emailAddress,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 }

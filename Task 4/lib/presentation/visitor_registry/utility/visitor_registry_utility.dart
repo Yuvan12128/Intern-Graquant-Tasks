@@ -8,7 +8,7 @@ class VisitorRegistryUtility {
   static Widget buildingFetchTryAgainButton(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        overlayColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+        overlayColor: WidgetStateProperty.all(Theme.of(context).primaryColor),
       ),
       child: Text(
         "Try again",

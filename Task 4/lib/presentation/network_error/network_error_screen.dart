@@ -11,25 +11,30 @@ class NetworkErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WillPopScope(
-        onWillPop: () => CustomDialog.alertDialog(
-          context,
-          'No Internet',
-          'Please connect your internet',
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(
-              'Close',
-              style: bodyText1.copyWith(
-                color: Theme.of(context).colorScheme.primary,
+      body: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) {
+          if (!didPop) {
+            CustomDialog.alertDialog(
+              context,
+              'No Internet',
+              'Please connect your internet',
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                ),
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text(
+                  'Close',
+                  style: bodyText1.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
               ),
-            ),
-          ),
-          null,
-        ),
+              null,
+            );
+          }
+        },
         child: Body(),
       ),
     );

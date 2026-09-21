@@ -23,7 +23,7 @@ AppBar tabScreenAppBar(
         Navigator.pop(context);
       },
     ),
-    backgroundColor: Theme.of(context).colorScheme.background,
+    backgroundColor: Theme.of(context).colorScheme.surface,
     actions: [
       IconButton(
         iconSize: SizeConfig.imageSizeMultiplier * 7,

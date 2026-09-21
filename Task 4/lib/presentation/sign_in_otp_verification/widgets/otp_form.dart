@@ -129,8 +129,8 @@ class _OTPForm extends State<OTPForm> {
                         fontSize: 4.5 * SizeConfig.textMultiplier,
                       ),
                     ),
-                    color: MaterialStateProperty.all<Color>(
-                      Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                    color: WidgetStateProperty.all<Color>(
+                      Theme.of(context).colorScheme.primary.withValues(alpha: 0.5),
                     ),
                     buttonWidth: SizeConfig.widthMultiplier * 40,
                     buttonHeight: SizeConfig.screenWidth < 600
