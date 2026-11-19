@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
         res.end('About Page');
     } else if (req.url == '/file') {
         const readStream=fs.createReadStream('./sample.mp4')
-        res.writeHead(200, { "content-type": "text/plain" })
+        res.writeHead(200, { "content-type": "video/mp4" })
         //res.end('About Page');
         readStream.pipe(res)
     }
