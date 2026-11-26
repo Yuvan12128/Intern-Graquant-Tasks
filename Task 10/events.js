@@ -28,22 +28,22 @@ event.on('greet',()=>{
 
 event.emit('greet')
 
-const EventEmitter = require('events');
-const emitter = new EventEmitter();
+// const EventEmitter = require('events');
+// const emitter = new EventEmitter();
 
-// Always handle 'error' events
-emitter.on('error',(err)=>{
+// // Always handle 'error' events
+// emitter.on('error',(err)=>{
 
-    console.error('An error occurred : ',err.message);
+//     console.error('An error occurred : ',err.message);
     
-})
+// })
 
-console.log('Clean up listeners');
+// console.log('Clean up listeners');
 
-emitter.emit('error',new Error('something went wrong'))
+// emitter.emit('error',new Error('something went wrong'))
 
-const listener = () => console.log('Event occurred');
-emitter.on('event', listener);
+// const listener = () => console.log('Event occurred');
+// emitter.on('event', listener);
 
-// Later, remove the listener when no longer needed
-emitter.off('event', listener); 
+// // Later, remove the listener when no longer needed
+// emitter.off('event', listener); 
